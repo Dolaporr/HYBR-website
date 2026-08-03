@@ -122,6 +122,12 @@ function FooterSocialIcon({ kind }: { kind: string }) {
 
 export function Footer() {
   const socialOrder = ["Instagram", "LinkedIn", "X", "YouTube", "Facebook", "Medium", "TikTok"];
+  const socialUrls: Partial<Record<(typeof socialOrder)[number], string>> = {
+    Instagram: "https://www.instagram.com/hybrgrouphq/",
+    LinkedIn: "https://www.linkedin.com/company/15213999/admin/dashboard/",
+    Facebook: "https://www.facebook.com/HYBRgroup/",
+    TikTok: "https://www.tiktok.com/@hybrgroup",
+  };
 
   return (
     <footer className="site-footer home-footer bg-black px-6 py-14 text-white md:py-20">
@@ -148,9 +154,15 @@ export function Footer() {
             <h3 className="font-bold uppercase">Follow us</h3>
             <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
               {socialOrder.map((link) => (
-                <Link aria-label={`${link} placeholder`} href="#" key={link}>
+                <a
+                  aria-label={`Visit HYBR on ${link}`}
+                  href={socialUrls[link] ?? "#"}
+                  key={link}
+                  rel="noreferrer"
+                  target={socialUrls[link] ? "_blank" : undefined}
+                >
                   <FooterSocialIcon kind={link} />
-                </Link>
+                </a>
               ))}
             </div>
             <div className="mt-8">

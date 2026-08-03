@@ -36,6 +36,13 @@ const homeWebinar = {
 
 const rotatingWords = ["ideas", "products", "services", "markets", "teams"];
 
+const socialUrls = {
+  instagram: "https://www.instagram.com/hybrgrouphq/",
+  linkedin: "https://www.linkedin.com/company/15213999/admin/dashboard/",
+  facebook: "https://www.facebook.com/HYBRgroup/",
+  tiktok: "https://www.tiktok.com/@hybrgroup",
+} as const;
+
 const risks = [
   "Wasting time and budget on ideas customers don’t want",
   "Slow, fragmented decision-making",
@@ -866,7 +873,13 @@ export default function Home() {
               <h3 className="font-bold uppercase">Follow us</h3>
               <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
                 {(["instagram", "linkedin", "x", "youtube", "facebook", "medium", "tiktok"] as const).map((kind) => (
-                  <a aria-label={`${kind} placeholder`} href="#" key={kind}>
+                  <a
+                    aria-label={`Visit HYBR on ${kind}`}
+                    href={socialUrls[kind as keyof typeof socialUrls] ?? "#"}
+                    key={kind}
+                    rel="noreferrer"
+                    target={kind in socialUrls ? "_blank" : undefined}
+                  >
                     <SocialIcon kind={kind} />
                   </a>
                 ))}
