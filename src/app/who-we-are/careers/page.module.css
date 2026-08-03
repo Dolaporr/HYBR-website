@@ -218,7 +218,7 @@
 }
 
 .careersScope :global(.careers-why-card > div) {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   gap: 16px;
 }
@@ -226,6 +226,7 @@
 .careersScope :global(.careers-card-icon) {
   flex: 0 0 32px;
   height: 32px;
+  margin-top: 2px;
   --fill-0: #cbe4a7;
   width: 32px;
 }
@@ -291,7 +292,7 @@
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.15;
 }
 
 .careersScope :global(.careers-why-card p) {
