@@ -1,0 +1,1562 @@
+.servicesScope {
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.servicesScope :global(.services-frame) {
+  --services-mobile-content-width: min(342px, calc(100% - 48px));
+  --services-mobile-gutter: max(24px, calc((100% - var(--services-mobile-content-width)) / 2));
+  background: #ffffff;
+  height: 4437px;
+  margin-inline: 0;
+  max-width: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.servicesScope :global(.services-frame *) {
+  box-sizing: border-box;
+}
+
+.servicesScope :global(.services-frame h1),
+.servicesScope :global(.services-frame h2),
+.servicesScope :global(.services-frame h3),
+.servicesScope :global(.services-frame p) {
+  margin: 0;
+}
+
+.servicesScope :global(.services-button) {
+  align-items: center;
+  background: #ffffff;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  min-height: 56px;
+  padding: 16px 32px;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.servicesScope :global(.services-hero) {
+  left: var(--services-mobile-gutter);
+  position: absolute;
+  top: 187px;
+  width: var(--services-mobile-content-width);
+}
+
+.servicesScope :global(.services-hero h1) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+  white-space: nowrap;
+}
+
+.servicesScope :global(.services-hero p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 0;
+}
+
+.servicesScope :global(.services-content-drop) {
+  background: #000000;
+  border-radius: 1000px 0 600px 1000px;
+  color: #ffffff;
+  height: 171px;
+  overflow: hidden;
+  position: absolute;
+  right: -284px;
+  top: 149px;
+  width: 342px;
+  z-index: 3;
+}
+
+.servicesScope :global(.services-content-drop-media) {
+  aspect-ratio: 4096 / 2731;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  display: block;
+  left: -16px;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+  width: 364px;
+}
+
+.servicesScope :global(.services-content-drop-media::after),
+.servicesScope :global(.services-process-bg::after),
+.servicesScope :global(.services-case-image::after),
+.servicesScope :global(.services-testimonial-bg::after) {
+  background: rgba(0, 0, 0, .6);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.servicesScope :global(.services-content-drop p) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  left: 42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+}
+
+.servicesScope :global(.services-content-drop nav) {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  left: 86px;
+  position: absolute;
+  top: 19px;
+  width: 215px;
+}
+
+.servicesScope :global(.services-content-drop a) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.servicesScope :global(.services-process) {
+  background: #000000;
+  border-radius: 16px;
+  height: 426px;
+  left: var(--services-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  top: 382px;
+  width: var(--services-mobile-content-width);
+}
+
+.servicesScope :global(.services-process-bg) {
+  background-position: center;
+  background-size: cover;
+  height: 426px;
+  inset: 0;
+  opacity: .35;
+  pointer-events: none;
+  position: absolute;
+}
+
+.servicesScope :global(.services-process-map) {
+  color: #ffffff;
+  height: 298px;
+  left: 56px;
+  position: absolute;
+  top: 64px;
+  width: 230px;
+}
+
+.servicesScope :global(.services-process-word) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.servicesScope :global(.services-process-word.is-discover) {
+  left: 16px;
+  top: 0;
+}
+
+.servicesScope :global(.services-process-word.is-develop) {
+  color: #4fc2f0;
+  left: 68px;
+  top: 154px;
+}
+
+.servicesScope :global(.services-process-word.is-deploy) {
+  color: #8dc540;
+  left: 77px;
+  top: 259px;
+}
+
+.servicesScope :global(.services-process-arrow) {
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  position: absolute;
+}
+
+.servicesScope :global(.services-process-arrow--desktop) {
+  display: none;
+}
+
+.servicesScope :global(.services-process-arrow.is-first) {
+  height: 59.082px;
+  left: 52.85px;
+  top: 67.428px;
+  transform: rotate(55.8deg) scaleY(-1);
+  transform-origin: center;
+  width: 122.204px;
+}
+
+.servicesScope :global(.services-process-arrow.is-second) {
+  height: 87.403px;
+  left: 30.48px;
+  top: 186.447px;
+  transform: rotate(139.12deg);
+  transform-origin: center;
+  width: 73.217px;
+}
+
+@media (min-width: 560px) {
+  .servicesScope :global(.services-book-button) {
+    transform: none;
+  }
+
+  .servicesScope :global(.services-process-arrow--mobile) {
+    display: none;
+  }
+
+  .servicesScope :global(.services-process-arrow--desktop) {
+    display: block;
+  }
+}
+
+.servicesScope :global(.services-service) {
+  left: var(--services-mobile-gutter);
+  position: absolute;
+  width: var(--services-mobile-content-width);
+}
+
+.servicesScope :global(.services-service.is-discover) {
+  top: 1048px;
+}
+
+.servicesScope :global(.services-service.is-develop) {
+  top: 1763px;
+}
+
+.servicesScope :global(.services-service.is-deploy) {
+  top: 2478px;
+}
+
+.servicesScope :global(.services-service-copy) {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.servicesScope :global(.services-service-copy h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.servicesScope :global(.services-service-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.servicesScope :global(.services-tags) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  left: 0;
+  position: absolute;
+  top: 190px;
+  width: 100%;
+}
+
+.servicesScope :global(.services-service.is-develop .services-tags) {
+  top: 170px;
+}
+
+.servicesScope :global(.services-tags span) {
+  align-items: center;
+  background: #000000;
+  border-radius: 100px;
+  color: #ffffff;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  height: 31px;
+  justify-content: center;
+  line-height: 15px;
+  padding: 8px 16px;
+  white-space: nowrap;
+}
+
+.servicesScope :global(.services-case-card) {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  height: 228px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 375px;
+  width: 100%;
+}
+
+.servicesScope :global(.services-case-image) {
+  background-position: center;
+  background-size: cover;
+  height: 369px;
+  left: -157px;
+  position: absolute;
+  top: -6px;
+  width: 656px;
+}
+
+.servicesScope :global(.services-case-company) {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  left: 32px;
+  position: absolute;
+  top: 32px;
+  z-index: 1;
+}
+
+.servicesScope :global(.services-case-mark) {
+  height: 24px;
+  width: 24px;
+}
+
+.servicesScope :global(.services-case-company h3) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.servicesScope :global(.services-case-statement) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  left: 32px;
+  line-height: 17px;
+  position: absolute;
+  top: 72px;
+  width: 286px;
+  z-index: 1;
+}
+
+.servicesScope :global(.services-case-label) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  left: 32px;
+  line-height: 15px;
+  position: absolute;
+  top: 180px;
+  z-index: 1;
+}
+
+.servicesScope :global(.services-button.is-read) {
+  border-color: #ffffff;
+  color: #000000;
+  font-size: 12px;
+  min-height: 33px;
+  padding: 8px 16px;
+  position: absolute;
+  right: 24px;
+  top: 171px;
+  z-index: 1;
+}
+
+.servicesScope :global(.services-book-button) {
+  left: 50%;
+  position: absolute;
+  top: 3141px;
+  transform: translateX(-50%);
+}
+
+.servicesScope :global(.services-testimonials-heading) {
+  left: var(--services-mobile-gutter);
+  position: absolute;
+  top: 3364px;
+  width: var(--services-mobile-content-width);
+}
+
+.servicesScope :global(.services-testimonials-heading > p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.servicesScope :global(.services-testimonials-heading h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.servicesScope :global(.services-testimonials-heading span) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.servicesScope :global(.services-testimonial-card) {
+  --services-testimonial-peek: 34px;
+  height: 698px;
+  left: var(--services-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  touch-action: pan-y;
+  top: 3554px;
+  width: var(--services-mobile-content-width);
+}
+
+.servicesScope :global(.services-testimonial-bg) {
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  border-radius: 16px;
+  display: block;
+  height: 634px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.servicesScope :global(.services-testimonial-preview) {
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  border-radius: 16px;
+  display: block;
+  height: 634px;
+  left: calc(100% - var(--services-testimonial-peek));
+  opacity: .34;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: scale(.985);
+  transform-origin: left center;
+  width: 100%;
+  z-index: 2;
+}
+
+.servicesScope :global(.services-testimonial-preview::after) {
+  background: rgba(0, 0, 0, .64);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.servicesScope :global(.services-testimonial-bg::after) {
+  background: rgba(0, 0, 0, .64);
+}
+
+.servicesScope :global(.services-testimonial-inner) {
+  animation: servicesTestimonialFade .35s ease both;
+  height: 478px;
+  left: 56px;
+  position: absolute;
+  top: 78px;
+  width: 230px;
+  z-index: 3;
+}
+
+.servicesScope :global(.services-testimonial-avatar) {
+  height: 188px;
+  left: 21px;
+  position: absolute;
+  top: 0;
+  width: 188px;
+}
+
+.servicesScope :global(.services-testimonial-avatar span) {
+  border: 3px solid #8dc540;
+  border-radius: 50%;
+  display: block;
+  height: 188px;
+  inset: 0;
+  position: absolute;
+  width: 188px;
+}
+
+.servicesScope :global(.services-testimonial-avatar img) {
+  border: 3px solid #8dc540;
+  border-radius: 50%;
+  height: 141px;
+  left: 24px;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 47px;
+  width: 141px;
+}
+
+.servicesScope :global(.services-testimonial-copy) {
+  color: #ffffff;
+  left: 0;
+  position: absolute;
+  top: 228px;
+  width: 230px;
+}
+
+.servicesScope :global(.services-testimonial-copy > p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.servicesScope :global(.services-testimonial-copy div) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.servicesScope :global(.services-testimonial-copy strong),
+.servicesScope :global(.services-testimonial-copy span) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.servicesScope :global(.services-carousel-arrow) {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #8dc540;
+  display: none;
+  height: 64px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  width: 64px;
+  z-index: 4;
+}
+
+.servicesScope :global(.services-carousel-arrow svg) {
+  height: 64px;
+  width: 64px;
+}
+
+.servicesScope :global(.services-carousel-dots) {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 674px;
+  transform: none;
+  width: 100%;
+  z-index: 4;
+}
+
+.servicesScope :global(.services-carousel-dots span),
+.servicesScope :global(.services-carousel-dots button) {
+  appearance: none;
+  background: #d9d9d9;
+  border: 0;
+  border-radius: 50%;
+  display: block;
+  height: 8px;
+  padding: 0;
+  width: 8px;
+}
+
+.servicesScope :global(.services-carousel-dots button) {
+  cursor: pointer;
+}
+
+.servicesScope :global(.services-carousel-dots .is-active) {
+  background: #8dc540;
+}
+
+@keyframes servicesTestimonialFade {
+  from {
+    opacity: .65;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.servicesScope :global(.services-talk-button) {
+  left: 117px;
+  position: absolute;
+  top: 4306px;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .servicesScope :global(.services-frame) {
+    height: 4684px;
+    max-width: 800px;
+  }
+
+  .servicesScope :global(.services-hero) {
+    left: 80px;
+    top: 240px;
+    width: 640px;
+  }
+
+  .servicesScope :global(.services-hero h1) {
+    font-size: 104px;
+    line-height: 122px;
+  }
+
+  .servicesScope :global(.services-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-content-drop) {
+    height: 197px;
+    right: -293px;
+    top: 246px;
+    width: 373px;
+  }
+
+  .servicesScope :global(.services-content-drop-media) {
+    left: -18px;
+    width: 397px;
+  }
+
+  .servicesScope :global(.services-content-drop nav) {
+    gap: 8px;
+    left: 90px;
+    top: 33px;
+    width: 156px;
+  }
+
+  .servicesScope :global(.services-content-drop a) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .servicesScope :global(.services-process) {
+    border-radius: 0;
+    height: 658px;
+    left: 0;
+    top: 588px;
+    width: 800px;
+  }
+
+  .servicesScope :global(.services-process-bg) {
+    height: 658px;
+    width: 800px;
+  }
+
+  .servicesScope :global(.services-process-map) {
+    height: 206px;
+    left: 183px;
+    top: 226px;
+    width: 435px;
+  }
+
+  .servicesScope :global(.services-process-word) {
+    font-size: 40px;
+  }
+
+  .servicesScope :global(.services-process-word.is-discover) {
+    left: 0;
+    top: 0;
+  }
+
+  .servicesScope :global(.services-process-word.is-develop) {
+    left: 94px;
+    top: 154px;
+  }
+
+  .servicesScope :global(.services-process-word.is-deploy) {
+    left: 249px;
+    top: 63px;
+  }
+
+  .servicesScope :global(.services-process-arrow.is-first) {
+    height: 108px;
+    left: 92px;
+    top: 63px;
+    transform: none;
+    width: 82px;
+  }
+
+  .servicesScope :global(.services-process-arrow.is-second) {
+    height: 86px;
+    left: 282px;
+    top: 110px;
+    transform: none;
+    width: 86px;
+  }
+
+  .servicesScope :global(.services-service) {
+    left: 80px;
+    width: 640px;
+  }
+
+  .servicesScope :global(.services-service.is-discover) {
+    top: 1470px;
+  }
+
+  .servicesScope :global(.services-service.is-develop) {
+    top: 2244px;
+  }
+
+  .servicesScope :global(.services-service.is-deploy) {
+    top: 3018px;
+  }
+
+  .servicesScope :global(.services-service-copy) {
+    width: 640px;
+  }
+
+  .servicesScope :global(.services-service-copy h2) {
+    line-height: 38px;
+  }
+
+  .servicesScope :global(.services-service-copy p) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-develop .services-tags) {
+    gap: 16px 24px;
+    top: 468px;
+    width: 640px;
+  }
+
+  .servicesScope :global(.services-tags span) {
+    font-size: 16px;
+    height: 33px;
+    line-height: 17px;
+  }
+
+  .servicesScope :global(.services-case-card) {
+    height: 228px;
+    top: 209px;
+    width: 640px;
+  }
+
+  .servicesScope :global(.services-case-image) {
+    height: 369px;
+    left: -8px;
+    top: -6px;
+    width: 656px;
+  }
+
+  .servicesScope :global(.services-case-mark) {
+    height: 40px;
+    width: 40px;
+  }
+
+  .servicesScope :global(.services-case-company h3) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .servicesScope :global(.services-case-statement) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 88px;
+    width: 557px;
+  }
+
+  .servicesScope :global(.services-case-label) {
+    font-size: 14px;
+    line-height: 17px;
+    top: 171px;
+  }
+
+  .servicesScope :global(.services-button.is-read) {
+    right: 24px;
+    top: 163px;
+  }
+
+  .servicesScope :global(.services-book-button) {
+    left: 286px;
+    top: 3635px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading) {
+    left: 80px;
+    top: 3792px;
+    width: 640px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading h2) {
+    line-height: 38px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading span) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .servicesScope :global(.services-testimonial-card) {
+    height: 490px;
+    left: 8px;
+    top: 3992px;
+    width: 792px;
+  }
+
+  .servicesScope :global(.services-testimonial-bg) {
+    height: 418px;
+    left: 80px;
+    width: 632px;
+  }
+
+  .servicesScope :global(.services-testimonial-preview) {
+    --services-testimonial-peek: 48px;
+    height: 418px;
+  }
+
+  .servicesScope :global(.services-testimonial-inner) {
+    height: 262px;
+    left: 136px;
+    width: 520px;
+  }
+
+  .servicesScope :global(.services-testimonial-avatar) {
+    left: 0;
+    top: 37px;
+  }
+
+  .servicesScope :global(.services-testimonial-copy) {
+    left: 228px;
+    top: 0;
+    width: 292px;
+  }
+
+  .servicesScope :global(.services-testimonial-copy > p) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .servicesScope :global(.services-carousel-arrow) {
+    display: flex;
+    top: 177px;
+  }
+
+  .servicesScope :global(.services-carousel-arrow.is-left) {
+    left: 0;
+  }
+
+  .servicesScope :global(.services-carousel-arrow.is-right) {
+    left: 728px;
+  }
+
+  .servicesScope :global(.services-carousel-dots) {
+    left: 0;
+    right: 0;
+    top: 466px;
+  }
+
+  .servicesScope :global(.services-talk-button) {
+    left: 322px;
+    top: 4530px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .servicesScope :global(.services-frame) {
+    height: 3806px;
+    max-width: 1280px;
+  }
+
+  .servicesScope :global(.services-hero) {
+    left: 120px;
+    top: 240px;
+    width: 809px;
+  }
+
+  .servicesScope :global(.services-hero h1) {
+    font-size: 112px;
+    line-height: 122px;
+  }
+
+  .servicesScope :global(.services-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-content-drop) {
+    height: 197px;
+    right: -285px;
+    top: 217px;
+    width: 373px;
+  }
+
+  .servicesScope :global(.services-content-drop-media) {
+    left: -18px;
+    width: 397px;
+  }
+
+  .servicesScope :global(.services-content-drop nav) {
+    gap: 8px;
+    left: 90px;
+    top: 33px;
+    width: 156px;
+  }
+
+  .servicesScope :global(.services-content-drop a) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .servicesScope :global(.services-process) {
+    border-radius: 0;
+    height: 517px;
+    left: 0;
+    top: 674px;
+    width: 1280px;
+  }
+
+  .servicesScope :global(.services-process-bg) {
+    height: 853px;
+    left: 0;
+    top: -168px;
+    width: 1280px;
+  }
+
+  .servicesScope :global(.services-process-map) {
+    height: 206px;
+    left: 423px;
+    top: 156px;
+    width: 435px;
+  }
+
+  .servicesScope :global(.services-process-word) {
+    font-size: 40px;
+  }
+
+  .servicesScope :global(.services-process-word.is-discover) {
+    left: 0;
+    top: 0;
+  }
+
+  .servicesScope :global(.services-process-word.is-develop) {
+    left: 94px;
+    top: 154px;
+  }
+
+  .servicesScope :global(.services-process-word.is-deploy) {
+    left: 249px;
+    top: 63px;
+  }
+
+  .servicesScope :global(.services-process-arrow.is-first) {
+    height: 108px;
+    left: 103px;
+    top: 63px;
+    transform: none;
+    width: 82px;
+  }
+
+  .servicesScope :global(.services-process-arrow.is-second) {
+    height: 86px;
+    left: 302px;
+    top: 110px;
+    transform: none;
+    width: 86px;
+  }
+
+  .servicesScope :global(.services-service) {
+    left: 120px;
+    width: 1040px;
+  }
+
+  .servicesScope :global(.services-service.is-discover) {
+    top: 1415px;
+  }
+
+  .servicesScope :global(.services-service.is-develop) {
+    top: 1966px;
+  }
+
+  .servicesScope :global(.services-service.is-deploy) {
+    top: 2511px;
+  }
+
+  .servicesScope :global(.services-service-copy) {
+    width: 508px;
+  }
+
+  .servicesScope :global(.services-service.is-discover .services-service-copy) {
+    top: 6px;
+  }
+
+  .servicesScope :global(.services-service-copy h2) {
+    line-height: 47px;
+  }
+
+  .servicesScope :global(.services-service-copy p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-develop .services-tags) {
+    gap: 16px 24px;
+    top: 228px;
+    width: 508px;
+  }
+
+  .servicesScope :global(.services-tags span) {
+    font-size: 16px;
+    height: 33px;
+    line-height: 17px;
+  }
+
+  .servicesScope :global(.services-case-card) {
+    height: 308px;
+    left: 532px;
+    top: 0;
+    width: 508px;
+  }
+
+  .servicesScope :global(.services-service.is-develop .services-case-card) {
+    top: 31px;
+  }
+
+  .servicesScope :global(.services-service.is-deploy .services-case-card) {
+    top: 7px;
+  }
+
+  .servicesScope :global(.services-case-image) {
+    height: 349px;
+    left: -57px;
+    top: -6px;
+    width: 620px;
+  }
+
+  .servicesScope :global(.services-case-mark) {
+    height: 48px;
+    width: 48px;
+  }
+
+  .servicesScope :global(.services-case-company h3) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .servicesScope :global(.services-case-statement) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 112px;
+    width: 422px;
+  }
+
+  .servicesScope :global(.services-case-label) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 254px;
+  }
+
+  .servicesScope :global(.services-button.is-read) {
+    font-size: 16px;
+    min-height: 40px;
+    right: 32px;
+    top: 238px;
+  }
+
+  .servicesScope :global(.services-book-button) {
+    left: 526px;
+    top: 2882px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading) {
+    left: 120px;
+    top: 3050px;
+    width: 798px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading h2) {
+    line-height: 47px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading span) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-testimonial-card) {
+    height: 416px;
+    left: 32px;
+    max-width: 1216px;
+    top: 3212px;
+    width: calc(100% - 64px);
+  }
+
+  .servicesScope :global(.services-testimonial-bg) {
+    height: 344px;
+    left: 88px;
+    max-width: 1040px;
+    width: calc(100% - 176px);
+  }
+
+  .servicesScope :global(.services-testimonial-preview) {
+    --services-testimonial-peek: 56px;
+    height: 344px;
+  }
+
+  .servicesScope :global(.services-testimonial-inner) {
+    height: 188px;
+    left: 144px;
+    max-width: 928px;
+    width: calc(100% - 288px);
+  }
+
+  .servicesScope :global(.services-testimonial-avatar) {
+    left: 0;
+    top: 0;
+  }
+
+  .servicesScope :global(.services-testimonial-copy) {
+    left: 228px;
+    top: 0;
+    max-width: 700px;
+    width: calc(100% - 228px);
+  }
+
+  .servicesScope :global(.services-testimonial-copy > p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-carousel-arrow) {
+    display: flex;
+    top: 140px;
+  }
+
+  .servicesScope :global(.services-carousel-arrow.is-left) {
+    left: 0;
+  }
+
+  .servicesScope :global(.services-carousel-arrow.is-right) {
+    left: auto;
+    right: 0;
+  }
+
+  .servicesScope :global(.services-carousel-dots) {
+    left: 0;
+    right: 0;
+    top: 392px;
+  }
+
+  .servicesScope :global(.services-talk-button) {
+    left: 562px;
+    top: 3653px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .servicesScope :global(.services-frame) {
+    height: 4069px;
+    max-width: 1440px;
+  }
+
+  .servicesScope :global(.services-hero) {
+    left: 120px;
+    top: 243px;
+    width: 945px;
+  }
+
+  .servicesScope :global(.services-hero h1) {
+    font-size: 160px;
+    line-height: 188px;
+  }
+
+  .servicesScope :global(.services-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-content-drop) {
+    height: 197px;
+    right: -288px;
+    top: 253px;
+    width: 373px;
+  }
+
+  .servicesScope :global(.services-content-drop-media) {
+    left: -18px;
+    width: 397px;
+  }
+
+  .servicesScope :global(.services-content-drop nav) {
+    gap: 8px;
+    left: 90px;
+    top: 33px;
+    width: 156px;
+  }
+
+  .servicesScope :global(.services-content-drop a) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .servicesScope :global(.services-process) {
+    height: 488px;
+    left: 120px;
+    top: 662px;
+    width: 1200px;
+  }
+
+  .servicesScope :global(.services-process-bg) {
+    height: 960px;
+    left: -120px;
+    top: -185px;
+    width: 1440px;
+  }
+
+  .servicesScope :global(.services-process-map) {
+    height: 206px;
+    left: 376px;
+    top: 122px;
+    width: 449px;
+  }
+
+  .servicesScope :global(.services-process-word) {
+    font-size: 40px;
+  }
+
+  .servicesScope :global(.services-process-word.is-discover) {
+    left: 0;
+    top: 0;
+  }
+
+  .servicesScope :global(.services-process-word.is-develop) {
+    left: 99px;
+    top: 154px;
+  }
+
+  .servicesScope :global(.services-process-word.is-deploy) {
+    left: 278px;
+    top: 63px;
+  }
+
+  .servicesScope :global(.services-process-arrow.is-first) {
+    height: 108px;
+    left: 103px;
+    top: 63px;
+    transform: none;
+    width: 82px;
+  }
+
+  .servicesScope :global(.services-process-arrow.is-second) {
+    height: 86px;
+    left: 313px;
+    top: 110px;
+    transform: none;
+    width: 86px;
+  }
+
+  .servicesScope :global(.services-service) {
+    left: 120px;
+    width: 1200px;
+  }
+
+  .servicesScope :global(.services-service.is-discover) {
+    top: 1430px;
+  }
+
+  .servicesScope :global(.services-service.is-develop) {
+    top: 2050px;
+  }
+
+  .servicesScope :global(.services-service.is-deploy) {
+    top: 2670px;
+  }
+
+  .servicesScope :global(.services-service-copy) {
+    width: 690px;
+  }
+
+  .servicesScope :global(.services-service-copy h2) {
+    line-height: 47px;
+  }
+
+  .servicesScope :global(.services-service-copy p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-develop .services-tags) {
+    gap: 31px 24px;
+    top: 240px;
+    width: 690px;
+  }
+
+  .servicesScope :global(.services-tags span) {
+    font-size: 16px;
+    height: 33px;
+    line-height: 17px;
+  }
+
+  .servicesScope :global(.services-case-card) {
+    height: 321px;
+    left: 714px;
+    top: 10px;
+    width: 486px;
+  }
+
+  .servicesScope :global(.services-case-image) {
+    height: 336px;
+    left: -56px;
+    top: -6px;
+    width: 597px;
+  }
+
+  .servicesScope :global(.services-case-company) {
+    gap: 24px;
+    top: 32px;
+  }
+
+  .servicesScope :global(.services-case-mark) {
+    height: 56px;
+    width: 56px;
+  }
+
+  .servicesScope :global(.services-case-company h3) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-case-statement) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 128px;
+    width: 422px;
+  }
+
+  .servicesScope :global(.services-case-label) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 269px;
+  }
+
+  .servicesScope :global(.services-button.is-read) {
+    font-size: 20px;
+    min-height: 44px;
+    padding: 10px 32px;
+    right: 32px;
+    top: 245px;
+  }
+
+  .servicesScope :global(.services-book-button) {
+    font-size: 24px;
+    left: 590px;
+    min-height: 61px;
+    top: 3119px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading) {
+    left: 120px;
+    top: 3290px;
+    width: 894px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading h2) {
+    line-height: 47px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading span) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-testimonial-card) {
+    height: 407px;
+    left: 32px;
+    max-width: 1376px;
+    top: 3454px;
+    width: calc(100% - 64px);
+  }
+
+  .servicesScope :global(.services-testimonial-bg) {
+    height: 344px;
+    left: 88px;
+    max-width: 1200px;
+    width: calc(100% - 176px);
+  }
+
+  .servicesScope :global(.services-testimonial-preview) {
+    --services-testimonial-peek: 64px;
+    height: 344px;
+  }
+
+  .servicesScope :global(.services-testimonial-inner) {
+    height: 188px;
+    left: 144px;
+    max-width: 1088px;
+    width: calc(100% - 288px);
+  }
+
+  .servicesScope :global(.services-testimonial-avatar) {
+    left: 0;
+    top: 0;
+  }
+
+  .servicesScope :global(.services-testimonial-copy) {
+    left: 228px;
+    top: 0;
+    max-width: 860px;
+    width: calc(100% - 228px);
+  }
+
+  .servicesScope :global(.services-testimonial-copy > p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .servicesScope :global(.services-carousel-arrow) {
+    display: flex;
+    top: 140px;
+  }
+
+  .servicesScope :global(.services-carousel-arrow.is-left) {
+    left: 0;
+  }
+
+  .servicesScope :global(.services-carousel-arrow.is-right) {
+    left: auto;
+    right: 0;
+  }
+
+  .servicesScope :global(.services-carousel-dots) {
+    left: 0;
+    right: 0;
+    top: 383px;
+  }
+
+  .servicesScope :global(.services-talk-button) {
+    font-size: 24px;
+    left: 632px;
+    min-height: 61px;
+    top: 3896px;
+  }
+}
+
+.servicesScope :global(.services-content-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.servicesScope :global(.services-content-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+.servicesScope :global(.services-case-image) {
+  background-size: cover !important;
+  inset: 0 !important;
+  height: auto !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: auto !important;
+}
+
+.servicesScope :global(.services-case-company-logo) {
+  display: block;
+  height: 44px;
+  max-height: 44px;
+  max-width: 142px;
+  object-fit: contain;
+  object-position: left center;
+  width: auto;
+}
+
+.servicesScope :global(.services-case-company-logo[src$="absa-logo.svg"]) {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 50%;
+  box-sizing: content-box;
+  padding: 4px;
+  width: 44px;
+}
+
+.servicesScope :global(.services-shared-testimonials) {
+  left: var(--services-mobile-gutter);
+  position: absolute;
+  top: 3514px;
+  width: var(--services-mobile-content-width);
+}
+
+.servicesScope :global(.services-shared-testimonials .home-testimonial-shell) {
+  margin-top: 40px;
+}
+
+@media (min-width: 560px) {
+  .servicesScope :global(.services-shared-testimonials) {
+    left: 8px;
+    top: 3952px;
+    width: calc(100% - 16px);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .servicesScope :global(.services-shared-testimonials) {
+    left: 32px;
+    top: 3172px;
+    width: calc(100% - 64px);
+  }
+}
+
+@media (min-width: 1360px) {
+  .servicesScope :global(.services-shared-testimonials) {
+    left: 32px;
+    top: 3414px;
+    width: calc(100% - 64px);
+  }
+}
+
+@media (min-width: 560px) {
+  .servicesScope :global(.services-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .servicesScope :global(.services-content-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+@media (min-width: 560px) {
+  .servicesScope :global(.services-book-button) {
+    transform: none;
+  }
+}

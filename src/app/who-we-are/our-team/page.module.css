@@ -1,0 +1,1192 @@
+.teamScope :global(.team-frame) {
+  --team-mobile-content-width: min(342px, calc(100% - 48px));
+  --team-mobile-gutter: max(24px, calc((100% - var(--team-mobile-content-width)) / 2));
+  background: #ffffff;
+  height: 7910px;
+  margin-inline: 0;
+  max-width: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.teamScope :global(.team-frame h1),
+.teamScope :global(.team-frame h2),
+.teamScope :global(.team-frame h3),
+.teamScope :global(.team-frame p) {
+  margin: 0;
+}
+
+.teamScope :global(.team-hero) {
+  left: var(--team-mobile-gutter);
+  position: absolute;
+  top: 187px;
+  width: var(--team-mobile-content-width);
+}
+
+.teamScope :global(.team-hero h1) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.teamScope :global(.team-hero p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  width: var(--team-mobile-content-width);
+}
+
+.teamScope :global(.team-content-drop),
+.teamScope :global(.team-tier-drop) {
+  background: #000000;
+  color: #ffffff;
+  overflow: hidden;
+  position: absolute;
+  z-index: 3;
+}
+
+.teamScope :global(.team-content-drop) {
+  border-radius: 1000px 0 600px 1000px;
+  height: 153px;
+  left: var(--team-mobile-gutter);
+  top: 166px;
+  width: 342px;
+}
+
+.teamScope :global(.team-content-drop-media) {
+  aspect-ratio: 4096 / 2731;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  display: block;
+  left: -4.81%;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+  width: 106.53%;
+}
+
+.teamScope :global(.team-content-drop-media::after) {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.teamScope :global(.team-content-drop p),
+.teamScope :global(.team-tier-drop p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  left: 42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+}
+
+.teamScope :global(.team-content-drop nav),
+.teamScope :global(.team-tier-drop nav) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+  position: absolute;
+  right: 49px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 207px;
+}
+
+.teamScope :global(.team-content-drop a),
+.teamScope :global(.team-tier-drop a) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.teamScope :global(.team-network) {
+  left: var(--team-mobile-gutter);
+  position: absolute;
+  top: 654px;
+  width: var(--team-mobile-content-width);
+}
+
+.teamScope :global(.team-network h2) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+
+.teamScope :global(.team-network-card) {
+  background: #000000;
+  border: 2px solid #000000;
+  border-radius: 16px;
+  height: 971px;
+  margin-top: 24px;
+  overflow: hidden;
+  position: relative;
+  width: var(--team-mobile-content-width);
+}
+
+.teamScope :global(.team-network-rings) {
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  height: 1494px;
+  left: 50%;
+  position: absolute;
+  top: -742px;
+  transform: translateX(-50%);
+  width: 1494px;
+  z-index: 0;
+}
+
+.teamScope :global(.team-network-rings::before),
+.teamScope :global(.team-network-rings::after) {
+  border-radius: 50%;
+  content: "";
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.teamScope :global(.team-network-rings::before) {
+  background: #000000;
+  border: 2px solid #ffffff;
+  height: 961px;
+  top: 259px;
+  width: 961px;
+}
+
+.teamScope :global(.team-network-rings::after) {
+  background: #ffffff;
+  border: 2px solid #000000;
+  height: 423px;
+  top: 535px;
+  width: 422px;
+}
+
+.teamScope :global(.team-network-tier) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  left: 23px;
+  position: absolute;
+  text-align: center;
+  width: 292px;
+  z-index: 1;
+}
+
+.teamScope :global(.team-network-tier h3) {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.teamScope :global(.team-network-tier p) {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.teamScope :global(.team-network-tier.is-core) {
+  color: #000000;
+  top: 31px;
+}
+
+.teamScope :global(.team-network-tier.is-associates) {
+  color: #ffffff;
+  top: 266px;
+}
+
+.teamScope :global(.team-network-tier.is-affiliates) {
+  color: #000000;
+  top: 555px;
+}
+
+.teamScope :global(.team-network-tier.is-advisors) {
+  color: #ffffff;
+  top: 800px;
+}
+
+.teamScope :global(.team-meet),
+.teamScope :global(.team-core),
+.teamScope :global(.team-more) {
+  position: absolute;
+  width: var(--team-mobile-content-width);
+}
+
+.teamScope :global(.team-meet) {
+  left: var(--team-mobile-gutter);
+  text-align: center;
+  top: 1825px;
+}
+
+.teamScope :global(.team-core) {
+  left: var(--team-mobile-gutter);
+  top: 2112px;
+}
+
+.teamScope :global(.team-meet h2),
+.teamScope :global(.team-core h2),
+.teamScope :global(.team-more h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.teamScope :global(.team-meet p),
+.teamScope :global(.team-core p),
+.teamScope :global(.team-more p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.teamScope :global(.team-meet a) {
+  display: none;
+}
+
+.teamScope :global(.team-tier-drop) {
+  border-radius: 1000px 0 600px 1000px;
+  height: 96px;
+  left: var(--team-mobile-gutter);
+  top: 1978px;
+  width: 342px;
+}
+
+.teamScope :global(.team-tier-drop p) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  left: 31.5px;
+}
+
+.teamScope :global(.team-tier-drop nav) {
+  right: 71px;
+  width: 200px;
+}
+
+.teamScope :global(.team-member-grid) {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: var(--team-mobile-content-width);
+  left: var(--team-mobile-gutter);
+  position: absolute;
+  top: 2381px;
+  width: var(--team-mobile-content-width);
+}
+
+.teamScope :global(.team-member-card) {
+  background: #000000;
+  border-radius: 16px;
+  height: 425px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.teamScope :global(.team-member-photo) {
+  background-position: center top;
+  background-size: cover;
+  inset: 0;
+  position: absolute;
+}
+
+.teamScope :global(.team-member-photo::after) {
+  background: rgba(0, 0, 0, .2);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.teamScope :global(.team-member-mark) {
+  color: #ffffff;
+  height: 56px;
+  left: 24px;
+  position: absolute;
+  top: 32px;
+  width: 56px;
+  z-index: 1;
+}
+
+.teamScope :global(.team-member-copy) {
+  bottom: 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  left: 24px;
+  position: absolute;
+  width: 294px;
+  z-index: 1;
+}
+
+.teamScope :global(.team-member-name-row) {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.teamScope :global(.team-member-name-row h3) {
+  color: #ffffff;
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.teamScope :global(.team-member-linkedin) {
+  color: #ffffff;
+  flex: 0 0 auto;
+  height: 24px;
+  width: 24px;
+}
+
+@media (max-width: 559px) {
+  .teamScope :global(.team-frame) {
+    --team-mobile-content-width: min(342px, calc(100vw - 48px));
+    --team-mobile-gutter: calc((100vw - var(--team-mobile-content-width)) / 2);
+  }
+
+  .teamScope :global(.team-network),
+  .teamScope :global(.team-member-grid),
+  .teamScope :global(.team-meet),
+  .teamScope :global(.team-core),
+  .teamScope :global(.team-more) {
+    left: var(--team-mobile-gutter) !important;
+    transform: none !important;
+    width: var(--team-mobile-content-width) !important;
+  }
+
+  .teamScope :global(.team-network-card),
+  .teamScope :global(.team-member-card) {
+    box-sizing: border-box;
+    width: var(--team-mobile-content-width) !important;
+  }
+
+  .teamScope :global(.team-network h2) {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .teamScope :global(.team-network-tier) {
+    box-sizing: border-box;
+    left: 50% !important;
+    max-width: calc(100% - 48px) !important;
+    text-align: center !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 48px) !important;
+  }
+
+  .teamScope :global(.team-network-tier h3) {
+    font-size: 20px !important;
+    line-height: 1.08 !important;
+  }
+
+  .teamScope :global(.team-network-tier p) {
+    font-size: 13px !important;
+    line-height: 1.16 !important;
+    overflow-wrap: normal;
+  }
+
+  .teamScope :global(.team-member-grid) {
+    gap: 40px !important;
+    grid-template-columns: var(--team-mobile-content-width) !important;
+    justify-content: stretch !important;
+    padding: 0 !important;
+  }
+
+  .teamScope :global(.team-member-copy) {
+    box-sizing: border-box;
+    max-width: calc(100% - 48px) !important;
+    width: calc(100% - 48px) !important;
+  }
+
+  .teamScope :global(.team-member-name-row) {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .teamScope :global(.team-member-name-row h3) {
+    flex: 1 1 auto;
+    font-size: 20px !important;
+    line-height: 1.04 !important;
+    min-width: 0;
+    white-space: normal !important;
+  }
+
+  .teamScope :global(.team-member-linkedin) {
+    flex: 0 0 22px !important;
+    height: 22px !important;
+    width: 22px !important;
+  }
+
+  .teamScope :global(.team-member-tags span) {
+    font-size: 10px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+.teamScope :global(.team-member-copy p),
+.teamScope :global(.team-member-more) {
+  color: #ffffff;
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.teamScope :global(.team-member-more) {
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  text-transform: capitalize;
+  top: -337px;
+}
+
+.teamScope :global(.team-member-tags) {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.teamScope :global(.team-member-tags span) {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 100px;
+  color: #000000;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: normal;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.teamScope :global(.team-tier-nav) {
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  color: #000000;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  left: 50%;
+  padding: 16px 32px;
+  position: absolute;
+  top: 7055px;
+  transform: translateX(-50%);
+}
+
+.teamScope :global(.team-tier-nav svg) {
+  height: 32px;
+  width: 32px;
+}
+
+.teamScope :global(.team-tier-nav button) {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 32px;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  width: 32px;
+}
+
+.teamScope :global(.team-tier-nav button:focus-visible) {
+  outline: 2px solid #648c2d;
+  outline-offset: 3px;
+}
+
+.teamScope :global(.team-tier-nav span) {
+  color: #648c2d;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  min-width: 124px;
+  text-align: center;
+}
+
+.teamScope :global(.team-more) {
+  left: var(--team-mobile-gutter);
+  top: 7275px;
+}
+
+.teamScope :global(.team-more div) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.teamScope :global(.team-more a) {
+  align-items: center;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  min-height: 56px;
+  padding: 16px 32px;
+  width: max-content;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .teamScope :global(.team-frame) {
+    height: 5720px;
+    margin-inline: auto;
+    max-width: 800px;
+  }
+
+  .teamScope :global(.team-hero) {
+    left: 80px;
+    top: 240px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-hero h1) {
+    font-size: 104px;
+  }
+
+  .teamScope :global(.team-hero p) {
+    font-size: 24px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-content-drop) {
+    border-radius: 1000px 0 800px 1000px;
+    height: 197px;
+    left: auto;
+    right: -268px;
+    top: 216px;
+    width: 337px;
+  }
+
+  .teamScope :global(.team-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    left: 41.5px;
+  }
+
+  .teamScope :global(.team-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 108px;
+    width: auto;
+  }
+
+  .teamScope :global(.team-network) {
+    left: 80px;
+    top: 592px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-network-card) {
+    height: 987px;
+    margin-top: 16px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-network-rings) {
+    top: -749px;
+  }
+
+  .teamScope :global(.team-network-tier) {
+    transform: none;
+  }
+
+  .teamScope :global(.team-network-tier.is-core) {
+    left: 149px;
+    top: 24px;
+    width: 339px;
+  }
+
+  .teamScope :global(.team-network-tier.is-associates) {
+    left: 58px;
+    top: 259px;
+    width: 519px;
+  }
+
+  .teamScope :global(.team-network-tier.is-affiliates) {
+    left: 28px;
+    top: 548px;
+    width: 580px;
+  }
+
+  .teamScope :global(.team-network-tier.is-advisors) {
+    left: 37px;
+    top: 814px;
+    width: 562px;
+  }
+
+  .teamScope :global(.team-meet) {
+    left: 80px;
+    top: 1839px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-core) {
+    left: 80px;
+    top: 2328px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-meet p),
+  .teamScope :global(.team-core p),
+  .teamScope :global(.team-more p) {
+    font-size: 20px;
+  }
+
+  .teamScope :global(.team-meet a) {
+    align-items: center;
+    border: 2px solid #000000;
+    border-radius: 100px;
+    color: #000000;
+    display: inline-flex;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 32px;
+    min-height: 61px;
+    padding: 16px 32px;
+  }
+
+  .teamScope :global(.team-tier-drop) {
+    border-radius: 1000px 0 1000px 1000px;
+    height: 197px;
+    left: auto;
+    right: -223px;
+    top: 2096px;
+    width: 291px;
+  }
+
+  .teamScope :global(.team-tier-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    left: 99px;
+    right: auto;
+    width: auto;
+  }
+
+  .teamScope :global(.team-member-grid) {
+    gap: 32px 24px;
+    grid-template-columns: repeat(2, 308px);
+    left: 80px;
+    top: 2600px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-member-card) {
+    width: 308px;
+  }
+
+  .teamScope :global(.team-member-copy) {
+    bottom: 32px;
+    gap: 8px;
+    left: 24px;
+    width: 265px;
+  }
+
+  .teamScope :global(.team-member-name-row h3) {
+    font-size: 20px;
+  }
+
+  .teamScope :global(.team-member-copy p),
+  .teamScope :global(.team-member-more) {
+    font-size: 14px;
+  }
+
+  .teamScope :global(.team-member-more) {
+    position: static;
+  }
+
+  .teamScope :global(.team-member-tags span) {
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+
+  .teamScope :global(.team-tier-nav) {
+    top: 4940px;
+  }
+
+  .teamScope :global(.team-more) {
+    left: 80px;
+    text-align: center;
+    top: 5200px;
+    width: 640px;
+  }
+
+  .teamScope :global(.team-more div) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .teamScope :global(.team-frame) {
+    height: 5660px;
+    margin-inline: auto;
+    max-width: 1280px;
+  }
+
+  .teamScope :global(.team-hero) {
+    left: 120px;
+    top: 240px;
+    width: 1040px;
+  }
+
+  .teamScope :global(.team-hero h1) {
+    font-size: 104px;
+  }
+
+  .teamScope :global(.team-hero p) {
+    font-size: 24px;
+    width: 1040px;
+  }
+
+  .teamScope :global(.team-content-drop) {
+    border-radius: 1000px 0 800px 1000px;
+    height: 197px;
+    left: auto;
+    right: -235px;
+    top: 216px;
+    width: 337px;
+  }
+
+  .teamScope :global(.team-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    left: 41.5px;
+  }
+
+  .teamScope :global(.team-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 108px;
+    width: auto;
+  }
+
+  .teamScope :global(.team-network) {
+    left: 120px;
+    top: 563px;
+    width: 1040px;
+  }
+
+  .teamScope :global(.team-network-card) {
+    height: 987px;
+    margin-top: 16px;
+    width: 1040px;
+  }
+
+  .teamScope :global(.team-network-rings) {
+    top: -749px;
+  }
+
+  .teamScope :global(.team-network-tier) {
+    transform: none;
+  }
+
+  .teamScope :global(.team-network-tier.is-core) {
+    left: 348px;
+    top: 24px;
+    width: 339px;
+  }
+
+  .teamScope :global(.team-network-tier.is-associates) {
+    left: 258px;
+    top: 259px;
+    width: 519px;
+  }
+
+  .teamScope :global(.team-network-tier.is-affiliates) {
+    left: 197px;
+    top: 548px;
+    width: 642px;
+  }
+
+  .teamScope :global(.team-network-tier.is-advisors) {
+    left: 57px;
+    top: 814px;
+    width: 922px;
+  }
+
+  .teamScope :global(.team-meet) {
+    left: 50%;
+    top: 1810px;
+    transform: translateX(-50%);
+    width: 774px;
+  }
+
+  .teamScope :global(.team-core) {
+    left: 120px;
+    top: 2265px;
+    width: 798px;
+  }
+
+  .teamScope :global(.team-meet p),
+  .teamScope :global(.team-core p),
+  .teamScope :global(.team-more p) {
+    font-size: 20px;
+  }
+
+  .teamScope :global(.team-meet a) {
+    align-items: center;
+    border: 2px solid #000000;
+    border-radius: 100px;
+    color: #000000;
+    display: inline-flex;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 32px;
+    min-height: 61px;
+    padding: 16px 32px;
+  }
+
+  .teamScope :global(.team-tier-drop) {
+    border-radius: 1000px 0 1000px 1000px;
+    height: 197px;
+    left: auto;
+    right: -205px;
+    top: 2040px;
+    width: 291px;
+  }
+
+  .teamScope :global(.team-tier-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    left: 99px;
+    right: auto;
+    width: auto;
+  }
+
+  .teamScope :global(.team-member-grid) {
+    gap: 32px 24px;
+    grid-template-columns: repeat(2, 508px);
+    left: 120px;
+    top: 2485px;
+    width: 1040px;
+  }
+
+  .teamScope :global(.team-member-card) {
+    width: 508px;
+  }
+
+  .teamScope :global(.team-member-copy) {
+    left: 40px;
+    width: 428px;
+  }
+
+  .teamScope :global(.team-member-more) {
+    position: static;
+  }
+
+  .teamScope :global(.team-member-linkedin) {
+    height: 32px;
+    width: 32px;
+  }
+
+  .teamScope :global(.team-member-mark) {
+    left: 40px;
+  }
+
+  .teamScope :global(.team-tier-nav) {
+    top: 4810px;
+  }
+
+  .teamScope :global(.team-more) {
+    left: 50%;
+    text-align: center;
+    top: 5090px;
+    transform: translateX(-50%);
+    width: 774px;
+  }
+
+  .teamScope :global(.team-more div) {
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1360px) {
+  .teamScope :global(.team-frame) {
+    height: 5960px;
+    margin-inline: auto;
+    max-width: 1440px;
+  }
+
+  .teamScope :global(.team-hero) {
+    left: 120px;
+    top: 243px;
+    width: 1200px;
+  }
+
+  .teamScope :global(.team-hero h1) {
+    font-size: 160px;
+  }
+
+  .teamScope :global(.team-hero p) {
+    font-size: 24px;
+    width: 1200px;
+  }
+
+  .teamScope :global(.team-content-drop) {
+    border-radius: 1000px 0 800px 1000px;
+    height: 197px;
+    left: auto;
+    right: -248px;
+    top: 294px;
+    width: 337px;
+  }
+
+  .teamScope :global(.team-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    left: 41.5px;
+  }
+
+  .teamScope :global(.team-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 108px;
+    width: auto;
+  }
+
+  .teamScope :global(.team-network) {
+    left: 120px;
+    top: 700px;
+    width: 1200px;
+  }
+
+  .teamScope :global(.team-network h2) {
+    font-size: 20px;
+  }
+
+  .teamScope :global(.team-network-card) {
+    height: 987px;
+    margin-top: 16px;
+    width: 1200px;
+  }
+
+  .teamScope :global(.team-network-rings) {
+    top: -749px;
+  }
+
+  .teamScope :global(.team-network-tier) {
+    transform: none;
+  }
+
+  .teamScope :global(.team-network-tier.is-core) {
+    left: 428px;
+    top: 24px;
+    width: 339px;
+  }
+
+  .teamScope :global(.team-network-tier.is-associates) {
+    left: 338px;
+    top: 259px;
+    width: 519px;
+  }
+
+  .teamScope :global(.team-network-tier.is-affiliates) {
+    left: 277px;
+    top: 548px;
+    width: 642px;
+  }
+
+  .teamScope :global(.team-network-tier.is-advisors) {
+    left: 137px;
+    top: 814px;
+    width: 922px;
+  }
+
+  .teamScope :global(.team-meet) {
+    left: 50%;
+    top: 2007px;
+    transform: translateX(-50%);
+    width: 894px;
+  }
+
+  .teamScope :global(.team-core) {
+    left: 120px;
+    top: 2485px;
+    width: 996px;
+  }
+
+  .teamScope :global(.team-meet h2),
+  .teamScope :global(.team-core h2),
+  .teamScope :global(.team-more h2) {
+    font-size: 40px;
+  }
+
+  .teamScope :global(.team-meet p),
+  .teamScope :global(.team-core p),
+  .teamScope :global(.team-more p) {
+    font-size: 24px;
+  }
+
+  .teamScope :global(.team-meet a) {
+    align-items: center;
+    border: 2px solid #000000;
+    border-radius: 100px;
+    color: #000000;
+    display: inline-flex;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 32px;
+    min-height: 61px;
+    padding: 16px 32px;
+  }
+
+  .teamScope :global(.team-tier-drop) {
+    border-radius: 1000px 0 1000px 1000px;
+    height: 197px;
+    left: auto;
+    right: -202px;
+    top: 2248px;
+    width: 291px;
+  }
+
+  .teamScope :global(.team-tier-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    left: 99px;
+    right: auto;
+    width: auto;
+  }
+
+  .teamScope :global(.team-member-grid) {
+    gap: 40px 24px;
+    grid-template-columns: repeat(2, 588px);
+    left: 120px;
+    top: 2720px;
+    width: 1200px;
+  }
+
+  .teamScope :global(.team-member-card) {
+    width: 588px;
+  }
+
+  .teamScope :global(.team-member-copy) {
+    left: 40px;
+    width: 484px;
+  }
+
+  .teamScope :global(.team-member-copy p) {
+    font-size: 16px;
+  }
+
+  .teamScope :global(.team-member-more) {
+    position: static;
+  }
+
+  .teamScope :global(.team-member-linkedin) {
+    height: 32px;
+    width: 32px;
+  }
+
+  .teamScope :global(.team-member-mark) {
+    left: 40px;
+  }
+
+  .teamScope :global(.team-tier-nav) {
+    top: 5065px;
+  }
+
+  .teamScope :global(.team-more) {
+    left: 50%;
+    text-align: center;
+    top: 5405px;
+    transform: translateX(-50%);
+    width: 996px;
+  }
+
+  .teamScope :global(.team-more div) {
+    flex-direction: row;
+    gap: 48px;
+    justify-content: center;
+  }
+
+  .teamScope :global(.team-more a) {
+    font-size: 24px;
+    min-height: 61px;
+  }
+}
+
+.teamScope :global(.team-content-drop.site-content-drop),
+.teamScope :global(.team-tier-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.teamScope :global(.team-content-drop.site-content-drop.is-content-open),
+.teamScope :global(.team-tier-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media (min-width: 560px) {
+  .teamScope :global(.team-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .teamScope :global(.team-tier-drop.site-content-drop) {
+    left: auto !important;
+    right: -220px !important;
+  }
+
+  .teamScope :global(.team-content-drop.site-content-drop.is-content-open),
+  .teamScope :global(.team-tier-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+@media (max-width: 559px) {
+  .teamScope :global(.team-member-tags span) {
+    font-size: 10px !important;
+    padding: 6px 10px !important;
+  }
+}

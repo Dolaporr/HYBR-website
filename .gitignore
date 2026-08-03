@@ -1,0 +1,67 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dev-server.*.log
+.next-*.log
+.chrome-debug*/
+.edge-debug*/
+.edge-cdp*/
+.tmp-*.log
+.tmp-*.png
+.tmp-screens/
+/Images for Website/
+/docx-review/
+/.playwright-mcp/
+homepage-top-current.png
+*.tgz
+
+# generated design exports
+figma-*.json
+figma-*.csv
+figma_*.json
+figma_*.csv
+.codex-screenshots/
+
+# local tooling
+/.tools/
+.claude/settings.local.json
+src/app/mcp.json
+public/Tablet, Horizontal - Homepage.svg
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

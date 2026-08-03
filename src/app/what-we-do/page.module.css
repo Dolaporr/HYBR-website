@@ -1,0 +1,1941 @@
+.whatScope {
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.whatScope :global(.what-frame) {
+  --what-mobile-content-width: min(342px, calc(100% - 48px));
+  --what-mobile-gutter: max(24px, calc((100% - var(--what-mobile-content-width)) / 2));
+  background: #ffffff;
+  height: 8049px;
+  margin-inline: 0;
+  max-width: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.whatScope :global(.what-frame h1),
+.whatScope :global(.what-frame h2),
+.whatScope :global(.what-frame h3),
+.whatScope :global(.what-frame p) {
+  margin: 0;
+}
+
+.whatScope :global(.what-services.site-reveal),
+.whatScope :global(.what-work.site-reveal),
+.whatScope :global(.what-products.site-reveal),
+.whatScope :global(.what-impact.site-reveal),
+.whatScope :global(.what-team.site-reveal),
+.whatScope :global(.what-case-card.site-reveal),
+.whatScope :global(.what-product-card.site-reveal) {
+  clip-path: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+.whatScope :global(.what-button) {
+  align-items: center;
+  background: #ffffff;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  min-height: 56px;
+  padding: 16px 32px;
+  position: relative;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.whatScope :global(.what-button.is-white) {
+  border-color: #ffffff;
+  color: #000000;
+}
+
+.whatScope :global(.what-button.is-glass),
+.whatScope :global(.what-button.is-clear) {
+  background: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.whatScope :global(.what-button.is-lime) {
+  background: #8dc540;
+  border-color: #8dc540;
+  color: #ffffff;
+}
+
+.whatScope :global(.what-hero) {
+  left: var(--what-mobile-gutter);
+  position: absolute;
+  top: 187px;
+  width: 294px;
+}
+
+.whatScope :global(.what-hero h1) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.whatScope :global(.what-hero p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.whatScope :global(.what-content-drop) {
+  background: #000000;
+  border-radius: 1000px 0 600px 1000px;
+  color: #ffffff;
+  height: 132px;
+  overflow: hidden;
+  position: absolute;
+  right: -276px;
+  top: 177px;
+  width: 342px;
+  z-index: 3;
+}
+
+.whatScope :global(.what-content-drop-media) {
+  aspect-ratio: 4096 / 2731;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  display: block;
+  left: -4.81%;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+  width: 106.53%;
+}
+
+.whatScope :global(.what-content-drop-media::after),
+.whatScope :global(.what-services-bg::after) {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.whatScope :global(.what-content-drop p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  left: 42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+}
+
+.whatScope :global(.what-content-drop nav) {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+  position: absolute;
+  right: 41px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 215px;
+}
+
+.whatScope :global(.what-content-drop a) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.whatScope :global(.what-services) {
+  background: #000000;
+  border-radius: 24px;
+  height: 925px;
+  left: var(--what-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  top: 428px;
+  width: var(--what-mobile-content-width);
+}
+
+.whatScope :global(.what-services-bg) {
+  background-position: center;
+  background-size: cover;
+  height: 948px;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(180deg) scaleY(-1);
+  width: 1422px;
+}
+
+.whatScope :global(.what-services-copy) {
+  left: 32px;
+  position: absolute;
+  top: 59px;
+  width: 278px;
+}
+
+.whatScope :global(.what-services-copy p),
+.whatScope :global(.what-work-copy p),
+.whatScope :global(.what-section-heading p),
+.whatScope :global(.what-impact-heading p),
+.whatScope :global(.what-team-copy p),
+.whatScope :global(.what-case-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.whatScope :global(.what-services-copy h2) {
+  color: #ffffff;
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.whatScope :global(.what-services-copy p) {
+  color: #ffffff;
+}
+
+.whatScope :global(.what-services-copy .what-button) {
+  left: 21px;
+  position: absolute;
+  top: 738px;
+}
+
+.whatScope :global(.what-process-map) {
+  color: #ffffff;
+  height: 298px;
+  left: 53px;
+  position: absolute;
+  top: 412px;
+  width: 229.492px;
+}
+
+.whatScope :global(.what-process-word) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: normal;
+  position: absolute;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.whatScope :global(.what-process-word.is-discover) {
+  left: 16.492px;
+  top: 0;
+}
+
+.whatScope :global(.what-process-word.is-develop) {
+  color: #4fc2f0;
+  left: 68.492px;
+  top: 154.004px;
+}
+
+.whatScope :global(.what-process-word.is-deploy) {
+  color: #8dc540;
+  left: 77.492px;
+  top: 259px;
+}
+
+.whatScope :global(.what-process-arrow) {
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  position: absolute;
+}
+
+.whatScope :global(.what-process-arrow--desktop) {
+  display: none;
+}
+
+.whatScope :global(.what-process-arrow--mobile.is-first) {
+  height: 59.082px;
+  left: 52.85px;
+  top: 67.428px;
+  transform: rotate(55.8deg) scaleY(-1);
+  transform-origin: center;
+  width: 122.204px;
+}
+
+.whatScope :global(.what-process-arrow--mobile.is-second) {
+  height: 87.403px;
+  left: 30.48px;
+  top: 186.447px;
+  transform: rotate(139.12deg);
+  transform-origin: center;
+  width: 73.217px;
+}
+
+@media (min-width: 560px) {
+  .whatScope :global(.what-process-arrow--mobile) {
+    display: none;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop) {
+    display: block;
+  }
+}
+
+.whatScope :global(.what-work) {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.whatScope :global(.what-work-copy) {
+  color: #000000;
+  left: var(--what-mobile-gutter);
+  position: absolute;
+  top: 1383px;
+  width: var(--what-mobile-content-width);
+}
+
+.whatScope :global(.what-work-copy h2),
+.whatScope :global(.what-section-heading h2),
+.whatScope :global(.what-impact-heading h2),
+.whatScope :global(.what-team-copy h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.whatScope :global(.what-work-copy span),
+.whatScope :global(.what-section-heading span),
+.whatScope :global(.what-impact-heading span),
+.whatScope :global(.what-team-copy > span) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.whatScope :global(.what-work-copy .what-button) {
+  left: 46px;
+  position: absolute;
+  top: 1246px;
+}
+
+.whatScope :global(.what-case-card) {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  left: var(--what-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  width: var(--what-mobile-content-width);
+}
+
+.whatScope :global(.what-case-card.is-feature) {
+  height: 386px;
+  top: 1605px;
+}
+
+.whatScope :global(.what-case-card.is-tall) {
+  height: 558px;
+  top: 2031px;
+}
+
+.whatScope :global(.what-case-image) {
+  background-position: center;
+  background-size: cover;
+  inset: 0;
+  position: absolute;
+}
+
+.whatScope :global(.what-case-card.is-feature .what-case-image) {
+  height: 100%;
+  inset: 0;
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 100%;
+}
+
+.whatScope :global(.what-case-card.is-tall .what-case-image) {
+  height: 100%;
+  inset: 0;
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 100%;
+}
+
+.whatScope :global(.what-case-image::after) {
+  background: rgba(0, 0, 0, .22);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.whatScope :global(.what-case-copy) {
+  left: 32px;
+  position: absolute;
+  top: 40px;
+  width: 278px;
+  z-index: 1;
+}
+
+.whatScope :global(.what-case-card.is-tall .what-case-copy) {
+  bottom: 40px;
+  top: auto;
+}
+
+.whatScope :global(.what-case-copy h3) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.whatScope :global(.what-case-copy span) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.whatScope :global(.what-case-card .what-button.is-read) {
+  min-height: 48px;
+  padding: 12px 24px;
+  position: absolute;
+  right: 32px;
+  z-index: 1;
+}
+
+.whatScope :global(.what-case-card.is-feature .what-button.is-read) {
+  top: 298px;
+}
+
+.whatScope :global(.what-case-card.is-tall .what-button.is-read) {
+  top: 32px;
+}
+
+.whatScope :global(.what-products) {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.whatScope :global(.what-section-heading) {
+  left: var(--what-mobile-gutter);
+  position: absolute;
+  top: 2841px;
+  width: var(--what-mobile-content-width);
+}
+
+.whatScope :global(.what-products-list) {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.whatScope :global(.what-product-orbit) {
+  display: none;
+}
+
+.whatScope :global(.what-product-card) {
+  align-items: center;
+  background: #000000;
+  border-radius: 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: var(--what-mobile-gutter);
+  padding: 56px max(32px, calc((var(--what-mobile-content-width) - 214px) / 2));
+  position: absolute;
+  width: var(--what-mobile-content-width);
+}
+
+.whatScope :global(.what-product-card.is-flywheel) {
+  height: 796px;
+  top: 3095px;
+}
+
+.whatScope :global(.what-product-card.is-indx) {
+  height: 796px;
+  top: 3931px;
+}
+
+.whatScope :global(.what-product-card.is-alpha) {
+  height: 796px;
+  top: 4767px;
+}
+
+.whatScope :global(.what-product-brand) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.whatScope :global(.what-product-icon) {
+  display: block;
+  height: 88px;
+  max-width: none;
+  object-fit: fill;
+  width: 88px;
+}
+
+.whatScope :global(.what-product-card.is-alpha .what-product-icon) {
+  width: 110.466px;
+}
+
+.whatScope :global(.what-product-brand h3) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.whatScope :global(.what-product-brand a) {
+  color: #cbe4a7;
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.whatScope :global(.what-product-copy) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 24px;
+  width: 214px;
+}
+
+.whatScope :global(.what-product-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
+.whatScope :global(.what-product-copy p + p) {
+  margin-top: 20px;
+}
+
+.whatScope :global(.what-product-actions) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  width: 214px;
+}
+
+.whatScope :global(.what-product-actions input) {
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 100px;
+  color: rgba(255, 255, 255, .85);
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  height: 56px;
+  line-height: normal;
+  outline: none;
+  padding: 16px 14px;
+  text-align: center;
+  width: 214px;
+}
+
+.whatScope :global(.what-product-actions input::placeholder) {
+  color: rgba(255, 255, 255, .85);
+  opacity: 1;
+}
+
+.whatScope :global(.what-product-actions .what-button) {
+  font-size: 20px;
+  padding: 16px 32px;
+}
+
+.whatScope :global(.what-products-button) {
+  left: 50%;
+  position: absolute;
+  top: 5627px;
+  transform: translateX(-50%);
+}
+
+.whatScope :global(.what-impact) {
+  background: #196ab4;
+  color: #ffffff;
+  height: 2059px;
+  left: 0;
+  position: absolute;
+  top: 5990px;
+  width: 100%;
+}
+
+.whatScope :global(.what-impact-heading) {
+  left: var(--what-mobile-gutter);
+  position: absolute;
+  top: 80px;
+  width: var(--what-mobile-content-width);
+}
+
+.whatScope :global(.what-impact-heading),
+.whatScope :global(.what-impact-stats) {
+  text-align: center;
+}
+
+.whatScope :global(.what-impact-stats) {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+  left: 50%;
+  position: absolute;
+  top: 288px;
+  transform: translateX(-50%);
+  width: 232px;
+}
+
+.whatScope :global(.what-impact-stats div) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  line-height: normal;
+}
+
+.whatScope :global(.what-impact-stats strong) {
+  display: block;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.whatScope :global(.what-impact-stats span) {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.whatScope :global(.what-impact-button) {
+  left: 50%;
+  position: absolute;
+  top: 850px;
+  transform: translateX(-50%);
+}
+
+.whatScope :global(.what-team) {
+  background: #ffffff;
+  border-radius: 24px;
+  color: #000000;
+  height: 766px;
+  left: var(--what-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  top: 1062px;
+  width: var(--what-mobile-content-width);
+}
+
+.whatScope :global(.what-team-copy) {
+  left: 32px;
+  position: absolute;
+  top: 224px;
+  width: 278px;
+}
+
+.whatScope :global(.what-team-copy h2 span) {
+  color: #196ab4;
+}
+
+.whatScope :global(.what-team-image) {
+  border: 2px solid #ffffff;
+  height: 124px;
+  left: 32px;
+  overflow: hidden;
+  position: absolute;
+  top: 59px;
+  width: 278px;
+}
+
+.whatScope :global(.what-team-image svg) {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.whatScope :global(.what-team-actions) {
+  bottom: 54px;
+  display: flex;
+  gap: 8px;
+  left: 32px;
+  position: absolute;
+}
+
+.whatScope :global(.what-team-actions .what-button) {
+  border-color: #000000;
+  color: #000000;
+  min-height: 48px;
+  padding: 12px 24px;
+}
+
+@media (max-width: 559px) {
+  .whatScope :global(.what-products-button:hover),
+  .whatScope :global(.what-products-button:focus-visible),
+  .whatScope :global(.what-impact-button:hover),
+  .whatScope :global(.what-impact-button:focus-visible) {
+    transform: translateX(-50%) !important;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .whatScope :global(.what-frame) {
+    height: 7312px;
+    max-width: 800px;
+  }
+
+  .whatScope :global(.what-hero) {
+    left: 80px;
+    top: 240px;
+    width: 623px;
+  }
+
+  .whatScope :global(.what-hero h1) {
+    font-size: 112px;
+  }
+
+  .whatScope :global(.what-hero p) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-content-drop) {
+    height: 197px;
+    right: -272px;
+    top: 239px;
+    width: 352px;
+  }
+
+  .whatScope :global(.what-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  .whatScope :global(.what-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 111px;
+    width: 109px;
+  }
+
+  .whatScope :global(.what-services) {
+    border-radius: 0;
+    height: 912px;
+    left: 0;
+    top: 588px;
+    width: 800px;
+  }
+
+  .whatScope :global(.what-services-bg) {
+    height: 1015px;
+    left: 439px;
+    top: 456px;
+    transform: translate(-50%, -50%);
+    width: 1522px;
+  }
+
+  .whatScope :global(.what-services-copy) {
+    left: 80px;
+    top: 184px;
+    width: 640px;
+  }
+
+  .whatScope :global(.what-services-copy h2) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-services-copy .what-button) {
+    left: 205px;
+    top: 488px;
+  }
+
+  .whatScope :global(.what-process-map) {
+    height: 160px;
+    left: 432px;
+    top: 350px;
+    width: 310px;
+  }
+
+  .whatScope :global(.what-process-word) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-process-word.is-discover) {
+    left: 0;
+    top: 0;
+  }
+
+  .whatScope :global(.what-process-word.is-develop) {
+    left: 68px;
+    top: 107px;
+  }
+
+  .whatScope :global(.what-process-word.is-deploy) {
+    left: 192px;
+    top: 44px;
+  }
+
+  .whatScope :global(.what-process-arrow--mobile) {
+    display: none;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop) {
+    display: block;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 108px;
+    left: 71px;
+    top: 44px;
+    transform: none;
+    width: 82px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 86px;
+    left: 216px;
+    top: 76px;
+    transform: none;
+    width: 86px;
+  }
+
+  .whatScope :global(.what-work-copy) {
+    left: 80px;
+    top: 1724px;
+    width: 640px;
+  }
+
+  .whatScope :global(.what-work-copy h2),
+  .whatScope :global(.what-section-heading h2),
+  .whatScope :global(.what-impact-heading h2),
+  .whatScope :global(.what-team-copy h2) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-work-copy span),
+  .whatScope :global(.what-section-heading span),
+  .whatScope :global(.what-impact-heading span),
+  .whatScope :global(.what-team-copy > span) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-work-copy .what-button) {
+    left: 196px;
+    top: 1052px;
+  }
+
+  .whatScope :global(.what-case-card) {
+    left: 80px;
+    width: 640px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature) {
+    height: 386px;
+    top: 1924px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall) {
+    height: 386px;
+    top: 2342px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall .what-case-copy) {
+    bottom: 48px;
+    top: auto;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-button.is-read),
+  .whatScope :global(.what-case-card.is-tall .what-button.is-read) {
+    top: 285px;
+  }
+
+  .whatScope :global(.what-section-heading) {
+    left: 80px;
+    top: 3056px;
+    width: 640px;
+  }
+
+  .whatScope :global(.what-product-card) {
+    align-items: center;
+    flex-direction: row;
+    gap: 56px;
+    left: 80px;
+    padding: 56px 64px;
+    width: 640px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    height: 532px;
+    top: 3263px;
+  }
+
+  .whatScope :global(.what-product-card.is-indx) {
+    height: 472px;
+    top: 3859px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    height: 472px;
+    top: 4395px;
+  }
+
+  .whatScope :global(.what-product-brand) {
+    flex: 0 0 170px;
+  }
+
+  .whatScope :global(.what-product-copy) {
+    align-items: flex-start;
+    margin-top: 0;
+    width: 286px;
+  }
+
+  .whatScope :global(.what-product-copy p) {
+    text-align: left;
+  }
+
+  .whatScope :global(.what-product-actions) {
+    align-items: flex-start;
+    width: 286px;
+  }
+
+  .whatScope :global(.what-product-actions input) {
+    font-size: 20px;
+    padding: 16px 32px;
+    width: 286px;
+  }
+
+  .whatScope :global(.what-products-button) {
+    left: 281px;
+    top: 4968px;
+    transform: none;
+  }
+
+  .whatScope :global(.what-impact) {
+    height: 1982px;
+    top: 5330px;
+    width: 800px;
+  }
+
+  .whatScope :global(.what-impact-heading) {
+    left: 80px;
+    top: 158px;
+    width: 640px;
+  }
+
+  .whatScope :global(.what-impact-stats) {
+    display: block;
+    left: 0;
+    top: 296px;
+    transform: none;
+    width: 800px;
+  }
+
+  .whatScope :global(.what-impact-stats div) {
+    position: absolute;
+  }
+
+  .whatScope :global(.what-impact-stats .is-countries) {
+    left: 80px;
+    top: 0;
+    width: 232px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-jobs) {
+    left: 407px;
+    top: 0;
+    width: 313px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-ventures) {
+    left: 240px;
+    top: 176px;
+    width: 320px;
+  }
+
+  .whatScope :global(.what-impact-stats strong) {
+    font-size: 96px;
+  }
+
+  .whatScope :global(.what-impact-button) {
+    left: 310px;
+    top: 661px;
+    transform: none;
+  }
+
+  .whatScope :global(.what-team) {
+    height: 706px;
+    left: 80px;
+    top: 941px;
+    width: 640px;
+  }
+
+  .whatScope :global(.what-team-image) {
+    height: 245px;
+    left: 48px;
+    top: 59px;
+    width: 544px;
+  }
+
+  .whatScope :global(.what-team-copy) {
+    left: 48px;
+    top: 343px;
+    width: 544px;
+  }
+
+  .whatScope :global(.what-team-actions) {
+    bottom: 12px;
+    gap: 32px;
+    left: 153px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .whatScope :global(.what-frame) {
+    height: 6089px;
+    max-width: 1280px;
+  }
+
+  .whatScope :global(.what-hero) {
+    left: 120px;
+    top: 240px;
+    width: 614px;
+  }
+
+  .whatScope :global(.what-hero h1) {
+    font-size: 112px;
+  }
+
+  .whatScope :global(.what-hero p) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-content-drop) {
+    height: 197px;
+    right: -253px;
+    top: 239px;
+    width: 352px;
+  }
+
+  .whatScope :global(.what-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  .whatScope :global(.what-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 111px;
+    width: 109px;
+  }
+
+  .whatScope :global(.what-services) {
+    border-radius: 0;
+    height: 632px;
+    left: 0;
+    top: 674px;
+    width: 1280px;
+  }
+
+  .whatScope :global(.what-services-bg) {
+    height: 853px;
+    left: 640px;
+    top: 367px;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+  }
+
+  .whatScope :global(.what-services-copy) {
+    left: 120px;
+    top: 205px;
+    width: 532px;
+  }
+
+  .whatScope :global(.what-services-copy h2) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-services-copy .what-button) {
+    left: 0;
+    top: 166px;
+  }
+
+  .whatScope :global(.what-process-map) {
+    height: 206.378px;
+    left: 720px;
+    top: 205px;
+    width: 449px;
+  }
+
+  .whatScope :global(.what-process-word) {
+    font-size: 32px;
+  }
+
+  .whatScope :global(.what-process-word.is-discover) {
+    left: 0;
+    top: 0;
+  }
+
+  .whatScope :global(.what-process-word.is-develop) {
+    left: 99px;
+    top: 154px;
+  }
+
+  .whatScope :global(.what-process-word.is-deploy) {
+    left: 278px;
+    top: 63px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 108px;
+    left: 103px;
+    top: 63.031px;
+    transform: none;
+    width: 82px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 86px;
+    left: 312.613px;
+    top: 110px;
+    transform: none;
+    width: 86px;
+  }
+
+  .whatScope :global(.what-work-copy) {
+    left: 652px;
+    top: 1948px;
+    width: 508px;
+  }
+
+  .whatScope :global(.what-work-copy h2),
+  .whatScope :global(.what-section-heading h2),
+  .whatScope :global(.what-impact-heading h2),
+  .whatScope :global(.what-team-copy h2) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-work-copy span),
+  .whatScope :global(.what-section-heading span),
+  .whatScope :global(.what-impact-heading span),
+  .whatScope :global(.what-team-copy > span) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-work-copy .what-button) {
+    left: 0;
+    top: 184px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature) {
+    height: 386px;
+    left: 652px;
+    top: 1530px;
+    width: 508px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall) {
+    height: 658px;
+    left: 120px;
+    top: 1530px;
+    width: 508px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall .what-case-copy) {
+    bottom: 48px;
+    top: auto;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-button.is-read) {
+    top: 285px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall .what-button.is-read) {
+    top: 32px;
+  }
+
+  .whatScope :global(.what-section-heading) {
+    left: 120px;
+    top: 2412px;
+    width: 774px;
+  }
+
+  .whatScope :global(.what-product-card) {
+    align-items: center;
+    flex-direction: row;
+    gap: 56px;
+    left: 120px;
+    padding: 56px 64px;
+    width: 1040px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    height: 392px;
+    top: 2587px;
+  }
+
+  .whatScope :global(.what-product-card.is-indx) {
+    height: 392px;
+    top: 3043px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    height: 392px;
+    top: 3499px;
+  }
+
+  .whatScope :global(.what-product-brand) {
+    flex: 0 0 170px;
+  }
+
+  .whatScope :global(.what-product-card.is-indx .what-product-brand) {
+    flex-basis: 92px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    gap: 40px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha .what-product-brand) {
+    flex-basis: 110.466px;
+  }
+
+  .whatScope :global(.what-product-copy) {
+    align-items: flex-start;
+    flex: 1 1 auto;
+    margin-top: 0;
+    width: auto;
+  }
+
+  .whatScope :global(.what-product-copy p) {
+    text-align: left;
+  }
+
+  .whatScope :global(.what-product-actions) {
+    align-items: flex-start;
+    width: 286px;
+  }
+
+  .whatScope :global(.what-product-actions input) {
+    font-size: 20px;
+    padding: 16px 32px;
+    width: 286px;
+  }
+
+  .whatScope :global(.what-products-button) {
+    left: 515px;
+    top: 3955px;
+    transform: none;
+  }
+
+  .whatScope :global(.what-impact) {
+    height: 1751px;
+    top: 4338px;
+    width: 1280px;
+  }
+
+  .whatScope :global(.what-impact-heading) {
+    left: 253px;
+    top: 209px;
+    width: 774px;
+  }
+
+  .whatScope :global(.what-impact-stats) {
+    display: block;
+    left: 0;
+    top: 347px;
+    transform: none;
+    width: 1280px;
+  }
+
+  .whatScope :global(.what-impact-stats div) {
+    position: absolute;
+  }
+
+  .whatScope :global(.what-impact-stats .is-countries) {
+    left: 120px;
+    top: 0;
+    width: 232px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-jobs) {
+    left: 440px;
+    top: 0;
+    width: 313px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-ventures) {
+    left: 841px;
+    top: 0;
+    width: 320px;
+  }
+
+  .whatScope :global(.what-impact-stats strong) {
+    font-size: 96px;
+  }
+
+  .whatScope :global(.what-impact-button) {
+    left: 550px;
+    top: 536px;
+    transform: none;
+  }
+
+  .whatScope :global(.what-team) {
+    height: 586px;
+    left: 120px;
+    top: 816px;
+    width: 1040px;
+  }
+
+  .whatScope :global(.what-team-image) {
+    height: 245px;
+    left: 48px;
+    top: 281px;
+    width: 944px;
+  }
+
+  .whatScope :global(.what-team-copy) {
+    left: 48px;
+    top: 59px;
+    width: 944px;
+  }
+
+  .whatScope :global(.what-team-actions) {
+    bottom: 60px;
+    gap: 32px;
+    left: auto;
+    right: 82px;
+  }
+
+  .whatScope :global(.what-team-actions .what-button) {
+    border-color: #ffffff;
+    color: #ffffff;
+    min-height: 56px;
+    padding: 16px 32px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .whatScope :global(.what-frame) {
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    max-width: none !important;
+    width: 100vw !important;
+  }
+
+  .whatScope :global(.what-services),
+  .whatScope :global(.what-impact) {
+    left: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .whatScope :global(.what-services-bg) {
+    left: 50% !important;
+    min-width: 1440px;
+    width: 100% !important;
+  }
+}
+
+.whatScope :global(.what-product-card.is-indx) {
+  top: 3095px;
+}
+
+.whatScope :global(.what-product-card.is-flywheel) {
+  top: 3931px;
+}
+
+.whatScope :global(.what-product-card.is-alpha) {
+  top: 4767px;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 3263px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3859px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 4395px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 2587px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3043px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 3499px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 2816px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3293px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 3770px;
+  }
+}
+
+.whatScope :global(.what-product-heading) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.whatScope :global(.what-case-copy) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.whatScope :global(.what-case-card.is-feature .what-case-copy) {
+  width: min(250px, calc(100% - 64px));
+}
+
+.whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.whatScope :global(.what-case-company) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1.1;
+  margin-top: 18px;
+}
+
+.whatScope :global(.what-case-company.is-coca-cola) {
+  display: inline-flex;
+  height: 26px;
+  width: 104px;
+}
+
+.whatScope :global(.what-case-company.is-alitheia) {
+  display: inline-flex;
+  height: 34px;
+  width: 136px;
+}
+
+/* Hide Alitheia on small screens to avoid bad placement in mobile view */
+@media (max-width: 559px) {
+  .whatScope :global(.what-case-company.is-alitheia) {
+    display: none !important;
+  }
+}
+
+.whatScope :global(.what-case-company-logo) {
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.whatScope :global(.what-case-company-logo--alitheia) {
+  background-image: url("/logos/alitheia-capital-white.png");
+}
+
+.whatScope :global(.what-case-company-logo--coca-cola) {
+  background-image: url("/logos/coca-cola-logo.svg");
+  filter: brightness(0) invert(1) drop-shadow(0 1px 12px rgba(0, 0, 0, .28));
+}
+
+@media (min-width: 560px) {
+  .whatScope :global(.what-case-company.is-coca-cola) {
+    height: 42px;
+    width: 160px;
+  }
+}
+
+.whatScope :global(.what-product-card.is-indx) {
+  top: 3095px;
+}
+
+.whatScope :global(.what-product-card.is-flywheel) {
+  top: 3931px;
+}
+
+.whatScope :global(.what-product-card.is-alpha) {
+  top: 4767px;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 3263px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3859px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 4395px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 2587px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3043px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 3499px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
+    width: 320px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .whatScope :global(.what-frame) {
+    max-width: none;
+  }
+
+  .whatScope :global(.what-product-card.is-indx) {
+    top: 2816px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    top: 3293px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    top: 3770px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
+    width: 390px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+    font-size: 16px;
+  }
+}
+
+.whatScope :global(.what-team-image) {
+  overflow: hidden !important;
+}
+
+@media (min-width: 1360px) {
+  .whatScope :global(.what-frame) {
+    height: 6180px;
+    max-width: 1440px;
+  }
+
+  .whatScope :global(.what-hero) {
+    left: 120px;
+    top: 243px;
+    width: 944px;
+  }
+
+  .whatScope :global(.what-hero h1) {
+    font-size: 160px;
+  }
+
+  .whatScope :global(.what-hero p) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-content-drop) {
+    height: 197px;
+    right: -254px;
+    top: 253px;
+    width: 352px;
+  }
+
+  .whatScope :global(.what-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  .whatScope :global(.what-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 111px;
+    width: 109px;
+  }
+
+  .whatScope :global(.what-services) {
+    border-radius: 0;
+    height: 632px;
+    left: 0;
+    top: 662px;
+    width: 1440px;
+  }
+
+  .whatScope :global(.what-services-bg) {
+    height: 960px;
+    left: 720px;
+    top: 367px;
+    transform: translate(-50%, -50%);
+    width: 1440px;
+  }
+
+  .whatScope :global(.what-services-copy) {
+    left: 120px;
+    top: 201px;
+    width: 588px;
+  }
+
+  .whatScope :global(.what-services-copy h2) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-services-copy .what-button) {
+    left: 0;
+    top: 244px;
+  }
+
+  .whatScope :global(.what-process-map) {
+    height: 206.378px;
+    left: 810px;
+    top: 200px;
+    width: 449px;
+  }
+
+  .whatScope :global(.what-process-word) {
+    font-size: 32px;
+  }
+
+  .whatScope :global(.what-process-word.is-discover) {
+    left: 0;
+    top: 0;
+  }
+
+  .whatScope :global(.what-process-word.is-develop) {
+    left: 99px;
+    top: 154px;
+  }
+
+  .whatScope :global(.what-process-word.is-deploy) {
+    left: 278px;
+    top: 63px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 108px;
+    left: 103px;
+    top: 63.031px;
+    transform: none;
+    width: 82px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 86px;
+    left: 312.613px;
+    top: 110px;
+    transform: none;
+    width: 86px;
+  }
+
+  .whatScope :global(.what-work-copy) {
+    left: 630px;
+    top: 2009px;
+    width: 690px;
+  }
+
+  .whatScope :global(.what-work-copy h2),
+  .whatScope :global(.what-section-heading h2),
+  .whatScope :global(.what-impact-heading h2),
+  .whatScope :global(.what-team-copy h2) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-work-copy span),
+  .whatScope :global(.what-section-heading span),
+  .whatScope :global(.what-impact-heading span),
+  .whatScope :global(.what-team-copy > span) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-work-copy .what-button) {
+    left: 0;
+    top: 216px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature) {
+    height: 386px;
+    left: 630px;
+    top: 1574px;
+    width: 690px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall) {
+    height: 712px;
+    left: 120px;
+    top: 1574px;
+    width: 486px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall .what-case-copy) {
+    bottom: 32px;
+    top: auto;
+    width: 371px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-button.is-read) {
+    top: 293px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall .what-button.is-read) {
+    top: 32px;
+  }
+
+  .whatScope :global(.what-section-heading) {
+    left: 120px;
+    top: 2566px;
+    width: 792px;
+  }
+
+  .whatScope :global(.what-product-orbit) {
+    background-image: url("/what-product-orbit.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 1431px;
+    opacity: .82;
+    position: absolute;
+    right: -708px;
+    top: 2275px;
+    transform: rotate(-14deg);
+    width: 1078px;
+  }
+
+  .whatScope :global(.what-product-card) {
+    align-items: center;
+    flex-direction: row;
+    gap: 56px;
+    height: 413px;
+    left: 120px;
+    padding: 56px 64px;
+    width: 1200px;
+  }
+
+  .whatScope :global(.what-product-card.is-indx) {
+    height: 413px;
+    top: 2816px;
+  }
+
+  .whatScope :global(.what-product-card.is-flywheel) {
+    height: 413px;
+    top: 3293px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    height: 413px;
+    top: 3770px;
+  }
+
+  .whatScope :global(.what-product-brand) {
+    flex: 0 0 170px;
+  }
+
+  .whatScope :global(.what-product-card.is-indx .what-product-brand) {
+    flex-basis: 92px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    gap: 40px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha .what-product-brand) {
+    flex-basis: 110.466px;
+  }
+
+  .whatScope :global(.what-product-brand h3) {
+    font-size: 32px;
+  }
+
+  .whatScope :global(.what-product-copy) {
+    align-items: flex-start;
+    flex: 1 1 auto;
+    gap: 40px;
+    margin-top: 0;
+    width: auto;
+  }
+
+  .whatScope :global(.what-product-copy p) {
+    text-align: left;
+  }
+
+  .whatScope :global(.what-product-actions) {
+    flex-direction: row;
+    gap: 40px;
+    justify-content: flex-start;
+    width: 846px;
+  }
+
+  .whatScope :global(.what-product-actions input) {
+    font-size: 20px;
+    padding: 16px 32px;
+    text-align: center;
+    width: 524px;
+  }
+
+  .whatScope :global(.what-product-actions input.is-tablet-only) {
+    display: none;
+  }
+
+  .whatScope :global(.what-products-button) {
+    left: 564px;
+    top: 4247px;
+    transform: none;
+  }
+
+  .whatScope :global(.what-impact) {
+    height: 1801px;
+    top: 4379px;
+    width: 1440px;
+  }
+
+  .whatScope :global(.what-impact-heading) {
+    left: 324px;
+    top: 152px;
+    width: 792px;
+  }
+
+  .whatScope :global(.what-impact-stats) {
+    display: block;
+    left: 0;
+    top: 324px;
+    transform: none;
+    width: 1440px;
+  }
+
+  .whatScope :global(.what-impact-stats div) {
+    position: absolute;
+  }
+
+  .whatScope :global(.what-impact-stats .is-countries) {
+    left: 191px;
+    top: 0;
+    width: 232px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-jobs) {
+    left: 519px;
+    top: 0;
+    width: 313px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-ventures) {
+    left: 928px;
+    top: 0;
+    width: 320px;
+  }
+
+  .whatScope :global(.what-impact-stats strong) {
+    font-size: 96px;
+  }
+
+  .whatScope :global(.what-impact-button) {
+    left: 619px;
+    top: 529px;
+    transform: none;
+  }
+
+  .whatScope :global(.what-team) {
+    height: 610px;
+    left: 120px;
+    top: 889px;
+    width: 1200px;
+  }
+
+  .whatScope :global(.what-team-image) {
+    height: 245px;
+    left: 48px;
+    top: 305px;
+    width: 1104px;
+  }
+
+  .whatScope :global(.what-team-copy) {
+    left: 48px;
+    top: 59px;
+    width: 1104px;
+  }
+
+  .whatScope :global(.what-team-actions) {
+    bottom: 76px;
+    gap: 48px;
+    left: auto;
+    right: 82px;
+  }
+
+  .whatScope :global(.what-team-actions .what-button) {
+    border-color: #ffffff;
+    color: #ffffff;
+    min-height: 56px;
+    padding: 16px 32px;
+  }
+}

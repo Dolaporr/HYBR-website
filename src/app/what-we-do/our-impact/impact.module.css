@@ -1,0 +1,1256 @@
+.impactScope {
+  background: #ffffff;
+  color: #000000;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.impactScope :global(.impact-frame) {
+  --impact-mobile-content-width: min(342px, calc(100% - 32px));
+  background: #ffffff;
+  height: 5080px;
+  margin-inline: auto;
+  max-width: 390px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.impactScope :global(.impact-frame *) {
+  box-sizing: border-box;
+}
+
+.impactScope :global(.impact-frame h1),
+.impactScope :global(.impact-frame h2),
+.impactScope :global(.impact-frame h3),
+.impactScope :global(.impact-frame p) {
+  margin: 0;
+}
+
+.impactScope :global(.impact-button) {
+  align-items: center;
+  background: #ffffff;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  min-height: 56px;
+  padding: 16px 32px;
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.impactScope :global(.impact-hero) {
+  left: 50%;
+  position: absolute;
+  top: 187px;
+  transform: translateX(-50%);
+  width: var(--impact-mobile-content-width);
+  z-index: 2;
+}
+
+.impactScope :global(.impact-hero h1) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+  white-space: nowrap;
+}
+
+.impactScope :global(.impact-hero p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 176px;
+}
+
+.impactScope :global(.impact-content-drop) {
+  background: #000000;
+  border-radius: 1000px 0 600px 1000px;
+  color: #ffffff;
+  contain: paint;
+  height: 178px;
+  overflow: hidden;
+  position: absolute;
+  right: -284px;
+  top: 154px;
+  width: 342px;
+  z-index: 4;
+}
+
+.impactScope :global(.impact-content-drop-media) {
+  aspect-ratio: 4096 / 2731;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  display: block;
+  left: -16px;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+  width: 364px;
+}
+
+.impactScope :global(.impact-content-drop-media::after),
+.impactScope :global(.impact-case-image::after) {
+  background: rgba(0, 0, 0, .6);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.impactScope :global(.impact-content-drop p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  left: 42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.impactScope :global(.impact-content-drop nav) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 238px;
+  z-index: 2;
+}
+
+.impactScope :global(.impact-content-drop a) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: right;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.impactScope :global(.impact-intro-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  background-position: center;
+  background-size: cover;
+  border-radius: 0;
+  display: block;
+  height: 118px;
+  left: 50%;
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  position: absolute;
+  top: 700px;
+  transform: translateX(-50%);
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  width: var(--impact-mobile-content-width);
+}
+
+.impactScope :global(.impact-intro-copy) {
+  left: 50%;
+  position: absolute;
+  top: 874px;
+  transform: translateX(-50%);
+  width: var(--impact-mobile-content-width);
+}
+
+.impactScope :global(.impact-intro-copy h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.impactScope :global(.impact-intro-copy div) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.impactScope :global(.impact-intro-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.impactScope :global(.impact-globe) {
+  height: var(--impact-mobile-content-width);
+  left: 50%;
+  object-fit: contain;
+  position: absolute;
+  top: 1354px;
+  transform: translateX(-50%);
+  width: var(--impact-mobile-content-width);
+}
+
+.impactScope :global(.impact-blue-band) {
+  background: #196ab4;
+  height: 750px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 2126px;
+}
+
+.impactScope :global(.impact-metric) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  width: var(--impact-mobile-content-width);
+  z-index: 2;
+}
+
+.impactScope :global(.impact-metric.is-countries) {
+  top: 1736px;
+}
+
+.impactScope :global(.impact-metric.is-jobs) {
+  color: #ffffff;
+  top: 2624px;
+}
+
+.impactScope :global(.impact-metric.is-ventures) {
+  top: 3458px;
+}
+
+.impactScope :global(.impact-metric-text) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 100%;
+}
+
+.impactScope :global(.impact-metric strong) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 78px;
+}
+
+.impactScope :global(.impact-metric span) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.impactScope :global(.impact-metric p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 100%;
+}
+
+.impactScope :global(.impact-metric .impact-button) {
+  margin-top: 24px;
+}
+
+.impactScope :global(.impact-trusted-label) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  left: max(16px, calc((100% - 342px) / 2));
+  line-height: 20px;
+  position: absolute;
+  top: 2206px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.impactScope :global(.impact-trusted-grid) {
+  display: grid;
+  gap: min(14.65px, 3.75vw);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  left: 50%;
+  position: absolute;
+  top: 2242px;
+  transform: translateX(-50%);
+  width: var(--impact-mobile-content-width);
+  z-index: 2;
+}
+
+.impactScope :global(.impact-trusted-grid span) {
+  aspect-ratio: 1;
+  background: #ffffff;
+  border-radius: 50%;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.impactScope :global(.impact-case-card) {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  height: 386px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  transform: translateX(-50%);
+  width: var(--impact-mobile-content-width);
+  z-index: 2;
+}
+
+.impactScope :global(.impact-case-card.is-feature) {
+  top: 3032px;
+}
+
+.impactScope :global(.impact-case-card.is-work-one) {
+  top: 4032px;
+}
+
+.impactScope :global(.impact-case-card.is-work-two) {
+  top: 4458px;
+}
+
+.impactScope :global(.impact-case-image) {
+  background-position: center;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: none;
+  width: 100%;
+}
+
+.impactScope :global(.impact-case-label) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  left: 32px;
+  line-height: 20px;
+  position: absolute;
+  top: 40px;
+  z-index: 2;
+}
+
+.impactScope :global(.impact-case-card h3) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  left: 32px;
+  line-height: 38px;
+  position: absolute;
+  top: 62px;
+  width: calc(100% - 64px);
+  z-index: 2;
+}
+
+.impactScope :global(.impact-case-body) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  left: 32px;
+  line-height: 20px;
+  position: absolute;
+  top: 200px;
+  width: calc(100% - 64px);
+  z-index: 2;
+}
+
+.impactScope :global(.impact-case-body.is-long) {
+  display: none;
+}
+
+.impactScope :global(.impact-case-company) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  left: 32px;
+  line-height: 20px;
+  position: absolute;
+  top: 258px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.impactScope :global(.impact-case-company-logo) {
+  bottom: 32px;
+  left: 32px;
+  max-height: 28px;
+  max-width: 150px;
+  object-fit: contain;
+  object-position: left center;
+  position: absolute;
+  width: auto;
+  z-index: 2;
+}
+
+.impactScope :global(.impact-case-mark) {
+  height: 24px;
+  position: absolute;
+  right: 32px;
+  top: 40px;
+  width: 24px;
+  z-index: 2;
+}
+
+.impactScope :global(.impact-button.is-read) {
+  border-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  min-height: 48px;
+  padding: 12px 24px;
+  position: absolute;
+  right: 32px;
+  top: 298px;
+}
+
+.impactScope :global(.impact-work-heading) {
+  left: 50%;
+  position: absolute;
+  top: 3848px;
+  transform: translateX(-50%);
+  width: var(--impact-mobile-content-width);
+  z-index: 2;
+}
+
+.impactScope :global(.impact-work-heading > p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.impactScope :global(.impact-work-heading h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+  margin-top: 0;
+}
+
+.impactScope :global(.impact-work-heading span) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.impactScope :global(.impact-button.is-all) {
+  left: 50%;
+  position: absolute;
+  top: 4884px;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 560px) {
+  .impactScope :global(.impact-trusted-grid) {
+    width: auto;
+  }
+
+  .impactScope :global(.impact-case-image) {
+    transform: none;
+  }
+}
+
+@media (max-width: 559px) {
+  .impactScope,
+  .impactScope :global(.impact-frame) {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .impactScope :global(.impact-content-drop nav) {
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .impactScope :global(.impact-frame) {
+    height: 5861px;
+    max-width: 800px;
+  }
+
+  .impactScope :global(.impact-hero) {
+    left: 80px;
+    top: 240px;
+    transform: none;
+    width: 640px;
+  }
+
+  .impactScope :global(.impact-hero h1) {
+    font-size: 104px;
+    line-height: 122px;
+  }
+
+  .impactScope :global(.impact-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+    width: 640px;
+  }
+
+  .impactScope :global(.impact-content-drop) {
+    height: 197px;
+    right: -293px;
+    top: 231px;
+    width: 373px;
+  }
+
+  .impactScope :global(.impact-content-drop-media) {
+    left: -18px;
+    width: 397px;
+  }
+
+  .impactScope :global(.impact-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 127px;
+    width: auto;
+  }
+
+  .impactScope :global(.impact-intro-image) {
+    height: 248px;
+    left: 80px;
+    top: 712px;
+    transform: none;
+    width: 640px;
+  }
+
+  .impactScope :global(.impact-intro-copy) {
+    left: 80px;
+    top: 1040px;
+    transform: none;
+    width: 640px;
+  }
+
+  .impactScope :global(.impact-intro-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .impactScope :global(.impact-intro-copy p) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .impactScope :global(.impact-globe) {
+    height: 508px;
+    left: 226px;
+    top: 1502px;
+    transform: none;
+    width: 508px;
+  }
+
+  .impactScope :global(.impact-blue-band) {
+    height: 1260px;
+    top: 2523px;
+  }
+
+  .impactScope :global(.impact-metric) {
+    left: 80px;
+    transform: none;
+    width: 640px;
+  }
+
+  .impactScope :global(.impact-metric.is-countries) {
+    top: 2090px;
+  }
+
+  .impactScope :global(.impact-metric.is-jobs) {
+    top: 3443px;
+  }
+
+  .impactScope :global(.impact-metric.is-ventures) {
+    top: 4353px;
+  }
+
+  .impactScope :global(.impact-metric strong) {
+    font-size: 96px;
+    line-height: 117px;
+  }
+
+  .impactScope :global(.impact-metric span),
+  .impactScope :global(.impact-metric p) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .impactScope :global(.impact-trusted-label) {
+    left: 80px;
+    top: 2655px;
+  }
+
+  .impactScope :global(.impact-trusted-grid) {
+    gap: 26.04px;
+    grid-template-columns: repeat(3, 195.919px);
+    left: 80px;
+    top: 2699px;
+    transform: none;
+  }
+
+  .impactScope :global(.impact-trusted-grid span) {
+    height: 195.919px;
+    width: 195.919px;
+  }
+
+  .impactScope :global(.impact-case-card) {
+    height: 258px;
+    left: 80px;
+    transform: none;
+    width: 640px;
+  }
+
+  .impactScope :global(.impact-case-card.is-feature) {
+    top: 4007px;
+  }
+
+  .impactScope :global(.impact-case-card.is-work-one) {
+    left: 80px;
+    top: 5000px;
+  }
+
+  .impactScope :global(.impact-case-card.is-work-two) {
+    left: 80px;
+    top: 5290px;
+  }
+
+  .impactScope :global(.impact-case-image) {
+    height: 369px;
+    left: -8px;
+    top: -6px;
+    width: 656px;
+  }
+
+  .impactScope :global(.impact-case-label) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 48px;
+  }
+
+  .impactScope :global(.impact-case-card h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 69px;
+    width: 584px;
+  }
+
+  .impactScope :global(.impact-case-body.is-long) {
+    display: block;
+  }
+
+  .impactScope :global(.impact-case-body.is-short) {
+    display: none;
+  }
+
+  .impactScope :global(.impact-case-body) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 116px;
+    width: 584px;
+  }
+
+  .impactScope :global(.impact-case-company) {
+    bottom: 62px;
+    top: auto;
+  }
+
+  .impactScope :global(.impact-case-mark) {
+    height: 32px;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+  }
+
+  .impactScope :global(.impact-button.is-read) {
+    min-height: 40px;
+    padding: 8px 24px;
+    right: 32px;
+    top: auto;
+    bottom: 32px;
+  }
+
+  .impactScope :global(.impact-work-heading) {
+    left: 80px;
+    top: 4862px;
+    transform: none;
+    width: 640px;
+  }
+
+  .impactScope :global(.impact-button.is-all) {
+    left: 50%;
+    top: 5596px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .impactScope :global(.impact-frame) {
+    height: 4398px;
+    max-width: 1280px;
+  }
+
+  .impactScope :global(.impact-hero) {
+    left: 120px;
+    top: 240px;
+    transform: none;
+    width: 520px;
+  }
+
+  .impactScope :global(.impact-hero h1) {
+    font-size: 104px;
+    line-height: 122px;
+  }
+
+  .impactScope :global(.impact-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+    width: 508px;
+  }
+
+  .impactScope :global(.impact-content-drop) {
+    height: 197px;
+    right: -297px;
+    top: 217px;
+    width: 373px;
+  }
+
+  .impactScope :global(.impact-content-drop-media) {
+    left: -18px;
+    width: 397px;
+  }
+
+  .impactScope :global(.impact-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 127px;
+    width: auto;
+  }
+
+  .impactScope :global(.impact-intro-image) {
+    border-radius: 0;
+    height: 336px;
+    left: -481px;
+    top: 672px;
+    transform: scaleX(-1);
+    width: 976px;
+  }
+
+  .impactScope :global(.impact-intro-copy) {
+    left: auto;
+    right: 120px;
+    text-align: right;
+    top: 697px;
+    transform: none;
+    width: 588px;
+  }
+
+  .impactScope :global(.impact-intro-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .impactScope :global(.impact-intro-copy p) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .impactScope :global(.impact-globe) {
+    height: 508px;
+    left: 652px;
+    top: 1232px;
+    transform: none;
+    width: 508px;
+  }
+
+  .impactScope :global(.impact-blue-band) {
+    height: 880px;
+    top: 1964px;
+  }
+
+  .impactScope :global(.impact-metric) {
+    align-items: flex-start;
+    left: 120px;
+    text-align: left;
+    transform: none;
+    width: 508px;
+  }
+
+  .impactScope :global(.impact-metric.is-countries) {
+    top: 1339px;
+  }
+
+  .impactScope :global(.impact-metric.is-jobs) {
+    top: 2302px;
+  }
+
+  .impactScope :global(.impact-metric.is-ventures) {
+    top: 3075px;
+  }
+
+  .impactScope :global(.impact-metric-text) {
+    align-items: flex-start;
+  }
+
+  .impactScope :global(.impact-metric strong) {
+    font-size: 96px;
+    line-height: 117px;
+  }
+
+  .impactScope :global(.impact-metric span),
+  .impactScope :global(.impact-metric p) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .impactScope :global(.impact-trusted-label) {
+    left: 652px;
+    top: 2128px;
+  }
+
+  .impactScope :global(.impact-trusted-grid) {
+    gap: 20.74px;
+    grid-template-columns: repeat(3, 155.51px);
+    left: 652px;
+    top: 2172px;
+    transform: none;
+  }
+
+  .impactScope :global(.impact-trusted-grid span) {
+    height: 155.51px;
+    width: 155.51px;
+  }
+
+  .impactScope :global(.impact-case-card) {
+    height: 308px;
+    transform: none;
+    width: 508px;
+  }
+
+  .impactScope :global(.impact-case-card.is-feature) {
+    left: 652px;
+    top: 3068px;
+  }
+
+  .impactScope :global(.impact-case-card.is-work-one) {
+    left: 120px;
+    top: 3773px;
+  }
+
+  .impactScope :global(.impact-case-card.is-work-two) {
+    left: 652px;
+    top: 3773px;
+  }
+
+  .impactScope :global(.impact-case-image) {
+    height: 336px;
+    left: -45px;
+    top: -6px;
+    width: 597px;
+  }
+
+  .impactScope :global(.impact-case-label) {
+    top: 50px;
+  }
+
+  .impactScope :global(.impact-case-card h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 77px;
+    width: 340px;
+  }
+
+  .impactScope :global(.impact-case-body.is-long) {
+    display: block;
+  }
+
+  .impactScope :global(.impact-case-body.is-short) {
+    display: none;
+  }
+
+  .impactScope :global(.impact-case-body) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 145px;
+    width: 428px;
+  }
+
+  .impactScope :global(.impact-case-company) {
+    top: 232px;
+  }
+
+  .impactScope :global(.impact-case-mark) {
+    height: 40px;
+    right: 40px;
+    top: 40px;
+    width: 40px;
+  }
+
+  .impactScope :global(.impact-button.is-read) {
+    font-size: 20px;
+    min-height: 40px;
+    padding: 8px 24px;
+    right: 40px;
+    top: 228px;
+  }
+
+  .impactScope :global(.impact-work-heading) {
+    left: 120px;
+    top: 3635px;
+    transform: none;
+    width: 798px;
+  }
+
+  .impactScope :global(.impact-work-heading h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .impactScope :global(.impact-work-heading span) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .impactScope :global(.impact-button.is-all) {
+    left: 495px;
+    top: 4129px;
+    transform: none;
+  }
+}
+
+@media (min-width: 1360px) {
+  .impactScope :global(.impact-frame) {
+    height: 4701px;
+    max-width: 1440px;
+  }
+
+  .impactScope :global(.impact-hero) {
+    left: 120px;
+    top: 243px;
+    transform: none;
+    width: 792px;
+  }
+
+  .impactScope :global(.impact-hero h1) {
+    font-size: 160px;
+    line-height: 188px;
+  }
+
+  .impactScope :global(.impact-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+    width: 792px;
+  }
+
+  .impactScope :global(.impact-content-drop) {
+    height: 197px;
+    right: -290px;
+    top: 253px;
+    width: 373px;
+  }
+
+  .impactScope :global(.impact-content-drop-media) {
+    left: -18px;
+    width: 397px;
+  }
+
+  .impactScope :global(.impact-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+  }
+
+  .impactScope :global(.impact-content-drop nav) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    right: 127px;
+    width: auto;
+  }
+
+  .impactScope :global(.impact-intro-image) {
+    border-radius: 0;
+    height: 336px;
+    left: -370px;
+    top: 690px;
+    transform: scaleX(-1);
+    width: 976px;
+  }
+
+  .impactScope :global(.impact-intro-copy) {
+    left: auto;
+    right: 120px;
+    text-align: right;
+    top: 681px;
+    transform: none;
+    width: 612px;
+  }
+
+  .impactScope :global(.impact-intro-copy h2) {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .impactScope :global(.impact-intro-copy p) {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+  }
+
+  .impactScope :global(.impact-globe) {
+    height: 588px;
+    left: 732px;
+    top: 1250px;
+    transform: none;
+    width: 588px;
+  }
+
+  .impactScope :global(.impact-blue-band) {
+    height: 880px;
+    top: 2118px;
+  }
+
+  .impactScope :global(.impact-metric) {
+    align-items: flex-start;
+    gap: 16px;
+    left: 120px;
+    text-align: left;
+    transform: none;
+    width: 588px;
+  }
+
+  .impactScope :global(.impact-metric.is-countries) {
+    top: 1386px;
+  }
+
+  .impactScope :global(.impact-metric.is-jobs) {
+    top: 2450px;
+  }
+
+  .impactScope :global(.impact-metric.is-ventures) {
+    top: 3234px;
+  }
+
+  .impactScope :global(.impact-metric-text) {
+    align-items: flex-start;
+  }
+
+  .impactScope :global(.impact-metric strong) {
+    font-size: 96px;
+    line-height: 117px;
+  }
+
+  .impactScope :global(.impact-metric span) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .impactScope :global(.impact-metric p) {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+  }
+
+  .impactScope :global(.impact-metric .impact-button) {
+    font-size: 24px;
+    margin-top: 24px;
+    min-height: 61px;
+  }
+
+  .impactScope :global(.impact-trusted-label) {
+    left: 732px;
+    top: 2240px;
+  }
+
+  .impactScope :global(.impact-trusted-grid) {
+    gap: 24px;
+    grid-template-columns: repeat(3, 180px);
+    left: 732px;
+    top: 2288px;
+    transform: none;
+  }
+
+  .impactScope :global(.impact-trusted-grid span) {
+    height: 180px;
+    width: 180px;
+  }
+
+  .impactScope :global(.impact-case-card) {
+    border-radius: 16px;
+    height: 372px;
+    transform: none;
+    width: 588px;
+  }
+
+  .impactScope :global(.impact-case-card.is-feature) {
+    left: 732px;
+    top: 3201px;
+  }
+
+  .impactScope :global(.impact-case-card.is-work-one) {
+    left: 120px;
+    top: 4001px;
+  }
+
+  .impactScope :global(.impact-case-card.is-work-two) {
+    left: 733px;
+    top: 4001px;
+  }
+
+  .impactScope :global(.impact-case-image) {
+    height: 387px;
+    left: -50px;
+    top: -6px;
+    width: 687px;
+  }
+
+  .impactScope :global(.impact-case-label) {
+    font-size: 24px;
+    line-height: 29px;
+    top: 40px;
+  }
+
+  .impactScope :global(.impact-case-card h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 69px;
+    width: 399px;
+  }
+
+  .impactScope :global(.impact-case-body.is-long) {
+    display: block;
+  }
+
+  .impactScope :global(.impact-case-body.is-short) {
+    display: none;
+  }
+
+  .impactScope :global(.impact-case-body) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 155px;
+    width: 511px;
+  }
+
+  .impactScope :global(.impact-case-company) {
+    font-size: 20px;
+    line-height: 24px;
+    top: 290px;
+  }
+
+  .impactScope :global(.impact-case-mark) {
+    height: 56px;
+    right: 40px;
+    top: 40px;
+    width: 56px;
+  }
+
+  .impactScope :global(.impact-button.is-read) {
+    font-size: 20px;
+    min-height: 61px;
+    padding: 16px 32px;
+    right: 40px;
+    top: 271px;
+  }
+
+  .impactScope :global(.impact-work-heading) {
+    left: 50%;
+    text-align: center;
+    top: 3853px;
+    transform: translateX(-50%);
+    width: 792px;
+  }
+
+  .impactScope :global(.impact-work-heading > p) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .impactScope :global(.impact-work-heading h2) {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .impactScope :global(.impact-work-heading span) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .impactScope :global(.impact-button.is-all) {
+    border-color: #000000;
+    font-size: 24px;
+    left: 50%;
+    min-height: 61px;
+    top: 4413px;
+    transform: translateX(-50%);
+  }
+}
+
+.impactScope :global(.impact-case-card .impact-case-image) {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  inset: 0;
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 100%;
+}
+
+.impactScope :global(.impact-intro-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask-image: var(--hybr-image-card-mask-current) !important;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
+  overflow: hidden !important;
+  -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+}
+
+@media (min-width: 1024px) {
+  .impactScope :global(.impact-intro-image) {
+    border-radius: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .impactScope :global(.impact-case-company-logo) {
+    bottom: 62px;
+    left: 32px;
+  }
+}

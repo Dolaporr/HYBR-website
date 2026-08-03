@@ -1,0 +1,1906 @@
+.careersScope {
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.careersScope :global(.careers-frame) {
+  --careers-mobile-gutter: max(16px, calc((100% - 342px) / 2));
+  background: #ffffff;
+  height: 9739px;
+  margin-inline: 0;
+  max-width: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.careersScope :global(.careers-frame h1),
+.careersScope :global(.careers-frame h2),
+.careersScope :global(.careers-frame h3),
+.careersScope :global(.careers-frame p) {
+  margin: 0;
+}
+
+.careersScope :global(.careers-hero) {
+  left: var(--careers-mobile-gutter);
+  position: absolute;
+  top: 187px;
+  width: 300px;
+}
+
+.careersScope :global(.careers-hero h1) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-hero p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-content-drop) {
+  background: #000000;
+  border-radius: 1000px 0 600px 1000px;
+  color: #ffffff;
+  height: 153px;
+  overflow: hidden;
+  position: absolute;
+  right: -276px;
+  top: 166px;
+  width: 342px;
+  z-index: 3;
+}
+
+.careersScope :global(.careers-content-drop-media) {
+  aspect-ratio: 4096 / 2731;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  display: block;
+  left: -4.81%;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+  width: 106.53%;
+}
+
+.careersScope :global(.careers-content-drop-media::after) {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.careersScope :global(.careers-content-drop p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  left: 42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+}
+
+.careersScope :global(.careers-content-drop nav) {
+  align-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  position: absolute;
+  right: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 222px;
+}
+
+.careersScope :global(.careers-content-drop a) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.careersScope :global(.careers-image-pill) {
+  background-color: #000000;
+  background-position: center -10px;
+  background-size: 100% auto;
+  border: 2px solid #000000;
+  overflow: hidden;
+  position: absolute;
+}
+
+.careersScope :global(.careers-image-pill.has-overlay::after) {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.careersScope :global(.careers-working-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask);
+  border-radius: 0;
+  height: 118px;
+  left: var(--careers-mobile-gutter);
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  top: 438px;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  width: 342px;
+}
+
+.careersScope :global(.careers-working) {
+  left: var(--careers-mobile-gutter);
+  position: absolute;
+  top: 612px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-working h2),
+.careersScope :global(.careers-why h2),
+.careersScope :global(.careers-testimonials h2),
+.careersScope :global(.careers-benefits h2),
+.careersScope :global(.careers-fellowship h2),
+.careersScope :global(.careers-internship h2),
+.careersScope :global(.careers-open h2),
+.careersScope :global(.careers-newsletter h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-working p),
+.careersScope :global(.careers-testimonials > p:last-child),
+.careersScope :global(.careers-benefits > p:last-child),
+.careersScope :global(.careers-fellowship > p:nth-of-type(2)),
+.careersScope :global(.careers-internship div p),
+.careersScope :global(.careers-open p),
+.careersScope :global(.careers-newsletter-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.careersScope :global(.careers-why),
+.careersScope :global(.careers-testimonials),
+.careersScope :global(.careers-benefits),
+.careersScope :global(.careers-fellowship),
+.careersScope :global(.careers-open) {
+  left: var(--careers-mobile-gutter);
+  position: absolute;
+  width: 342px;
+}
+
+.careersScope :global(.careers-why) {
+  top: 914px;
+}
+
+.careersScope :global(.careers-why > p),
+.careersScope :global(.careers-testimonials > p:first-child),
+.careersScope :global(.careers-benefits > p:first-child),
+.careersScope :global(.careers-fellowship > p:first-child) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-why-card) {
+  background: #000000;
+  border-radius: 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  left: var(--careers-mobile-gutter);
+  padding: 40px 32px;
+  position: absolute;
+  width: 342px;
+}
+
+.careersScope :global(.careers-why-card > div) {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.careersScope :global(.careers-card-icon) {
+  flex: 0 0 32px;
+  height: 32px;
+  --fill-0: #cbe4a7;
+  width: 32px;
+}
+
+.careersScope :global(.careers-vector-icon) {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+
+.careersScope :global(.careers-vector-icon img) {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.careersScope :global(.careers-vector-icon--bag) {
+  padding: 6.25% 9.38% 15.63%;
+}
+
+.careersScope :global(.careers-vector-icon--palette) {
+  padding: 9.37% 9.37% 12.5% 9.38%;
+}
+
+.careersScope :global(.careers-vector-icon--trend) {
+  padding: 18.75% 6.25% 25%;
+}
+
+.careersScope :global(.careers-vector-icon--mask) {
+  padding: 12.5% 12.5% 6.27%;
+}
+
+.careersScope :global(.careers-vector-icon--clock-user) {
+  padding: 9.37% 9.36% 9.32% 9.37%;
+}
+
+.careersScope :global(.careers-vector-icon--calendar-dots) {
+  padding: 6.25% 12.5% 12.5%;
+}
+
+.careersScope :global(.careers-vector-icon--certificate) {
+  padding: 15.63% 3.13% 9.35% 9.38%;
+}
+
+.careersScope :global(.careers-vector-icon--cursor-click) {
+  padding: 3.12% 12.5% 12.5% 3.12%;
+}
+
+.careersScope :global(.careers-vector-icon--hand-heart) {
+  padding: 12.5% 6.23% 15.62% 0;
+}
+
+.careersScope :global(.careers-vector-icon--hand-coins) {
+  padding: 9.37% 6.23% 15.63% 0;
+}
+
+.careersScope :global(.careers-vector-icon--globe-hemisphere-east) {
+  padding: 9.38% 9.38% 9.37% 9.37%;
+}
+
+.careersScope :global(.careers-why-card h3) {
+  color: #ffffff;
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-why-card p) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-why-card.is-purpose) {
+  height: 200px;
+  top: 1050px;
+}
+
+.careersScope :global(.careers-why-card.is-curiosity) {
+  height: 252px;
+  top: 1290px;
+}
+
+.careersScope :global(.careers-why-card.is-growth) {
+  height: 272px;
+  top: 1582px;
+}
+
+.careersScope :global(.careers-why-card.is-boring) {
+  height: 284px;
+  top: 1894px;
+}
+
+.careersScope :global(.careers-culture-visual) {
+  align-items: center;
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  border-radius: 24px;
+  display: flex;
+  height: 237px;
+  justify-content: center;
+  left: var(--careers-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  top: 2218px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-culture-visual::after) {
+  background: rgba(0, 0, 0, .28);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.careersScope :global(.careers-culture-visual img) {
+  height: 56px;
+  position: relative;
+  width: 178.83px;
+  z-index: 1;
+}
+
+.careersScope :global(.careers-play-mark) {
+  border-bottom: 16px solid transparent;
+  border-left: 24px solid #ffffff;
+  border-top: 16px solid transparent;
+  height: 0;
+  left: 36px;
+  position: absolute;
+  top: 29px;
+  width: 0;
+  z-index: 1;
+}
+
+.careersScope :global(.careers-testimonials) {
+  top: 2611px;
+}
+
+.careersScope :global(.careers-testimonials h2 span) {
+  display: none;
+}
+
+.careersScope :global(.careers-testimonial-card) {
+  background: #000000;
+  border: 2px solid #000000;
+  border-radius: 16px;
+  height: 634px;
+  left: var(--careers-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  top: 2797px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-testimonial-bg) {
+  background-position: center;
+  background-size: cover;
+  inset: -118px -603px;
+  position: absolute;
+}
+
+.careersScope :global(.careers-testimonial-bg::after) {
+  background: rgba(0, 0, 0, .6);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.careersScope :global(.careers-testimonial-inner) {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  left: 56px;
+  position: absolute;
+  top: 78px;
+  width: 230px;
+  z-index: 1;
+}
+
+.careersScope :global(.careers-testimonial-avatar) {
+  height: 188px;
+  position: relative;
+  width: 188px;
+}
+
+.careersScope :global(.careers-testimonial-avatar span) {
+  border: 3px solid #8dc540;
+  border-radius: 50%;
+  inset: 0;
+  position: absolute;
+}
+
+.careersScope :global(.careers-testimonial-avatar img) {
+  border: 3px solid #8dc540;
+  border-radius: 999px;
+  height: 141px;
+  left: 24px;
+  object-fit: cover;
+  object-position: top;
+  position: absolute;
+  top: 47px;
+  width: 141px;
+}
+
+.careersScope :global(.careers-testimonial-copy) {
+  color: #ffffff;
+  width: 230px;
+}
+
+.careersScope :global(.careers-testimonial-copy > p) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+}
+
+.careersScope :global(.careers-testimonial-copy div) {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 8px;
+  line-height: normal;
+  margin-top: 24px;
+}
+
+.careersScope :global(.careers-carousel-arrow) {
+  background: transparent;
+  border: 0;
+  color: #8dc540;
+  display: none;
+  height: 64px;
+  padding: 0;
+  position: absolute;
+  top: 140px;
+  width: 64px;
+  z-index: 2;
+}
+
+.careersScope :global(.careers-carousel-arrow svg) {
+  height: 64px;
+  width: 64px;
+}
+
+.careersScope :global(.careers-carousel-dots) {
+  bottom: -65px;
+  display: flex;
+  gap: 10px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.careersScope :global(.careers-carousel-dots span) {
+  background: #8dc540;
+  border-radius: 50%;
+  height: 8px;
+  opacity: .45;
+  width: 8px;
+}
+
+.careersScope :global(.careers-carousel-dots span:first-child) {
+  opacity: 1;
+}
+
+.careersScope :global(.careers-benefits) {
+  top: 3606px;
+}
+
+.careersScope :global(.careers-benefits-grid) {
+  display: grid;
+  gap: 40px;
+  grid-auto-rows: 252px;
+  grid-template-columns: 180px;
+  left: 50%;
+  position: absolute;
+  top: 3810px;
+  transform: translateX(-50%);
+  width: 180px;
+}
+
+.careersScope :global(.careers-benefit) {
+  color: #000000;
+  min-height: 252px;
+  text-align: center;
+}
+
+.careersScope :global(.careers-benefit-icon) {
+  height: 80px;
+  margin: 0 auto 16px;
+  --fill-0: #8dc540;
+  width: 80px;
+}
+
+.careersScope :global(.careers-benefit h3) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.careersScope :global(.careers-benefit p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.careersScope :global(.careers-fellowship-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-simple-mask-mirror);
+  border-radius: 0;
+  height: 118px;
+  left: var(--careers-mobile-gutter);
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  top: 5900px;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  width: 342px;
+}
+
+.careersScope :global(.careers-fellowship) {
+  top: 6082px;
+}
+
+.careersScope :global(.careers-fellowship h2) {
+  margin-top: 0;
+}
+
+.careersScope :global(.careers-button) {
+  align-items: center;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  margin-top: 32px;
+  min-height: 56px;
+  padding: 16px 32px;
+  white-space: nowrap;
+}
+
+.careersScope :global(.careers-working-button) {
+  display: none;
+}
+
+.careersScope :global(.careers-button.is-white) {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.careersScope :global(.careers-internship) {
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  height: 636px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 6608px;
+  width: 100%;
+}
+
+.careersScope :global(.careers-internship::after) {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.careersScope :global(.careers-internship-partner),
+.careersScope :global(.careers-internship-alpha),
+.careersScope :global(.careers-internship div) {
+  position: absolute;
+  z-index: 1;
+}
+
+.careersScope :global(.careers-internship-partner) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  left: 76.5px;
+  line-height: normal;
+  top: 53px;
+  width: 272px;
+}
+
+.careersScope :global(.careers-internship div) {
+  left: max(24px, calc((100% - 310px) / 2));
+  text-align: center;
+  top: 165px;
+  width: 310px;
+}
+
+.careersScope :global(.careers-internship div p) {
+  color: #ffffff;
+}
+
+.careersScope :global(.careers-internship .careers-button) {
+  margin-top: 32px;
+}
+
+.careersScope :global(.careers-internship-alpha) {
+  bottom: 51px;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  left: 113px;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-open) {
+  top: 7586px;
+}
+
+.careersScope :global(.careers-roles-list) {
+  left: var(--careers-mobile-gutter);
+  position: absolute;
+  top: 7712px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-role) {
+  border-top: 1px solid #000000;
+  height: 224px;
+  position: relative;
+}
+
+.careersScope :global(.careers-role:last-child) {
+  border-bottom: 1px solid #000000;
+}
+
+.careersScope :global(.careers-role > div) {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 48px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-role h3) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.careersScope :global(.careers-role p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 8px;
+}
+
+.careersScope :global(.careers-role .careers-button) {
+  height: 48px;
+  left: 0;
+  margin-top: 0;
+  min-height: 48px;
+  padding: 12px 32px;
+  position: absolute;
+  top: 128px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-newsletter) {
+  background-color: #000000;
+  background-position: top center;
+  background-size: cover;
+  color: #ffffff;
+  height: 751px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 8988px;
+  width: 100%;
+}
+
+.careersScope :global(.careers-newsletter::before) {
+  background: rgba(0, 0, 0, .2);
+  content: "";
+  height: 264px;
+  inset: 0 0 auto;
+  position: absolute;
+}
+
+.careersScope :global(.careers-newsletter::after) {
+  background: #196ab4;
+  content: "";
+  height: 487px;
+  inset: 264px 0 auto;
+  position: absolute;
+}
+
+.careersScope :global(.careers-newsletter-copy),
+.careersScope :global(.careers-newsletter-form) {
+  position: absolute;
+  z-index: 1;
+}
+
+.careersScope :global(.careers-newsletter-copy) {
+  left: var(--careers-mobile-gutter);
+  top: 56px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-newsletter h2) {
+  color: #ffffff;
+}
+
+.careersScope :global(.careers-newsletter h2 span) {
+  display: block;
+}
+
+.careersScope :global(.careers-newsletter-copy p) {
+  color: #ffffff;
+  width: 342px;
+}
+
+.careersScope :global(.careers-newsletter-form) {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  left: var(--careers-mobile-gutter);
+  top: 340px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-newsletter-form input),
+.careersScope :global(.careers-newsletter-form button) {
+  border-radius: 100px;
+  font-family: var(--font-inter), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 51px;
+  line-height: normal;
+  padding: 16px 32px;
+  width: 342px;
+}
+
+.careersScope :global(.careers-newsletter-form input) {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.careersScope :global(.careers-newsletter-form input::placeholder) {
+  color: rgba(255, 255, 255, .7);
+  opacity: 1;
+}
+
+.careersScope :global(.careers-newsletter-form button) {
+  background: #ffffff;
+  border: 0;
+  color: #000000;
+  cursor: pointer;
+  font-size: 20px;
+  height: 56px;
+  justify-content: center;
+  padding: 16px 32px;
+}
+
+@media (min-width: 560px) {
+  .careersScope :global(.careers-image-pill) {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .careersScope :global(.careers-frame) {
+    height: 8435px;
+    margin-inline: auto;
+    max-width: 800px;
+  }
+
+  .careersScope :global(.careers-hero) {
+    left: 80px;
+    top: 240px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-hero h1) {
+    font-size: 104px;
+  }
+
+  .careersScope :global(.careers-hero p) {
+    font-size: 24px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-content-drop) {
+    border-radius: 1000px 0 800px 1000px;
+    height: 197px;
+    right: -268px;
+    top: 216px;
+    width: 337px;
+  }
+
+  .careersScope :global(.careers-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    left: 41.5px;
+  }
+
+  .careersScope :global(.careers-content-drop nav) {
+    gap: 5px;
+    right: 78px;
+    width: 179px;
+  }
+
+  .careersScope :global(.careers-content-drop a) {
+    font-size: 14px;
+  }
+
+  .careersScope :global(.careers-working-image) {
+    border-radius: 0;
+    height: 248px;
+    left: 80px;
+    top: 592px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-working) {
+    left: 80px;
+    top: 920px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-working h2),
+  .careersScope :global(.careers-why h2),
+  .careersScope :global(.careers-testimonials h2),
+  .careersScope :global(.careers-benefits h2),
+  .careersScope :global(.careers-fellowship h2),
+  .careersScope :global(.careers-internship h2),
+  .careersScope :global(.careers-open h2),
+  .careersScope :global(.careers-newsletter h2) {
+    font-size: 32px;
+  }
+
+  .careersScope :global(.careers-working p),
+  .careersScope :global(.careers-testimonials > p:last-child),
+  .careersScope :global(.careers-benefits > p:last-child),
+  .careersScope :global(.careers-fellowship > p:nth-of-type(2)),
+  .careersScope :global(.careers-internship div p),
+  .careersScope :global(.careers-open p),
+  .careersScope :global(.careers-newsletter-copy p) {
+    font-size: 20px;
+  }
+
+  .careersScope :global(.careers-working-button) {
+    display: inline-flex;
+  }
+
+  .careersScope :global(.careers-why),
+  .careersScope :global(.careers-testimonials),
+  .careersScope :global(.careers-benefits),
+  .careersScope :global(.careers-fellowship),
+  .careersScope :global(.careers-open) {
+    left: 80px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-why) {
+    top: 1355px;
+  }
+
+  .careersScope :global(.careers-why-card) {
+    left: 80px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-why-card.is-purpose) {
+    height: 176px;
+    top: 1461px;
+  }
+
+  .careersScope :global(.careers-why-card.is-curiosity) {
+    height: 176px;
+    top: 1669px;
+  }
+
+  .careersScope :global(.careers-why-card.is-growth) {
+    height: 176px;
+    top: 1877px;
+  }
+
+  .careersScope :global(.careers-why-card.is-boring) {
+    height: 196px;
+    top: 2085px;
+  }
+
+  .careersScope :global(.careers-culture-visual) {
+    height: 237px;
+    left: 80px;
+    top: 2331px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-testimonials) {
+    top: 2792px;
+  }
+
+  .careersScope :global(.careers-testimonials h2 span) {
+    display: inline;
+  }
+
+  .careersScope :global(.careers-testimonial-card) {
+    height: 418px;
+    left: 88px;
+    top: 2954px;
+    width: 632px;
+  }
+
+  .careersScope :global(.careers-testimonial-bg) {
+    inset: -106px -327px;
+  }
+
+  .careersScope :global(.careers-testimonial-inner) {
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+    left: 56px;
+    top: 78px;
+    width: 520px;
+  }
+
+  .careersScope :global(.careers-testimonial-copy) {
+    width: 292px;
+  }
+
+  .careersScope :global(.careers-testimonial-copy > p) {
+    font-size: 24px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow) {
+    display: block;
+    top: 177px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow.is-left) {
+    left: -80px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow.is-right) {
+    right: -80px;
+  }
+
+  .careersScope :global(.careers-carousel-dots) {
+    bottom: -72px;
+  }
+
+  .careersScope :global(.careers-benefits) {
+    top: 3668px;
+  }
+
+  .careersScope :global(.careers-benefits) {
+    text-align: left;
+  }
+
+  .careersScope :global(.careers-benefits-grid) {
+    column-gap: 24px;
+    grid-template-columns: repeat(4, 142px);
+    left: 50%;
+    row-gap: 32px;
+    top: 3943px;
+    transform: translateX(-50%);
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-benefit) {
+    width: 142px;
+  }
+
+  .careersScope :global(.careers-benefit:nth-child(n+5)) {
+    transform: translateX(83px);
+  }
+
+  .careersScope :global(.careers-fellowship-image) {
+    height: 248px;
+    left: 80px;
+    top: 4525px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-fellowship) {
+    top: 4853px;
+  }
+
+  .careersScope :global(.careers-internship) {
+    height: 469px;
+    top: 5365px;
+    width: 800px;
+  }
+
+  .careersScope :global(.careers-internship-partner) {
+    left: 218px;
+    top: 48px;
+    width: 501px;
+  }
+
+  .careersScope :global(.careers-internship div) {
+    left: 79px;
+    top: 127px;
+    width: 642px;
+  }
+
+  .careersScope :global(.careers-internship-alpha) {
+    bottom: 48px;
+    left: 150px;
+  }
+
+  .careersScope :global(.careers-open) {
+    top: 6058px;
+  }
+
+  .careersScope :global(.careers-roles-list) {
+    left: 80px;
+    top: 6176px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-role) {
+    height: 156px;
+  }
+
+  .careersScope :global(.careers-role > div) {
+    text-align: left;
+    top: 48px;
+    width: 424px;
+  }
+
+  .careersScope :global(.careers-role h3) {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .careersScope :global(.careers-role p) {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .careersScope :global(.careers-role .careers-button) {
+    height: 56px;
+    left: auto;
+    min-height: 56px;
+    right: 0;
+    top: 50px;
+    width: 189px;
+  }
+
+  .careersScope :global(.careers-newsletter) {
+    border-radius: 24px;
+    height: 968px;
+    left: 80px;
+    top: 7180px;
+    width: 640px;
+  }
+
+  .careersScope :global(.careers-newsletter::before) {
+    height: 372px;
+  }
+
+  .careersScope :global(.careers-newsletter::after) {
+    height: 596px;
+    inset: 372px 0 auto;
+  }
+
+  .careersScope :global(.careers-newsletter-copy) {
+    left: 80px;
+    text-align: center;
+    top: 104px;
+    width: 441px;
+  }
+
+  .careersScope :global(.careers-newsletter-copy p) {
+    width: 441px;
+  }
+
+  .careersScope :global(.careers-newsletter-form) {
+    gap: 37px;
+    left: 105px;
+    top: 503px;
+    width: 430px;
+  }
+
+  .careersScope :global(.careers-newsletter-form input),
+  .careersScope :global(.careers-newsletter-form button) {
+    font-size: 20px;
+    height: 56px;
+    width: 430px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .careersScope :global(.careers-frame) {
+    height: 7133px;
+    margin-inline: auto;
+    max-width: 1280px;
+  }
+
+  .careersScope :global(.careers-hero) {
+    left: 120px;
+    top: 240px;
+    width: 916px;
+  }
+
+  .careersScope :global(.careers-hero h1) {
+    font-size: 104px;
+  }
+
+  .careersScope :global(.careers-hero p) {
+    font-size: 24px;
+  }
+
+  .careersScope :global(.careers-content-drop) {
+    border-radius: 1000px 0 800px 1000px;
+    height: 197px;
+    right: -235px;
+    top: 216px;
+    width: 337px;
+  }
+
+  .careersScope :global(.careers-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    left: 41.5px;
+  }
+
+  .careersScope :global(.careers-content-drop nav) {
+    gap: 5px;
+    right: 78px;
+    width: 179px;
+  }
+
+  .careersScope :global(.careers-content-drop a) {
+    font-size: 14px;
+  }
+
+  .careersScope :global(.careers-working-image) {
+    border-radius: 0;
+    height: 336px;
+    left: -481px;
+    top: 563px;
+    width: 976px;
+  }
+
+  .careersScope :global(.careers-working) {
+    left: auto;
+    right: 120px;
+    text-align: right;
+    top: 614px;
+    width: 588px;
+  }
+
+  .careersScope :global(.careers-working h2),
+  .careersScope :global(.careers-why h2),
+  .careersScope :global(.careers-testimonials h2),
+  .careersScope :global(.careers-benefits h2),
+  .careersScope :global(.careers-fellowship h2),
+  .careersScope :global(.careers-internship h2),
+  .careersScope :global(.careers-open h2),
+  .careersScope :global(.careers-newsletter h2) {
+    font-size: 32px;
+  }
+
+  .careersScope :global(.careers-working p),
+  .careersScope :global(.careers-testimonials > p:last-child),
+  .careersScope :global(.careers-benefits > p:last-child),
+  .careersScope :global(.careers-fellowship > p:nth-of-type(2)),
+  .careersScope :global(.careers-internship div p),
+  .careersScope :global(.careers-open p),
+  .careersScope :global(.careers-newsletter-copy p) {
+    font-size: 20px;
+  }
+
+  .careersScope :global(.careers-working-button) {
+    display: inline-flex;
+  }
+
+  .careersScope :global(.careers-why),
+  .careersScope :global(.careers-testimonials),
+  .careersScope :global(.careers-benefits),
+  .careersScope :global(.careers-fellowship),
+  .careersScope :global(.careers-open) {
+    left: 120px;
+    width: 1040px;
+  }
+
+  .careersScope :global(.careers-why) {
+    top: 1123px;
+  }
+
+  .careersScope :global(.careers-why-card) {
+    height: 237px;
+  }
+
+  .careersScope :global(.careers-why-card.is-purpose) {
+    height: 237px;
+    left: 120px;
+    top: 1229px;
+    width: 508px;
+  }
+
+  .careersScope :global(.careers-why-card.is-curiosity) {
+    height: 237px;
+    left: 652px;
+    top: 1229px;
+    width: 508px;
+  }
+
+  .careersScope :global(.careers-why-card.is-growth) {
+    height: 237px;
+    left: 120px;
+    top: 1498px;
+    width: 375px;
+  }
+
+  .careersScope :global(.careers-why-card.is-boring) {
+    height: 237px;
+    left: 519px;
+    top: 1498px;
+    width: 641px;
+  }
+
+  .careersScope :global(.careers-culture-visual) {
+    height: 237px;
+    left: 120px;
+    top: 1767px;
+    width: 1040px;
+  }
+
+  .careersScope :global(.careers-testimonials) {
+    top: 2228px;
+    width: 798px;
+  }
+
+  .careersScope :global(.careers-testimonials h2 span) {
+    display: inline;
+  }
+
+  .careersScope :global(.careers-testimonial-card) {
+    height: 344.025px;
+    left: 120px;
+    top: 2390px;
+    width: 1040px;
+  }
+
+  .careersScope :global(.careers-testimonial-bg) {
+    inset: -106px -123px;
+  }
+
+  .careersScope :global(.careers-testimonial-inner) {
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+    left: 56px;
+    top: 78px;
+    width: 928px;
+  }
+
+  .careersScope :global(.careers-testimonial-copy) {
+    width: 700px;
+  }
+
+  .careersScope :global(.careers-testimonial-copy > p) {
+    font-size: 24px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow) {
+    display: block;
+    top: 140px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow.is-left) {
+    left: -88px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow.is-right) {
+    right: -88px;
+  }
+
+  .careersScope :global(.careers-carousel-dots) {
+    bottom: -72px;
+  }
+
+  .careersScope :global(.careers-benefits) {
+    text-align: center;
+    top: 3030px;
+    width: 774px;
+    left: 253px;
+  }
+
+  .careersScope :global(.careers-benefits-grid) {
+    column-gap: 35px;
+    grid-template-columns: repeat(5, 180px);
+    left: 50%;
+    row-gap: 54px;
+    top: 3192px;
+    transform: translateX(-50%);
+    width: 1040px;
+  }
+
+  .careersScope :global(.careers-benefit:nth-child(n+5)) {
+    transform: none;
+  }
+
+  .careersScope :global(.careers-benefit:nth-child(6)) {
+    grid-column: 2;
+    transform: translateX(102px);
+  }
+
+  .careersScope :global(.careers-benefit:nth-child(7)) {
+    grid-column: 3;
+    transform: translateX(102px);
+  }
+
+  .careersScope :global(.careers-fellowship-image) {
+    border-radius: 0;
+    height: 336px;
+    left: auto;
+    right: -481px;
+    top: 3796px;
+    width: 976px;
+  }
+
+  .careersScope :global(.careers-fellowship) {
+    left: 120px;
+    top: 3808px;
+    width: 588px;
+  }
+
+  .careersScope :global(.careers-internship) {
+    height: 530px;
+    top: 4356px;
+    width: 1280px;
+  }
+
+  .careersScope :global(.careers-internship-partner) {
+    left: 731px;
+    top: 48px;
+    width: 501px;
+  }
+
+  .careersScope :global(.careers-internship div) {
+    left: 253px;
+    top: 177px;
+    width: 774px;
+  }
+
+  .careersScope :global(.careers-internship-alpha) {
+    bottom: 40px;
+    left: 121px;
+  }
+
+  .careersScope :global(.careers-open) {
+    top: 5110px;
+    width: 603px;
+  }
+
+  .careersScope :global(.careers-roles-list) {
+    left: 120px;
+    top: 5228px;
+    width: 1040px;
+  }
+
+  .careersScope :global(.careers-role) {
+    height: 156px;
+  }
+
+  .careersScope :global(.careers-role > div) {
+    text-align: left;
+    top: 48px;
+    width: 424px;
+  }
+
+  .careersScope :global(.careers-role h3) {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .careersScope :global(.careers-role p) {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .careersScope :global(.careers-role .careers-button) {
+    height: 56px;
+    left: auto;
+    min-height: 56px;
+    right: 0;
+    top: 50px;
+    width: 189px;
+  }
+
+  .careersScope :global(.careers-newsletter) {
+    border-radius: 24px;
+    height: 596px;
+    left: 120px;
+    top: 6232px;
+    width: 1040px;
+  }
+
+  .careersScope :global(.careers-newsletter::before) {
+    height: 596px;
+  }
+
+  .careersScope :global(.careers-newsletter::after) {
+    height: 596px;
+    inset: 0 0 0 auto;
+    width: 532px;
+  }
+
+  .careersScope :global(.careers-newsletter-copy) {
+    left: 64px;
+    top: 216px;
+    width: 399px;
+  }
+
+  .careersScope :global(.careers-newsletter-copy p) {
+    width: 399px;
+  }
+
+  .careersScope :global(.careers-newsletter-form) {
+    gap: 37px;
+    left: 559px;
+    top: 131px;
+    width: 430px;
+  }
+
+  .careersScope :global(.careers-newsletter-form input),
+  .careersScope :global(.careers-newsletter-form button) {
+    font-size: 20px;
+    height: 56px;
+    width: 430px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .careersScope :global(.careers-frame) {
+    height: 7838px;
+    margin-inline: auto;
+    max-width: 1440px;
+  }
+
+  .careersScope :global(.careers-hero) {
+    left: 120px;
+    top: 243px;
+    width: 916px;
+  }
+
+  .careersScope :global(.careers-hero h1) {
+    font-size: 160px;
+  }
+
+  .careersScope :global(.careers-hero p) {
+    font-size: 24px;
+  }
+
+  .careersScope :global(.careers-content-drop) {
+    border-radius: 1000px 0 800px 1000px;
+    height: 257px;
+    right: -308px;
+    top: 223px;
+    width: 401px;
+  }
+
+  .careersScope :global(.careers-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    left: 41.5px;
+  }
+
+  .careersScope :global(.careers-content-drop nav) {
+    flex-direction: column;
+    gap: 8px;
+    right: 118px;
+    width: 179px;
+  }
+
+  .careersScope :global(.careers-working-image) {
+    border-radius: 0;
+    height: 336px;
+    left: -370px;
+    top: 688px;
+    width: 976px;
+  }
+
+  .careersScope :global(.careers-working) {
+    left: auto;
+    right: 120px;
+    text-align: right;
+    top: 766px;
+    width: 612px;
+  }
+
+  .careersScope :global(.careers-working h2),
+  .careersScope :global(.careers-why h2),
+  .careersScope :global(.careers-testimonials h2),
+  .careersScope :global(.careers-benefits h2),
+  .careersScope :global(.careers-fellowship h2),
+  .careersScope :global(.careers-internship h2),
+  .careersScope :global(.careers-newsletter h2) {
+    font-size: 40px;
+  }
+
+  .careersScope :global(.careers-open h2) {
+    font-size: 64px;
+  }
+
+  .careersScope :global(.careers-working p),
+  .careersScope :global(.careers-testimonials > p:last-child),
+  .careersScope :global(.careers-benefits > p:last-child),
+  .careersScope :global(.careers-fellowship > p:nth-of-type(2)),
+  .careersScope :global(.careers-internship div p),
+  .careersScope :global(.careers-newsletter-copy p) {
+    font-size: 24px;
+  }
+
+  .careersScope :global(.careers-open p) {
+    font-size: 32px;
+  }
+
+  .careersScope :global(.careers-why),
+  .careersScope :global(.careers-testimonials),
+  .careersScope :global(.careers-benefits),
+  .careersScope :global(.careers-fellowship),
+  .careersScope :global(.careers-open) {
+    left: 120px;
+  }
+
+  .careersScope :global(.careers-why) {
+    top: 1304px;
+    width: 894px;
+  }
+
+  .careersScope :global(.careers-why > p),
+  .careersScope :global(.careers-testimonials > p:first-child),
+  .careersScope :global(.careers-benefits > p:first-child),
+  .careersScope :global(.careers-fellowship > p:first-child) {
+    font-size: 20px;
+  }
+
+  .careersScope :global(.careers-why-card) {
+    height: 237px;
+  }
+
+  .careersScope :global(.careers-why-card.is-purpose) {
+    height: 237px;
+    left: 120px;
+    top: 1423px;
+    width: 384px;
+  }
+
+  .careersScope :global(.careers-why-card.is-curiosity) {
+    height: 237px;
+    left: 528px;
+    top: 1423px;
+    width: 384px;
+  }
+
+  .careersScope :global(.careers-why-card.is-growth) {
+    height: 237px;
+    left: 936px;
+    top: 1423px;
+    width: 384px;
+  }
+
+  .careersScope :global(.careers-why-card.is-boring) {
+    height: 237px;
+    left: 120px;
+    top: 1700px;
+    width: 588px;
+  }
+
+  .careersScope :global(.careers-culture-visual) {
+    height: 237px;
+    left: 732px;
+    top: 1700px;
+    width: 588px;
+  }
+
+  .careersScope :global(.careers-testimonials) {
+    top: 2217px;
+    width: 894px;
+  }
+
+  .careersScope :global(.careers-testimonials h2 span) {
+    display: inline;
+  }
+
+  .careersScope :global(.careers-testimonial-card) {
+    height: 344.025px;
+    left: 120px;
+    top: 2410px;
+    width: 1200px;
+  }
+
+  .careersScope :global(.careers-testimonial-bg) {
+    inset: -106px -43px;
+  }
+
+  .careersScope :global(.careers-testimonial-inner) {
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+    left: 56px;
+    top: 78px;
+    width: 1088px;
+  }
+
+  .careersScope :global(.careers-testimonial-copy) {
+    width: 860px;
+  }
+
+  .careersScope :global(.careers-testimonial-copy > p) {
+    font-size: 24px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow) {
+    display: block;
+    top: 140px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow.is-left) {
+    left: -88px;
+  }
+
+  .careersScope :global(.careers-carousel-arrow.is-right) {
+    right: -88px;
+  }
+
+  .careersScope :global(.careers-carousel-dots) {
+    bottom: -72px;
+  }
+
+  .careersScope :global(.careers-benefits) {
+    left: 202px;
+    text-align: center;
+    top: 3097px;
+    width: 1036px;
+  }
+
+  .careersScope :global(.careers-benefits-grid) {
+    column-gap: 24px;
+    grid-template-columns: repeat(5, 180px);
+    left: 50%;
+    row-gap: 54px;
+    top: 3274px;
+    transform: translateX(-50%);
+    width: 996px;
+  }
+
+  .careersScope :global(.careers-benefit:nth-child(n+5)) {
+    transform: none;
+  }
+
+  .careersScope :global(.careers-benefit:nth-child(6)) {
+    grid-column: 2;
+    transform: translateX(102px);
+  }
+
+  .careersScope :global(.careers-benefit:nth-child(7)) {
+    grid-column: 3;
+    transform: translateX(102px);
+  }
+
+  .careersScope :global(.careers-fellowship-image) {
+    border-radius: 0;
+    height: 536px;
+    left: 773px;
+    top: 3934px;
+    width: 976px;
+  }
+
+  .careersScope :global(.careers-fellowship) {
+    left: 120px;
+    top: 3982px;
+    width: 588px;
+  }
+
+  .careersScope :global(.careers-internship) {
+    height: 530px;
+    top: 4750px;
+    width: 1440px;
+  }
+
+  .careersScope :global(.careers-internship-partner) {
+    left: 891px;
+    top: 48px;
+    width: 501px;
+  }
+
+  .careersScope :global(.careers-internship div) {
+    left: 122px;
+    top: 179px;
+    width: 1195px;
+  }
+
+  .careersScope :global(.careers-internship-alpha) {
+    bottom: 40px;
+    left: 121px;
+  }
+
+  .careersScope :global(.careers-open) {
+    left: 120px;
+    top: 5560px;
+    width: 964px;
+  }
+
+  .careersScope :global(.careers-roles-list) {
+    left: 120px;
+    top: 5732px;
+    width: 1200px;
+  }
+
+  .careersScope :global(.careers-role) {
+    height: 181px;
+  }
+
+  .careersScope :global(.careers-role > div) {
+    text-align: left;
+    top: 48px;
+    width: 424px;
+  }
+
+  .careersScope :global(.careers-role h3) {
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .careersScope :global(.careers-role p) {
+    font-family: var(--font-inter), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .careersScope :global(.careers-role .careers-button) {
+    height: 61px;
+    left: auto;
+    min-height: 61px;
+    right: 0;
+    top: 60px;
+    width: 189px;
+  }
+
+  .careersScope :global(.careers-newsletter) {
+    border-radius: 24px;
+    height: 596px;
+    left: 120px;
+    top: 6917px;
+    width: 1200px;
+  }
+
+  .careersScope :global(.careers-newsletter::before) {
+    height: 596px;
+  }
+
+  .careersScope :global(.careers-newsletter::after) {
+    height: 596px;
+    inset: 0 0 0 auto;
+    width: 612px;
+  }
+
+  .careersScope :global(.careers-newsletter-copy) {
+    left: 64px;
+    top: 200px;
+    width: 461px;
+  }
+
+  .careersScope :global(.careers-newsletter-copy p) {
+    width: 461px;
+  }
+
+  .careersScope :global(.careers-newsletter-form) {
+    gap: 32px;
+    left: 679px;
+    top: 128px;
+    width: 430px;
+  }
+
+  .careersScope :global(.careers-newsletter-form input),
+  .careersScope :global(.careers-newsletter-form button) {
+    font-size: 24px;
+    height: 61px;
+    width: 430px;
+  }
+}
+
+.careersScope :global(.careers-content-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.careersScope :global(.careers-content-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media (min-width: 560px) {
+  .careersScope :global(.careers-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .careersScope :global(.careers-content-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+.careersScope :global(.careers-working-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask-image: var(--hybr-image-card-mask-current) !important;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
+  -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+}
+
+/* Preserve the supplied Figma SVGs at their intended card size. */
+.careersScope :global(.careers-card-icon) {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 32px;
+  min-height: 32px;
+  min-width: 32px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.careersScope :global(.careers-vector-icon img) {
+  display: block !important;
+  height: 32px !important;
+  max-width: none;
+  width: 32px !important;
+}
+
+.careersScope :global(.careers-fellowship-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask-mirror);
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask-image: var(--hybr-image-card-mask-current) !important;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
+  -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+}

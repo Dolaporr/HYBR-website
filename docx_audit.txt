@@ -1,0 +1,128 @@
+PARAS 127
+1: DESKTOP
+2: 
+3: Home Page
+4: 
+5: 
+6: Gap between the edges of the screen and the page’s elements
+7: 
+8: 
+9: 
+10: 
+11: Use icon used in Figma file and make it slightly smaller
+12: 
+13: 
+14: 
+15: 
+16: Give some more space between the text/info block and the image
+17: 
+18: 
+19: 
+20: Change button hover effect to only turn green, with no movement
+21: 
+22: 
+23: 
+24: 
+25: 
+26: Provide more space between text blocks and 
+27: 
+28: 
+29: 
+30: 
+31: 
+32: Use icons/icon library used in Figma file
+33: 
+34: 
+35: Green “buttons” should turn to light blue 
+36:             
+37: 
+38: Images don’t fill the cards they’re supposed to
+39: 
+40: Make the Coca-Cola logo smaller
+41: 
+42: 
+43: 
+44: 
+45: Tweak spacing of this
+46: 
+47: 
+48: 
+49: 
+50: Text is too close to the bottom border
+51: 
+52: 
+53: 
+54: 
+55: Make outer circumference thicker
+56: 
+57: 
+58: 
+59: 
+60: 
+61: Round out this edge
+62: 
+63: Make the arrow bigger and round it out. Also make it black when hovered over it
+64: 
+65: 
+66: 
+67: Remove the placeholder entry
+68: 
+69: 
+70: Tweak images and amend spacing and placement of text
+71: 
+72: 
+73:         
+74: 
+75: Space out elements a little more
+76: 
+77: 
+78: 
+79: 
+80: Remove glow from the input fields when clicked on/selected
+81: 
+82: 
+83: 
+84: Thin out box outlines a bit
+85: 
+86: Change font to Montserrat
+87: 
+88: 
+89: 
+90: 
+91: Make rounded corners equal
+92: 
+93: 
+94: 
+95: 
+96: 
+97: Icons are too thick
+98: 
+99: 
+100: 
+101: 
+102: Make button size smaller
+103: 
+104: 
+105: 
+106: WHO ARE WE (Overview)
+107: 
+108: 
+109: 
+110: Tweak size/length and roundness of edges
+111: 
+112: 
+113: 
+114: 
+115: Remove “See The Whole Journey” button
+116: 
+117: 
+118: 
+119: 
+120: Remove “View More” button
+121: 
+122: 
+123: 
+124: 
+125: 
+126: 
+127: 

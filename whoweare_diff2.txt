@@ -1,0 +1,20 @@
+diff --git a/src/app/who-we-are/page.tsx b/src/app/who-we-are/page.tsx
+index 8066bc7..638769e 100644
+--- a/src/app/who-we-are/page.tsx
++++ b/src/app/who-we-are/page.tsx
+@@ -2,7 +2,6 @@ import Link from "next/link";
+ import type { CSSProperties, ReactNode } from "react";
+ import { figmaAssets } from "@/content/site";
+ import { Footer, Header } from "../_components/marketing";
+-import { HistoryScrollButton } from "./HistoryScrollButton";
+ 
+ const primaryImage = figmaAssets.figmaBusinessPartners;
+ 
+@@ -266,7 +265,6 @@ export default function WhoWeArePage() {
+           <div className="who-history-head">
+             <SectionLabel>Our History</SectionLabel>
+           </div>
+-          <HistoryScrollButton />
+           <h2 id="who-history-title" className="sr-only">
+             Our History
+           </h2>

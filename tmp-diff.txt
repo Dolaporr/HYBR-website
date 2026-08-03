@@ -1,0 +1,227 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index 3d6c094..1a3f473 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -20622,3 +20622,115 @@ video.home-video-card {
+     right: 24px !important;
+   }
+ }
++
++/* Designer review: keep the shared homepage controls and cards visually stable. */
++.field,
++.home-contact-form .field {
++  border-radius: 28px !important;
++  border-width: 1.5px !important;
++  box-shadow: none !important;
++  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif !important;
++}
++
++.field:focus,
++.field:focus-visible,
++.home-contact-form .field:focus,
++.home-contact-form .field:focus-visible {
++  border-color: #ffffff !important;
++  box-shadow: none !important;
++  outline: 0 !important;
++}
++
++.homepage-live .home-service-glyph,
++.homepage-live .home-service-glyph svg {
++  height: 56px !important;
++  width: 56px !important;
++}
++
++.homepage-live .home-service-pill,
++.homepage-live .home-service-pill:hover,
++.homepage-live .home-service-pill:focus-visible {
++  background: #4fc2f0 !important;
++  border-color: #4fc2f0 !important;
++  color: #07171d !important;
++  transform: translateX(-50%) !important;
++}
++
++.homepage-live .home-case-bg {
++  display: block !important;
++}
++
++.homepage-live .home-case-feature .home-case-bg--feature {
++  object-position: center 52% !important;
++}
++
++.homepage-live .home-case-tall .home-case-bg--tall {
++  object-position: center center !important;
++}
++
++.homepage-live .home-case-feature .home-company-wordmark--coca-cola {
++  height: 40px !important;
++  width: 154px !important;
++}
++
++.homepage-live .home-testimonial-avatar > span {
++  border-width: 2px !important;
++}
++
++.homepage-live .home-testimonial-arrow {
++  border-radius: 999px;
++  font-size: 52px;
++  height: 56px;
++  transition: background-color 180ms ease, color 180ms ease;
++  width: 56px;
++}
++
++.homepage-live .home-testimonial-arrow:hover,
++.homepage-live .home-testimonial-arrow:focus-visible {
++  background: #ffffff;
++  color: #000000;
++  outline: 0;
++}
++
++.home-footer-socials svg [stroke] {
++  stroke-width: 1.7px;
++}
++
++.home-footer .hybr-button--white {
++  font-size: 18px !important;
++  min-height: 52px !important;
++  padding: 11px 28px !important;
++}
++
++@media (min-width: 1024px) {
++  .homepage-live .home-work-wrap {
++    column-gap: 40px !important;
++    row-gap: 40px !important;
++  }
++
++  .homepage-live .home-case-feature {
++    padding: 28px !important;
++  }
++
++  .homepage-live .home-case-tall {
++    padding: 24px 24px 32px !important;
++  }
++
++  .homepage-live .home-case-tall-copy {
++    margin-top: auto !important;
++    padding-bottom: 2px !important;
++    top: auto !important;
++  }
++}
++
++@media (max-width: 559px) {
++  .homepage-live .home-case-feature .home-company-wordmark--coca-cola {
++    height: 24px !important;
++    width: 90px !important;
++  }
++}
++
++/* Keep the Who We Are contents drawer as a consistent rounded capsule. */
++.who-page .who-content-drop {
++  border-radius: 999px !important;
++}
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 9ed169f..6cd5ea2 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -232,8 +232,8 @@ function SocialIcon({
+   if (kind === "instagram") {
+     return (
+       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
+-        <rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="2.4" />
+-        <circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="2.4" />
++        <rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="1.7" />
++        <circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="1.7" />
+         <circle cx="22.4" cy="9.6" r="1.6" fill="currentColor" />
+       </svg>
+     );
+@@ -253,9 +253,9 @@ function SocialIcon({
+   if (kind === "linkedin") {
+     return (
+       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
+-        <rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="2.2" />
+-        <path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" />
+-        <path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="2.4" />
++        <rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.7" />
++        <path d="M11 14V22" stroke="currentColor" strokeWidth="1.7" />
++        <path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="1.7" />
+         <circle cx="11" cy="10.5" r="1.5" fill="currentColor" />
+       </svg>
+     );
+@@ -264,7 +264,7 @@ function SocialIcon({
+   if (kind === "youtube") {
+     return (
+       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
+-        <rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="2.2" />
++        <rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="1.7" />
+         <path d="M14 12.8L20.4 16L14 19.2V12.8Z" fill="currentColor" />
+       </svg>
+     );
+@@ -273,7 +273,7 @@ function SocialIcon({
+   if (kind === "facebook") {
+     return (
+       <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
+-        <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="2.2" />
++        <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.7" />
+         <path d="M17.5 26V16.8H20.4L20.9 13.4H17.5V11.2C17.5 10.2 17.8 9.5 19.2 9.5H21V6.5C20.1 6.4 19.4 6.4 18.6 6.4C16.1 6.4 14.4 7.9 14.4 10.7V13.4H11.6V16.8H14.4V26" fill="currentColor" />
+       </svg>
+     );
+@@ -539,10 +539,10 @@ export default function Home() {
+                 src={assets.whoImage}
+               />
+               <div className="home-who-actions absolute bottom-4 right-4">
+-                <Button className="home-who-button home-who-button--desktop home-arrow-hover" href="/who-we-are/our-team" variant="glass">
++                <Button className="home-who-button home-who-button--desktop" href="/who-we-are/our-team" variant="glass">
+                   Meet The Team
+                 </Button>
+-                <Button className="home-who-button home-who-button--mobile home-arrow-hover" href="/who-we-are/about-us" variant="glass">
++                <Button className="home-who-button home-who-button--mobile" href="/who-we-are/about-us" variant="glass">
+                   Learn More
+                 </Button>
+               </div>
+@@ -604,7 +604,7 @@ export default function Home() {
+               ))}
+             </div>
+             <div className="home-services-cta mt-8 text-center">
+-              <Button className="home-arrow-hover" href="/what-we-do/services" variant="outline">
++              <Button href="/what-we-do/services" variant="outline">
+                 <span className="home-services-cta-full">Explore Our Services</span>
+                 <span className="home-services-cta-mobile">Explore Services</span>
+               </Button>
+diff --git a/src/app/who-we-are/page.tsx b/src/app/who-we-are/page.tsx
+index 8066bc7..638769e 100644
+--- a/src/app/who-we-are/page.tsx
++++ b/src/app/who-we-are/page.tsx
+@@ -2,7 +2,6 @@ import Link from "next/link";
+ import type { CSSProperties, ReactNode } from "react";
+ import { figmaAssets } from "@/content/site";
+ import { Footer, Header } from "../_components/marketing";
+-import { HistoryScrollButton } from "./HistoryScrollButton";
+ 
+ const primaryImage = figmaAssets.figmaBusinessPartners;
+ 
+@@ -266,7 +265,6 @@ export default function WhoWeArePage() {
+           <div className="who-history-head">
+             <SectionLabel>Our History</SectionLabel>
+           </div>
+-          <HistoryScrollButton />
+           <h2 id="who-history-title" className="sr-only">
+             Our History
+           </h2>
+diff --git a/src/components/TestimonialsCarousel.tsx b/src/components/TestimonialsCarousel.tsx
+index 6a9997a..7dc0901 100644
+--- a/src/components/TestimonialsCarousel.tsx
++++ b/src/components/TestimonialsCarousel.tsx
+@@ -11,13 +11,6 @@ import {
+ } from "react";
+ 
+ const testimonials = [
+-  {
+-    quote:
+-      "Working with HYBR transformed how our leadership team approaches innovation. We now have the tools and confidence to build what's next.",
+-    name: "Placeholder Client",
+-    title: "Director of Strategy, Future Group",
+-    image: "/home/testimonial.png",
+-  },
+   {
+     quote:
+       "The curated innovation retreat for AFEX's 40-exco team was truly world class and highly impactful, shaping our strategic plans going forward.",
+

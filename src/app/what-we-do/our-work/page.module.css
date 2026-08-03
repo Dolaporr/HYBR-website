@@ -1,0 +1,1421 @@
+.workScope {
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.workScope :global(.work-frame) {
+  --work-mobile-content-width: min(342px, calc(100% - 48px));
+  --work-mobile-gutter: max(24px, calc((100% - var(--work-mobile-content-width)) / 2));
+  background: #ffffff;
+  height: 2698px;
+  margin-inline: 0;
+  max-width: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.workScope :global(.work-frame *) {
+  box-sizing: border-box;
+}
+
+.workScope :global(.work-frame h1),
+.workScope :global(.work-frame h2),
+.workScope :global(.work-frame h3),
+.workScope :global(.work-frame p) {
+  margin: 0;
+}
+
+.workScope :global(.work-button) {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  min-height: 56px;
+  padding: 12px 32px;
+  position: absolute;
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.workScope :global(.work-hero) {
+  left: var(--work-mobile-gutter);
+  position: absolute;
+  top: 187px;
+  width: var(--work-mobile-content-width);
+}
+
+.workScope :global(.work-hero h1) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+  white-space: nowrap;
+}
+
+.workScope :global(.work-hero p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.workScope :global(.work-content-drop) {
+  background: #000000;
+  border-radius: 1000px 0 600px 1000px;
+  color: #ffffff;
+  height: 132px;
+  overflow: hidden;
+  position: absolute;
+  right: -286px;
+  top: 177px;
+  width: 342px;
+  z-index: 4;
+}
+
+.workScope :global(.work-content-drop-media) {
+  aspect-ratio: 4096 / 2731;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #000000;
+  display: block;
+  left: -16px;
+  pointer-events: none;
+  position: absolute;
+  top: -10px;
+  width: 364px;
+}
+
+.workScope :global(.work-content-drop-media::after) {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.workScope :global(.work-card-image::after) {
+  background: rgba(0, 0, 0, .6);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.workScope :global(.work-content-drop p) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  left: 42px;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+}
+
+.workScope :global(.work-content-drop nav) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  left: 86px;
+  position: absolute;
+  top: 28px;
+  width: 205px;
+}
+
+.workScope :global(.work-content-drop a) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.workScope :global(.work-filters) {
+  height: 40px;
+  left: var(--work-mobile-gutter);
+  position: absolute;
+  top: 374px;
+  width: var(--work-mobile-content-width);
+  z-index: 2;
+}
+
+.workScope :global(.work-filter) {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 100px;
+  color: #858688;
+  display: flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  gap: 6px;
+  height: 40px;
+  justify-content: center;
+  line-height: normal;
+  padding: 0 18px;
+  position: absolute;
+  top: 0;
+}
+
+.workScope :global(.work-filter input) {
+  background: transparent;
+  border: 0;
+  color: #858688;
+  font: inherit;
+  outline: 0;
+  padding: 0;
+  width: 104px;
+}
+
+.workScope :global(.work-filter input::placeholder) {
+  color: #858688;
+  opacity: 1;
+}
+
+.workScope :global(.work-filter-icon) {
+  height: 24px;
+  width: 24px;
+}
+
+.workScope :global(.work-filter-chevron) {
+  color: #000000;
+  height: 14px;
+  width: 14px;
+}
+
+.workScope :global(.work-filter.is-search) {
+  left: 0;
+  width: 100%;
+}
+
+.workScope :global(.work-filter.is-filters),
+.workScope :global(.work-filter.is-sort),
+.workScope :global(.work-filter.is-topic),
+.workScope :global(.work-filter.is-duration) {
+  display: none;
+}
+
+.workScope :global(.work-section-label) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  left: var(--work-mobile-gutter);
+  line-height: 20px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.workScope :global(.work-section-label.is-spotlight-label) {
+  top: 454px;
+}
+
+.workScope :global(.work-section-label.is-recent-label) {
+  top: 956px;
+}
+
+.workScope :global(.work-card) {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  height: 386px;
+  left: var(--work-mobile-gutter);
+  overflow: hidden;
+  position: absolute;
+  width: var(--work-mobile-content-width);
+}
+
+.workScope :global(.work-card.is-spotlight) {
+  top: 490px;
+}
+
+.workScope :global(.work-card.is-first) {
+  top: 992px;
+}
+
+.workScope :global(.work-card.is-second) {
+  top: 1418px;
+}
+
+.workScope :global(.work-card-image) {
+  background-position: center;
+  background-size: cover !important;
+  display: block;
+  height: 100% !important;
+  left: 0 !important;
+  pointer-events: none;
+  position: absolute;
+  top: 0 !important;
+  width: 100% !important;
+}
+
+.workScope :global(.work-card.is-spotlight .work-card-image::after) {
+  background: rgba(0, 26, 34, .68);
+}
+
+.workScope :global(.work-card-eyebrow) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  left: 32px;
+  line-height: 20px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 40px;
+  width: 90px;
+  z-index: 2;
+}
+
+.workScope :global(.work-card h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  left: 32px;
+  line-height: 38px;
+  position: absolute;
+  top: 82px;
+  width: 278px;
+  z-index: 2;
+}
+
+.workScope :global(.work-card-body) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  left: 32px;
+  line-height: 20px;
+  position: absolute;
+  top: 200px;
+  width: 278px;
+  z-index: 2;
+}
+
+.workScope :global(.work-card-body.is-long) {
+  display: none;
+}
+
+.workScope :global(.work-card-company) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  left: 32px;
+  line-height: 20px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 258px;
+  z-index: 2;
+}
+
+.workScope :global(.work-card-company-logo) {
+  display: block;
+  height: 24px;
+  object-fit: contain;
+  object-position: left center;
+  width: auto;
+}
+
+.workScope :global(.work-card-mark) {
+  height: 24px;
+  position: absolute;
+  right: 32px;
+  top: 40px;
+  width: 24px;
+  z-index: 2;
+}
+
+.workScope :global(.work-button.is-read) {
+  border-color: #ffffff;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  min-height: 48px;
+  padding: 10px 28px;
+  right: 32px;
+  top: 298px;
+  width: 158px;
+}
+
+.workScope :global(.work-button.is-view-all) {
+  font-size: 20px;
+  left: 50%;
+  min-height: 56px;
+  top: 1844px;
+  transform: translateX(-50%);
+  width: 280px;
+}
+
+.workScope :global(.work-services) {
+  height: 420px;
+  left: 0;
+  position: absolute;
+  top: 2056px;
+  width: 100%;
+}
+
+.workScope :global(.work-services-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  background-position: center;
+  background-size: cover;
+  border-radius: 0;
+  display: block;
+  filter: hue-rotate(35deg) saturate(1.12) brightness(1.03);
+  height: 118px;
+  left: var(--work-mobile-gutter);
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  width: var(--work-mobile-content-width);
+}
+
+.workScope :global(.work-services-copy) {
+  left: var(--work-mobile-gutter);
+  position: absolute;
+  top: 182px;
+  width: var(--work-mobile-content-width);
+}
+
+.workScope :global(.work-services-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.workScope :global(.work-services-copy h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.workScope :global(.work-services-copy > span) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.workScope :global(.work-button.is-services) {
+  font-size: 20px;
+  left: 0;
+  min-height: 56px;
+  top: 196px;
+  width: max-content;
+}
+
+.workScope :global(.work-button .is-desktop-label) {
+  display: none;
+}
+
+.workScope :global(.work-button .is-mobile-label) {
+  display: inline;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .workScope :global(.work-frame) {
+    height: 2837px;
+    margin-inline: auto;
+    max-width: 800px;
+  }
+
+  .workScope :global(.work-hero) {
+    left: 80px;
+    top: 240px;
+    width: 640px;
+  }
+
+  .workScope :global(.work-hero h1) {
+    font-size: 104px;
+    line-height: 122px;
+  }
+
+  .workScope :global(.work-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .workScope :global(.work-content-drop) {
+    height: 197px;
+    right: -266px;
+    top: 231px;
+    width: 338px;
+  }
+
+  .workScope :global(.work-content-drop-media) {
+    left: -18px;
+    width: 397px;
+  }
+
+  .workScope :global(.work-content-drop p) {
+    font-size: 16px;
+  }
+
+  .workScope :global(.work-content-drop nav) {
+    gap: 8px;
+    left: 90px;
+    top: 34px;
+    width: 160px;
+  }
+
+  .workScope :global(.work-content-drop a) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-filters) {
+    height: 56px;
+    left: 80px;
+    top: 1028px;
+    width: 640px;
+  }
+
+  .workScope :global(.work-filter) {
+    border-width: 2px;
+    font-size: 20px;
+    height: 56px;
+    justify-content: space-between;
+    padding-inline: 26px;
+  }
+
+  .workScope :global(.work-filter input) {
+    width: 300px;
+  }
+
+  .workScope :global(.work-filter-icon),
+  .workScope :global(.work-filter-chevron) {
+    height: 18px;
+    width: 18px;
+  }
+
+  .workScope :global(.work-filter.is-search) {
+    justify-content: flex-start;
+    width: 391px;
+  }
+
+  .workScope :global(.work-filter.is-filters) {
+    display: flex;
+    left: 415px;
+    width: 225px;
+  }
+
+  .workScope :global(.work-section-label) {
+    font-size: 16px;
+    left: 80px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-section-label.is-spotlight-label) {
+    top: 584px;
+  }
+
+  .workScope :global(.work-section-label.is-recent-label) {
+    top: 1172px;
+  }
+
+  .workScope :global(.work-card) {
+    left: 80px;
+  }
+
+  .workScope :global(.work-card.is-spotlight) {
+    height: 352px;
+    top: 620px;
+    width: 640px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-image) {
+    height: 684px;
+    left: -288px;
+    top: -113px;
+    width: 1216px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-eyebrow) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 52px;
+    width: 170px;
+  }
+
+  .workScope :global(.work-card.is-spotlight h2) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 108px;
+    width: 560px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-long) {
+    display: block;
+    font-size: 24px;
+    line-height: 29px;
+    top: 147px;
+    width: 560px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-short) {
+    display: none;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-company) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 288px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-mark) {
+    height: 48px;
+    right: 40px;
+    top: 40px;
+    width: 48px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-button.is-read) {
+    min-height: 40px;
+    right: 40px;
+    top: 280px;
+    width: 158px;
+  }
+
+  .workScope :global(.work-card.is-recent) {
+    height: 228px;
+    width: 640px;
+  }
+
+  .workScope :global(.work-card.is-first) {
+    top: 1208px;
+  }
+
+  .workScope :global(.work-card.is-second) {
+    top: 1468px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-image) {
+    height: 369px;
+    left: -8px;
+    top: -6px;
+    width: 656px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-eyebrow) {
+    font-size: 16px;
+    line-height: 20px;
+    left: 32px;
+    top: 44px;
+    width: 170px;
+  }
+
+  .workScope :global(.work-card.is-recent h2) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    left: 32px;
+    top: 65px;
+    width: 460px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-long) {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    left: 32px;
+    top: 108px;
+    width: 557px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-short) {
+    display: none;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-company) {
+    font-size: 16px;
+    line-height: 20px;
+    left: 32px;
+    top: 174px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-mark) {
+    height: 40px;
+    right: 24px;
+    top: 32px;
+    width: 40px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-button.is-read) {
+    font-size: 14px;
+    min-height: 33px;
+    padding-inline: 18px;
+    right: 24px;
+    top: 163px;
+    width: 109px;
+  }
+
+  .workScope :global(.work-button.is-view-all) {
+    font-size: 20px;
+    left: 260px;
+    top: 1744px;
+  }
+
+  .workScope :global(.work-services) {
+    top: 2024px;
+  }
+
+  .workScope :global(.work-services-image) {
+    border-radius: 0;
+    height: 248px;
+    left: 80px;
+    width: 640px;
+  }
+
+  .workScope :global(.work-services-copy) {
+    left: 80px;
+    top: 328px;
+    width: 640px;
+  }
+
+  .workScope :global(.work-services-copy p) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-services-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px;
+    width: 640px;
+  }
+
+  .workScope :global(.work-services-copy > span) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    width: 520px;
+  }
+
+  .workScope :global(.work-button.is-services) {
+    font-size: 20px;
+    min-height: 56px;
+    top: 160px;
+    width: 192px;
+  }
+
+  .workScope :global(.work-button .is-desktop-label) {
+    display: inline;
+  }
+
+  .workScope :global(.work-button .is-mobile-label) {
+    display: none;
+  }
+}
+
+.workScope :global(.work-services-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask-image: var(--hybr-image-card-mask-current) !important;
+  mask-position: center !important;
+  mask-repeat: no-repeat !important;
+  mask-size: 100% 100% !important;
+  overflow: hidden !important;
+  -webkit-mask-image: var(--hybr-image-card-mask-current) !important;
+  -webkit-mask-position: center !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-size: 100% 100% !important;
+}
+
+.workScope :global(.work-content-drop.site-content-drop) {
+  left: auto !important;
+  right: -260px !important;
+}
+
+.workScope :global(.work-content-drop.site-content-drop.is-content-open) {
+  left: auto !important;
+  right: 0 !important;
+}
+
+@media (min-width: 560px) {
+  .workScope :global(.work-button.is-view-all) {
+    transform: none;
+  }
+
+  .workScope :global(.work-content-drop.site-content-drop) {
+    left: auto !important;
+    right: -257px !important;
+  }
+
+  .workScope :global(.work-content-drop.site-content-drop.is-content-open) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .workScope :global(.work-frame) {
+    height: 2479px;
+    margin-inline: auto;
+    max-width: 1280px;
+  }
+
+  .workScope :global(.work-hero) {
+    left: 120px;
+    top: 240px;
+    width: 460px;
+  }
+
+  .workScope :global(.work-hero h1) {
+    font-size: 104px;
+    line-height: 122px;
+  }
+
+  .workScope :global(.work-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .workScope :global(.work-content-drop) {
+    height: 197px;
+    right: -262px;
+    top: 217px;
+    width: 338px;
+  }
+
+  .workScope :global(.work-content-drop p) {
+    font-size: 16px;
+  }
+
+  .workScope :global(.work-content-drop nav) {
+    gap: 8px;
+    left: 90px;
+    top: 34px;
+    width: 160px;
+  }
+
+  .workScope :global(.work-content-drop a) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-filters) {
+    height: 56px;
+    left: 120px;
+    top: 1028px;
+    width: 1040px;
+  }
+
+  .workScope :global(.work-filter) {
+    border-width: 2px;
+    font-size: 20px;
+    height: 56px;
+    justify-content: space-between;
+    padding-inline: 26px;
+  }
+
+  .workScope :global(.work-filter input) {
+    width: 670px;
+  }
+
+  .workScope :global(.work-filter-icon),
+  .workScope :global(.work-filter-chevron) {
+    height: 18px;
+    width: 18px;
+  }
+
+  .workScope :global(.work-filter.is-search) {
+    justify-content: flex-start;
+    width: 774px;
+  }
+
+  .workScope :global(.work-filter.is-filters) {
+    display: flex;
+    left: 798px;
+    width: 242px;
+  }
+
+  .workScope :global(.work-section-label) {
+    font-size: 16px;
+    left: 120px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-section-label.is-spotlight-label) {
+    top: 584px;
+  }
+
+  .workScope :global(.work-section-label.is-recent-label) {
+    top: 1172px;
+  }
+
+  .workScope :global(.work-card) {
+    left: 120px;
+  }
+
+  .workScope :global(.work-card.is-spotlight) {
+    height: 352px;
+    top: 620px;
+    width: 1040px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-image) {
+    height: 684px;
+    left: -88px;
+    top: -113px;
+    width: 1216px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-eyebrow) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 52px;
+    width: 170px;
+  }
+
+  .workScope :global(.work-card.is-spotlight h2) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 123px;
+    width: 878px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-long) {
+    display: block;
+    font-size: 24px;
+    line-height: 29px;
+    top: 162px;
+    width: 878px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-short) {
+    display: none;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-company) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 280px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-mark) {
+    height: 48px;
+    right: 40px;
+    top: 40px;
+    width: 48px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-button.is-read) {
+    font-size: 12px;
+    min-height: 40px;
+    right: 40px;
+    top: 272px;
+    width: 158px;
+  }
+
+  .workScope :global(.work-card.is-recent) {
+    height: 308px;
+    top: 1208px;
+    width: 508px;
+  }
+
+  .workScope :global(.work-card.is-second) {
+    left: 652px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-image) {
+    height: 336px;
+    left: -45px;
+    top: -6px;
+    width: 597px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-eyebrow) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 50px;
+    width: 170px;
+  }
+
+  .workScope :global(.work-card.is-recent h2) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    top: 77px;
+    width: 300px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-long) {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    top: 145px;
+    width: 428px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-short) {
+    display: none;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-company) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 232px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-mark) {
+    height: 40px;
+    right: 40px;
+    top: 40px;
+    width: 40px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-button.is-read) {
+    font-size: 20px;
+    min-height: 40px;
+    right: 40px;
+    top: 228px;
+    width: 158px;
+  }
+
+  .workScope :global(.work-button.is-view-all) {
+    font-size: 20px;
+    left: 495px;
+    top: 1564px;
+  }
+
+  .workScope :global(.work-services) {
+    top: 1844px;
+  }
+
+  .workScope :global(.work-services-image) {
+    border-radius: 0;
+    height: 336px;
+    left: 785px;
+    width: 976px;
+  }
+
+  .workScope :global(.work-services-copy) {
+    left: 120px;
+    top: 67px;
+    width: 588px;
+  }
+
+  .workScope :global(.work-services-copy p) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-services-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px;
+    width: 588px;
+  }
+
+  .workScope :global(.work-services-copy > span) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    width: 450px;
+  }
+
+  .workScope :global(.work-button.is-services) {
+    font-size: 20px;
+    min-height: 56px;
+    top: 184px;
+    width: 192px;
+  }
+
+  .workScope :global(.work-button .is-desktop-label) {
+    display: inline;
+  }
+
+  .workScope :global(.work-button .is-mobile-label) {
+    display: none;
+  }
+}
+
+@media (min-width: 1360px) {
+  .workScope :global(.work-frame) {
+    height: 2790px;
+    margin-inline: auto;
+    max-width: 1440px;
+  }
+
+  .workScope :global(.work-hero) {
+    left: 120px;
+    top: 243px;
+    width: 703px;
+  }
+
+  .workScope :global(.work-hero h1) {
+    font-size: 160px;
+    line-height: 188px;
+  }
+
+  .workScope :global(.work-hero p) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .workScope :global(.work-content-drop) {
+    height: 197px;
+    right: -249px;
+    top: 253px;
+    width: 338px;
+  }
+
+  .workScope :global(.work-content-drop p) {
+    font-size: 16px;
+  }
+
+  .workScope :global(.work-content-drop nav) {
+    gap: 8px;
+    left: 90px;
+    top: 34px;
+    width: 160px;
+  }
+
+  .workScope :global(.work-content-drop a) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-filters) {
+    height: 56px;
+    left: 120px;
+    top: 1125px;
+    width: 1200px;
+  }
+
+  .workScope :global(.work-filter) {
+    border-width: 2px;
+    font-size: 20px;
+    height: 56px;
+    justify-content: space-between;
+    padding-inline: 26px;
+  }
+
+  .workScope :global(.work-filter input) {
+    width: 360px;
+  }
+
+  .workScope :global(.work-filter-icon),
+  .workScope :global(.work-filter-chevron) {
+    height: 18px;
+    width: 18px;
+  }
+
+  .workScope :global(.work-filter.is-search) {
+    justify-content: flex-start;
+    width: 469px;
+  }
+
+  .workScope :global(.work-filter.is-filters) {
+    display: none;
+  }
+
+  .workScope :global(.work-filter.is-sort),
+  .workScope :global(.work-filter.is-topic),
+  .workScope :global(.work-filter.is-duration) {
+    display: flex;
+  }
+
+  .workScope :global(.work-filter.is-sort) {
+    left: 493px;
+    width: 219px;
+  }
+
+  .workScope :global(.work-filter.is-topic) {
+    left: 736px;
+    width: 220px;
+  }
+
+  .workScope :global(.work-filter.is-duration) {
+    left: 980px;
+    width: 220px;
+  }
+
+  .workScope :global(.work-section-label) {
+    font-size: 20px;
+    left: 120px;
+    line-height: 24px;
+  }
+
+  .workScope :global(.work-section-label.is-spotlight-label) {
+    top: 645px;
+  }
+
+  .workScope :global(.work-section-label.is-recent-label) {
+    top: 1261px;
+  }
+
+  .workScope :global(.work-card) {
+    border-radius: 16px;
+    left: 120px;
+  }
+
+  .workScope :global(.work-card.is-spotlight) {
+    height: 352px;
+    top: 693px;
+    width: 1200px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-image) {
+    height: 684px;
+    left: -8px;
+    top: -113px;
+    width: 1216px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-eyebrow) {
+    font-size: 24px;
+    line-height: 29px;
+    top: 40px;
+    width: 170px;
+  }
+
+  .workScope :global(.work-card.is-spotlight h2) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 69px;
+    width: 878px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-long) {
+    display: block;
+    font-size: 24px;
+    line-height: 29px;
+    top: 116px;
+    width: 878px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-short) {
+    display: none;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-company) {
+    font-size: 20px;
+    line-height: 24px;
+    top: 288px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-mark) {
+    height: 56px;
+    right: 40px;
+    top: 40px;
+    width: 56px;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-button.is-read) {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    min-height: 61px;
+    right: 40px;
+    top: 251px;
+    width: 196px;
+  }
+
+  .workScope :global(.work-card.is-recent) {
+    height: 372px;
+    top: 1309px;
+    width: 588px;
+  }
+
+  .workScope :global(.work-card.is-second) {
+    left: 732px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-image) {
+    height: 387px;
+    left: -50px;
+    top: -6px;
+    width: 687px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-eyebrow) {
+    font-size: 24px;
+    line-height: 29px;
+    top: 40px;
+    width: 170px;
+  }
+
+  .workScope :global(.work-card.is-recent h2) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 69px;
+    width: 399px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-long) {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    top: 155px;
+    width: 511px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-short) {
+    display: none;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-company) {
+    font-size: 20px;
+    line-height: 24px;
+    top: 290px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-mark) {
+    height: 56px;
+    right: 40px;
+    top: 40px;
+    width: 56px;
+  }
+
+  .workScope :global(.work-card.is-recent .work-button.is-read) {
+    border-color: #ffffff;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 500;
+    min-height: 61px;
+    right: 40px;
+    top: 271px;
+    width: 196px;
+  }
+
+  .workScope :global(.work-button.is-view-all) {
+    font-size: 24px;
+    left: 558px;
+    min-height: 61px;
+    top: 1745px;
+    width: 323px;
+  }
+
+  .workScope :global(.work-services) {
+    top: 2086px;
+  }
+
+  .workScope :global(.work-services-image) {
+    border-radius: 0;
+    height: 336px;
+    left: 773px;
+    width: 976px;
+  }
+
+  .workScope :global(.work-services-copy) {
+    left: 120px;
+    top: 53px;
+    width: 588px;
+  }
+
+  .workScope :global(.work-services-copy p) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .workScope :global(.work-services-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px;
+    width: 588px;
+  }
+
+  .workScope :global(.work-services-copy > span) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    width: 450px;
+  }
+
+  .workScope :global(.work-button.is-services) {
+    font-size: 24px;
+    min-height: 61px;
+    top: 216px;
+    width: 217px;
+  }
+
+  .workScope :global(.work-button .is-desktop-label) {
+    display: inline;
+  }
+
+  .workScope :global(.work-button .is-mobile-label) {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .workScope :global(.work-card h2),
+  .workScope :global(.work-card-eyebrow),
+  .workScope :global(.work-card-body),
+  .workScope :global(.work-card-company) {
+    margin: 0 !important;
+  }
+
+  .workScope :global(.work-card-eyebrow) {
+    width: auto !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight h2) {
+    top: 86px !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-body.is-long) {
+    top: 178px !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-card-company) {
+    bottom: 32px !important;
+    top: auto !important;
+  }
+
+  .workScope :global(.work-card.is-spotlight .work-button.is-read) {
+    bottom: 40px !important;
+    top: auto !important;
+  }
+
+  .workScope :global(.work-card.is-recent h2) {
+    top: 86px !important;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-body.is-long) {
+    top: 176px !important;
+  }
+
+  .workScope :global(.work-card.is-recent .work-card-company) {
+    bottom: 32px !important;
+    top: auto !important;
+  }
+
+  .workScope :global(.work-card.is-recent .work-button.is-read) {
+    bottom: 32px !important;
+    top: auto !important;
+  }
+}

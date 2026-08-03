@@ -1,0 +1,1927 @@
+﻿.caseScope {
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+}
+
+.caseScope :global(.case-frame) {
+  background: #ffffff;
+  height: 2705px;
+  margin-inline: 0;
+  max-width: 390px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.caseScope :global(.case-frame.is-report) {
+  height: 4601px;
+}
+
+.caseScope :global(.case-frame *) {
+  box-sizing: border-box;
+}
+
+.caseScope :global(.case-frame h1),
+.caseScope :global(.case-frame h2),
+.caseScope :global(.case-frame h3),
+.caseScope :global(.case-frame p) {
+  margin: 0;
+}
+
+.caseScope :global(.case-button) {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: normal;
+  min-height: 56px;
+  padding: 12px 28px;
+  position: absolute;
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.caseScope :global(.case-button:focus-visible),
+.caseScope :global(.case-search input:focus-visible),
+.caseScope :global(.case-swipe:focus-visible) {
+  outline: 3px solid rgba(25, 106, 180, .55);
+  outline-offset: 3px;
+}
+
+.caseScope :global(.case-search) {
+  align-items: center;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  color: #858688;
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  justify-content: center;
+  left: 24px;
+  position: absolute;
+  top: 187px;
+  width: 342px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-search-icon) {
+  height: 24px;
+  width: 24px;
+}
+
+.caseScope :global(.case-search input) {
+  background: transparent;
+  border: 0;
+  color: #858688;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  outline: 0;
+  padding: 0;
+  width: 76px;
+}
+
+.caseScope :global(.case-search input::placeholder) {
+  color: #858688;
+  opacity: 1;
+}
+
+.caseScope :global(.case-hero-card) {
+  background: #000000;
+  color: #ffffff;
+  height: 386px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 267px;
+  width: 390px;
+}
+
+.caseScope :global(.case-frame.is-report .case-hero-card) {
+  height: 469px;
+  top: 0;
+}
+
+.caseScope :global(.case-hero-card::after) {
+  background: rgba(0, 0, 0, .6);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.caseScope :global(.case-hero-image) {
+  background-position: center;
+  background-size: 100% 100%;
+  display: block;
+  height: 400px;
+  left: -155px;
+  position: absolute;
+  top: -7px;
+  width: 710px;
+}
+
+.caseScope :global(.case-frame.is-report .case-hero-image) {
+  height: 537px;
+  left: -306px;
+  top: -34px;
+  width: 954px;
+}
+
+.caseScope :global(.case-cover-nav) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  justify-content: flex-end;
+  left: 105px;
+  position: absolute;
+  top: 40px;
+  width: 245px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-cover-nav a) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.caseScope :global(.case-hero-copy) {
+  left: 40px;
+  position: absolute;
+  top: 121px;
+  width: 310px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-frame.is-report .case-hero-copy) {
+  left: 32px;
+  top: 241px;
+  width: 326px;
+}
+
+.caseScope :global(.case-hero-copy h1) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.caseScope :global(.case-hero-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 17px;
+  margin-top: 8px;
+  max-height: 51px;
+  overflow: hidden;
+}
+
+.caseScope :global(.case-company) {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  left: 40px;
+  position: absolute;
+  top: 261px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-frame.is-report .case-company) {
+  left: 32px;
+  top: 381px;
+}
+
+.caseScope :global(.case-company-mark) {
+  height: 24px;
+  width: 24px;
+}
+
+.caseScope :global(.case-company span) {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.caseScope :global(.case-company .case-company-logo--coca-cola),
+.caseScope :global(.case-related-logo--coca-cola) {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.caseScope :global(.case-company .case-company-logo--coca-cola) {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.caseScope :global(.case-study-label) {
+  display: none;
+}
+
+.caseScope :global(.case-swipe) {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  height: 48px;
+  justify-content: center;
+  left: 151px;
+  padding: 0 16px;
+  position: absolute;
+  top: 306px;
+  width: 205px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-swipe span) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  white-space: nowrap;
+}
+
+.caseScope :global(.case-swipe-icon) {
+  height: 24px;
+  width: 24px;
+}
+
+.caseScope :global(.case-button.is-view-report) {
+  left: 23px;
+  top: 693px;
+  width: 343px;
+}
+
+.caseScope :global(.case-button.is-read-sections) {
+  font-size: 12px;
+  left: 112px;
+  min-height: 40px;
+  top: 509px;
+  width: 167px;
+}
+
+.caseScope :global(.case-button.is-read-sections.is-bottom) {
+  left: 199px;
+  top: 2605px;
+}
+
+.caseScope :global(.case-report-sections) {
+  inset: 0;
+  position: absolute;
+}
+
+.caseScope :global(.case-report-section) {
+  left: 24px;
+  position: absolute;
+  width: 342px;
+}
+
+.caseScope :global(.case-report-section.is-section-1) {
+  top: 613px;
+}
+
+.caseScope :global(.case-report-section.is-section-2) {
+  top: 1111px;
+}
+
+.caseScope :global(.case-report-section.is-section-3) {
+  top: 1609px;
+}
+
+.caseScope :global(.case-report-section.is-section-4) {
+  top: 2107px;
+}
+
+.caseScope :global(.case-report-section h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.caseScope :global(.case-report-label) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 15px;
+  margin-bottom: 8px !important;
+  text-transform: uppercase;
+}
+
+.caseScope :global(.case-report-intro) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 8px !important;
+}
+
+.caseScope :global(.case-report-body) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.caseScope :global(.case-report-body p + p) {
+  margin-top: 16px !important;
+}
+
+.caseScope :global(.case-inline-link) {
+  color: #4fc2f0;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.caseScope :global(.case-related) {
+  left: 24px;
+  position: absolute;
+  top: 905px;
+  width: 342px;
+}
+
+.caseScope :global(.case-frame.is-report .case-related) {
+  top: 2801px;
+}
+
+.caseScope :global(.case-related-intro) {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 342px;
+}
+
+.caseScope :global(.case-related-intro p),
+.caseScope :global(.case-services-copy p) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 10px;
+  text-transform: uppercase;
+}
+
+.caseScope :global(.case-related-intro h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+  margin-top: 6px !important;
+}
+
+.caseScope :global(.case-related-intro span) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 8px;
+  width: 342px;
+}
+
+.caseScope :global(.case-related-card) {
+  background: #000000;
+  border-radius: 6px;
+  color: #ffffff;
+  height: 386px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 146px;
+  width: 342px;
+}
+
+.caseScope :global(.case-related-card.is-second) {
+  top: 572px;
+}
+
+.caseScope :global(.case-related-image) {
+  background-position: center;
+  background-size: 100% 100%;
+  display: block;
+  height: 400px;
+  left: -179px;
+  position: absolute;
+  top: -7px;
+  width: 710px;
+}
+
+.caseScope :global(.case-related-image::after) {
+  background: rgba(0, 0, 0, .5);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.caseScope :global(.case-related-eyebrow) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  left: 32px;
+  line-height: 10px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 40px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-related-card h3) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  left: 32px;
+  line-height: 38px;
+  position: absolute;
+  top: 62px;
+  width: 278px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-related-body) {
+  display: none;
+}
+
+.caseScope :global(.case-related-company) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  left: 32px;
+  line-height: 10px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 258px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-related-mark) {
+  height: 24px;
+  position: absolute;
+  right: 32px;
+  top: 40px;
+  width: 24px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-related-logo) {
+  position: absolute;
+  right: 32px;
+  top: 42px;
+  z-index: 2;
+}
+
+.caseScope :global(.case-related-logo--coca-cola) {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.caseScope :global(.case-button.is-read-more) {
+  border-color: #ffffff;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  min-height: 48px;
+  padding: 10px 28px;
+  right: 32px;
+  top: 298px;
+  width: 158px;
+}
+
+.caseScope :global(.case-button.is-view-all) {
+  font-size: 12px;
+  left: 31px;
+  top: 998px;
+  width: 280px;
+}
+
+.caseScope :global(.case-services) {
+  position: absolute;
+  top: 2115px;
+}
+
+.caseScope :global(.case-frame.is-report .case-services) {
+  top: 4011px;
+}
+
+.caseScope :global(.case-services-image) {
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  background-position: center;
+  background-size: cover;
+  border-radius: 0;
+  display: block;
+  filter: hue-rotate(35deg) saturate(1.12) brightness(1.03);
+  height: 118px;
+  left: 24px;
+  mask-image: var(--hybr-image-card-mask-current);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  -webkit-mask-image: var(--hybr-image-card-mask-current);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  width: 342px;
+}
+
+.caseScope :global(.case-services-copy) {
+  left: 24px;
+  position: absolute;
+  top: 182px;
+  width: 342px;
+}
+
+.caseScope :global(.case-services-copy h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  margin-top: 6px !important;
+  width: 342px;
+}
+
+.caseScope :global(.case-services-copy > span) {
+  display: block;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  margin-top: 6px;
+  width: 238px;
+}
+
+.caseScope :global(.case-button.is-services) {
+  font-size: 12px;
+  left: 0;
+  min-height: 40px;
+  top: 174px;
+  width: 157px;
+}
+
+.caseScope :global(.case-button .is-desktop-label) {
+  display: none;
+}
+
+.caseScope :global(.case-button .is-mobile-label) {
+  display: inline;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .caseScope :global(.case-frame) {
+    height: 2889px;
+    margin-inline: auto;
+    max-width: 800px;
+  }
+
+  .caseScope :global(.case-frame.is-report) {
+    height: 5068px;
+  }
+
+  .caseScope :global(.case-search) {
+    height: 56px;
+    left: 80px;
+    top: 208px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-search-icon) {
+    height: 40px;
+    width: 40px;
+  }
+
+  .caseScope :global(.case-search input) {
+    font-size: 20px;
+    line-height: 24px;
+    width: 92px;
+  }
+
+  .caseScope :global(.case-hero-card) {
+    border-radius: 16px;
+    height: 567px;
+    left: 80px;
+    top: 317px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-card) {
+    border-radius: 0;
+    height: 567px;
+    left: 0;
+    top: 0;
+    width: 800px;
+  }
+
+  .caseScope :global(.case-hero-image) {
+    height: 684px;
+    left: -288px;
+    top: -113px;
+    width: 1216px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-image) {
+    height: 684px;
+    left: -208px;
+    top: -113px;
+    width: 1216px;
+  }
+
+  .caseScope :global(.case-cover-nav) {
+    gap: 16px 30px;
+    justify-content: center;
+    left: 48px;
+    top: 56px;
+    width: 544px;
+  }
+
+  .caseScope :global(.case-cover-nav a) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .caseScope :global(.case-hero-copy) {
+    left: 48px;
+    top: 173px;
+    width: 512px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-copy) {
+    left: 80px;
+    top: 173px;
+    width: 512px;
+  }
+
+  .caseScope :global(.case-hero-copy h1) {
+    font-size: 40px;
+    line-height: 49px;
+  }
+
+  .caseScope :global(.case-hero-copy p) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 16px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .caseScope :global(.case-company) {
+    gap: 24px;
+    left: 48px;
+    top: 471px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-company) {
+    left: 80px;
+    top: 439px;
+  }
+
+  .caseScope :global(.case-company-mark) {
+    height: 48px;
+    width: 48px;
+  }
+
+  .caseScope :global(.case-company span) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-study-label) {
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    left: 590px;
+    line-height: 20px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 451px;
+    z-index: 2;
+  }
+
+  .caseScope :global(.case-swipe) {
+    left: 441px;
+    top: 471px;
+    width: 151px;
+  }
+
+  .caseScope :global(.case-swipe span) {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .caseScope :global(.case-button.is-view-report) {
+    font-size: 16px;
+    left: 229px;
+    top: 932px;
+    width: 343px;
+  }
+
+  .caseScope :global(.case-button.is-read-sections) {
+    font-size: 16px;
+    left: 288px;
+    min-height: 56px;
+    top: 615px;
+    width: 225px;
+  }
+
+  .caseScope :global(.case-button.is-read-sections.is-bottom) {
+    left: 80px;
+    top: 3215px;
+  }
+
+  .caseScope :global(.case-report-section) {
+    left: 80px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-1) {
+    top: 767px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-2) {
+    top: 1209px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-3) {
+    top: 1819px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-4) {
+    top: 2525px;
+  }
+
+  .caseScope :global(.case-report-section h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .caseScope :global(.case-report-intro) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-report-body) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 8px;
+  }
+
+  .caseScope :global(.case-report-body p + p) {
+    margin-top: 24px !important;
+  }
+
+  .caseScope :global(.case-related) {
+    left: 80px;
+    top: 1212px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-related) {
+    top: 3375px;
+  }
+
+  .caseScope :global(.case-related-intro) {
+    width: 640px;
+  }
+
+  .caseScope :global(.case-related-intro p),
+  .caseScope :global(.case-services-copy p) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-related-intro h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px !important;
+  }
+
+  .caseScope :global(.case-related-intro span) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    width: 520px;
+  }
+
+  .caseScope :global(.case-related-card) {
+    height: 228px;
+    top: 138px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-related-card.is-second) {
+    top: 398px;
+  }
+
+  .caseScope :global(.case-related-image) {
+    height: 369px;
+    left: -8px;
+    top: -6px;
+    width: 656px;
+  }
+
+  .caseScope :global(.case-related-eyebrow) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 44px;
+  }
+
+  .caseScope :global(.case-related-card h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    top: 65px;
+    width: 460px;
+  }
+
+  .caseScope :global(.case-related-body) {
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    left: 32px;
+    line-height: 20px;
+    position: absolute;
+    top: 108px;
+    width: 557px;
+    z-index: 2;
+  }
+
+  .caseScope :global(.case-related-company) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 174px;
+  }
+
+  .caseScope :global(.case-related-mark) {
+    height: 40px;
+    right: 24px;
+    top: 32px;
+    width: 40px;
+  }
+
+  .caseScope :global(.case-button.is-read-more) {
+    font-size: 12px;
+    min-height: 33px;
+    padding-inline: 18px;
+    right: 24px;
+    top: 163px;
+    width: 109px;
+  }
+
+  .caseScope :global(.case-button.is-view-all) {
+    font-size: 16px;
+    left: 180px;
+    top: 674px;
+    width: 280px;
+  }
+
+  .caseScope :global(.case-services) {
+    top: 2166px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-services) {
+    top: 4329px;
+  }
+
+  .caseScope :global(.case-services-image) {
+    height: 248px;
+    left: 80px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-services-copy) {
+    left: 80px;
+    top: 328px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-services-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px !important;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-services-copy > span) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    width: 520px;
+  }
+
+  .caseScope :global(.case-button.is-services) {
+    font-size: 16px;
+    min-height: 56px;
+    top: 160px;
+    width: 192px;
+  }
+
+  .caseScope :global(.case-button .is-desktop-label) {
+    display: inline;
+  }
+
+  .caseScope :global(.case-button .is-mobile-label) {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .caseScope :global(.case-frame) {
+    height: 2890px;
+    margin-inline: auto;
+    max-width: 1280px;
+  }
+
+  .caseScope :global(.case-frame.is-report) {
+    height: 4633px;
+  }
+
+  .caseScope :global(.case-search) {
+    height: 56px;
+    left: 120px;
+    top: 208px;
+    width: 1040px;
+  }
+
+  .caseScope :global(.case-search-icon) {
+    height: 40px;
+    width: 40px;
+  }
+
+  .caseScope :global(.case-search input) {
+    font-size: 20px;
+    line-height: 24px;
+    width: 92px;
+  }
+
+  .caseScope :global(.case-hero-card) {
+    border-radius: 16px;
+    height: 567px;
+    left: 120px;
+    top: 344px;
+    width: 1040px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-card) {
+    border-radius: 0;
+    height: 567px;
+    left: 0;
+    top: 0;
+    width: 1280px;
+  }
+
+  .caseScope :global(.case-hero-image) {
+    height: 684px;
+    left: -88px;
+    top: -113px;
+    width: 1216px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-image) {
+    height: 741px;
+    left: -19px;
+    top: -87px;
+    width: 1318px;
+  }
+
+  .caseScope :global(.case-cover-nav) {
+    gap: 0;
+    justify-content: space-between;
+    left: 80px;
+    top: 56px;
+    width: 880px;
+  }
+
+  .caseScope :global(.case-cover-nav a) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .caseScope :global(.case-hero-copy) {
+    left: 80px;
+    top: 185px;
+    width: 666px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-copy) {
+    left: 120px;
+    top: 185px;
+    width: 666px;
+  }
+
+  .caseScope :global(.case-hero-copy h1) {
+    font-size: 40px;
+    line-height: 49px;
+  }
+
+  .caseScope :global(.case-hero-copy p) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 8px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .caseScope :global(.case-company) {
+    gap: 24px;
+    left: 80px;
+    top: 471px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-company) {
+    left: 120px;
+    top: 439px;
+  }
+
+  .caseScope :global(.case-company-mark) {
+    height: 48px;
+    width: 48px;
+  }
+
+  .caseScope :global(.case-company span) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-study-label) {
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    left: 830px;
+    line-height: 20px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 483px;
+    z-index: 2;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-study-label) {
+    left: 1042px;
+    top: 451px;
+  }
+
+  .caseScope :global(.case-swipe) {
+    display: none;
+  }
+
+  .caseScope :global(.case-button.is-view-report) {
+    font-size: 16px;
+    left: 469px;
+    top: 959px;
+    width: 343px;
+  }
+
+  .caseScope :global(.case-button.is-read-sections) {
+    font-size: 16px;
+    left: 519px;
+    min-height: 56px;
+    top: 615px;
+    width: 242px;
+  }
+
+  .caseScope :global(.case-button.is-read-sections.is-bottom) {
+    left: 120px;
+    top: 2999px;
+  }
+
+  .caseScope :global(.case-report-section) {
+    left: 120px;
+    width: 798px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-1) {
+    top: 767px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-2) {
+    top: 1185px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-3) {
+    top: 1747px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-4) {
+    top: 2381px;
+  }
+
+  .caseScope :global(.case-report-section h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .caseScope :global(.case-report-intro) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-report-body) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .caseScope :global(.case-report-body p + p) {
+    margin-top: 24px !important;
+  }
+
+  .caseScope :global(.case-related) {
+    left: 120px;
+    top: 1239px;
+    width: 1040px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-related) {
+    top: 3159px;
+  }
+
+  .caseScope :global(.case-related-intro) {
+    width: 798px;
+  }
+
+  .caseScope :global(.case-related-intro p),
+  .caseScope :global(.case-services-copy p) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-related-intro h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px !important;
+  }
+
+  .caseScope :global(.case-related-intro span) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 8px;
+    width: 588px;
+  }
+
+  .caseScope :global(.case-related-card) {
+    height: 308px;
+    top: 138px;
+    width: 508px;
+  }
+
+  .caseScope :global(.case-related-card.is-second) {
+    left: 532px;
+    top: 138px;
+  }
+
+  .caseScope :global(.case-related-image) {
+    height: 336px;
+    left: -45px;
+    top: -6px;
+    width: 597px;
+  }
+
+  .caseScope :global(.case-related-eyebrow) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 50px;
+  }
+
+  .caseScope :global(.case-related-card h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 29px;
+    top: 77px;
+    width: 300px;
+  }
+
+  .caseScope :global(.case-related-body) {
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    left: 32px;
+    line-height: 20px;
+    position: absolute;
+    top: 145px;
+    width: 428px;
+    z-index: 2;
+  }
+
+  .caseScope :global(.case-related-company) {
+    font-size: 16px;
+    line-height: 20px;
+    top: 232px;
+  }
+
+  .caseScope :global(.case-related-mark) {
+    height: 40px;
+    right: 40px;
+    top: 40px;
+    width: 40px;
+  }
+
+  .caseScope :global(.case-button.is-read-more) {
+    font-size: 12px;
+    min-height: 40px;
+    right: 40px;
+    top: 228px;
+    width: 158px;
+  }
+
+  .caseScope :global(.case-button.is-view-all) {
+    font-size: 16px;
+    left: 375px;
+    top: 494px;
+    width: 290px;
+  }
+
+  .caseScope :global(.case-services) {
+    top: 2131px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-services) {
+    top: 3933px;
+  }
+
+  .caseScope :global(.case-services-image) {
+    border-radius: 0;
+    height: 336px;
+    left: 785px;
+    width: 976px;
+  }
+
+  .caseScope :global(.case-services-copy) {
+    left: 120px;
+    top: 67px;
+    width: 588px;
+  }
+
+  .caseScope :global(.case-services-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px !important;
+    width: 588px;
+  }
+
+  .caseScope :global(.case-services-copy > span) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    width: 450px;
+  }
+
+  .caseScope :global(.case-button.is-services) {
+    font-size: 16px;
+    min-height: 56px;
+    top: 184px;
+    width: 192px;
+  }
+
+  .caseScope :global(.case-button .is-desktop-label) {
+    display: inline;
+  }
+
+  .caseScope :global(.case-button .is-mobile-label) {
+    display: none;
+  }
+}
+
+@media (min-width: 1360px) {
+  .caseScope :global(.case-frame) {
+    height: 2890px;
+    margin-inline: auto;
+    max-width: 1440px;
+  }
+
+  .caseScope :global(.case-frame.is-report) {
+    height: 4500px;
+  }
+
+  .caseScope :global(.case-search) {
+    height: 56px;
+    left: 120px;
+    top: 216px;
+    width: 1200px;
+  }
+
+  .caseScope :global(.case-search-icon) {
+    height: 40px;
+    width: 40px;
+  }
+
+  .caseScope :global(.case-search input) {
+    font-size: 20px;
+    line-height: 24px;
+    width: 92px;
+  }
+
+  .caseScope :global(.case-hero-card) {
+    border-radius: 16px;
+    height: 680px;
+    left: 120px;
+    top: 312px;
+    width: 1200px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-card) {
+    border-radius: 0;
+    height: 680px;
+    left: 0;
+    top: 0;
+    width: 1440px;
+  }
+
+  .caseScope :global(.case-hero-image) {
+    height: 718px;
+    left: -38px;
+    top: -19px;
+    width: 1276px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-image) {
+    height: 823px;
+    left: -12px;
+    top: -60px;
+    width: 1463px;
+  }
+
+  .caseScope :global(.case-cover-nav) {
+    gap: 0;
+    justify-content: space-between;
+    left: 72px;
+    top: 72px;
+    width: 1056px;
+  }
+
+  .caseScope :global(.case-cover-nav a) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .caseScope :global(.case-hero-copy) {
+    left: 72px;
+    top: 268px;
+    width: 871px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-hero-copy) {
+    left: 120px;
+    top: 228px;
+    width: 894px;
+  }
+
+  .caseScope :global(.case-hero-copy h1) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 56px;
+    line-height: 68px;
+  }
+
+  .caseScope :global(.case-hero-copy p) {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 8px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .caseScope :global(.case-company) {
+    gap: 24px;
+    left: 72px;
+    top: 576px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-company) {
+    left: 120px;
+    top: 552px;
+  }
+
+  .caseScope :global(.case-company-mark) {
+    height: 48px;
+    width: 48px;
+  }
+
+  .caseScope :global(.case-company span) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .caseScope :global(.case-study-label) {
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    left: 972px;
+    line-height: 29px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 595px;
+    z-index: 2;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-study-label) {
+    left: 1164px;
+    top: 571px;
+  }
+
+  .caseScope :global(.case-swipe) {
+    display: none;
+  }
+
+  .caseScope :global(.case-button.is-view-report) {
+    font-size: 20px;
+    left: 520px;
+    min-height: 61px;
+    top: 1040px;
+    width: 398px;
+  }
+
+  .caseScope :global(.case-button.is-read-sections) {
+    font-size: 20px;
+    left: 587px;
+    min-height: 61px;
+    top: 756px;
+    width: 267px;
+  }
+
+  .caseScope :global(.case-button.is-read-sections.is-bottom) {
+    left: 120px;
+    top: 3300px;
+  }
+
+  .caseScope :global(.case-report-section) {
+    left: 120px;
+    width: 894px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-1) {
+    top: 922px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-2) {
+    top: 1424px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-3) {
+    top: 2100px;
+  }
+
+  .caseScope :global(.case-report-section.is-section-4) {
+    top: 2863px;
+  }
+
+  .caseScope :global(.case-report-section h2) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .caseScope :global(.case-report-intro) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 15px !important;
+  }
+
+  .caseScope :global(.case-report-body) {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 15px;
+  }
+
+  .caseScope :global(.case-report-body p + p) {
+    margin-top: 29px !important;
+  }
+
+  .caseScope :global(.case-related) {
+    left: 120px;
+    top: 1373px;
+    width: 1200px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-related) {
+    top: 3450px;
+  }
+
+  .caseScope :global(.case-related-intro) {
+    width: 792px;
+  }
+
+  .caseScope :global(.case-related-intro p),
+  .caseScope :global(.case-services-copy p) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .caseScope :global(.case-related-intro h2) {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 8px !important;
+  }
+
+  .caseScope :global(.case-related-intro span) {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 8px;
+    width: 792px;
+  }
+
+  .caseScope :global(.case-related-card) {
+    border-radius: 8px;
+    height: 372px;
+    top: 148px;
+    width: 588px;
+  }
+
+  .caseScope :global(.case-related-card.is-second) {
+    left: 613px;
+    top: 148px;
+  }
+
+  .caseScope :global(.case-related-image) {
+    height: 387px;
+    left: -50px;
+    top: -6px;
+    width: 687px;
+  }
+
+  .caseScope :global(.case-related-eyebrow) {
+    font-size: 24px;
+    line-height: 29px;
+    top: 40px;
+  }
+
+  .caseScope :global(.case-related-card h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    line-height: 39px;
+    top: 69px;
+    width: 399px;
+  }
+
+  .caseScope :global(.case-related-body) {
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    left: 40px;
+    line-height: 20px;
+    position: absolute;
+    top: 155px;
+    width: 511px;
+    z-index: 2;
+  }
+
+  .caseScope :global(.case-related-eyebrow),
+  .caseScope :global(.case-related-card h3),
+  .caseScope :global(.case-related-company) {
+    left: 40px;
+  }
+
+  .caseScope :global(.case-related-company) {
+    font-size: 20px;
+    line-height: 24px;
+    top: 290px;
+  }
+
+  .caseScope :global(.case-related-mark) {
+    height: 56px;
+    right: 40px;
+    top: 40px;
+    width: 56px;
+  }
+
+  .caseScope :global(.case-button.is-read-more) {
+    border-color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    min-height: 61px;
+    right: 40px;
+    top: 271px;
+    width: 196px;
+  }
+
+  .caseScope :global(.case-button.is-view-all) {
+    font-size: 16px;
+    left: 438px;
+    min-height: 61px;
+    top: 560px;
+    width: 323px;
+  }
+
+  .caseScope :global(.case-services) {
+    top: 2274px;
+  }
+
+  .caseScope :global(.case-frame.is-report .case-services) {
+    top: 4140px;
+  }
+
+  .caseScope :global(.case-services-image) {
+    border-radius: 0;
+    height: 336px;
+    left: 773px;
+    width: 976px;
+  }
+
+  .caseScope :global(.case-services-copy) {
+    left: 120px;
+    top: 53px;
+    width: 588px;
+  }
+
+  .caseScope :global(.case-services-copy h2) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-top: 8px !important;
+    width: 588px;
+  }
+
+  .caseScope :global(.case-services-copy > span) {
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+    width: 450px;
+  }
+
+  .caseScope :global(.case-button.is-services) {
+    font-size: 16px;
+    min-height: 61px;
+    top: 216px;
+    width: 217px;
+  }
+
+  .caseScope :global(.case-button .is-desktop-label) {
+    display: inline;
+  }
+
+  .caseScope :global(.case-button .is-mobile-label) {
+    display: none;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .caseScope :global(.case-company .case-company-logo--coca-cola) {
+    font-size: 30px;
+  }
+
+  .caseScope :global(.case-related-logo) {
+    right: 24px;
+    top: 38px;
+  }
+
+  .caseScope :global(.case-related-logo--coca-cola) {
+    font-size: 20px;
+  }
+
+  .caseScope :global(.case-report-label) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .caseScope :global(.case-company .case-company-logo--coca-cola) {
+    font-size: 30px;
+  }
+
+  .caseScope :global(.case-related-logo) {
+    right: 40px;
+    top: 48px;
+  }
+
+  .caseScope :global(.case-related-logo--coca-cola) {
+    font-size: 20px;
+  }
+
+  .caseScope :global(.case-report-label) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .caseScope :global(.case-company .case-company-logo--coca-cola) {
+    font-size: 38px;
+  }
+
+  .caseScope :global(.case-related-logo) {
+    right: 40px;
+    top: 50px;
+  }
+
+  .caseScope :global(.case-related-logo--coca-cola) {
+    font-size: 24px;
+  }
+
+  .caseScope :global(.case-report-label) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.caseScope :global(.case-section-reader) {
+  display: grid;
+  gap: 56px;
+  left: 24px;
+  position: absolute;
+  top: 805px;
+  width: 342px;
+}
+
+.caseScope :global(.case-section-card) {
+  scroll-margin-top: 24px;
+}
+
+.caseScope :global(.case-section-card h2) {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.caseScope :global(.case-section-intro) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 8px !important;
+}
+
+.caseScope :global(.case-section-body) {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.caseScope :global(.case-section-body p + p) {
+  margin-top: 16px !important;
+}
+
+.caseScope :global(.case-frame.is-sections) {
+  height: 4025px;
+}
+
+.caseScope :global(.case-frame.is-sections .case-related) {
+  top: 2225px;
+}
+
+.caseScope :global(.case-frame.is-sections .case-services) {
+  top: 3435px;
+}
+
+@media (max-width: 559px) {
+  .caseScope :global(.case-frame.is-sections .case-hero-copy) {
+    top: 104px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-hero-copy p) {
+    font-size: 12px;
+    line-height: 15px;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-company) {
+    top: 292px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .caseScope :global(.case-section-reader) {
+    gap: 72px;
+    left: 80px;
+    top: 1070px;
+    width: 640px;
+  }
+
+  .caseScope :global(.case-section-card h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .caseScope :global(.case-section-intro) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-section-body) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 8px;
+  }
+
+  .caseScope :global(.case-frame.is-sections) {
+    height: 3950px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-related) {
+    top: 2250px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-services) {
+    top: 3340px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .caseScope :global(.case-section-reader) {
+    gap: 80px;
+    left: 120px;
+    top: 1095px;
+    width: 798px;
+  }
+
+  .caseScope :global(.case-section-card h2) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .caseScope :global(.case-section-intro) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .caseScope :global(.case-section-body) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .caseScope :global(.case-frame.is-sections) {
+    height: 3825px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-related) {
+    top: 2160px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-services) {
+    top: 3035px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .caseScope :global(.case-section-reader) {
+    gap: 88px;
+    left: 120px;
+    top: 1185px;
+    width: 894px;
+  }
+
+  .caseScope :global(.case-section-card h2) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .caseScope :global(.case-section-intro) {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 15px !important;
+  }
+
+  .caseScope :global(.case-section-body) {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 15px;
+  }
+
+  .caseScope :global(.case-frame.is-sections) {
+    height: 4375px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-related) {
+    top: 2580px;
+  }
+
+  .caseScope :global(.case-frame.is-sections .case-services) {
+    top: 3650px;
+  }
+}
+
+

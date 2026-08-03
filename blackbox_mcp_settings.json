@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "github.com/GLips/Figma-Context-MCP": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-context-mcp@latest",
+        "--stdio"
+      ]
+    }
+  }
+}
+

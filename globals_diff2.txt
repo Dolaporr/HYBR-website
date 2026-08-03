@@ -1,0 +1,120 @@
+diff --git a/src/app/globals.css b/src/app/globals.css
+index 3d6c094..1a3f473 100644
+--- a/src/app/globals.css
++++ b/src/app/globals.css
+@@ -20622,3 +20622,115 @@ video.home-video-card {
+     right: 24px !important;
+   }
+ }
++
++/* Designer review: keep the shared homepage controls and cards visually stable. */
++.field,
++.home-contact-form .field {
++  border-radius: 28px !important;
++  border-width: 1.5px !important;
++  box-shadow: none !important;
++  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif !important;
++}
++
++.field:focus,
++.field:focus-visible,
++.home-contact-form .field:focus,
++.home-contact-form .field:focus-visible {
++  border-color: #ffffff !important;
++  box-shadow: none !important;
++  outline: 0 !important;
++}
++
++.homepage-live .home-service-glyph,
++.homepage-live .home-service-glyph svg {
++  height: 56px !important;
++  width: 56px !important;
++}
++
++.homepage-live .home-service-pill,
++.homepage-live .home-service-pill:hover,
++.homepage-live .home-service-pill:focus-visible {
++  background: #4fc2f0 !important;
++  border-color: #4fc2f0 !important;
++  color: #07171d !important;
++  transform: translateX(-50%) !important;
++}
++
++.homepage-live .home-case-bg {
++  display: block !important;
++}
++
++.homepage-live .home-case-feature .home-case-bg--feature {
++  object-position: center 52% !important;
++}
++
++.homepage-live .home-case-tall .home-case-bg--tall {
++  object-position: center center !important;
++}
++
++.homepage-live .home-case-feature .home-company-wordmark--coca-cola {
++  height: 40px !important;
++  width: 154px !important;
++}
++
++.homepage-live .home-testimonial-avatar > span {
++  border-width: 2px !important;
++}
++
++.homepage-live .home-testimonial-arrow {
++  border-radius: 999px;
++  font-size: 52px;
++  height: 56px;
++  transition: background-color 180ms ease, color 180ms ease;
++  width: 56px;
++}
++
++.homepage-live .home-testimonial-arrow:hover,
++.homepage-live .home-testimonial-arrow:focus-visible {
++  background: #ffffff;
++  color: #000000;
++  outline: 0;
++}
++
++.home-footer-socials svg [stroke] {
++  stroke-width: 1.7px;
++}
++
++.home-footer .hybr-button--white {
++  font-size: 18px !important;
++  min-height: 52px !important;
++  padding: 11px 28px !important;
++}
++
++@media (min-width: 1024px) {
++  .homepage-live .home-work-wrap {
++    column-gap: 40px !important;
++    row-gap: 40px !important;
++  }
++
++  .homepage-live .home-case-feature {
++    padding: 28px !important;
++  }
++
++  .homepage-live .home-case-tall {
++    padding: 24px 24px 32px !important;
++  }
++
++  .homepage-live .home-case-tall-copy {
++    margin-top: auto !important;
++    padding-bottom: 2px !important;
++    top: auto !important;
++  }
++}
++
++@media (max-width: 559px) {
++  .homepage-live .home-case-feature .home-company-wordmark--coca-cola {
++    height: 24px !important;
++    width: 90px !important;
++  }
++}
++
++/* Keep the Who We Are contents drawer as a consistent rounded capsule. */
++.who-page .who-content-drop {
++  border-radius: 999px !important;
++}
