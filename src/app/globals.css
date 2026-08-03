@@ -21819,14 +21819,16 @@ video.home-video-card {
 @media (min-width: 768px) {
   .contact-testimonials-section .home-testimonial-card {
     display: block !important;
-    padding: 148px 56px 48px !important;
+    height: 520px !important;
+    min-height: 520px !important;
+    padding: 238px 56px 48px !important;
     position: relative !important;
   }
 
   .contact-testimonials-section .home-testimonial-avatar {
     left: 50% !important;
     position: absolute !important;
-    top: 32px !important;
+    top: 24px !important;
     transform: translateX(-50%) !important;
   }
 
