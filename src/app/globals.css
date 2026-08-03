@@ -21815,27 +21815,28 @@ video.home-video-card {
   color: #000000;
 }
 
-/* Contact keeps the testimonial portrait centred above the copy within its black card. */
+/* Match the desktop homepage treatment: portrait on the left, testimonial copy on the right. */
 @media (min-width: 768px) {
   .contact-testimonials-section .home-testimonial-card {
-    display: block !important;
-    height: 520px !important;
-    min-height: 520px !important;
-    padding: 238px 56px 48px !important;
-    position: relative !important;
+    align-items: center !important;
+    display: grid !important;
+    grid-template-columns: 190px minmax(0, 1fr) !important;
+    height: 344px !important;
+    min-height: 344px !important;
+    padding: 78px 56px !important;
   }
 
   .contact-testimonials-section .home-testimonial-avatar {
-    left: 50% !important;
-    position: absolute !important;
-    top: 24px !important;
-    transform: translateX(-50%) !important;
+    left: auto !important;
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
   }
 
   .contact-testimonials-section .home-testimonial-card > div:last-child {
-    margin: 0 auto !important;
-    max-width: 720px;
-    text-align: center !important;
+    margin: 0 !important;
+    max-width: 760px;
+    text-align: left !important;
   }
 }
 
