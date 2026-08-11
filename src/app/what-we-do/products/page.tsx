@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
+import { productDescriptions } from "@/content/products";
 
-const products = ["INDX", "FLYWHEEL", "ALPHA"];
+const products = [
+  { name: "INDX", body: productDescriptions.indx },
+  { name: "FLYWHEEL", body: productDescriptions.flywheel },
+  { name: "ALPHA", body: productDescriptions.alpha },
+] as const;
 
 export default function ProductsPage() {
   return (
@@ -22,14 +27,11 @@ export default function ProductsPage() {
           </p>
           <div className="products-list">
             {products.map((product) => (
-              <article className="product-card" key={product}>
-                <h2>{product}</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus dolor id
-                  metus auctor tincidunt. Cras et gravida dolor.
-                </p>
+              <article className="product-card" key={product.name}>
+                <h2>{product.name}</h2>
+                <p>{product.body}</p>
                 <Link className="product-card-cta" href="/contact">
-                  Access {product}
+                  Access {product.name}
                 </Link>
               </article>
             ))}

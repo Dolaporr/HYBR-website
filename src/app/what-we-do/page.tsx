@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { figmaAssets } from "@/content/site";
+import { productDescriptions } from "@/content/products";
 import { Footer, Header } from "../_components/marketing";
 import styles from "./page.module.css";
 
@@ -16,7 +17,7 @@ const products = [
     key: "indx",
     name: "INDX",
     heading: "Know where to grow.",
-    body: "INDX is HYBR's innovation assessment platform that helps leaders measure innovation maturity, identify growth opportunities, and uncover execution gaps. Complete the assessment to receive practical insights and your next steps toward measurable growth.",
+    body: productDescriptions.indx,
     cta: "Join Waiting List",
     hasDesktopEmail: true,
   },
@@ -24,7 +25,7 @@ const products = [
     key: "flywheel",
     name: "FLYWHEEL",
     heading: "Build the capability to grow.",
-    body: "FLYWHEEL is HYBR's innovation development programme that helps teams build the skills, systems, and discipline to consistently discover opportunities, develop solutions, and deploy measurable growth. Turn innovation into a repeatable capability - not a one-time initiative.",
+    body: productDescriptions.flywheel,
     cta: "Join Waiting List",
     hasDesktopEmail: true,
   },
@@ -32,7 +33,7 @@ const products = [
     key: "alpha",
     name: "ALPHA",
     heading: "Develop Tomorrow's Innovators. Today.",
-    body: "ALPHA is HYBR's innovation and research programme for ambitious teenagers. Through real-world challenges, expert coaching, and hands-on projects, students develop the curiosity, problem-solving, and leadership skills needed to thrive in high school and beyond.",
+    body: productDescriptions.alpha,
     cta: "Access ALPHA",
     hasDesktopEmail: false,
   },

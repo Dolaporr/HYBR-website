@@ -25,7 +25,7 @@ export const absaDiscoveryCaseStudy: CaseStudyListing = {
   imagePosition: "center center",
   title: "Beyond the Obvious",
   body: "How Absa expanded its innovation radar across Africa by connecting defined business priorities with emerging technology ventures.",
-  shortBody: "A discovery engine for finding the external innovations that matter to the business.",
+  shortBody: "A discovery engine for finding the external innovations that matter to ABSA Group.",
   company: "Absa Group",
   companyLogo: "/logos/absa-logo.svg",
   href: "/case-studies/absa",

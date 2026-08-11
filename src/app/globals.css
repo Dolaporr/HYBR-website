@@ -22061,23 +22061,21 @@ video.home-video-card {
 
   .insights-hub-page .insights-article-small-a .insights-story-copy span:nth-child(2),
   .insights-hub-page .insights-article-small-b .insights-story-copy span:nth-child(2) {
-    display: -webkit-box !important;
-    font-size: 24px !important;
-    line-height: 1.08 !important;
-    overflow: hidden !important;
-    -webkit-box-orient: vertical !important;
-    -webkit-line-clamp: 3 !important;
+    display: block !important;
+    font-size: 19px !important;
+    line-height: 1.1 !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
   }
 
   .insights-hub-page .insights-article-small-a .insights-story-copy span:nth-child(3),
   .insights-hub-page .insights-article-small-b .insights-story-copy span:nth-child(3) {
-    display: -webkit-box !important;
-    font-size: 14px !important;
-    line-height: 1.24 !important;
+    display: block !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
     margin-top: 8px !important;
-    overflow: hidden !important;
-    -webkit-box-orient: vertical !important;
-    -webkit-line-clamp: 4 !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
   }
 
   .insights-hub-page .insights-article-small-a .insights-read-button,
