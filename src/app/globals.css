@@ -20943,15 +20943,15 @@ video.home-video-card {
   }
 
   .homepage-live .home-article-card h3 {
-    font-size: 22px !important;
-    line-height: 1.1 !important;
+    font-size: 30px !important;
+    line-height: 1.08 !important;
   }
 
   .homepage-live .home-article-card .home-article-card-summary {
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    font-size: 11px !important;
-    line-height: 1.4 !important;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
     overflow: hidden;
     -webkit-line-clamp: 2;
   }
@@ -21894,8 +21894,8 @@ video.home-video-card {
     gap: 4px !important;
   }
 
-  .insights-hub-page .insights-card-title { font-size: 18px !important; line-height: 1.06 !important; }
-  .insights-hub-page .insights-card-meta { font-size: 10px !important; line-height: 1.25 !important; }
+  .insights-hub-page .insights-card-title { font-size: 27px !important; line-height: 1.08 !important; }
+  .insights-hub-page .insights-card-meta { font-size: 15px !important; line-height: 1.28 !important; }
   .insights-hub-page .insights-play--small { top: 36px !important; right: 16px !important; }
 
   .insights-hub-page .insights-story-copy {
@@ -21906,8 +21906,8 @@ video.home-video-card {
     padding-bottom: 48px !important;
   }
 
-  .insights-hub-page .insights-story-copy span:nth-child(2) { font-size: 18px !important; line-height: 1.08 !important; }
-  .insights-hub-page .insights-story-copy span:nth-child(3) { font-size: 10px !important; line-height: 1.25 !important; }
+  .insights-hub-page .insights-story-copy span:nth-child(2) { font-size: 27px !important; line-height: 1.08 !important; }
+  .insights-hub-page .insights-story-copy span:nth-child(3) { font-size: 15px !important; line-height: 1.28 !important; }
 
   .insights-hub-page .insights-read-button {
     right: 16px !important;
@@ -21927,8 +21927,8 @@ video.home-video-card {
     display: -webkit-box !important;
     width: auto !important;
     overflow: hidden !important;
-    font-size: 15px !important;
-    line-height: 1.07 !important;
+    font-size: 27px !important;
+    line-height: 1.08 !important;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
   }
@@ -21967,8 +21967,8 @@ video.home-video-card {
     gap: 4px !important;
   }
 
-  .articles-page .articles-webinar-copy span:first-child { font-size: 18px !important; line-height: 1.08 !important; }
-  .articles-page .articles-webinar-copy span:not(:first-child) { font-size: 10px !important; line-height: 1.2 !important; }
+  .articles-page .articles-webinar-copy span:first-child { font-size: 27px !important; line-height: 1.08 !important; }
+  .articles-page .articles-webinar-copy span:not(:first-child) { font-size: 15px !important; line-height: 1.28 !important; }
   .articles-page .articles-play { top: 36px !important; right: 16px !important; width: 18px !important; height: 18px !important; }
 
   .careers-why-card,

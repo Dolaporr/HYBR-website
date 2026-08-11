@@ -48,7 +48,7 @@ const caseStudies = {
   },
   tall: {
     image: figmaAssets.ourWorkTall,
-    title: "Operational and technical diagnostics",
+    title: "Operational and Technical Diagnosis",
     body: "We conducted - in record time - robust due diligence and scale diagnostics for a female-led food company working towards Series A round funding.",
     company: "Alitheia Capital",
     companyClass: "is-alitheia",
