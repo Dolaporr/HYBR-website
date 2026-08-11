@@ -28,7 +28,19 @@ const assets = {
   footerPattern: figmaAssets.footerPattern,
 };
 
-const trustedLogoStrip = "/logos/sliding-animation.svg?v=20260811";
+const trustedPartners: ReadonlyArray<{ label: string; src?: string }> = [
+  { label: "Thomson Reuters" },
+  { label: "Samsung", src: "/logos/samsung-wordmark.svg" },
+  { label: "AFEX" },
+  { label: "Meta" },
+  { label: "Alitheia", src: "/logos/alitheia-capital-white.png" },
+  { label: "AfriLabs" },
+  { label: "giz" },
+  { label: "Merck" },
+  { label: "Coca-Cola", src: "/logos/coca-cola-logo.svg" },
+  { label: "Google" },
+  { label: "ABSA", src: "/logos/absa-logo.svg" },
+];
 const homeWebinar = {
   duration: "01:40:35",
   url: "/insights/webinars/specific-webinar",
@@ -386,13 +398,21 @@ export default function Home() {
             <div className="trusted-marquee mt-9">
               <div className="trusted-marquee-track">
                 {[0, 1, 2].map((item) => (
-                  <img
-                    alt={item === 0 ? "Trusted by partner logos" : ""}
+                  <div
                     aria-hidden={item === 0 ? undefined : true}
-                    className="trusted-logo-strip"
+                    className="trusted-partner-set"
                     key={item}
-                    src={trustedLogoStrip}
-                  />
+                  >
+                    {trustedPartners.map((partner) => (
+                      <span className="trusted-partner" key={partner.label}>
+                        {partner.src ? (
+                          <img alt={partner.label} src={partner.src} />
+                        ) : (
+                          partner.label
+                        )}
+                      </span>
+                    ))}
+                  </div>
                 ))}
               </div>
             </div>

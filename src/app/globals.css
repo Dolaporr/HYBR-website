@@ -20360,6 +20360,78 @@ video.home-video-card {
   z-index: 3;
 }
 
+/* Trusted-partner marquee: individual partners keep the repeating loop seamless
+   and avoid the cropped logos embedded in the legacy exported SVG. */
+.trusted-marquee-track {
+  --trusted-partner-set-width: 1510px;
+}
+
+.trusted-partner-set {
+  align-items: center;
+  display: flex;
+  flex: 0 0 var(--trusted-partner-set-width);
+  height: 44px;
+  justify-content: space-around;
+  padding: 0 28px;
+}
+
+.trusted-partner {
+  align-items: center;
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  opacity: 0.95;
+  white-space: nowrap;
+}
+
+.trusted-partner:nth-child(1) { font-size: 12px; letter-spacing: -0.06em; }
+.trusted-partner:nth-child(3) { font-size: 21px; font-weight: 700; }
+.trusted-partner:nth-child(4) { font-size: 23px; font-weight: 500; }
+.trusted-partner:nth-child(6) { font-size: 16px; }
+.trusted-partner:nth-child(7) { font-size: 21px; font-weight: 700; text-transform: lowercase; }
+.trusted-partner:nth-child(8) { font-size: 20px; font-weight: 700; }
+.trusted-partner:nth-child(10) { font-size: 22px; font-weight: 500; }
+
+.trusted-partner img {
+  display: block;
+  filter: brightness(0) invert(1);
+  height: 23px;
+  max-width: 112px;
+  object-fit: contain;
+  width: auto;
+}
+
+.trusted-partner:nth-child(5) img { height: 26px; }
+.trusted-partner:nth-child(9) img { height: 28px; }
+.trusted-partner:nth-child(11) img { height: 25px; }
+
+@media (max-width: 767px) {
+  .trusted-marquee-track { --trusted-partner-set-width: 920px; }
+
+  .trusted-partner-set {
+    height: 36px;
+    padding: 0 17px;
+  }
+
+  .trusted-partner { font-size: 13px; }
+  .trusted-partner:nth-child(1) { font-size: 8px; }
+  .trusted-partner:nth-child(3) { font-size: 15px; }
+  .trusted-partner:nth-child(4) { font-size: 16px; }
+  .trusted-partner:nth-child(6) { font-size: 11px; }
+  .trusted-partner:nth-child(7) { font-size: 15px; }
+  .trusted-partner:nth-child(8) { font-size: 14px; }
+  .trusted-partner:nth-child(10) { font-size: 16px; }
+  .trusted-partner img { height: 16px; max-width: 78px; }
+  .trusted-partner:nth-child(5) img { height: 18px; }
+  .trusted-partner:nth-child(9) img { height: 19px; }
+  .trusted-partner:nth-child(11) img { height: 17px; }
+}
+
 @media (min-width: 768px) {
   .trusted-by-block .trusted-marquee,
   .homepage-live .trusted-marquee {
