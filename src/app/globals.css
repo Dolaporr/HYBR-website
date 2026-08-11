@@ -1826,7 +1826,7 @@ a {
 }
 
 .trusted-marquee-track {
-  --trusted-loop-gap: clamp(40px, 4vw, 72px);
+  --trusted-loop-gap: 0px;
   align-items: center;
   animation: trusted-logo-scroll 38s linear infinite;
   display: flex;
