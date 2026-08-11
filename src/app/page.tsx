@@ -28,7 +28,7 @@ const assets = {
   footerPattern: figmaAssets.footerPattern,
 };
 
-const trustedLogoStrip = "/logos/sliding-animation.svg";
+const trustedLogoStrip = "/logos/sliding-animation.svg?v=20260811";
 const homeWebinar = {
   duration: "01:40:35",
   url: "/insights/webinars/specific-webinar",
