@@ -22041,3 +22041,48 @@ video.home-video-card {
     pointer-events: none;
   }
 }
+
+/* The two-column article cards have half the space of the full-width insight cards. */
+@media (max-width: 559px) {
+  .insights-hub-page .insights-article-small-a .insights-story-copy,
+  .insights-hub-page .insights-article-small-b .insights-story-copy {
+    bottom: 64px !important;
+    left: 16px !important;
+    right: 16px !important;
+    top: 16px !important;
+    width: auto !important;
+  }
+
+  .insights-hub-page .insights-article-small-a .insights-story-copy span:first-child,
+  .insights-hub-page .insights-article-small-b .insights-story-copy span:first-child {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  .insights-hub-page .insights-article-small-a .insights-story-copy span:nth-child(2),
+  .insights-hub-page .insights-article-small-b .insights-story-copy span:nth-child(2) {
+    display: -webkit-box !important;
+    font-size: 24px !important;
+    line-height: 1.08 !important;
+    overflow: hidden !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 3 !important;
+  }
+
+  .insights-hub-page .insights-article-small-a .insights-story-copy span:nth-child(3),
+  .insights-hub-page .insights-article-small-b .insights-story-copy span:nth-child(3) {
+    display: -webkit-box !important;
+    font-size: 14px !important;
+    line-height: 1.24 !important;
+    margin-top: 8px !important;
+    overflow: hidden !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 4 !important;
+  }
+
+  .insights-hub-page .insights-article-small-a .insights-read-button,
+  .insights-hub-page .insights-article-small-b .insights-read-button {
+    bottom: 14px !important;
+    right: 14px !important;
+  }
+}
