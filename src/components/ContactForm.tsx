@@ -15,10 +15,24 @@ export function ContactForm() {
       "strategy_meeting_requested",
     ) as HTMLInputElement | null;
 
-    // Always send an explicit value so the automation can reliably branch.
+    const wantsStrategyMeeting = meetingRequested?.checked ?? false;
+
+    // These are two separate Netlify Forms. The checkbox keeps the page simple
+    // for a visitor while giving the automation team separate triggers.
     data.set(
-      "strategy_meeting_requested",
-      meetingRequested?.checked ? "Yes" : "No",
+      "form-name",
+      wantsStrategyMeeting ? "hybr-strategy-meeting" : "hybr-contact-enquiry",
+    );
+    data.set("strategy_meeting_requested", wantsStrategyMeeting ? "Yes" : "No");
+    data.set(
+      "lead_type",
+      wantsStrategyMeeting ? "Strategy meeting request" : "General enquiry",
+    );
+    data.set(
+      "subject",
+      wantsStrategyMeeting
+        ? "New HYBR strategy meeting request"
+        : "New HYBR website enquiry",
     );
     setStatus("sending");
 
@@ -49,6 +63,7 @@ export function ContactForm() {
       onSubmit={handleSubmit}
     >
       <input name="form-name" type="hidden" value="hybr-contact-enquiry" />
+      <input name="lead_type" type="hidden" value="General enquiry" />
       <input name="subject" type="hidden" value="New HYBR website enquiry" />
       <p className="contact-honeypot" aria-hidden="true">
         <label>
