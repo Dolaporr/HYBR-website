@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
 import { HeroWordRotator } from "@/components/HeroWordRotator";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { HomeLeadForm } from "@/components/LeadCaptureForms";
 import { innovationSweetSpotArticle, spctaNewsFeature } from "@/content/insights";
 
 const assets = {
@@ -317,6 +318,13 @@ function ServiceGlyph({ kind }: { kind: "bag" | "palette" | "trend" }) {
 export default function Home() {
   return (
     <main className="homepage-live min-h-screen overflow-hidden bg-white text-black">
+      <form data-netlify="true" hidden name="hybr-homepage-enquiry">
+        <input name="form-name" type="hidden" value="hybr-homepage-enquiry" />
+        <input name="name" type="text" />
+        <input name="email" type="email" />
+        <textarea name="message" />
+        <input name="lead_type" type="text" />
+      </form>
       <header className="home-header absolute left-0 right-0 top-0 z-20">
         <div className="mx-auto flex min-h-28 max-w-[1200px] items-center justify-between gap-5 px-6 py-6 md:h-[152px] md:py-0 lg:px-0">
           <a
@@ -855,17 +863,7 @@ export default function Home() {
               growth.
             </p>
           </div>
-          <form className="home-contact-form space-y-6 bg-black p-6 md:space-y-8 md:p-16">
-            <input className="field" placeholder="Insert Your Name" />
-            <input className="field" placeholder="Insert Your Email" type="email" />
-            <textarea
-              className="field min-h-40 resize-none"
-              placeholder="What would you like us to know?"
-            />
-            <button className="home-submit-button min-h-14 w-full rounded-full bg-white px-8 text-lg font-medium text-black transition">
-              Submit
-            </button>
-          </form>
+          <HomeLeadForm />
         </div>
       </section>
 

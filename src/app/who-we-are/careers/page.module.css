@@ -811,6 +811,26 @@
   padding: 16px 32px;
 }
 
+.careersScope :global(.careers-form-status) {
+  color: #d3efad;
+  display: none;
+  font-family: var(--font-inter), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  left: 0;
+  line-height: 1.3;
+  margin: 0;
+  position: absolute;
+  top: calc(100% + 12px);
+  width: 100%;
+}
+
+.careersScope :global(.careers-form-status.is-success),
+.careersScope :global(.careers-form-status.is-error) {
+  display: block;
+}
+
+.careersScope :global(.careers-form-status.is-error) { color: #ffd0d0; }
+
 @media (min-width: 560px) {
   .careersScope :global(.careers-image-pill) {
     background-position: center;

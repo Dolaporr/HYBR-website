@@ -929,6 +929,16 @@ a {
 .contact-form-status.is-success { color: #d3efad; }
 .contact-form-status.is-error { color: #ffd0d0; }
 
+.home-form-status {
+  color: #d3efad;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: -10px 0 0;
+}
+
+.home-form-status:empty { display: none; }
+.home-form-status.is-error { color: #ffd0d0; }
+
 .provisional-form button {
   background: #000000;
   border: 0;

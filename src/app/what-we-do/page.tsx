@@ -2,6 +2,7 @@ import Link from "next/link";
 import { figmaAssets } from "@/content/site";
 import { productDescriptions } from "@/content/products";
 import { ProductWaitlistForm } from "@/components/ProductWaitlistForm";
+import { AlphaAccessForm } from "@/components/LeadCaptureForms";
 import { Footer, Header } from "../_components/marketing";
 import styles from "./page.module.css";
 
@@ -173,17 +174,7 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
           <p>{product.body}</p>
         </div>
         {product.key === "alpha" ? (
-          <form className="what-product-actions">
-            <input
-              aria-label="ALPHA email access"
-              className="is-tablet-only"
-              placeholder="Insert Your Email"
-              type="email"
-            />
-            <ButtonLink className="is-lime" href="/what-we-do/products">
-              {product.cta}
-            </ButtonLink>
-          </form>
+          <AlphaAccessForm />
         ) : (
           <ProductWaitlistForm product={product.key} />
         )}
@@ -213,6 +204,12 @@ export default function WhatWeDoPage() {
       </form>
       <form data-netlify="true" hidden name="hybr-flywheel-waitlist">
         <input name="form-name" type="hidden" value="hybr-flywheel-waitlist" />
+        <input name="email" type="email" />
+        <input name="product" type="text" />
+        <input name="lead_type" type="text" />
+      </form>
+      <form data-netlify="true" hidden name="hybr-alpha-access">
+        <input name="form-name" type="hidden" value="hybr-alpha-access" />
         <input name="email" type="email" />
         <input name="product" type="text" />
         <input name="lead_type" type="text" />
