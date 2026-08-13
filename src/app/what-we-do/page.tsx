@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { figmaAssets } from "@/content/site";
 import { productDescriptions } from "@/content/products";
+import { ProductWaitlistForm } from "@/components/ProductWaitlistForm";
 import { Footer, Header } from "../_components/marketing";
 import styles from "./page.module.css";
 
@@ -171,17 +172,21 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
           <strong className="what-product-heading">{product.heading}</strong>
           <p>{product.body}</p>
         </div>
-        <form className="what-product-actions">
-          <input
-            aria-label={`${product.name} email access`}
-            className={product.hasDesktopEmail ? "" : "is-tablet-only"}
-            placeholder="Insert Your Email"
-            type="email"
-          />
-          <ButtonLink className="is-lime" href="/what-we-do/products">
-            {product.cta}
-          </ButtonLink>
-        </form>
+        {product.key === "alpha" ? (
+          <form className="what-product-actions">
+            <input
+              aria-label="ALPHA email access"
+              className="is-tablet-only"
+              placeholder="Insert Your Email"
+              type="email"
+            />
+            <ButtonLink className="is-lime" href="/what-we-do/products">
+              {product.cta}
+            </ButtonLink>
+          </form>
+        ) : (
+          <ProductWaitlistForm product={product.key} />
+        )}
       </div>
     </article>
   );
@@ -199,6 +204,19 @@ function TeamStatement() {
 export default function WhatWeDoPage() {
   return (
     <main className={`${styles.whatScope} what-page`}>
+      {/* Server-rendered forms allow Netlify to create separate automation triggers. */}
+      <form data-netlify="true" hidden name="hybr-indx-waitlist">
+        <input name="form-name" type="hidden" value="hybr-indx-waitlist" />
+        <input name="email" type="email" />
+        <input name="product" type="text" />
+        <input name="lead_type" type="text" />
+      </form>
+      <form data-netlify="true" hidden name="hybr-flywheel-waitlist">
+        <input name="form-name" type="hidden" value="hybr-flywheel-waitlist" />
+        <input name="email" type="email" />
+        <input name="product" type="text" />
+        <input name="lead_type" type="text" />
+      </form>
       <div className="what-frame">
         <Header active="what" />
 
