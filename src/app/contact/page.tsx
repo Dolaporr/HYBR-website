@@ -1,5 +1,6 @@
 import { Footer, Header } from "../_components/marketing";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { ContactForm } from "@/components/ContactForm";
 import { figmaAssets } from "@/content/site";
 
 const contactDetails = [
@@ -11,6 +12,15 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <main className="provisional-page contact-page">
+      {/* Kept in the server-rendered page so Netlify detects every field at deploy time. */}
+      <form data-netlify="true" hidden name="hybr-contact-enquiry">
+        <input name="form-name" type="hidden" value="hybr-contact-enquiry" />
+        <input name="name" type="text" />
+        <input name="email" type="email" />
+        <textarea name="message" />
+        <input name="strategy_meeting_requested" type="checkbox" value="Yes" />
+        <input name="bot-field" type="text" />
+      </form>
       <Header />
       <section className="provisional-hero provisional-hero--compact">
         <div className="provisional-shell">
@@ -35,15 +45,7 @@ export default function ContactPage() {
                 <img alt="" src={figmaAssets.figmaBusinessPartners} />
               </div>
             </div>
-            <form className="provisional-form">
-              <input className="field" placeholder="Insert Your Name" />
-              <input className="field" placeholder="Insert Your Email" type="email" />
-              <textarea
-                className="field"
-                placeholder="What would you like us to know?"
-              />
-              <button type="button">Submit</button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>

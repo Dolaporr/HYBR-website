@@ -888,6 +888,47 @@ a {
   resize: none;
 }
 
+.contact-honeypot {
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+}
+
+.strategy-meeting-option {
+  align-items: flex-start;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  gap: 12px;
+  line-height: 1.35;
+}
+
+.strategy-meeting-option input {
+  accent-color: #8dc540;
+  flex: 0 0 auto;
+  height: 18px;
+  margin: 2px 0 0;
+  width: 18px;
+}
+
+.contact-form-status {
+  display: none;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: -12px 0 0;
+}
+
+.contact-form-status.is-success,
+.contact-form-status.is-error {
+  display: block;
+}
+
+.contact-form-status.is-success { color: #d3efad; }
+.contact-form-status.is-error { color: #ffd0d0; }
+
 .provisional-form button {
   background: #000000;
   border: 0;
