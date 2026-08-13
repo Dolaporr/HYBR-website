@@ -12,7 +12,6 @@ const contentLinks = [
   { label: "Benefits", href: "#benefits" },
   { label: "Innovation Fellowship", href: "#fellowship" },
   { label: "Internship Program", href: "#internship" },
-  { label: "Open Roles", href: "#roles" },
   { label: "Newsletter", href: "#newsletter" },
 ];
 
@@ -66,12 +65,6 @@ const benefits = [
   { icon: "hand-coins", title: "Competitive Rewards", body: "Receive fair compensation, performance recognition and opportunities to share in our growth." },
   { icon: "globe-hemisphere-east", title: "Global Exposure", body: "Collaborate across markets, industries and cultures while solving important global challenges." },
 ];
-
-const roles = Array.from({ length: 5 }, (_, index) => ({
-  id: index + 1,
-  title: "Name of Position/Role",
-  meta: "Tier | Department | Location",
-}));
 
 function FigmaIcon({ type, className = "" }: { type: string; className?: string }) {
   const src = iconAssets[type] ?? iconAssets["globe-hemisphere-east"];
@@ -242,22 +235,6 @@ function InternshipProgram() {
   );
 }
 
-function Roles() {
-  return (
-    <div className="careers-roles-list">
-      {roles.map((role) => (
-        <article className="careers-role" key={role.id}>
-          <div>
-            <h3>{role.title}</h3>
-            <p>{role.meta}</p>
-          </div>
-          <ButtonLink href="/contact">Apply Now</ButtonLink>
-        </article>
-      ))}
-    </div>
-  );
-}
-
 function NewsletterCard() {
   return (
     <section
@@ -350,12 +327,6 @@ export default function CareersPage() {
         </section>
 
         <InternshipProgram />
-
-        <section aria-labelledby="careers-roles-title" className="careers-open" id="roles">
-          <h2 id="careers-roles-title">Open Roles</h2>
-          <p>A short, captivating statement about what this section is for.</p>
-        </section>
-        <Roles />
 
         <NewsletterCard />
       </div>
