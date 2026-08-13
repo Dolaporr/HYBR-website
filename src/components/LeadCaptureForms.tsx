@@ -10,7 +10,7 @@ async function submitLead(form: HTMLFormElement, formName: string, extra: Record
   Object.entries(extra).forEach(([key, value]) => data.set(key, value));
   const parameters = new URLSearchParams();
   data.forEach((value, key) => parameters.append(key, String(value)));
-  const response = await fetch("/", {
+  const response = await fetch("/__forms.html", {
     body: parameters.toString(),
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     method: "POST",

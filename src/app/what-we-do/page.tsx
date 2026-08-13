@@ -195,25 +195,6 @@ function TeamStatement() {
 export default function WhatWeDoPage() {
   return (
     <main className={`${styles.whatScope} what-page`}>
-      {/* Server-rendered forms allow Netlify to create separate automation triggers. */}
-      <form data-netlify="true" hidden name="hybr-indx-waitlist">
-        <input name="form-name" type="hidden" value="hybr-indx-waitlist" />
-        <input name="email" type="email" />
-        <input name="product" type="text" />
-        <input name="lead_type" type="text" />
-      </form>
-      <form data-netlify="true" hidden name="hybr-flywheel-waitlist">
-        <input name="form-name" type="hidden" value="hybr-flywheel-waitlist" />
-        <input name="email" type="email" />
-        <input name="product" type="text" />
-        <input name="lead_type" type="text" />
-      </form>
-      <form data-netlify="true" hidden name="hybr-alpha-access">
-        <input name="form-name" type="hidden" value="hybr-alpha-access" />
-        <input name="email" type="email" />
-        <input name="product" type="text" />
-        <input name="lead_type" type="text" />
-      </form>
       <div className="what-frame">
         <Header active="what" />
 

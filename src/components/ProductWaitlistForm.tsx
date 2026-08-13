@@ -23,7 +23,7 @@ export function ProductWaitlistForm({ product }: { product: ProductKey }) {
     setStatus("sending");
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/__forms.html", {
         body: parameters.toString(),
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         method: "POST",

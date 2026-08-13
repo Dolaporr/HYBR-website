@@ -12,25 +12,6 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <main className="provisional-page contact-page">
-      {/* Kept in the server-rendered page so Netlify detects every field at deploy time. */}
-      <form data-netlify="true" hidden name="hybr-contact-enquiry">
-        <input name="form-name" type="hidden" value="hybr-contact-enquiry" />
-        <input name="lead_type" type="text" />
-        <input name="name" type="text" />
-        <input name="email" type="email" />
-        <textarea name="message" />
-        <input name="strategy_meeting_requested" type="checkbox" value="Yes" />
-        <input name="bot-field" type="text" />
-      </form>
-      <form data-netlify="true" hidden name="hybr-strategy-meeting">
-        <input name="form-name" type="hidden" value="hybr-strategy-meeting" />
-        <input name="lead_type" type="text" />
-        <input name="name" type="text" />
-        <input name="email" type="email" />
-        <textarea name="message" />
-        <input name="strategy_meeting_requested" type="checkbox" value="Yes" />
-        <input name="bot-field" type="text" />
-      </form>
       <Header />
       <section className="provisional-hero provisional-hero--compact">
         <div className="provisional-shell">

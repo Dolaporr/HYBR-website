@@ -40,7 +40,7 @@ export function ContactForm() {
       const parameters = new URLSearchParams();
       data.forEach((value, key) => parameters.append(key, String(value)));
 
-      const response = await fetch("/", {
+      const response = await fetch("/__forms.html", {
         body: parameters.toString(),
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         method: "POST",
@@ -57,8 +57,6 @@ export function ContactForm() {
   return (
     <form
       className="provisional-form"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       name="hybr-contact-enquiry"
       onSubmit={handleSubmit}
     >

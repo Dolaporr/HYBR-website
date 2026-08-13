@@ -283,13 +283,6 @@ function NewsletterCard() {
 export default function CareersPage() {
   return (
     <main className={`${styles.careersScope} careers-page`}>
-      <form data-netlify="true" hidden name="hybr-careers-connection">
-        <input name="form-name" type="hidden" value="hybr-careers-connection" />
-        <input name="first_name" type="text" />
-        <input name="last_name" type="text" />
-        <input name="email" type="email" />
-        <input name="lead_type" type="text" />
-      </form>
       <div className="careers-frame">
         <Header active="who" />
 
