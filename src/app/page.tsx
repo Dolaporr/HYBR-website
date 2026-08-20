@@ -398,7 +398,7 @@ export default function Home() {
             </p>
             <div className="trusted-marquee mt-9">
               <div className="trusted-marquee-track">
-                {[0, 1, 2].map((item) => (
+                {[0, 1, 2, 3].map((item) => (
                   <div
                     aria-hidden={item === 0 ? undefined : true}
                     className="trusted-partner-set"

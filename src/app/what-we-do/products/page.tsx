@@ -1,11 +1,12 @@
-import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
 import { productDescriptions } from "@/content/products";
+import { ProductWaitlistForm } from "@/components/ProductWaitlistForm";
+import { AlphaAccessForm } from "@/components/LeadCaptureForms";
 
 const products = [
-  { name: "INDX", body: productDescriptions.indx },
-  { name: "FLYWHEEL", body: productDescriptions.flywheel },
-  { name: "ALPHA", body: productDescriptions.alpha },
+  { key: "indx", name: "INDX", body: productDescriptions.indx },
+  { key: "flywheel", name: "FLYWHEEL", body: productDescriptions.flywheel },
+  { key: "alpha", name: "ALPHA", body: productDescriptions.alpha },
 ] as const;
 
 export default function ProductsPage() {
@@ -30,9 +31,13 @@ export default function ProductsPage() {
               <article className="product-card" key={product.name}>
                 <h2>{product.name}</h2>
                 <p>{product.body}</p>
-                <Link className="product-card-cta" href="/contact">
-                  Access {product.name}
-                </Link>
+                <div className="product-card-action">
+                  {product.key === "alpha" ? (
+                    <AlphaAccessForm />
+                  ) : (
+                    <ProductWaitlistForm product={product.key} />
+                  )}
+                </div>
               </article>
             ))}
           </div>
