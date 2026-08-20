@@ -6,7 +6,7 @@ import { figmaAssets } from "@/content/site";
 const contactDetails = [
   ["Address", "6th Floor, Landmark Towers, 5 Water Corporation Drive, Victoria Island, Lagos, Nigeria"],
   ["Phone", "+234 201 236 6363"],
-  ["Email", "sales@hybrgroup.net"],
+  ["Email", "hello@hybrgroup.net"],
 ] as const;
 
 export default function ContactPage() {

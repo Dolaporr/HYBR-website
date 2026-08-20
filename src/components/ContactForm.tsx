@@ -103,7 +103,7 @@ export function ContactForm() {
         {status === "success" &&
           "Thank you — your enquiry has been sent to the HYBR team."}
         {status === "error" &&
-          "We could not send your enquiry. Please email sales@hybrgroup.net."}
+          "We could not send your enquiry. Please email hello@hybrgroup.net."}
       </p>
     </form>
   );

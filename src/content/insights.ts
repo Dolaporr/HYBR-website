@@ -311,13 +311,13 @@ export const spctaNewsFeature = {
     {
       title: "Investors and strategic partners",
       copy: "Help finance and deploy recovery sites, processing capacity and the systems that make material supply more dependable.",
-      href: "mailto:sales@hybrgroup.net?subject=SPCTA%20Industrial%20partnership",
+      href: "mailto:hello@hybrgroup.net?subject=SPCTA%20Industrial%20partnership",
       linkLabel: "Start a conversation",
     },
     {
       title: "Industry, government and development organisations",
       copy: "Explore stronger circular-material systems that create operational value, local enterprise and more resilient infrastructure.",
-      href: "mailto:sales@hybrgroup.net?subject=SPCTA%20Industrial%20collaboration",
+      href: "mailto:hello@hybrgroup.net?subject=SPCTA%20Industrial%20collaboration",
       linkLabel: "Explore collaboration",
     },
     {
