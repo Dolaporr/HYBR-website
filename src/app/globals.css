@@ -13049,7 +13049,7 @@ video.home-video-card {
 
 @media (min-width: 560px) and (max-width: 1023px) {
   .who-frame {
-    height: 5300px;
+    height: 7700px;
     max-width: 800px;
   }
 
@@ -13080,134 +13080,152 @@ video.home-video-card {
   }
 
   .who-history {
-    height: 1024px;
+    height: 4200px;
     top: 630px;
   }
 
   .who-history-head {
-    left: 120px;
-    top: 97px;
+    left: 80px;
+    top: 32px;
     width: 640px;
   }
 
   .who-journey-button {
-    align-items: center;
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    gap: 10px;
-    height: 64px;
-    justify-content: center;
-    line-height: 29.26px;
-    padding: 18px 32px;
-    position: absolute;
-    right: 34px;
-    top: -31px;
-    width: 393px;
-    z-index: 2;
-  }
-
-  .who-journey-icon {
-    height: 32px;
-    width: 32px;
+    display: none;
   }
 
   .who-timeline-shell {
-    height: 1024px;
+    height: 4000px;
     left: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    top: 0;
+    overflow: visible;
+    top: 140px;
     width: 100%;
   }
 
   .who-timeline-rail {
-    height: 8px;
-    left: 164px;
-    top: 431px;
-    width: 3525px;
+    background: #ffffff;
+    border-radius: 999px;
+    height: 3800px;
+    left: 140px;
+    opacity: 0.94;
+    position: absolute;
+    top: 40px;
+    width: 8px;
   }
 
   .who-timeline-track {
-    height: 782px;
-    margin-left: 120px;
-    margin-top: 121px;
-    width: 4096px;
+    height: 3900px;
+    margin-left: 0;
+    margin-top: 0;
+    position: relative;
+    width: 100%;
   }
 
   .who-timeline-range-year {
     color: #ffffff;
     display: block;
     font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 700;
-    line-height: 48.76px;
+    left: 95px;
+    line-height: 40px;
     position: absolute;
     text-align: center;
-    top: 407px;
+    width: 90px;
   }
 
   .who-timeline-range-start {
-    left: 40px;
+    top: -20px;
   }
 
   .who-timeline-range-end {
-    left: 3721px;
+    top: 3860px;
   }
 
   .who-timeline-card {
-    border-radius: 24px;
-    height: var(--history-h);
-    left: var(--history-x);
-    padding: 40px;
-    top: var(--history-y);
-    width: var(--history-w);
+    background: #ffffff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: #000000;
+    height: var(--history-mobile-h);
+    left: 200px;
+    max-width: 520px;
+    overflow: visible;
+    padding: 28px 32px;
+    position: absolute;
+    top: var(--history-mobile-y);
+    width: calc(100% - 240px);
+  }
+
+  .who-timeline-card.is-featured {
+    background: #196ab4;
+    color: #ffffff;
   }
 
   .who-timeline-card p {
-    font-size: 24px;
-    line-height: 1.17;
+    font-size: 20px;
+    line-height: 1.25;
+    margin: 0;
   }
 
   .who-timeline-card strong {
-    bottom: 40px;
-    font-size: 16px;
-    line-height: 19.5px;
-    right: 40px;
+    bottom: 20px;
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    position: absolute;
+    right: 24px;
   }
 
   .who-timeline-pin {
-    height: 64px;
-    left: calc(50% - 32px);
-    top: 228px;
+    align-items: center;
+    background: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 999px;
+    color: #000000;
+    display: inline-flex;
+    height: 56px;
+    justify-content: center;
+    left: -88px;
+    position: absolute;
+    top: calc(50% - 28px);
     transform: none;
-    width: 64px;
+    width: 56px;
+    z-index: 1;
   }
 
   .who-timeline-card.is-bottom .who-timeline-pin {
-    top: -128px;
+    top: calc(50% - 28px);
   }
 
   .who-timeline-pin::after {
-    height: 80px;
-    left: 30px;
-    top: -48px;
-    width: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    content: "";
+    height: 4px;
+    left: 56px;
+    position: absolute;
+    top: 25px;
+    width: 32px;
+    z-index: -1;
   }
 
   .who-timeline-card.is-bottom .who-timeline-pin::after {
-    top: 32px;
+    top: 25px;
+  }
+
+  .who-timeline-pin img {
+    display: block;
+    height: 32px !important;
+    max-width: none;
+    object-fit: contain;
+    width: 32px !important;
   }
 
   .who-early {
     left: 80px;
-    top: 1878px;
+    top: 4900px;
     width: 640px;
   }
 
@@ -13250,7 +13268,7 @@ video.home-video-card {
   }
 
   .who-about-image {
-    top: 2488px;
+    top: 5350px;
   }
 
   .who-about-media {
@@ -13264,7 +13282,7 @@ video.home-video-card {
 
   .who-about-copy {
     left: 80px;
-    top: 2816px;
+    top: 5630px;
     width: 640px;
   }
 
@@ -13273,7 +13291,7 @@ video.home-video-card {
     height: 745px;
     left: 80px;
     padding: 48px;
-    top: 3448px;
+    top: 6050px;
     width: 640px;
   }
 
@@ -13307,12 +13325,12 @@ video.home-video-card {
   }
 
   .who-careers-image {
-    top: 4417px;
+    top: 6850px;
   }
 
   .who-careers-copy {
     left: 80px;
-    top: 4745px;
+    top: 7130px;
     width: 640px;
   }
 
@@ -13325,7 +13343,7 @@ video.home-video-card {
 
 @media (min-width: 1024px) and (max-width: 1359px) {
   .who-frame {
-    height: 4558px;
+    height: 4114px;
     max-width: 1280px;
   }
 
@@ -13381,63 +13399,47 @@ video.home-video-card {
   }
 
   .who-history {
-    height: 1024px;
+    height: 580px;
     top: 630px;
   }
 
   .who-history-head {
     left: 120px;
-    top: 97px;
+    top: 32px;
     width: 1040px;
   }
 
   .who-journey-button {
-    align-items: center;
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    gap: 10px;
-    height: 64px;
-    justify-content: center;
-    line-height: 29.26px;
-    padding: 18px 32px;
-    position: absolute;
-    right: 51px;
-    top: -31px;
-    width: 393px;
-    z-index: 2;
-  }
-
-  .who-journey-icon {
-    height: 32px;
-    width: 32px;
+    display: none;
   }
 
   .who-timeline-shell {
-    height: 1024px;
+    height: 580px;
     left: 0;
     overflow-x: auto;
     overflow-y: hidden;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-width: thin;
     top: 0;
     width: 100%;
   }
 
   .who-timeline-rail {
+    background: #ffffff;
+    border-radius: 999px;
     height: 8px;
     left: 164px;
-    top: 431px;
+    opacity: 0.94;
+    position: absolute;
+    top: 256px;
     width: 3525px;
   }
 
   .who-timeline-track {
-    height: 782px;
+    height: 540px;
     margin-left: 120px;
-    margin-top: 121px;
+    margin-top: 20px;
+    position: relative;
     width: 4096px;
   }
 
@@ -13450,7 +13452,7 @@ video.home-video-card {
     line-height: 48.76px;
     position: absolute;
     text-align: center;
-    top: 407px;
+    top: 236px;
   }
 
   .who-timeline-range-start {
@@ -13462,52 +13464,88 @@ video.home-video-card {
   }
 
   .who-timeline-card {
+    background: #ffffff;
     border-radius: 24px;
+    box-sizing: border-box;
+    color: #000000;
     height: var(--history-h);
     left: var(--history-x);
-    padding: 40px;
+    overflow: visible;
+    padding: 36px 40px;
+    position: absolute;
     top: var(--history-y);
     width: var(--history-w);
   }
 
+  .who-timeline-card.is-featured {
+    background: #196ab4;
+    color: #ffffff;
+  }
+
   .who-timeline-card p {
-    font-size: 24px;
-    line-height: 1.17;
+    font-size: 22px;
+    line-height: 1.22;
+    margin: 0;
   }
 
   .who-timeline-card strong {
-    bottom: 40px;
+    bottom: 24px;
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-size: 16px;
+    font-weight: 600;
     line-height: 19.5px;
-    right: 40px;
+    position: absolute;
+    right: 32px;
   }
 
   .who-timeline-pin {
+    align-items: center;
+    background: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 999px;
+    color: #000000;
+    display: inline-flex;
     height: 64px;
+    justify-content: center;
     left: calc(50% - 32px);
-    top: 228px;
+    position: absolute;
+    top: calc(100% + 4px);
     transform: none;
     width: 64px;
+    z-index: 1;
   }
 
   .who-timeline-card.is-bottom .who-timeline-pin {
-    top: -128px;
+    top: -68px;
   }
 
   .who-timeline-pin::after {
-    height: 80px;
-    left: 30px;
-    top: -48px;
+    background: rgba(255, 255, 255, 0.8);
+    content: "";
+    height: 40px;
+    left: 27px;
+    position: absolute;
+    top: -36px;
     width: 4px;
+    z-index: -1;
   }
 
   .who-timeline-card.is-bottom .who-timeline-pin::after {
-    top: 32px;
+    top: 60px;
+  }
+
+  .who-timeline-pin img {
+    display: block;
+    height: 40px !important;
+    max-width: none;
+    object-fit: contain;
+    width: 40px !important;
   }
 
   .who-early {
     left: 120px;
-    top: 1878px;
+    top: 1434px;
     width: 1040px;
   }
 
@@ -13547,19 +13585,19 @@ video.home-video-card {
 
   .who-about-copy {
     left: 120px;
-    top: 2488px;
+    top: 2044px;
   }
 
   .who-about-orbit {
     right: -761.03px;
-    top: 2223.109px;
+    top: 1779.109px;
   }
 
   .who-about-image {
     border-radius: 0;
     height: 336px;
     left: 785px;
-    top: 2536px;
+    top: 2092px;
     width: 976px;
   }
 
@@ -13576,7 +13614,7 @@ video.home-video-card {
     height: 630px;
     left: 120px;
     padding: 48px;
-    top: 3144px;
+    top: 2700px;
     width: 1040px;
   }
 
@@ -13624,14 +13662,14 @@ video.home-video-card {
     border-radius: 0;
     height: 336px;
     left: -348px;
-    top: 3998px;
+    top: 3554px;
     width: 976px;
   }
 
   .who-careers-copy {
     left: 572px;
     text-align: right;
-    top: 4001px;
+    top: 3557px;
   }
 
   .who-button {
@@ -13643,7 +13681,7 @@ video.home-video-card {
 
 @media (min-width: 1360px) {
   .who-frame {
-    height: 5149px;
+    height: 4705px;
     max-width: 1440px;
   }
 
@@ -13705,63 +13743,47 @@ video.home-video-card {
   }
 
   .who-history {
-    height: 1024px;
+    height: 580px;
     top: 705px;
   }
 
   .who-history-head {
     left: 120px;
-    top: 97px;
+    top: 32px;
     width: 1200px;
   }
 
   .who-journey-button {
-    align-items: center;
-    background: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    gap: 10px;
-    height: 64px;
-    justify-content: center;
-    line-height: 29.26px;
-    padding: 18px 32px;
-    position: absolute;
-    right: 78px;
-    top: -31px;
-    width: 393px;
-    z-index: 2;
-  }
-
-  .who-journey-icon {
-    height: 32px;
-    width: 32px;
+    display: none;
   }
 
   .who-timeline-shell {
-    height: 1024px;
+    height: 580px;
     left: 0;
     overflow-x: auto;
     overflow-y: hidden;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-width: thin;
     top: 0;
     width: 100%;
   }
 
   .who-timeline-rail {
+    background: #ffffff;
+    border-radius: 999px;
     height: 8px;
     left: 164px;
-    top: 431px;
+    opacity: 0.94;
+    position: absolute;
+    top: 256px;
     width: 3525px;
   }
 
   .who-timeline-track {
-    height: 782px;
+    height: 540px;
     margin-left: 120px;
-    margin-top: 121px;
+    margin-top: 20px;
+    position: relative;
     width: 4096px;
   }
 
@@ -13774,7 +13796,7 @@ video.home-video-card {
     line-height: 48.76px;
     position: absolute;
     text-align: center;
-    top: 407px;
+    top: 236px;
   }
 
   .who-timeline-range-start {
@@ -13786,52 +13808,88 @@ video.home-video-card {
   }
 
   .who-timeline-card {
+    background: #ffffff;
     border-radius: 24px;
+    box-sizing: border-box;
+    color: #000000;
     height: var(--history-h);
     left: var(--history-x);
-    padding: 40px;
+    overflow: visible;
+    padding: 36px 40px;
+    position: absolute;
     top: var(--history-y);
     width: var(--history-w);
   }
 
+  .who-timeline-card.is-featured {
+    background: #196ab4;
+    color: #ffffff;
+  }
+
   .who-timeline-card p {
-    font-size: 24px;
-    line-height: 1.17;
+    font-size: 22px;
+    line-height: 1.22;
+    margin: 0;
   }
 
   .who-timeline-card strong {
-    bottom: 40px;
+    bottom: 24px;
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-size: 16px;
+    font-weight: 600;
     line-height: 19.5px;
-    right: 40px;
+    position: absolute;
+    right: 32px;
   }
 
   .who-timeline-pin {
+    align-items: center;
+    background: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 999px;
+    color: #000000;
+    display: inline-flex;
     height: 64px;
+    justify-content: center;
     left: calc(50% - 32px);
-    top: 228px;
+    position: absolute;
+    top: calc(100% + 4px);
     transform: none;
     width: 64px;
+    z-index: 1;
   }
 
   .who-timeline-card.is-bottom .who-timeline-pin {
-    top: -128px;
+    top: -68px;
   }
 
   .who-timeline-pin::after {
-    height: 80px;
-    left: 30px;
-    top: -48px;
+    background: rgba(255, 255, 255, 0.8);
+    content: "";
+    height: 40px;
+    left: 27px;
+    position: absolute;
+    top: -36px;
     width: 4px;
+    z-index: -1;
   }
 
   .who-timeline-card.is-bottom .who-timeline-pin::after {
-    top: 32px;
+    top: 60px;
+  }
+
+  .who-timeline-pin img {
+    display: block;
+    height: 40px !important;
+    max-width: none;
+    object-fit: contain;
+    width: 40px !important;
   }
 
   .who-early {
     left: 120px;
-    top: 2009px;
+    top: 1565px;
     width: 1200px;
   }
 
@@ -13872,19 +13930,19 @@ video.home-video-card {
 
   .who-about-copy {
     left: 120px;
-    top: 2675px;
+    top: 2231px;
   }
 
   .who-about-orbit {
     right: -755.38px;
-    top: 2392.105px;
+    top: 1948.105px;
   }
 
   .who-about-image {
     border-radius: 0;
     height: 336px;
     left: 773px;
-    top: 2814px;
+    top: 2370px;
     width: 976px;
   }
 
@@ -13921,7 +13979,7 @@ video.home-video-card {
     height: 632px;
     left: 120px;
     padding: 48px;
-    top: 3569px;
+    top: 3125px;
     width: 1200px;
   }
 
@@ -13954,14 +14012,15 @@ video.home-video-card {
     border-radius: 0;
     height: 336px;
     left: -268px;
-    top: 4519px;
+    top: 4075px;
     width: 976px;
   }
 
   .who-careers-copy {
     left: 732px;
     text-align: right;
-    top: 4481px;
+    top: 4037px;
+    width: 588px;
   }
 
   .who-button {

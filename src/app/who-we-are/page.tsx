@@ -18,70 +18,70 @@ const timeline = [
     year: "2016",
     text: "HYBR conceptualised to help ventures scale their impact in Africa.",
     icon: "hybr",
-    desktop: { x: 0, y: 171, w: 490, h: 164, side: "top" },
+    desktop: { x: 0, y: 60, w: 490, h: 164, side: "top" },
     mobile: { x: 130, y: 0, w: 212, h: 160 },
   },
   {
     year: "2017",
     text: "Launched maiden edition of the Young Enterprise (YES) Bootcamp in Lagos in partnership with Samsung, Google, Deloitte, and Sage.",
     icon: "shoe",
-    desktop: { x: 366, y: 527, w: 490, h: 220, side: "bottom" },
+    desktop: { x: 366, y: 296, w: 490, h: 220, side: "bottom" },
     mobile: { x: 130, y: 279, w: 212, h: 217 },
   },
   {
     year: "2018",
     text: "YES expands to reach ventures in Lagos, Johannesburg, and Nairobi. HYBR opens office in Cape Town.",
     icon: "arrows",
-    desktop: { x: 732, y: 143, w: 490, h: 192, side: "top" },
+    desktop: { x: 732, y: 32, w: 490, h: 192, side: "top" },
     mobile: { x: 130, y: 615, w: 212, h: 179 },
   },
   {
     year: "2019",
     text: "Implements the Merck-Make-IT-Africa Joint program to impact healthcare ventures across Africa.",
     icon: "health",
-    desktop: { x: 1098, y: 527, w: 490, h: 192, side: "bottom" },
+    desktop: { x: 1098, y: 296, w: 490, h: 192, side: "bottom" },
     mobile: { x: 130, y: 932, w: 212, h: 198 },
   },
   {
     year: "2019",
     text: "Implements the Entrepreneurs Plastics Innovation Challenge (EPIC) powered by Coca-Cola.",
     icon: "bottle",
-    desktop: { x: 1464, y: 143, w: 490, h: 192, side: "top" },
+    desktop: { x: 1464, y: 32, w: 490, h: 192, side: "top" },
     mobile: { x: 130, y: 1249, w: 212, h: 198 },
   },
   {
     year: "2020",
     text: "Supports ventures globally, through the Growing through Uncertainty program during COVID-19.",
     icon: "handshake",
-    desktop: { x: 1830, y: 527, w: 490, h: 192, side: "bottom" },
+    desktop: { x: 1830, y: 296, w: 490, h: 192, side: "bottom" },
     mobile: { x: 130, y: 1547, w: 212, h: 179 },
   },
   {
     year: "2020",
     text: "Ecosystem study - Innovating in the New Normal post COVID-19. Opens operations in London, UK.",
     icon: "pin",
-    desktop: { x: 2196, y: 143, w: 490, h: 192, side: "top" },
+    desktop: { x: 2196, y: 32, w: 490, h: 192, side: "top" },
     mobile: { x: 130, y: 1864, w: 212, h: 198 },
   },
   {
     year: "2021",
     text: "Partnership with ABSA for continent-wide innovation intelligence.",
     icon: "robot",
-    desktop: { x: 2562, y: 527, w: 490, h: 164, side: "bottom" },
+    desktop: { x: 2562, y: 296, w: 490, h: 164, side: "bottom" },
     mobile: { x: 130, y: 2162, w: 212, h: 160 },
   },
   {
     year: "2022",
     text: "Strategic reorganization, new purpose, and missions.",
     icon: "compass",
-    desktop: { x: 2928, y: 171, w: 490, h: 164, side: "top" },
+    desktop: { x: 2928, y: 60, w: 490, h: 164, side: "top" },
     mobile: { x: 130, y: 2441, w: 212, h: 160 },
   },
   {
     year: "2024",
     text: "Transition into a full-service innovation agency.",
     icon: "sparkle",
-    desktop: { x: 3294, y: 527, w: 490, h: 164, side: "bottom" },
+    desktop: { x: 3294, y: 296, w: 490, h: 164, side: "bottom" },
     mobile: { x: 130, y: 2701, w: 212, h: 141 },
   },
 ];
@@ -193,7 +193,7 @@ function AboutImageCard() {
     <div className="who-about-image" aria-hidden="true">
       <span
         className="who-about-media"
-        style={{ backgroundImage: `url(${primaryImage})` }}
+        style={{ backgroundImage: `url(${figmaAssets.whoAboutUs})` }}
       />
     </div>
   );
@@ -321,7 +321,7 @@ export default function WhoWeArePage() {
           </FigmaButton>
         </section>
 
-        <ImageSurface className="who-careers-image" src={primaryImage} />
+        <ImageSurface className="who-careers-image" src={figmaAssets.whoCareers} />
 
         <section className="who-careers-copy" id="careers" aria-labelledby="who-careers-title">
           <SectionLabel>Careers</SectionLabel>

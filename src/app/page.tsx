@@ -29,18 +29,24 @@ const assets = {
   footerPattern: figmaAssets.footerPattern,
 };
 
-const trustedPartners: ReadonlyArray<{ label: string; src?: string }> = [
-  { label: "Thomson Reuters" },
-  { label: "Samsung", src: "/logos/samsung-wordmark.svg" },
-  { label: "AFEX" },
-  { label: "Meta" },
-  { label: "Alitheia", src: "/logos/alitheia-capital-white.png" },
-  { label: "AfriLabs" },
-  { label: "giz" },
-  { label: "Merck" },
-  { label: "Coca-Cola", src: "/logos/coca-cola-logo.svg" },
-  { label: "Google" },
-  { label: "ABSA", src: "/logos/absa-logo.svg" },
+const trustedPartners: ReadonlyArray<{
+  label: string;
+  src: string;
+  width: number;
+  height: number;
+}> = [
+  { label: "Coca-Cola", src: "/logos/coca-cola-marquee.svg", width: 80, height: 25 },
+  { label: "Google", src: "/logos/google-marquee.svg", width: 80, height: 27 },
+  { label: "ABSA", src: "/logos/absa-marquee.png", width: 81, height: 19 },
+  { label: "Thomson Reuters", src: "/logos/thomson-reuters-marquee.svg", width: 101, height: 14 },
+  { label: "Samsung", src: "/logos/samsung-marquee.svg", width: 81, height: 13 },
+  { label: "AFEX", src: "/logos/afex-marquee.png", width: 71, height: 20 },
+  { label: "Meta", src: "/logos/meta-marquee.svg", width: 98, height: 17 },
+  { label: "Alitheia", src: "/logos/alitheia-marquee.png", width: 87, height: 28 },
+  { label: "AfriLabs", src: "/logos/afrilabs-marquee.png", width: 82, height: 19 },
+  { label: "GIZ", src: "/logos/giz-marquee.svg", width: 79, height: 22 },
+  { label: "Merck", src: "/logos/merck-marquee.svg", width: 80, height: 14 },
+  { label: "Columbia University", src: "/logos/columbia-university.svg", width: 125, height: 19 },
 ];
 const homeWebinar = {
   duration: "01:40:35",
@@ -398,19 +404,32 @@ export default function Home() {
             </p>
             <div className="trusted-marquee mt-9">
               <div className="trusted-marquee-track">
-                {[0, 1, 2, 3].map((item) => (
+                {[0, 1, 2, 3].map((copyIndex) => (
                   <div
-                    aria-hidden={item === 0 ? undefined : true}
+                    aria-hidden={copyIndex === 0 ? undefined : true}
                     className="trusted-partner-set"
-                    key={item}
+                    key={copyIndex}
                   >
                     {trustedPartners.map((partner) => (
-                      <span className="trusted-partner" key={partner.label}>
-                        {partner.src ? (
-                          <img alt={partner.label} src={partner.src} />
-                        ) : (
-                          partner.label
-                        )}
+                      <span
+                        className="trusted-partner"
+                        key={`${partner.label}-${copyIndex}`}
+                        title={partner.label}
+                      >
+                        <img
+                          alt={partner.label}
+                          className={`trusted-logo-${partner.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                          height={partner.height}
+                          loading="eager"
+                          src={partner.src}
+                          style={{
+                            height: `${partner.height}px`,
+                            width: `${partner.width}px`,
+                            maxWidth: "none",
+                            objectFit: "contain",
+                          }}
+                          width={partner.width}
+                        />
                       </span>
                     ))}
                   </div>
