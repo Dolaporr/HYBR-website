@@ -34,6 +34,7 @@ Source: **Developer Docs: HYBR 2.2 | Internal Edit Doc**, from the Careers form 
 - Adjusted mobile insight, article, news, and webinar card copy so it has a reserved action area and does not collide with the **Read More** button.
 - Reduced text sizes where the two-column mobile article cards have substantially less room than full-width cards, while preserving title and summary readability.
 - Restored the full-width mobile Spotlight and News cards to their 280px design height, reflowed the following sections, and reserved a fixed action area for **Read More**. This removes the long-card button collision and the unnecessary white gap before the footer.
+- Repaired the desktop Articles and Masterclasses listing cards: the Article Spotlight now uses its intended shorter card title, while the long News cards reserve independent, non-overlapping areas for their copy and **Read More** action.
 - **Masterclass** is the approved product term. It remains unchanged across Insights; Figma's use of “Webinar” is not a copy-change instruction.
 - Aligned Contact and Services shared testimonials to the established desktop carousel format and placed the mobile portrait correctly at the ring’s top-centre.
 

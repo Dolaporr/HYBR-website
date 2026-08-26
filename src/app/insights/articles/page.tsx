@@ -108,7 +108,7 @@ function SpotlightCard({ article, href }: { article: typeof innovationSweetSpotA
         <img alt="" src={figmaAssets.figmaBuilding} />
       </span>
       <span className="articles-spotlight-copy">
-        <span>{article.title}</span>
+        <span>{article.cardTitle}</span>
         <span>{article.summary}</span>
       </span>
       <span className="articles-spotlight-button">Read More</span>
