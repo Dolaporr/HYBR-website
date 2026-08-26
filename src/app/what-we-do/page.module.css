@@ -98,44 +98,50 @@
 
 .whatScope :global(.what-content-drop) {
   background: #000000;
-  border-radius: 1000px 0 600px 1000px;
+  border-radius: 1000px 0 0 1000px;
   color: #ffffff;
-  height: 132px;
+  height: 280px;
   overflow: hidden;
   position: absolute;
-  right: -276px;
-  top: 177px;
-  width: 342px;
+  right: -230px;
+  top: 166px;
+  width: 300px;
   z-index: 3;
 }
 
 .whatScope :global(.what-content-drop-media) {
-  aspect-ratio: 4096 / 2731;
   background-position: center;
   background-size: cover;
-  border: 2px solid #000000;
+  border: none;
   display: block;
-  left: -4.81%;
+  inset: 0;
   pointer-events: none;
   position: absolute;
-  top: -10px;
-  width: 106.53%;
+  width: 100%;
+  height: 100%;
 }
 
-.whatScope :global(.what-content-drop-media::after),
-.whatScope :global(.what-services-bg::after) {
+.whatScope :global(.what-content-drop-media::after) {
   background: rgba(0, 0, 0, .5);
   content: "";
   inset: 0;
   position: absolute;
 }
 
+.whatScope :global(.what-services-bg::after) {
+  background: rgba(0, 0, 0, .68);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
 .whatScope :global(.what-content-drop p) {
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  left: 42px;
+  font-weight: 700;
+  left: 36px;
   line-height: normal;
+  margin: 0;
   position: absolute;
   text-align: center;
   top: 50%;
@@ -144,24 +150,23 @@
 }
 
 .whatScope :global(.what-content-drop nav) {
-  align-content: flex-start;
+  align-items: flex-end;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 7px;
   position: absolute;
-  right: 41px;
+  right: 28px;
   top: 50%;
   transform: translateY(-50%);
-  width: 215px;
+  width: 170px;
 }
 
 .whatScope :global(.what-content-drop a) {
   color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.25;
   text-align: right;
   white-space: nowrap;
 }
@@ -703,6 +708,8 @@
   color: #196ab4;
 }
 
+
+
 .whatScope :global(.what-team-image) {
   border: 2px solid #ffffff;
   height: 124px;
@@ -746,13 +753,14 @@
 @media (min-width: 560px) and (max-width: 1023px) {
   .whatScope :global(.what-frame) {
     height: 7312px;
-    max-width: 800px;
+    max-width: none;
+    width: 100%;
   }
 
   .whatScope :global(.what-hero) {
-    left: 80px;
+    left: max(24px, calc(50% - 320px));
     top: 240px;
-    width: 623px;
+    width: min(623px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-hero h1) {
@@ -764,23 +772,30 @@
   }
 
   .whatScope :global(.what-content-drop) {
-    height: 197px;
-    right: -272px;
-    top: 239px;
-    width: 352px;
+    border-radius: 1000px 0 0 1000px;
+    height: 300px;
+    right: -245px;
+    top: 216px;
+    width: 320px;
   }
 
   .whatScope :global(.what-content-drop p) {
     font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-weight: 700;
+    left: 38px;
   }
 
   .whatScope :global(.what-content-drop nav) {
     flex-direction: column;
-    flex-wrap: nowrap;
     gap: 8px;
-    right: 111px;
-    width: 109px;
+    right: 32px;
+    width: 175px;
+  }
+
+  .whatScope :global(.what-content-drop a) {
+    font-size: 13px;
+    line-height: 1.25;
+    white-space: normal;
   }
 
   .whatScope :global(.what-services) {
@@ -788,21 +803,22 @@
     height: 912px;
     left: 0;
     top: 588px;
-    width: 800px;
+    width: 100%;
   }
 
   .whatScope :global(.what-services-bg) {
     height: 1015px;
-    left: 439px;
+    left: 50%;
     top: 456px;
     transform: translate(-50%, -50%);
-    width: 1522px;
+    width: 100%;
+    min-width: 800px;
   }
 
   .whatScope :global(.what-services-copy) {
-    left: 80px;
+    left: max(24px, calc(50% - 320px));
     top: 184px;
-    width: 640px;
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-services-copy h2) {
@@ -810,13 +826,14 @@
   }
 
   .whatScope :global(.what-services-copy .what-button) {
-    left: 205px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 488px;
   }
 
   .whatScope :global(.what-process-map) {
     height: 160px;
-    left: 432px;
+    left: calc(50% + 32px);
     top: 350px;
     width: 310px;
   }
@@ -865,9 +882,10 @@
   }
 
   .whatScope :global(.what-work-copy) {
-    left: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 1724px;
-    width: 640px;
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-work-copy h2),
@@ -885,13 +903,15 @@
   }
 
   .whatScope :global(.what-work-copy .what-button) {
-    left: 196px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 1052px;
   }
 
   .whatScope :global(.what-case-card) {
-    left: 80px;
-    width: 640px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-case-card.is-feature) {
@@ -915,18 +935,19 @@
   }
 
   .whatScope :global(.what-section-heading) {
-    left: 80px;
+    left: max(24px, calc(50% - 320px));
     top: 3056px;
-    width: 640px;
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-product-card) {
     align-items: center;
     flex-direction: row;
     gap: 56px;
-    left: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 56px 64px;
-    width: 640px;
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-product-card.is-flywheel) {
@@ -960,39 +981,44 @@
 
   .whatScope :global(.what-product-actions) {
     align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     width: 286px;
   }
 
   .whatScope :global(.what-product-actions input) {
-    font-size: 20px;
-    padding: 16px 32px;
+    font-size: 18px;
+    padding: 16px 20px;
     width: 286px;
   }
 
   .whatScope :global(.what-products-button) {
-    left: 281px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 4968px;
-    transform: none;
   }
 
   .whatScope :global(.what-impact) {
     height: 1982px;
+    left: 0;
     top: 5330px;
-    width: 800px;
+    width: 100%;
   }
 
   .whatScope :global(.what-impact-heading) {
-    left: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 158px;
-    width: 640px;
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-impact-stats) {
     display: block;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: 296px;
-    transform: none;
-    width: 800px;
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-impact-stats div) {
@@ -1000,19 +1026,19 @@
   }
 
   .whatScope :global(.what-impact-stats .is-countries) {
-    left: 80px;
+    left: 0;
     top: 0;
     width: 232px;
   }
 
   .whatScope :global(.what-impact-stats .is-jobs) {
-    left: 407px;
+    left: 327px;
     top: 0;
     width: 313px;
   }
 
   .whatScope :global(.what-impact-stats .is-ventures) {
-    left: 240px;
+    left: 160px;
     top: 176px;
     width: 320px;
   }
@@ -1022,52 +1048,55 @@
   }
 
   .whatScope :global(.what-impact-button) {
-    left: 310px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 661px;
-    transform: none;
   }
 
   .whatScope :global(.what-team) {
     height: 706px;
-    left: 80px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 941px;
-    width: 640px;
+    width: min(640px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-team-image) {
     height: 245px;
     left: 48px;
     top: 59px;
-    width: 544px;
+    width: calc(100% - 96px);
   }
 
   .whatScope :global(.what-team-copy) {
     left: 48px;
     top: 343px;
-    width: 544px;
+    width: calc(100% - 96px);
   }
 
   .whatScope :global(.what-team-actions) {
     bottom: 12px;
     gap: 32px;
-    left: 153px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1359px) {
   .whatScope :global(.what-frame) {
-    height: 6089px;
-    max-width: 1280px;
+    height: 6180px;
+    max-width: none;
+    width: 100%;
   }
 
   .whatScope :global(.what-hero) {
-    left: 120px;
-    top: 240px;
-    width: 614px;
+    left: max(24px, calc(50% - 520px));
+    top: 243px;
+    width: min(944px, calc(100% - 48px));
   }
 
   .whatScope :global(.what-hero h1) {
-    font-size: 112px;
+    font-size: 140px;
   }
 
   .whatScope :global(.what-hero p) {
@@ -1075,23 +1104,30 @@
   }
 
   .whatScope :global(.what-content-drop) {
-    height: 197px;
-    right: -253px;
-    top: 239px;
-    width: 352px;
+    border-radius: 1000px 0 0 1000px;
+    height: 310px;
+    right: -250px;
+    top: 216px;
+    width: 330px;
   }
 
   .whatScope :global(.what-content-drop p) {
     font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-weight: 700;
+    left: 40px;
   }
 
   .whatScope :global(.what-content-drop nav) {
     flex-direction: column;
-    flex-wrap: nowrap;
     gap: 8px;
-    right: 111px;
-    width: 109px;
+    right: 34px;
+    width: 180px;
+  }
+
+  .whatScope :global(.what-content-drop a) {
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: normal;
   }
 
   .whatScope :global(.what-services) {
@@ -1099,19 +1135,20 @@
     height: 632px;
     left: 0;
     top: 674px;
-    width: 1280px;
+    width: 100%;
   }
 
   .whatScope :global(.what-services-bg) {
     height: 853px;
-    left: 640px;
+    left: 50%;
     top: 367px;
     transform: translate(-50%, -50%);
-    width: 1280px;
+    width: 100%;
+    min-width: 1280px;
   }
 
   .whatScope :global(.what-services-copy) {
-    left: 120px;
+    left: max(24px, calc(50% - 520px));
     top: 205px;
     width: 532px;
   }
@@ -1127,7 +1164,7 @@
 
   .whatScope :global(.what-process-map) {
     height: 206.378px;
-    left: 720px;
+    left: calc(50% + 80px);
     top: 205px;
     width: 449px;
   }
@@ -1168,7 +1205,7 @@
   }
 
   .whatScope :global(.what-work-copy) {
-    left: 652px;
+    left: calc(50% + 12px);
     top: 1948px;
     width: 508px;
   }
@@ -1194,14 +1231,14 @@
 
   .whatScope :global(.what-case-card.is-feature) {
     height: 386px;
-    left: 652px;
+    left: calc(50% + 12px);
     top: 1530px;
     width: 508px;
   }
 
   .whatScope :global(.what-case-card.is-tall) {
     height: 658px;
-    left: 120px;
+    left: max(24px, calc(50% - 520px));
     top: 1530px;
     width: 508px;
   }
@@ -1220,7 +1257,7 @@
   }
 
   .whatScope :global(.what-section-heading) {
-    left: 120px;
+    left: max(24px, calc(50% - 520px));
     top: 2412px;
     width: 774px;
   }
@@ -1229,7 +1266,8 @@
     align-items: center;
     flex-direction: row;
     gap: 56px;
-    left: 120px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 56px 64px;
     width: 1040px;
   }
@@ -1247,6 +1285,7 @@
   .whatScope :global(.what-product-card.is-alpha) {
     height: 392px;
     top: 3499px;
+    gap: 40px;
   }
 
   .whatScope :global(.what-product-brand) {
@@ -1257,18 +1296,20 @@
     flex-basis: 92px;
   }
 
-  .whatScope :global(.what-product-card.is-alpha) {
-    gap: 40px;
-  }
-
   .whatScope :global(.what-product-card.is-alpha .what-product-brand) {
     flex-basis: 110.466px;
+  }
+
+  .whatScope :global(.what-product-brand h3) {
+    font-size: 32px;
   }
 
   .whatScope :global(.what-product-copy) {
     align-items: flex-start;
     flex: 1 1 auto;
+    gap: 40px;
     margin-top: 0;
+    min-width: 0;
     width: auto;
   }
 
@@ -1277,40 +1318,71 @@
   }
 
   .whatScope :global(.what-product-actions) {
-    align-items: flex-start;
-    width: 286px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+    max-width: 880px;
+    width: 100%;
   }
 
   .whatScope :global(.what-product-actions input) {
+    flex: 1 1 0;
+    font-size: 18px;
+    min-width: 0;
+    padding: 16px 20px;
+    text-align: center;
+    width: auto;
+  }
+
+  .whatScope :global(.what-product-actions .what-button),
+  .whatScope :global(.what-product-actions button.what-button) {
+    flex: 0 0 auto;
+    flex-shrink: 0;
     font-size: 20px;
+    min-width: max-content;
     padding: 16px 32px;
-    width: 286px;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .whatScope :global(.what-product-form-status) {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .whatScope :global(.what-product-actions input.is-tablet-only) {
+    display: none;
   }
 
   .whatScope :global(.what-products-button) {
-    left: 515px;
+    left: 50%;
     top: 3955px;
-    transform: none;
+    transform: translateX(-50%);
   }
 
   .whatScope :global(.what-impact) {
     height: 1751px;
+    left: 0;
     top: 4338px;
-    width: 1280px;
+    width: 100%;
   }
 
   .whatScope :global(.what-impact-heading) {
-    left: 253px;
+    left: 50%;
     top: 209px;
+    transform: translateX(-50%);
     width: 774px;
   }
 
   .whatScope :global(.what-impact-stats) {
     display: block;
-    left: 0;
+    left: 50%;
     top: 347px;
-    transform: none;
-    width: 1280px;
+    transform: translateX(-50%);
+    width: 1040px;
   }
 
   .whatScope :global(.what-impact-stats div) {
@@ -1318,19 +1390,19 @@
   }
 
   .whatScope :global(.what-impact-stats .is-countries) {
-    left: 120px;
+    left: 0;
     top: 0;
     width: 232px;
   }
 
   .whatScope :global(.what-impact-stats .is-jobs) {
-    left: 440px;
+    left: 320px;
     top: 0;
     width: 313px;
   }
 
   .whatScope :global(.what-impact-stats .is-ventures) {
-    left: 841px;
+    left: 721px;
     top: 0;
     width: 320px;
   }
@@ -1340,15 +1412,16 @@
   }
 
   .whatScope :global(.what-impact-button) {
-    left: 550px;
+    left: 50%;
     top: 536px;
-    transform: none;
+    transform: translateX(-50%);
   }
 
   .whatScope :global(.what-team) {
     height: 586px;
-    left: 120px;
+    left: 50%;
     top: 816px;
+    transform: translateX(-50%);
     width: 1040px;
   }
 
@@ -1382,77 +1455,394 @@
 
 @media (min-width: 1360px) {
   .whatScope :global(.what-frame) {
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    max-width: none !important;
-    width: 100vw !important;
+    height: 6180px;
+    max-width: none;
+    width: 100%;
   }
 
-  .whatScope :global(.what-services),
-  .whatScope :global(.what-impact) {
-    left: 0 !important;
-    max-width: none !important;
-    width: 100% !important;
+  .whatScope :global(.what-hero) {
+    left: max(24px, calc(50% - 600px));
+    top: 243px;
+    width: 944px;
+  }
+
+  .whatScope :global(.what-hero h1) {
+    font-size: 160px;
+  }
+
+  .whatScope :global(.what-hero p) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-content-drop) {
+    border-radius: 1000px 0 0 1000px;
+    height: 320px;
+    right: -260px;
+    top: 223px;
+    width: 340px;
+  }
+
+  .whatScope :global(.what-content-drop p) {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    left: 40px;
+  }
+
+  .whatScope :global(.what-content-drop nav) {
+    flex-direction: column;
+    gap: 8px;
+    right: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px;
+  }
+
+  .whatScope :global(.what-content-drop a) {
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .whatScope :global(.what-services) {
+    border-radius: 0;
+    height: 632px;
+    left: 0;
+    top: 662px;
+    width: 100%;
   }
 
   .whatScope :global(.what-services-bg) {
-    left: 50% !important;
+    height: 960px;
+    left: 50%;
+    top: 367px;
+    transform: translate(-50%, -50%);
+    width: 100%;
     min-width: 1440px;
-    width: 100% !important;
   }
-}
 
-.whatScope :global(.what-product-card.is-indx) {
-  top: 3095px;
-}
+  .whatScope :global(.what-services-copy) {
+    left: max(24px, calc(50% - 600px));
+    top: 201px;
+    width: 588px;
+  }
 
-.whatScope :global(.what-product-card.is-flywheel) {
-  top: 3931px;
-}
+  .whatScope :global(.what-services-copy h2) {
+    font-size: 40px;
+  }
 
-.whatScope :global(.what-product-card.is-alpha) {
-  top: 4767px;
-}
+  .whatScope :global(.what-services-copy .what-button) {
+    left: 0;
+    top: 244px;
+  }
 
-@media (min-width: 560px) and (max-width: 1023px) {
+  .whatScope :global(.what-process-map) {
+    height: 206.378px;
+    left: calc(50% + 90px);
+    top: 200px;
+    width: 449px;
+  }
+
+  .whatScope :global(.what-process-word) {
+    font-size: 32px;
+  }
+
+  .whatScope :global(.what-process-word.is-discover) {
+    left: 0;
+    top: 0;
+  }
+
+  .whatScope :global(.what-process-word.is-develop) {
+    left: 99px;
+    top: 154px;
+  }
+
+  .whatScope :global(.what-process-word.is-deploy) {
+    left: 278px;
+    top: 63px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 108px;
+    left: 103px;
+    top: 63.031px;
+    transform: none;
+    width: 82px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 86px;
+    left: 312.613px;
+    top: 110px;
+    transform: none;
+    width: 86px;
+  }
+
+  .whatScope :global(.what-work-copy) {
+    left: calc(50% - 90px);
+    top: 2009px;
+    width: 690px;
+  }
+
+  .whatScope :global(.what-work-copy h2),
+  .whatScope :global(.what-section-heading h2),
+  .whatScope :global(.what-impact-heading h2),
+  .whatScope :global(.what-team-copy h2) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-work-copy span),
+  .whatScope :global(.what-section-heading span),
+  .whatScope :global(.what-impact-heading span),
+  .whatScope :global(.what-team-copy > span) {
+    font-size: 24px;
+  }
+
+  .whatScope :global(.what-work-copy .what-button) {
+    left: 0;
+    top: 216px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature) {
+    height: 386px;
+    left: calc(50% - 90px);
+    top: 1574px;
+    width: 690px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall) {
+    height: 712px;
+    left: max(24px, calc(50% - 600px));
+    top: 1574px;
+    width: 486px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall .what-case-copy) {
+    bottom: 32px;
+    top: auto;
+    width: 371px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-button.is-read) {
+    top: 293px;
+  }
+
+  .whatScope :global(.what-case-card.is-tall .what-button.is-read) {
+    top: 32px;
+  }
+
+  .whatScope :global(.what-section-heading) {
+    left: max(24px, calc(50% - 600px));
+    top: 2566px;
+    width: 792px;
+  }
+
+  .whatScope :global(.what-product-orbit) {
+    background-image: url("/what-product-orbit.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 1431px;
+    opacity: .82;
+    position: absolute;
+    right: calc(50% - 720px - 708px + 120px);
+    top: 2275px;
+    transform: rotate(-14deg);
+    width: 1078px;
+  }
+
+  .whatScope :global(.what-product-card) {
+    align-items: center;
+    flex-direction: row;
+    gap: 56px;
+    height: 413px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 56px 64px;
+    width: 1200px;
+  }
+
   .whatScope :global(.what-product-card.is-indx) {
-    top: 3263px;
-  }
-
-  .whatScope :global(.what-product-card.is-flywheel) {
-    top: 3859px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha) {
-    top: 4395px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1359px) {
-  .whatScope :global(.what-product-card.is-indx) {
-    top: 2587px;
-  }
-
-  .whatScope :global(.what-product-card.is-flywheel) {
-    top: 3043px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha) {
-    top: 3499px;
-  }
-}
-
-@media (min-width: 1360px) {
-  .whatScope :global(.what-product-card.is-indx) {
+    height: 413px;
     top: 2816px;
   }
 
   .whatScope :global(.what-product-card.is-flywheel) {
+    height: 413px;
     top: 3293px;
   }
 
   .whatScope :global(.what-product-card.is-alpha) {
+    height: 413px;
     top: 3770px;
+  }
+
+  .whatScope :global(.what-product-brand) {
+    flex: 0 0 170px;
+  }
+
+  .whatScope :global(.what-product-card.is-indx .what-product-brand) {
+    flex-basis: 92px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha) {
+    gap: 40px;
+  }
+
+  .whatScope :global(.what-product-card.is-alpha .what-product-brand) {
+    flex-basis: 110.466px;
+  }
+
+  .whatScope :global(.what-product-brand h3) {
+    font-size: 32px;
+  }
+
+  .whatScope :global(.what-product-copy) {
+    align-items: flex-start;
+    flex: 1 1 auto;
+    gap: 40px;
+    margin-top: 0;
+    min-width: 0;
+    width: auto;
+  }
+
+  .whatScope :global(.what-product-copy p) {
+    text-align: left;
+  }
+
+  .whatScope :global(.what-product-actions) {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+    max-width: 880px;
+    width: 100%;
+  }
+
+  .whatScope :global(.what-product-actions input) {
+    flex: 1 1 0;
+    font-size: 18px;
+    min-width: 0;
+    padding: 16px 20px;
+    text-align: center;
+    width: auto;
+  }
+
+  .whatScope :global(.what-product-actions .what-button),
+  .whatScope :global(.what-product-actions button.what-button) {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    font-size: 20px;
+    min-width: max-content;
+    padding: 16px 32px;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .whatScope :global(.what-product-form-status) {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .whatScope :global(.what-product-actions input.is-tablet-only) {
+    display: none;
+  }
+
+  .whatScope :global(.what-products-button) {
+    left: 50%;
+    top: 4247px;
+    transform: translateX(-50%);
+  }
+
+  .whatScope :global(.what-impact) {
+    height: 1801px;
+    left: 0;
+    top: 4380px;
+    width: 100%;
+  }
+
+  .whatScope :global(.what-impact-heading) {
+    left: 50%;
+    top: 152px;
+    transform: translateX(-50%);
+    width: 792px;
+  }
+
+  .whatScope :global(.what-impact-stats) {
+    display: block;
+    left: 50%;
+    top: 324px;
+    transform: translateX(-50%);
+    width: 1200px;
+  }
+
+  .whatScope :global(.what-impact-stats div) {
+    position: absolute;
+  }
+
+  .whatScope :global(.what-impact-stats .is-countries) {
+    left: 71px;
+    top: 0;
+    width: 232px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-jobs) {
+    left: 399px;
+    top: 0;
+    width: 313px;
+  }
+
+  .whatScope :global(.what-impact-stats .is-ventures) {
+    left: 808px;
+    top: 0;
+    width: 320px;
+  }
+
+  .whatScope :global(.what-impact-stats strong) {
+    font-size: 96px;
+  }
+
+  .whatScope :global(.what-impact-button) {
+    left: 50%;
+    top: 529px;
+    transform: translateX(-50%);
+  }
+
+  .whatScope :global(.what-team) {
+    height: 610px;
+    left: 50%;
+    top: 889px;
+    transform: translateX(-50%);
+    width: 1200px;
+  }
+
+  .whatScope :global(.what-team-image) {
+    height: 245px;
+    left: 48px;
+    top: 305px;
+    width: 1104px;
+  }
+
+  .whatScope :global(.what-team-copy) {
+    left: 48px;
+    top: 59px;
+    width: 1104px;
+  }
+
+  .whatScope :global(.what-team-actions) {
+    bottom: 76px;
+    gap: 48px;
+    left: auto;
+    right: 82px;
+  }
+
+  .whatScope :global(.what-team-actions .what-button) {
+    border-color: #ffffff;
+    color: #ffffff;
+    min-height: 56px;
+    padding: 16px 32px;
   }
 }
 
@@ -1534,435 +1924,6 @@
   }
 }
 
-.whatScope :global(.what-product-card.is-indx) {
-  top: 3095px;
-}
-
-.whatScope :global(.what-product-card.is-flywheel) {
-  top: 3931px;
-}
-
-.whatScope :global(.what-product-card.is-alpha) {
-  top: 4767px;
-}
-
-@media (min-width: 560px) and (max-width: 1023px) {
-  .whatScope :global(.what-product-card.is-indx) {
-    top: 3263px;
-  }
-
-  .whatScope :global(.what-product-card.is-flywheel) {
-    top: 3859px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha) {
-    top: 4395px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1359px) {
-  .whatScope :global(.what-product-card.is-indx) {
-    top: 2587px;
-  }
-
-  .whatScope :global(.what-product-card.is-flywheel) {
-    top: 3043px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha) {
-    top: 3499px;
-  }
-
-  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
-    width: 320px;
-  }
-
-  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 1360px) {
-  .whatScope :global(.what-frame) {
-    max-width: none;
-  }
-
-  .whatScope :global(.what-product-card.is-indx) {
-    top: 2816px;
-  }
-
-  .whatScope :global(.what-product-card.is-flywheel) {
-    top: 3293px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha) {
-    top: 3770px;
-  }
-
-  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
-    width: 390px;
-  }
-
-  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
-    font-size: 16px;
-  }
-}
-
 .whatScope :global(.what-team-image) {
   overflow: hidden !important;
-}
-
-@media (min-width: 1360px) {
-  .whatScope :global(.what-frame) {
-    height: 6180px;
-    max-width: 1440px;
-  }
-
-  .whatScope :global(.what-hero) {
-    left: 120px;
-    top: 243px;
-    width: 944px;
-  }
-
-  .whatScope :global(.what-hero h1) {
-    font-size: 160px;
-  }
-
-  .whatScope :global(.what-hero p) {
-    font-size: 24px;
-  }
-
-  .whatScope :global(.what-content-drop) {
-    height: 197px;
-    right: -254px;
-    top: 253px;
-    width: 352px;
-  }
-
-  .whatScope :global(.what-content-drop p) {
-    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-weight: 700;
-  }
-
-  .whatScope :global(.what-content-drop nav) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 8px;
-    right: 111px;
-    width: 109px;
-  }
-
-  .whatScope :global(.what-services) {
-    border-radius: 0;
-    height: 632px;
-    left: 0;
-    top: 662px;
-    width: 1440px;
-  }
-
-  .whatScope :global(.what-services-bg) {
-    height: 960px;
-    left: 720px;
-    top: 367px;
-    transform: translate(-50%, -50%);
-    width: 1440px;
-  }
-
-  .whatScope :global(.what-services-copy) {
-    left: 120px;
-    top: 201px;
-    width: 588px;
-  }
-
-  .whatScope :global(.what-services-copy h2) {
-    font-size: 40px;
-  }
-
-  .whatScope :global(.what-services-copy .what-button) {
-    left: 0;
-    top: 244px;
-  }
-
-  .whatScope :global(.what-process-map) {
-    height: 206.378px;
-    left: 810px;
-    top: 200px;
-    width: 449px;
-  }
-
-  .whatScope :global(.what-process-word) {
-    font-size: 32px;
-  }
-
-  .whatScope :global(.what-process-word.is-discover) {
-    left: 0;
-    top: 0;
-  }
-
-  .whatScope :global(.what-process-word.is-develop) {
-    left: 99px;
-    top: 154px;
-  }
-
-  .whatScope :global(.what-process-word.is-deploy) {
-    left: 278px;
-    top: 63px;
-  }
-
-  .whatScope :global(.what-process-arrow--desktop.is-first) {
-    height: 108px;
-    left: 103px;
-    top: 63.031px;
-    transform: none;
-    width: 82px;
-  }
-
-  .whatScope :global(.what-process-arrow--desktop.is-second) {
-    height: 86px;
-    left: 312.613px;
-    top: 110px;
-    transform: none;
-    width: 86px;
-  }
-
-  .whatScope :global(.what-work-copy) {
-    left: 630px;
-    top: 2009px;
-    width: 690px;
-  }
-
-  .whatScope :global(.what-work-copy h2),
-  .whatScope :global(.what-section-heading h2),
-  .whatScope :global(.what-impact-heading h2),
-  .whatScope :global(.what-team-copy h2) {
-    font-size: 40px;
-  }
-
-  .whatScope :global(.what-work-copy span),
-  .whatScope :global(.what-section-heading span),
-  .whatScope :global(.what-impact-heading span),
-  .whatScope :global(.what-team-copy > span) {
-    font-size: 24px;
-  }
-
-  .whatScope :global(.what-work-copy .what-button) {
-    left: 0;
-    top: 216px;
-  }
-
-  .whatScope :global(.what-case-card.is-feature) {
-    height: 386px;
-    left: 630px;
-    top: 1574px;
-    width: 690px;
-  }
-
-  .whatScope :global(.what-case-card.is-tall) {
-    height: 712px;
-    left: 120px;
-    top: 1574px;
-    width: 486px;
-  }
-
-  .whatScope :global(.what-case-card.is-tall .what-case-copy) {
-    bottom: 32px;
-    top: auto;
-    width: 371px;
-  }
-
-  .whatScope :global(.what-case-card.is-feature .what-button.is-read) {
-    top: 293px;
-  }
-
-  .whatScope :global(.what-case-card.is-tall .what-button.is-read) {
-    top: 32px;
-  }
-
-  .whatScope :global(.what-section-heading) {
-    left: 120px;
-    top: 2566px;
-    width: 792px;
-  }
-
-  .whatScope :global(.what-product-orbit) {
-    background-image: url("/what-product-orbit.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    height: 1431px;
-    opacity: .82;
-    position: absolute;
-    right: -708px;
-    top: 2275px;
-    transform: rotate(-14deg);
-    width: 1078px;
-  }
-
-  .whatScope :global(.what-product-card) {
-    align-items: center;
-    flex-direction: row;
-    gap: 56px;
-    height: 413px;
-    left: 120px;
-    padding: 56px 64px;
-    width: 1200px;
-  }
-
-  .whatScope :global(.what-product-card.is-indx) {
-    height: 413px;
-    top: 2816px;
-  }
-
-  .whatScope :global(.what-product-card.is-flywheel) {
-    height: 413px;
-    top: 3293px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha) {
-    height: 413px;
-    top: 3770px;
-  }
-
-  .whatScope :global(.what-product-brand) {
-    flex: 0 0 170px;
-  }
-
-  .whatScope :global(.what-product-card.is-indx .what-product-brand) {
-    flex-basis: 92px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha) {
-    gap: 40px;
-  }
-
-  .whatScope :global(.what-product-card.is-alpha .what-product-brand) {
-    flex-basis: 110.466px;
-  }
-
-  .whatScope :global(.what-product-brand h3) {
-    font-size: 32px;
-  }
-
-  .whatScope :global(.what-product-copy) {
-    align-items: flex-start;
-    flex: 1 1 auto;
-    gap: 40px;
-    margin-top: 0;
-    width: auto;
-  }
-
-  .whatScope :global(.what-product-copy p) {
-    text-align: left;
-  }
-
-  .whatScope :global(.what-product-actions) {
-    flex-direction: row;
-    gap: 40px;
-    justify-content: flex-start;
-    width: 846px;
-  }
-
-  .whatScope :global(.what-product-actions input) {
-    font-size: 20px;
-    padding: 16px 32px;
-    text-align: center;
-    width: 524px;
-  }
-
-  .whatScope :global(.what-product-actions input.is-tablet-only) {
-    display: none;
-  }
-
-  .whatScope :global(.what-products-button) {
-    left: 564px;
-    top: 4247px;
-    transform: none;
-  }
-
-  .whatScope :global(.what-impact) {
-    height: 1801px;
-    top: 4379px;
-    width: 1440px;
-  }
-
-  .whatScope :global(.what-impact-heading) {
-    left: 324px;
-    top: 152px;
-    width: 792px;
-  }
-
-  .whatScope :global(.what-impact-stats) {
-    display: block;
-    left: 0;
-    top: 324px;
-    transform: none;
-    width: 1440px;
-  }
-
-  .whatScope :global(.what-impact-stats div) {
-    position: absolute;
-  }
-
-  .whatScope :global(.what-impact-stats .is-countries) {
-    left: 191px;
-    top: 0;
-    width: 232px;
-  }
-
-  .whatScope :global(.what-impact-stats .is-jobs) {
-    left: 519px;
-    top: 0;
-    width: 313px;
-  }
-
-  .whatScope :global(.what-impact-stats .is-ventures) {
-    left: 928px;
-    top: 0;
-    width: 320px;
-  }
-
-  .whatScope :global(.what-impact-stats strong) {
-    font-size: 96px;
-  }
-
-  .whatScope :global(.what-impact-button) {
-    left: 619px;
-    top: 529px;
-    transform: none;
-  }
-
-  .whatScope :global(.what-team) {
-    height: 610px;
-    left: 120px;
-    top: 889px;
-    width: 1200px;
-  }
-
-  .whatScope :global(.what-team-image) {
-    height: 245px;
-    left: 48px;
-    top: 305px;
-    width: 1104px;
-  }
-
-  .whatScope :global(.what-team-copy) {
-    left: 48px;
-    top: 59px;
-    width: 1104px;
-  }
-
-  .whatScope :global(.what-team-actions) {
-    bottom: 76px;
-    gap: 48px;
-    left: auto;
-    right: 82px;
-  }
-
-  .whatScope :global(.what-team-actions .what-button) {
-    border-color: #ffffff;
-    color: #ffffff;
-    min-height: 56px;
-    padding: 16px 32px;
-  }
 }

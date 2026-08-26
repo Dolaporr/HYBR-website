@@ -32,6 +32,7 @@ export function HomeLeadForm() {
   return <form className="home-contact-form space-y-6 bg-black p-6 md:space-y-8 md:p-16" onSubmit={handleSubmit}>
     <input name="form-name" type="hidden" value="hybr-homepage-enquiry" />
     <input className="field" name="name" placeholder="Insert Your Name" required />
+    <input aria-label="Company" autoComplete="organization" className="field" name="company" placeholder="Insert Your Company" type="text" />
     <input className="field" name="email" placeholder="Insert Your Email" required type="email" />
     <textarea className="field min-h-40 resize-none" name="message" placeholder="What would you like us to know?" required />
     <button className="home-submit-button min-h-14 w-full rounded-full bg-white px-8 text-lg font-medium text-black transition" disabled={status === "sending"} type="submit">{status === "sending" ? "Sending…" : "Submit"}</button>
@@ -66,6 +67,7 @@ export function AlphaAccessForm() {
   }
   return <form className="what-product-actions" onSubmit={handleSubmit}>
     <input name="form-name" type="hidden" value="hybr-alpha-access" />
+    <input aria-label="Company" autoComplete="organization" name="company" placeholder="Insert Your Company" type="text" />
     <input aria-label="ALPHA email access" name="email" placeholder="Insert Your Email" required type="email" />
     <button className="what-button is-lime" disabled={status === "sending"} type="submit">{status === "sending" ? "Opening…" : "Access ALPHA"}</button>
     <p aria-live="polite" className={`what-product-form-status is-${status}`}>{status === "success" && "Your access request has been sent."}{status === "error" && "We could not save your request. Please try again."}</p>

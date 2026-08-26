@@ -10,7 +10,6 @@ type NetworkTier = {
 
 type TeamTierBrowserProps = {
   members: ReactNode;
-  tierDrop: ReactNode;
   tiers: NetworkTier[];
 };
 
@@ -38,7 +37,7 @@ function ArrowIcon({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export function TeamTierBrowser({ members, tierDrop, tiers }: TeamTierBrowserProps) {
+export function TeamTierBrowser({ members, tiers }: TeamTierBrowserProps) {
   const [activeTierIndex, setActiveTierIndex] = useState(0);
   const activeTier = tiers[activeTierIndex];
 
@@ -48,9 +47,36 @@ export function TeamTierBrowser({ members, tierDrop, tiers }: TeamTierBrowserPro
     });
   };
 
+  const selectTier = (index: number) => {
+    setActiveTierIndex(index);
+    document.getElementById("team")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <>
-      {tierDrop}
+      <aside aria-label="Team tiers" className="team-tier-drop">
+        <p>TIERS</p>
+        <nav>
+          {tiers.map((tier, index) => {
+            const isActive = index === activeTierIndex;
+
+            return (
+              <a
+                aria-current={isActive ? "page" : undefined}
+                href="#team"
+                key={tier.label}
+                onClick={(event) => {
+                  event.preventDefault();
+                  selectTier(index);
+                }}
+                style={{ fontWeight: isActive ? 700 : 500, opacity: isActive ? 1 : 0.72 }}
+              >
+                {tier.label}
+              </a>
+            );
+          })}
+        </nav>
+      </aside>
 
       <section aria-labelledby="team-tier-title" className="team-core" id="team">
         <h2 id="team-tier-title">{activeTier.label}</h2>

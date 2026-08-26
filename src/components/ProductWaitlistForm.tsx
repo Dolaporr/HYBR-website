@@ -42,6 +42,13 @@ export function ProductWaitlistForm({ product }: { product: ProductKey }) {
       <input name="product" type="hidden" value={details.product} />
       <input name="lead_type" type="hidden" value="Product waitlist" />
       <input
+        aria-label="Company"
+        autoComplete="organization"
+        name="company"
+        placeholder="Insert Your Company"
+        type="text"
+      />
+      <input
         aria-label={`${details.product} waitlist email`}
         name="email"
         placeholder="Insert Your Email"

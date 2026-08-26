@@ -78,6 +78,14 @@ export function ContactForm() {
         required
       />
       <input
+        aria-label="Company"
+        autoComplete="organization"
+        className="field"
+        name="company"
+        placeholder="Insert Your Company"
+        type="text"
+      />
+      <input
         aria-label="Your email address"
         className="field"
         name="email"

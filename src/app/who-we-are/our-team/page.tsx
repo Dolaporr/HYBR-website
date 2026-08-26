@@ -83,21 +83,6 @@ function NetworkMap() {
   );
 }
 
-function TierDrop() {
-  return (
-    <aside aria-label="Team tiers" className="team-tier-drop">
-      <p>TIERS</p>
-      <nav>
-        {networkTiers.map((tier) => (
-          <a href="#team" key={tier.label}>
-            {tier.label}
-          </a>
-        ))}
-      </nav>
-    </aside>
-  );
-}
-
 function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
   return (
     <article className="team-member-card">
@@ -153,14 +138,12 @@ export default function OurTeamPage() {
             Our network model enables us to go further faster, be radically original,
             achieve greater lasting impact, and do so with ruthless efficiency
           </p>
-          <Link href="#team">View as Single Page</Link>
         </section>
 
         <TeamTierBrowser
           members={teamMembers.map((member) => (
             <TeamCard key={member.id} member={member} />
           ))}
-          tierDrop={<TierDrop />}
           tiers={networkTiers}
         />
 

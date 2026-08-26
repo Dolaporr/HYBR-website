@@ -179,6 +179,9 @@
 }
 
 .teamScope :global(.team-network-tier) {
+  background: transparent;
+  border: none;
+  box-shadow: none;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   left: 23px;
   position: absolute;
@@ -258,9 +261,6 @@
   margin-top: 8px;
 }
 
-.teamScope :global(.team-meet a) {
-  display: none;
-}
 
 .teamScope :global(.team-tier-drop) {
   border-radius: 1000px 0 600px 1000px;
@@ -671,19 +671,6 @@
     font-size: 20px;
   }
 
-  .teamScope :global(.team-meet a) {
-    align-items: center;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 32px;
-    min-height: 61px;
-    padding: 16px 32px;
-  }
 
   .teamScope :global(.team-tier-drop) {
     border-radius: 1000px 0 1000px 1000px;
@@ -865,19 +852,6 @@
     font-size: 20px;
   }
 
-  .teamScope :global(.team-meet a) {
-    align-items: center;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 32px;
-    min-height: 61px;
-    padding: 16px 32px;
-  }
 
   .teamScope :global(.team-tier-drop) {
     border-radius: 1000px 0 1000px 1000px;
@@ -1064,19 +1038,6 @@
     font-size: 24px;
   }
 
-  .teamScope :global(.team-meet a) {
-    align-items: center;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 32px;
-    min-height: 61px;
-    padding: 16px 32px;
-  }
 
   .teamScope :global(.team-tier-drop) {
     border-radius: 1000px 0 1000px 1000px;

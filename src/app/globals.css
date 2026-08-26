@@ -1355,9 +1355,6 @@ a {
   width: 1100px;
 }
 
-.team-network-tier {
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
-}
 
 .figma-case-cover nav a,
 .listing-controls button,
@@ -14346,9 +14343,6 @@ video.home-video-card {
   margin-top: 8px;
 }
 
-.team-meet a {
-  display: none;
-}
 
 .team-core {
   left: 24px;
@@ -14694,21 +14688,6 @@ video.home-video-card {
     font-size: 20px;
   }
 
-  .team-meet a {
-    align-items: center;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    justify-content: center;
-    line-height: normal;
-    margin-top: 32px;
-    min-height: 61px;
-    padding: 16px 32px;
-  }
 
   .team-core {
     left: 80px;
@@ -14896,21 +14875,6 @@ video.home-video-card {
     font-size: 20px;
   }
 
-  .team-meet a {
-    align-items: center;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    justify-content: center;
-    line-height: normal;
-    margin-top: 32px;
-    min-height: 61px;
-    padding: 16px 32px;
-  }
 
   .team-core {
     left: 120px;
@@ -15098,21 +15062,6 @@ video.home-video-card {
     font-size: 24px;
   }
 
-  .team-meet a {
-    align-items: center;
-    border: 2px solid #000000;
-    border-radius: 100px;
-    color: #000000;
-    display: inline-flex;
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    justify-content: center;
-    line-height: normal;
-    margin-top: 32px;
-    min-height: 61px;
-    padding: 16px 32px;
-  }
 
   .team-core {
     left: 120px;
@@ -17164,8 +17113,8 @@ video.home-video-card {
   background: #ffffff;
   color: #000000;
   margin-inline: auto;
-  max-width: var(--figma-desktop);
-  overflow: hidden;
+  max-width: none;
+  overflow-x: clip;
   position: relative;
   width: 100%;
 }
@@ -17184,10 +17133,10 @@ video.home-video-card {
 }
 
 .about-hero-copy {
-  left: 120px;
+  left: max(24px, calc(50% - 600px));
   position: absolute;
   top: 243px;
-  width: min(916px, calc(100% - 240px));
+  width: min(916px, calc(100% - 48px));
 }
 
 .about-hero-copy h1 {
@@ -17315,7 +17264,7 @@ video.home-video-card {
   margin-inline: auto;
   max-width: 1200px;
   position: relative;
-  width: calc(100% - 240px);
+  width: min(1200px, calc(100% - 48px));
   z-index: 1;
 }
 
@@ -17348,21 +17297,25 @@ video.home-video-card {
 }
 
 .about-play-button {
-  height: 104px;
+  align-items: center;
+  display: flex;
+  height: 64px;
+  justify-content: center;
   left: 50%;
   position: absolute;
-  top: calc(50% - 1px);
+  top: 50%;
   transform: translate(-50%, -50%);
-  width: 104px;
+  width: 64px;
   z-index: 2;
 }
 
 .about-play-button img {
-  height: 100%;
+  display: block;
+  height: 52px;
   max-width: none;
   object-fit: contain;
   transform: rotate(90deg);
-  width: 100%;
+  width: 52px;
 }
 
 .about-card-caption {
@@ -17410,7 +17363,7 @@ video.home-video-card {
   margin-inline: auto;
   overflow: hidden;
   position: relative;
-  width: min(1200px, calc(100% - 240px));
+  width: min(1200px, calc(100% - 48px));
 }
 
 .about-label {
@@ -17493,7 +17446,7 @@ video.home-video-card {
   margin-inline: auto;
   margin-top: 166px;
   position: relative;
-  width: min(1200px, calc(100% - 240px));
+  width: min(1200px, calc(100% - 48px));
   z-index: 1;
 }
 
@@ -17528,16 +17481,17 @@ video.home-video-card {
   margin-top: 280px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .about-purpose-copy {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  left: 120px;
+  left: max(24px, calc(50% - 600px));
   position: absolute;
   top: 182px;
-  width: 714px;
+  width: min(714px, calc(100% - 48px));
   z-index: 1;
 }
 
@@ -17574,7 +17528,7 @@ video.home-video-card {
 .about-purpose-pill--top {
   border-radius: 1000px;
   height: 336px;
-  left: calc(66.6667% - 44px);
+  left: calc(50% + 196px);
   right: -452px;
   top: 308px;
 }
@@ -17588,7 +17542,7 @@ video.home-video-card {
   margin-top: 280px;
   min-height: 526px;
   position: relative;
-  width: min(1200px, calc(100% - 240px));
+  width: min(1200px, calc(100% - 48px));
   z-index: 1;
 }
 
@@ -17726,7 +17680,7 @@ video.home-video-card {
   margin-inline: auto;
   margin-top: 151px;
   position: relative;
-  width: min(894px, calc(100% - 240px));
+  width: min(894px, calc(100% - 48px));
   z-index: 1;
 }
 
@@ -17770,12 +17724,8 @@ video.home-video-card {
 }
 
 .about-value-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.62);
   position: absolute;
-}
-
-.about-value-card:nth-child(4) .about-value-overlay {
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .about-value-card:nth-child(3) .about-value-bg {
@@ -17834,7 +17784,7 @@ video.home-video-card {
   margin-top: 277px;
   padding-bottom: 571px;
   text-align: center;
-  width: min(996px, calc(100% - 240px));
+  width: min(996px, calc(100% - 48px));
 }
 
 .about-cta-copy {
@@ -17871,15 +17821,16 @@ video.home-video-card {
 }
 
 @media (min-width: 1024px) and (max-width: 1359px) {
-  .about-hero-copy {
-    left: 120px;
+  .about-hero-copy,
+  .about-purpose-copy {
+    left: max(24px, calc(50% - 520px));
   }
 
   .about-history-card,
   .about-founder-section,
   .about-early-section,
   .about-missions-section {
-    width: min(1040px, calc(100% - 240px));
+    width: min(1040px, calc(100% - 48px));
   }
 
   .about-history-body {
@@ -18080,9 +18031,14 @@ video.home-video-card {
   }
 
   .about-play-button {
+    align-items: center;
+    display: flex;
     height: 48px;
-    left: calc(50% + 107px);
-    top: 64px;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 48px;
   }
 
@@ -18477,8 +18433,6 @@ video.home-video-card {
 .who-journey-button:focus-visible,
 .about-button:hover,
 .about-button:focus-visible,
-.team-meet a:hover,
-.team-meet a:focus-visible,
 .team-more a:hover,
 .team-more a:focus-visible,
 .careers-button:hover,
@@ -18628,19 +18582,23 @@ video.home-video-card {
   }
 
   .about-page .about-founder-card .about-play-button {
+    align-items: center !important;
+    display: flex !important;
     height: 48px !important;
-    left: calc(50% + 107px) !important;
-    top: 64px !important;
+    justify-content: center !important;
+    left: 50% !important;
+    top: 50% !important;
     transform: translate(-50%, -50%) !important;
     width: 48px !important;
   }
 
   .about-page .about-founder-card .about-play-button img {
     display: block !important;
-    height: 100% !important;
+    height: 32px !important;
     max-width: none !important;
+    object-fit: contain !important;
     transform: rotate(90deg) !important;
-    width: 100% !important;
+    width: 32px !important;
   }
 
   .about-page .about-history-card .about-button {
@@ -22135,6 +22093,12 @@ video.home-video-card {
 
   .careers-why-card { align-items: flex-start !important; justify-content: flex-start !important; }
 }
+
+.careers-why-card,
+.careers-why-card h3,
+.careers-why-card p { text-align: left !important; }
+
+.careers-why-card { align-items: flex-start !important; justify-content: flex-start !important; }
 
 /* Keep Contact's shared testimonial portrait centered on the ring and seated at its base. */
 @media (max-width: 767px) {
