@@ -20633,14 +20633,14 @@ video.home-video-card {
   }
 
   .insights-hub-page .insights-stage {
-    height: 5620px !important;
+    height: 5410px !important;
   }
 
   .insights-hub-page .insights-spotlight-article,
   .insights-hub-page .insights-spotlight-news,
   .insights-hub-page .insights-news-a,
   .insights-hub-page .insights-news-b {
-    height: 240px !important;
+    height: 280px !important;
     left: 24px !important;
     width: calc(100vw - 48px) !important;
   }
@@ -20650,56 +20650,56 @@ video.home-video-card {
   }
 
   .insights-hub-page .insights-spotlight-news {
-    top: 1147px !important;
+    top: 1187px !important;
   }
 
   .insights-hub-page .insights-webinars-copy {
-    top: 1440px !important;
+    top: 1520px !important;
   }
 
   .insights-hub-page .insights-webinar-a {
-    top: 1693px !important;
+    top: 1773px !important;
   }
 
   .insights-hub-page .insights-webinar-b {
-    top: 2119px !important;
+    top: 2199px !important;
   }
 
   .insights-hub-page .insights-webinars-button {
-    top: 2545px !important;
+    top: 2625px !important;
   }
 
   .insights-hub-page .insights-articles-copy {
-    top: 2726px !important;
+    top: 2806px !important;
   }
 
   .insights-hub-page .insights-article-small-a,
   .insights-hub-page .insights-article-small-b {
-    top: 2968px !important;
+    top: 3048px !important;
   }
 
   .insights-hub-page .insights-articles-button {
-    top: 3288px !important;
+    top: 3368px !important;
   }
 
   .insights-hub-page .insights-news-copy {
-    top: 3471px !important;
+    top: 3551px !important;
   }
 
   .insights-hub-page .insights-news-a {
-    top: 3725px !important;
+    top: 3805px !important;
   }
 
   .insights-hub-page .insights-news-b {
-    top: 3989px !important;
+    top: 4109px !important;
   }
 
   .insights-hub-page .insights-news-button {
-    top: 4281px !important;
+    top: 4421px !important;
   }
 
   .insights-hub-page .insights-newsletter {
-    top: 4448px !important;
+    top: 4568px !important;
   }
 
   .insights-hub-page .insights-spotlight-main .insights-card-kind {
@@ -20753,8 +20753,11 @@ video.home-video-card {
   .insights-hub-page .insights-spotlight-news .insights-story-copy,
   .insights-hub-page .insights-news-a .insights-story-copy,
   .insights-hub-page .insights-news-b .insights-story-copy {
+    bottom: 64px !important;
     gap: 6px !important;
     left: 24px !important;
+    overflow: hidden !important;
+    padding-bottom: 0 !important;
     top: 24px !important;
     width: calc(100% - 48px) !important;
   }
