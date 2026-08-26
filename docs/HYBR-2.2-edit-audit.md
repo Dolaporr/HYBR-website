@@ -25,6 +25,10 @@ Source: **Developer Docs: HYBR 2.2 | Internal Edit Doc**, from the Careers form 
 - Tightened product-card layout and form actions so the email field, CTA, and form-status area stay readable at tablet and desktop widths.
 - Product lead forms now collect an optional **Company** field alongside the existing product, lead-type, and email values. This field is registered in Netlify’s static form definitions for INDX, Flywheel, and Alpha.
 
+### Our Work
+
+- Restored the Figma case-study card details on desktop and mobile: each card now renders its client name at the lower-left and the white HYBR case-study mark at the upper-right. The content and responsive layout already matched the supplied Our Work reference frames; this closes the missing visual treatment without substituting coloured client logos for the HYBR mark.
+
 ### Insights, articles, news, and shared testimonials
 
 - Adjusted mobile insight, article, news, and webinar card copy so it has a reserved action area and does not collide with the **Read More** button.

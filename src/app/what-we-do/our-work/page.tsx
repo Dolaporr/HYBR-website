@@ -109,6 +109,8 @@ function CaseStudyCard({ caseStudy, className = "" }: { caseStudy: CaseStudyList
       <p className="work-card-body is-short">
         {caseStudy.shortBody}
       </p>
+      <p className="work-card-company">{caseStudy.company}</p>
+      <img alt="" aria-hidden="true" className="work-card-mark" src="/home/logo-case-study.svg" />
       <WorkButton className="is-read" href={caseStudy.href}>
         Read More
       </WorkButton>
