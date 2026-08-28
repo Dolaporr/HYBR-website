@@ -29,12 +29,185 @@ const networkTiers = [
   },
 ];
 
-const teamMembers = Array.from({ length: 10 }, (_, index) => ({
-  id: index + 1,
-  name: "Oluwatobi Agbana",
-  role: "Marketing & Communications Analyst",
-  skills: ["Growth Strategy", "Business Development", "Corporate Systems"],
-}));
+type TeamTier = (typeof networkTiers)[number]["label"];
+
+type TeamMember = {
+  name: string;
+  role?: string;
+  linkedinUrl: string;
+  portrait?: string;
+  tier: TeamTier;
+};
+
+const teamMembers: TeamMember[] = [
+  {
+    name: "Carlman Moyo",
+    role: "Chairman",
+    linkedinUrl: "https://www.linkedin.com/in/carlmanmoyo/",
+    portrait: "/team/bw/carlman-moyo.png",
+    tier: "Core",
+  },
+  {
+    name: "Charles Ojei",
+    role: "Founder",
+    linkedinUrl: "https://www.linkedin.com/in/charlesojei/",
+    portrait: "/team/bw/charles-ojei.png",
+    tier: "Core",
+  },
+  {
+    name: "Adeyinka Aderombi",
+    role: "Partner",
+    linkedinUrl: "https://www.linkedin.com/in/adeyinkaaderombi/",
+    portrait: "/team/bw/adeyinka-aderombi.png",
+    tier: "Core",
+  },
+  {
+    name: "Ameh Loko",
+    role: "Venture Partner",
+    linkedinUrl: "https://www.linkedin.com/in/ameh-idoko-3090b347/",
+    portrait: "/team/bw/ameh-idoko.png",
+    tier: "Core",
+  },
+  {
+    name: "Mbayilan Aondo-Akaa",
+    role: "Senior Fellow",
+    linkedinUrl: "https://www.linkedin.com/in/mbayilan-aondo-akaa-62988113/",
+    portrait: "/team/bw/mbayilan-aondo-akaa.png",
+    tier: "Core",
+  },
+  {
+    name: "Stephen Ojonugwa",
+    role: "Project Delivery",
+    linkedinUrl: "https://www.linkedin.com/in/ojonugwa-stephen-agipm-cpm-550a7849/",
+    portrait: "/team/bw/stephen-ojonugwa.png",
+    tier: "Core",
+  },
+  {
+    name: "Tina Nyamache",
+    role: "Partnerships Consultant",
+    linkedinUrl: "https://www.linkedin.com/in/tinanyamache/",
+    portrait: "/team/bw/tina-nyamache.png",
+    tier: "Core",
+  },
+  {
+    name: "Francis Enakele",
+    role: "Corporate Finance Consultant",
+    linkedinUrl: "https://www.linkedin.com/in/francis-enakele-msc-mba-b9074529/",
+    portrait: "/team/bw/francis-enakele.png",
+    tier: "Core",
+  },
+  {
+    name: "Ntukwasi Agu",
+    role: "Experience Designer",
+    linkedinUrl: "https://www.linkedin.com/in/ntukwasi-agu/",
+    portrait: "/team/bw/ntukwasi-agu.png",
+    tier: "Core",
+  },
+  {
+    name: "Oluwatobi Agbana",
+    role: "Marketing-to-Sales AI Engineer",
+    linkedinUrl: "https://www.linkedin.com/in/tobi-a-a97067230/",
+    portrait: "/team/bw/oluwatobi-agbana.png",
+    tier: "Core",
+  },
+  {
+    name: "Tiambi Simms",
+    role: "Venture Builder | CEO, Shefarms",
+    linkedinUrl: "https://www.linkedin.com/in/tiambirsimms/",
+    portrait: "/team/bw/tiambi-simms.png",
+    tier: "Associates",
+  },
+  {
+    name: "Tania Sime Kouamou",
+    role: "Operations Expert | CEO, KoheLabs",
+    linkedinUrl: "https://www.linkedin.com/in/tania-sime/",
+    portrait: "/team/bw/tania-sime-kouamou.png",
+    tier: "Associates",
+  },
+  {
+    name: "Siphesihle Kala",
+    role: "Strategy | Ex-McKinsey",
+    linkedinUrl: "https://www.linkedin.com/in/siphekala/",
+    portrait: "/team/bw/siphesihle-kala.png",
+    tier: "Associates",
+  },
+  {
+    name: "Emmanuel Oluwatosin",
+    role: "AI Product Management | Ex-Microsoft",
+    linkedinUrl: "https://www.linkedin.com/in/emmanuel-oluwatosin/details/experience/",
+    portrait: "/team/bw/emmanuel-oluwatosin.png",
+    tier: "Associates",
+  },
+  {
+    name: "Olawale Jagunmolu",
+    role: "Route-to-Market Expert",
+    linkedinUrl: "https://www.linkedin.com/in/olawale-jagunmolu-61579218/",
+    portrait: "/team/bw/olawale-jagunmolu.png",
+    tier: "Associates",
+  },
+  {
+    name: "Jeff Wallace",
+    role: "President, Global Kinetics Inc",
+    linkedinUrl: "https://www.linkedin.com/in/jeffwallace913/",
+    portrait: "/team/bw/jeff-wallace.png",
+    tier: "Affiliates",
+  },
+  {
+    name: "Camille Park",
+    role: "Chief Executive Officer, NABU",
+    linkedinUrl: "https://www.linkedin.com/in/camille-park-04468762/",
+    portrait: "/team/bw/camille-park.png",
+    tier: "Affiliates",
+  },
+  {
+    name: "Kal Deutsch",
+    role: "Adjunct Professor, UC Berkeley",
+    linkedinUrl: "https://www.linkedin.com/in/kaldeutsch/",
+    portrait: "/team/bw/kal-deutsch.png",
+    tier: "Affiliates",
+  },
+  {
+    name: "Paul Kallmes",
+    role: "Partner, Silicon Valley In Your Pocket",
+    linkedinUrl: "https://www.linkedin.com/in/paulkallmes/",
+    portrait: "/team/bw/paul-kallmes.png",
+    tier: "Affiliates",
+  },
+  {
+    name: "Harald Friedl",
+    role: "Ex CEO Circular Economy",
+    linkedinUrl: "https://www.linkedin.com/in/harald-friedl/",
+    portrait: "/team/bw/harald-friedl.png",
+    tier: "Affiliates",
+  },
+  {
+    name: "Ademola Okunoga",
+    linkedinUrl: "https://www.linkedin.com/in/ademola-okuwoga-550a1675/",
+    portrait: "/team/bw/ademola-okunoga.png",
+    tier: "Advisors",
+  },
+  {
+    name: "Samantha Yarwood",
+    role: "Chief Innovation Officer, SHIFT Toronto",
+    linkedinUrl: "https://www.linkedin.com/in/samanthayarwood/",
+    // No BW portrait supplied yet. Add the local portrait path here when it becomes available.
+    tier: "Advisors",
+  },
+  {
+    name: "Hayat Chedid",
+    role: "Managing Partner, UpSpot",
+    linkedinUrl: "https://www.linkedin.com/in/hayat-chedid-480abb4/",
+    portrait: "/team/bw/hayat-chedid.png",
+    tier: "Advisors",
+  },
+  {
+    name: "Jubril Enakele",
+    role: "CEO, Iron Capital",
+    linkedinUrl: "https://www.linkedin.com/in/jubrilenakele/",
+    portrait: "/team/bw/jubril-enakele.png",
+    tier: "Advisors",
+  },
+];
 
 function HybrMark({ className = "" }: { className?: string }) {
   return (
@@ -83,35 +256,39 @@ function NetworkMap() {
   );
 }
 
-function TeamCard({ member }: { member: (typeof teamMembers)[number] }) {
+function TeamCard({ member }: { member: TeamMember }) {
+  const portraitStyle = member.portrait
+    ? { backgroundImage: `url(${member.portrait})` }
+    : undefined;
+
   return (
     <article className="team-member-card">
       <span
         aria-hidden="true"
-        className="team-member-photo"
-        style={{ backgroundImage: `url(${figmaAssets.figmaTeamPortrait})` }}
+        className={`team-member-photo${member.portrait ? "" : " is-placeholder"}`}
+        style={portraitStyle}
       />
       <HybrMark className="team-member-mark" />
       <div className="team-member-copy">
         <div>
           <div className="team-member-name-row">
             <h3>{member.name}</h3>
-            <svg aria-hidden="true" className="team-member-linkedin" fill="none" viewBox="0 0 32 32">
-              <rect height="20" rx="3" stroke="currentColor" strokeWidth="2.2" width="20" x="6" y="6" />
-              <path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" />
-              <path d="M16 22V17.5C16 15.84 17.34 14.5 19 14.5C20.66 14.5 22 15.84 22 17.5V22" stroke="currentColor" strokeWidth="2.4" />
-              <circle cx="11" cy="10.5" fill="currentColor" r="1.5" />
-            </svg>
+            <a
+              aria-label={`Open ${member.name}'s LinkedIn profile`}
+              className="team-member-linkedin"
+              href={member.linkedinUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <svg aria-hidden="true" fill="none" viewBox="0 0 32 32">
+                <rect height="20" rx="3" stroke="currentColor" strokeWidth="2.2" width="20" x="6" y="6" />
+                <path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" />
+                <path d="M16 22V17.5C16 15.84 17.34 14.5 19 14.5C20.66 14.5 22 15.84 22 17.5V22" stroke="currentColor" strokeWidth="2.4" />
+                <circle cx="11" cy="10.5" fill="currentColor" r="1.5" />
+              </svg>
+            </a>
           </div>
-          <p>{member.role}</p>
-          <Link className="team-member-more" href="/who-we-are/our-team">
-            Learn More
-          </Link>
-        </div>
-        <div className="team-member-tags">
-          {member.skills.map((skill) => (
-            <span key={`${member.id}-${skill}`}>{skill}</span>
-          ))}
+          {member.role ? <p>{member.role}</p> : null}
         </div>
       </div>
     </article>
@@ -141,9 +318,14 @@ export default function OurTeamPage() {
         </section>
 
         <TeamTierBrowser
-          members={teamMembers.map((member) => (
-            <TeamCard key={member.id} member={member} />
-          ))}
+          membersByTier={Object.fromEntries(
+            networkTiers.map((tier) => [
+              tier.label,
+              teamMembers
+                .filter((member) => member.tier === tier.label)
+                .map((member) => <TeamCard key={member.name} member={member} />),
+            ]),
+          )}
           tiers={networkTiers}
         />
 

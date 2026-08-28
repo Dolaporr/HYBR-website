@@ -307,6 +307,12 @@
   position: absolute;
 }
 
+.teamScope :global(.team-member-photo.is-placeholder) {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(148, 204, 67, 0.28), transparent 26%),
+    linear-gradient(145deg, #1e2528 0%, #0b0f10 62%, #000000 100%);
+}
+
 .teamScope :global(.team-member-photo::after) {
   background: rgba(0, 0, 0, .2);
   content: "";
@@ -353,10 +359,23 @@
 }
 
 .teamScope :global(.team-member-linkedin) {
+  align-items: center;
   color: #ffffff;
+  display: inline-flex;
   flex: 0 0 auto;
   height: 24px;
+  justify-content: center;
   width: 24px;
+}
+
+.teamScope :global(.team-member-linkedin:focus-visible) {
+  outline: 2px solid #94cc43;
+  outline-offset: 3px;
+}
+
+.teamScope :global(.team-member-linkedin svg) {
+  height: 100%;
+  width: 100%;
 }
 
 @media (max-width: 559px) {

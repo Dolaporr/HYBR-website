@@ -9,7 +9,7 @@ type NetworkTier = {
 };
 
 type TeamTierBrowserProps = {
-  members: ReactNode;
+  membersByTier: Record<string, ReactNode>;
   tiers: NetworkTier[];
 };
 
@@ -37,7 +37,7 @@ function ArrowIcon({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export function TeamTierBrowser({ members, tiers }: TeamTierBrowserProps) {
+export function TeamTierBrowser({ membersByTier, tiers }: TeamTierBrowserProps) {
   const [activeTierIndex, setActiveTierIndex] = useState(0);
   const activeTier = tiers[activeTierIndex];
 
@@ -67,6 +67,7 @@ export function TeamTierBrowser({ members, tiers }: TeamTierBrowserProps) {
                 key={tier.label}
                 onClick={(event) => {
                   event.preventDefault();
+                  event.stopPropagation();
                   selectTier(index);
                 }}
                 style={{ fontWeight: isActive ? 700 : 500, opacity: isActive ? 1 : 0.72 }}
@@ -88,7 +89,7 @@ export function TeamTierBrowser({ members, tiers }: TeamTierBrowserProps) {
         className="team-member-grid"
         key={activeTier.label}
       >
-        {members}
+        {membersByTier[activeTier.label]}
       </div>
 
       <div aria-label="Team tier navigation" className="team-tier-nav" role="group">
