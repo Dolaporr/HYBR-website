@@ -9,6 +9,7 @@ type NetworkTier = {
 };
 
 type TeamTierBrowserProps = {
+  afterRoster: ReactNode;
   membersByTier: Record<string, ReactNode>;
   tiers: NetworkTier[];
 };
@@ -37,7 +38,7 @@ function ArrowIcon({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export function TeamTierBrowser({ membersByTier, tiers }: TeamTierBrowserProps) {
+export function TeamTierBrowser({ afterRoster, membersByTier, tiers }: TeamTierBrowserProps) {
   const [activeTierIndex, setActiveTierIndex] = useState(0);
   const activeTier = tiers[activeTierIndex];
 
@@ -79,35 +80,39 @@ export function TeamTierBrowser({ membersByTier, tiers }: TeamTierBrowserProps) 
         </nav>
       </aside>
 
-      <section aria-labelledby="team-tier-title" className="team-core" id="team">
-        <h2 id="team-tier-title">{activeTier.label}</h2>
-        <p>{activeTier.text}</p>
-      </section>
+      <div className="team-roster-layout">
+        <section aria-labelledby="team-tier-title" className="team-core" id="team">
+          <h2 id="team-tier-title">{activeTier.label}</h2>
+          <p>{activeTier.text}</p>
+        </section>
 
-      <div
-        aria-label={`${activeTier.label} team members`}
-        className="team-member-grid"
-        key={activeTier.label}
-      >
-        {membersByTier[activeTier.label]}
-      </div>
+        <div
+          aria-label={`${activeTier.label} team members`}
+          className="team-member-grid"
+          key={activeTier.label}
+        >
+          {membersByTier[activeTier.label]}
+        </div>
 
-      <div aria-label="Team tier navigation" className="team-tier-nav" role="group">
-        <button
-          aria-label={`Show previous tier before ${activeTier.label}`}
-          onClick={() => changeTier(-1)}
-          type="button"
-        >
-          <ArrowIcon direction="left" />
-        </button>
-        <span aria-live="polite">{activeTier.label.toUpperCase()}</span>
-        <button
-          aria-label={`Show next tier after ${activeTier.label}`}
-          onClick={() => changeTier(1)}
-          type="button"
-        >
-          <ArrowIcon direction="right" />
-        </button>
+        <div aria-label="Team tier navigation" className="team-tier-nav" role="group">
+          <button
+            aria-label={`Show previous tier before ${activeTier.label}`}
+            onClick={() => changeTier(-1)}
+            type="button"
+          >
+            <ArrowIcon direction="left" />
+          </button>
+          <span aria-live="polite">{activeTier.label.toUpperCase()}</span>
+          <button
+            aria-label={`Show next tier after ${activeTier.label}`}
+            onClick={() => changeTier(1)}
+            type="button"
+          >
+            <ArrowIcon direction="right" />
+          </button>
+        </div>
+
+        {afterRoster}
       </div>
     </>
   );

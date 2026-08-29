@@ -318,6 +318,22 @@ export default function OurTeamPage() {
         </section>
 
         <TeamTierBrowser
+          afterRoster={(
+            <section aria-labelledby="team-more-title" className="team-more" id="more-about-us">
+              <h2 id="team-more-title">
+                Empowering organizations to unlock new value, create impact, and shape tomorrow.
+              </h2>
+              <p>
+                Build what&apos;s next &mdash; collaborate, experiment, and create change
+                with HYBR. Join a team where curiosity, creativity, and impact drive
+                everything we do.
+              </p>
+              <div>
+                <Link href="/who-we-are/careers">Join Us</Link>
+                <Link href="/what-we-do">What We Do</Link>
+              </div>
+            </section>
+          )}
           membersByTier={Object.fromEntries(
             networkTiers.map((tier) => [
               tier.label,
@@ -328,21 +344,6 @@ export default function OurTeamPage() {
           )}
           tiers={networkTiers}
         />
-
-        <section aria-labelledby="team-more-title" className="team-more" id="more-about-us">
-          <h2 id="team-more-title">
-            Empowering organizations to unlock new value, create impact, and shape tomorrow.
-          </h2>
-          <p>
-            Build what&apos;s next &mdash; collaborate, experiment, and create change
-            with HYBR. Join a team where curiosity, creativity, and impact drive
-            everything we do.
-          </p>
-          <div>
-            <Link href="/who-we-are/careers">Join Us</Link>
-            <Link href="/what-we-do">What We Do</Link>
-          </div>
-        </section>
       </div>
 
       <Footer />

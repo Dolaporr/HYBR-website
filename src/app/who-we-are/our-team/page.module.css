@@ -1134,6 +1134,116 @@
   }
 }
 
+/* The roster is the only variable-height portion of this Figma-led page.
+   Keep it in normal flow so each tier can place its controls after its own cards. */
+.teamScope :global(.team-frame) {
+  --team-roster-start: 2112px;
+  --team-roster-grid-gap: 150px;
+  --team-roster-nav-gap: 64px;
+  --team-roster-more-gap: 154px;
+  --team-roster-bottom-gap: 296px;
+  height: auto !important;
+  min-height: 0;
+  padding-bottom: var(--team-roster-bottom-gap);
+}
+
+.teamScope :global(.team-roster-layout) {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  padding-top: var(--team-roster-start);
+  width: var(--team-mobile-content-width);
+}
+
+.teamScope :global(.team-roster-layout .team-core),
+.teamScope :global(.team-roster-layout .team-member-grid),
+.teamScope :global(.team-roster-layout .team-tier-nav),
+.teamScope :global(.team-roster-layout .team-more) {
+  left: auto !important;
+  position: static !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+.teamScope :global(.team-roster-layout .team-core) {
+  width: 100% !important;
+}
+
+.teamScope :global(.team-roster-layout .team-member-grid) {
+  margin-top: var(--team-roster-grid-gap);
+  width: 100% !important;
+}
+
+.teamScope :global(.team-roster-layout .team-tier-nav) {
+  margin: var(--team-roster-nav-gap) auto 0;
+}
+
+.teamScope :global(.team-roster-layout .team-more) {
+  margin-top: var(--team-roster-more-gap);
+  width: 100% !important;
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .teamScope :global(.team-frame) {
+    --team-roster-start: 2328px;
+    --team-roster-grid-gap: 150px;
+    --team-roster-nav-gap: 87px;
+    --team-roster-more-gap: 192px;
+    --team-roster-bottom-gap: 260px;
+  }
+
+  .teamScope :global(.team-roster-layout) {
+    width: 640px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .teamScope :global(.team-frame) {
+    --team-roster-start: 2265px;
+    --team-roster-grid-gap: 126px;
+    --team-roster-nav-gap: 72px;
+    --team-roster-more-gap: 212px;
+    --team-roster-bottom-gap: 320px;
+  }
+
+  .teamScope :global(.team-roster-layout) {
+    width: 1040px;
+  }
+
+  .teamScope :global(.team-roster-layout .team-core) {
+    width: 798px !important;
+  }
+
+  .teamScope :global(.team-roster-layout .team-more) {
+    align-self: center;
+    width: 774px !important;
+  }
+}
+
+@media (min-width: 1360px) {
+  .teamScope :global(.team-frame) {
+    --team-roster-start: 2485px;
+    --team-roster-grid-gap: 120px;
+    --team-roster-nav-gap: 60px;
+    --team-roster-more-gap: 272px;
+    --team-roster-bottom-gap: 300px;
+  }
+
+  .teamScope :global(.team-roster-layout) {
+    width: 1200px;
+  }
+
+  .teamScope :global(.team-roster-layout .team-core) {
+    width: 996px !important;
+  }
+
+  .teamScope :global(.team-roster-layout .team-more) {
+    align-self: center;
+    width: 996px !important;
+  }
+}
+
 .teamScope :global(.team-content-drop.site-content-drop),
 .teamScope :global(.team-tier-drop.site-content-drop) {
   left: auto !important;
