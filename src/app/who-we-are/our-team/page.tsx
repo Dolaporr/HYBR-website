@@ -65,7 +65,7 @@ const teamMembers: TeamMember[] = [
     name: "Ameh Loko",
     role: "Venture Partner",
     linkedinUrl: "https://www.linkedin.com/in/ameh-idoko-3090b347/",
-    portrait: "/team/bw/ameh-idoko.png",
+    portrait: "/team/bw/ameh-idoko.jpg",
     tier: "Core",
   },
   {
@@ -175,13 +175,14 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Harald Friedl",
-    role: "Ex CEO Circular Economy",
+    role: "Circular Economist",
     linkedinUrl: "https://www.linkedin.com/in/harald-friedl/",
     portrait: "/team/bw/harald-friedl.png",
     tier: "Affiliates",
   },
   {
     name: "Ademola Okunoga",
+    role: "GROWTH EQUITY, GENERAL ATLANTIC",
     linkedinUrl: "https://www.linkedin.com/in/ademola-okuwoga-550a1675/",
     portrait: "/team/bw/ademola-okunoga.png",
     tier: "Advisors",
@@ -190,7 +191,7 @@ const teamMembers: TeamMember[] = [
     name: "Samantha Yarwood",
     role: "Chief Innovation Officer, SHIFT Toronto",
     linkedinUrl: "https://www.linkedin.com/in/samanthayarwood/",
-    // No BW portrait supplied yet. Add the local portrait path here when it becomes available.
+    portrait: "/team/bw/samantha-yarwood.jpg",
     tier: "Advisors",
   },
   {

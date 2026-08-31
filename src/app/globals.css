@@ -18621,6 +18621,95 @@ video.home-video-card {
   }
 }
 
+/* About Us mobile: keep the visual hierarchy but let the history card grow
+   with its copy, rather than stacking fixed coordinates inside a fixed height. */
+@media (max-width: 559px) {
+  .about-page .about-founder-card .about-play-button {
+    top: 20% !important;
+  }
+
+  .about-page .about-founder-card .about-card-caption {
+    left: 32px !important;
+    right: 32px !important;
+    width: auto !important;
+  }
+
+  .about-page .about-history-card {
+    align-items: stretch;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    padding: 59px 32px;
+  }
+
+  .about-page .about-history-card > .about-label,
+  .about-page .about-history-card h2,
+  .about-page .about-history-card .about-history-body,
+  .about-page .about-history-card .about-history-media,
+  .about-page .about-history-card .about-button {
+    left: auto !important;
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+
+  .about-page .about-history-card > .about-label {
+    flex: 0 0 auto;
+    margin: 0 0 39px;
+    order: 0;
+    z-index: 1;
+  }
+
+  .about-page .about-history-card .about-history-media {
+    border-radius: 0 1000px 1000px 1000px;
+    box-sizing: border-box;
+    flex: 0 0 124px !important;
+    height: 124px !important;
+    max-height: 124px;
+    margin: 0 0 26px;
+    min-height: 124px;
+    order: 1;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .about-page .about-history-card .about-history-media img {
+    display: block;
+    height: 100% !important;
+    inset: auto !important;
+    object-fit: cover;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .about-page .about-history-card h2 {
+    flex: 0 0 auto;
+    margin: 0 0 40px;
+    order: 2;
+    width: auto;
+    z-index: 1;
+  }
+
+  .about-page .about-history-card .about-history-body {
+    flex: 0 0 auto;
+    order: 3;
+    width: auto;
+    z-index: 1;
+  }
+
+  .about-page .about-history-card .about-button {
+    align-self: center;
+    flex: 0 0 auto;
+    margin: 32px 0 0;
+    order: 4;
+    z-index: 1;
+  }
+}
+
 .about-page .home-footer .hybr-button--white {
   background: #ffffff !important;
   border-color: #ffffff !important;

@@ -889,6 +889,32 @@
 
 .careersScope :global(.careers-form-status.is-error) { color: #ffd0d0; }
 
+/* The Open Roles section is intentionally hidden. On phones, place the
+   newsletter directly after the final visible section instead of retaining
+   the removed section's reserved canvas space. */
+@media (max-width: 559px) {
+  .careersScope :global(.careers-frame) {
+    --careers-internship-top: 6608px;
+    --careers-internship-height: 636px;
+    --careers-section-gap: 96px;
+    --careers-newsletter-height: 751px;
+    height: calc(
+      var(--careers-internship-top) +
+      var(--careers-internship-height) +
+      var(--careers-section-gap) +
+      var(--careers-newsletter-height)
+    );
+  }
+
+  .careersScope :global(.careers-newsletter) {
+    top: calc(
+      var(--careers-internship-top) +
+      var(--careers-internship-height) +
+      var(--careers-section-gap)
+    );
+  }
+}
+
 @media (min-width: 560px) {
   .careersScope :global(.careers-image-pill) {
     background-position: center;
