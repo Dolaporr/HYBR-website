@@ -28,12 +28,18 @@ export default function InnovationGuidePage() {
           <div className="resource-download-panel">
             <div className="resource-download-copy">
               <h2>Get the guide in your inbox.</h2>
-              <p>This becomes a WordPress-managed gated resource flow later.</p>
+              <p>Download the HYBR 3D Innovation Flywheel.</p>
             </div>
             <form className="provisional-form">
               <input className="field" placeholder="Insert Your Name" />
               <input className="field" placeholder="Insert Your Email" type="email" />
-              <button type="button">Download</button>
+              <a
+                className="resource-download-button"
+                download="HYBR-3D-Innovation-Flywheel.jpg"
+                href="/resources/hybr-3d-innovation-flywheel.jpg"
+              >
+                Download
+              </a>
             </form>
           </div>
         </div>

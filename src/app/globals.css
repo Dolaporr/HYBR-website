@@ -939,12 +939,17 @@ a {
 .home-form-status:empty { display: none; }
 .home-form-status.is-error { color: #ffd0d0; }
 
-.provisional-form button {
+.provisional-form button,
+.resource-download-button {
+  align-items: center;
   background: #000000;
   border: 0;
   border-radius: 100px;
   color: #ffffff;
+  display: inline-flex;
   font-size: 20px;
+  justify-content: center;
+  text-decoration: none;
   font-weight: 700;
   min-height: 56px;
   padding: 16px 32px;
@@ -1253,7 +1258,8 @@ a {
     min-height: 128px;
   }
 
-  .provisional-form button {
+  .provisional-form button,
+  .resource-download-button {
     font-size: 18px;
     min-height: 56px;
   }
@@ -1665,7 +1671,8 @@ a {
     min-height: 128px;
   }
 
-  .provisional-form button {
+  .provisional-form button,
+  .resource-download-button {
     font-size: 18px;
     min-height: 56px;
   }
@@ -18486,7 +18493,9 @@ video.home-video-card {
 .listing-controls button:hover,
 .listing-controls button:focus-visible,
 .provisional-form button:hover,
-.provisional-form button:focus-visible {
+.provisional-form button:focus-visible,
+.resource-download-button:hover,
+.resource-download-button:focus-visible {
   background: #8dc540 !important;
   border-color: #8dc540 !important;
   box-shadow: none !important;

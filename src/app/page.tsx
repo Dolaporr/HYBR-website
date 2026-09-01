@@ -130,14 +130,20 @@ function Button({
   href = "/contact",
   variant = "primary",
   className = "",
+  download,
 }: {
   children: ReactNode;
   href?: string;
   variant?: "primary" | "outline" | "dark" | "white" | "glass";
   className?: string;
+  download?: string;
 }) {
   return (
-    <a className={`hybr-button hybr-button--${variant} ${className}`} href={href}>
+    <a
+      className={`hybr-button hybr-button--${variant} ${className}`}
+      download={download}
+      href={href}
+    >
       {children}
     </a>
   );
@@ -849,7 +855,11 @@ export default function Home() {
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-4">
             <Button variant="outline">Book a Strategy Call</Button>
-            <Button href="/resources/innovation-guide" variant="outline">
+            <Button
+              download="HYBR-3D-Innovation-Flywheel.jpg"
+              href="/resources/hybr-3d-innovation-flywheel.jpg"
+              variant="outline"
+            >
               <span className="home-cta-guide-full">Download Our Innovation Guide</span>
               <span className="home-cta-guide-mobile">Get Our Innovation Guide</span>
             </Button>
