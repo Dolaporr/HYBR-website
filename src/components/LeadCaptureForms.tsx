@@ -4,6 +4,8 @@ import { FormEvent, useState } from "react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
+const alphaAccessWebhook = "https://hybrgroup.app.n8n.cloud/webhook/hybr-alpha-access";
+
 async function submitLead(form: HTMLFormElement, formName: string, extra: Record<string, string>) {
   const data = new FormData(form);
   data.set("form-name", formName);
@@ -16,6 +18,26 @@ async function submitLead(form: HTMLFormElement, formName: string, extra: Record
     method: "POST",
   });
   if (!response.ok) throw new Error("Submission failed");
+}
+
+async function submitAlphaAccessLead(form: HTMLFormElement) {
+  const data = new FormData(form);
+  data.set("form-name", "hybr-alpha-access");
+  data.set("form_name", "hybr-alpha-access");
+  data.set("lead_type", "ALPHA access request");
+  data.set("product", "ALPHA");
+  data.set("subject", "New HYBR ALPHA access request");
+
+  const parameters = new URLSearchParams();
+  data.forEach((value, key) => parameters.append(key, String(value)));
+
+  const response = await fetch(alphaAccessWebhook, {
+    body: parameters.toString(),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    method: "POST",
+  });
+
+  if (!response.ok) throw new Error(`Alpha Access webhook failed with ${response.status}`);
 }
 
 export function HomeLeadForm() {
@@ -62,7 +84,7 @@ export function AlphaAccessForm() {
     event.preventDefault(); const form = event.currentTarget;
     const alphaWindow = window.open("https://alpha.hybrgroup.net", "_blank", "noopener,noreferrer");
     setStatus("sending");
-    try { await submitLead(form, "hybr-alpha-access", { lead_type: "ALPHA access request", product: "ALPHA", subject: "New HYBR ALPHA access request" }); form.reset(); setStatus("success"); } catch { setStatus("error"); }
+    try { await submitAlphaAccessLead(form); form.reset(); setStatus("success"); } catch (error) { console.error("Alpha Access webhook submission failed", error); setStatus("error"); }
     alphaWindow?.focus();
   }
   return <form className="what-product-actions" onSubmit={handleSubmit}>

@@ -62,7 +62,7 @@ const teamMembers: TeamMember[] = [
     tier: "Core",
   },
   {
-    name: "Ameh Loko",
+    name: "Ameh Idoko",
     role: "Venture Partner",
     linkedinUrl: "https://www.linkedin.com/in/ameh-idoko-3090b347/",
     portrait: "/team/bw/ameh-idoko.jpg",
