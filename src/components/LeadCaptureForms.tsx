@@ -5,6 +5,8 @@ import { FormEvent, useState } from "react";
 type Status = "idle" | "sending" | "success" | "error";
 
 const alphaAccessWebhook = "https://hybrgroup.app.n8n.cloud/webhook/hybr-alpha-access";
+const innovationGuideWebhook = "https://hybrgroup.app.n8n.cloud/webhook/hybr-innovation-guide";
+const innovationGuideDownload = "/resources/hybr-3d-innovation-flywheel.pdf";
 
 async function submitLead(form: HTMLFormElement, formName: string, extra: Record<string, string>) {
   const data = new FormData(form);
@@ -38,6 +40,15 @@ async function submitAlphaAccessLead(form: HTMLFormElement) {
   });
 
   if (!response.ok) throw new Error(`Alpha Access webhook failed with ${response.status}`);
+}
+
+function downloadInnovationGuide() {
+  const link = document.createElement("a");
+  link.download = "HYBR-3D-Innovation-Flywheel.pdf";
+  link.href = innovationGuideDownload;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
 }
 
 export function HomeLeadForm() {
@@ -93,5 +104,45 @@ export function AlphaAccessForm() {
     <input aria-label="ALPHA email access" name="email" placeholder="Insert Your Email" required type="email" />
     <button className="what-button is-lime" disabled={status === "sending"} type="submit">{status === "sending" ? "Opening…" : "Access ALPHA"}</button>
     <p aria-live="polite" className={`what-product-form-status is-${status}`}>{status === "success" && "Your access request has been sent."}{status === "error" && "We could not save your request. Please try again."}</p>
+  </form>;
+}
+
+export function InnovationGuideDownloadForm() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    data.set("form_name", "hybr-innovation-guide");
+    const parameters = new URLSearchParams();
+    data.forEach((value, key) => parameters.append(key, String(value)));
+
+    setStatus("sending");
+    try {
+      const response = await fetch(innovationGuideWebhook, {
+        body: parameters.toString(),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        method: "POST",
+      });
+      if (!response.ok) throw new Error(`Innovation Guide webhook failed with ${response.status}`);
+
+      form.reset();
+      setStatus("success");
+      downloadInnovationGuide();
+    } catch (error) {
+      console.error("Innovation Guide webhook submission failed", error);
+      setStatus("error");
+    }
+  }
+
+  return <form className="provisional-form" onSubmit={handleSubmit}>
+    <input className="field" name="name" placeholder="Insert Your Name" />
+    <input className="field" name="email" placeholder="Insert Your Email" required type="email" />
+    <button disabled={status === "sending"} type="submit">{status === "sending" ? "Sending…" : "Download"}</button>
+    <p aria-live="polite" className={`resource-download-status is-${status}`}>
+      {status === "success" && "Your guide is downloading now."}
+      {status === "error" && "We could not prepare your guide. Please try again."}
+    </p>
   </form>;
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Footer, Header } from "../../_components/marketing";
 import { figmaAssets } from "@/content/site";
+import { InnovationGuideDownloadForm } from "@/components/LeadCaptureForms";
 
 export default function InnovationGuidePage() {
   return (
@@ -30,17 +31,7 @@ export default function InnovationGuidePage() {
               <h2>Get the guide in your inbox.</h2>
               <p>Download the HYBR 3D Innovation Flywheel.</p>
             </div>
-            <form className="provisional-form">
-              <input className="field" placeholder="Insert Your Name" />
-              <input className="field" placeholder="Insert Your Email" type="email" />
-              <a
-                className="resource-download-button"
-                download="HYBR-3D-Innovation-Flywheel.jpg"
-                href="/resources/hybr-3d-innovation-flywheel.jpg"
-              >
-                Download
-              </a>
-            </form>
+            <InnovationGuideDownloadForm />
           </div>
         </div>
       </section>
