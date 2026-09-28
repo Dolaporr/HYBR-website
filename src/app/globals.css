@@ -7787,7 +7787,7 @@ video.home-video-card {
   border-radius: 16px;
   color: #ffffff;
   display: block;
-  height: 408px;
+  height: 460px;
   margin-top: 20px;
   overflow: hidden;
   position: relative;
@@ -7871,7 +7871,11 @@ video.home-video-card {
   left: 32px;
   line-height: normal;
   position: absolute;
-  width: 371px;
+  /* Was 371px on a 1200px+ card, forcing the headline to wrap 4 lines
+     deep; give it most of the card's width (reserving room for the
+     bottom-right duration badge) so it and the subheading wrap far
+     less at every width down to tablet. */
+  width: min(820px, calc(100% - 180px));
   z-index: 1;
 }
 
