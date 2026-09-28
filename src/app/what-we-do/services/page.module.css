@@ -98,9 +98,15 @@
 
 .servicesScope :global(.services-content-drop-media::after),
 .servicesScope :global(.services-process-bg::after),
-.servicesScope :global(.services-case-image::after),
 .servicesScope :global(.services-testimonial-bg::after) {
   background: rgba(0, 0, 0, .6);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.servicesScope :global(.services-case-image::after) {
+  background: rgba(0, 0, 0, .72);
   content: "";
   inset: 0;
   position: absolute;
@@ -293,6 +299,10 @@
   top: 170px;
 }
 
+.servicesScope :global(.services-service.is-discover .services-tags) {
+  top: 170px;
+}
+
 .servicesScope :global(.services-tags span) {
   align-items: center;
   background: #000000;
@@ -319,6 +329,18 @@
   position: absolute;
   top: 375px;
   width: 100%;
+}
+
+.servicesScope :global(.services-service.is-discover .services-case-card) {
+  top: 288px;
+}
+
+.servicesScope :global(.services-service.is-develop .services-case-card) {
+  top: 382px;
+}
+
+.servicesScope :global(.services-service.is-deploy .services-case-card) {
+  top: 355px;
 }
 
 .servicesScope :global(.services-case-image) {
@@ -615,9 +637,10 @@
 }
 
 .servicesScope :global(.services-talk-button) {
-  left: 117px;
+  left: 50%;
   position: absolute;
   top: 4306px;
+  transform: translateX(-50%);
 }
 
 @media (min-width: 560px) and (max-width: 1023px) {
@@ -752,6 +775,7 @@
   }
 
   .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-discover .services-tags),
   .servicesScope :global(.services-service.is-develop .services-tags) {
     gap: 16px 24px;
     top: 468px;
@@ -764,7 +788,10 @@
     line-height: 17px;
   }
 
-  .servicesScope :global(.services-case-card) {
+  .servicesScope :global(.services-case-card),
+  .servicesScope :global(.services-service.is-discover .services-case-card),
+  .servicesScope :global(.services-service.is-develop .services-case-card),
+  .servicesScope :global(.services-service.is-deploy .services-case-card) {
     height: 228px;
     top: 209px;
     width: 640px;
@@ -886,6 +913,7 @@
 
   .servicesScope :global(.services-talk-button) {
     left: 322px;
+    transform: none;
     top: 4530px;
   }
 }
@@ -1028,6 +1056,7 @@
   }
 
   .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-discover .services-tags),
   .servicesScope :global(.services-service.is-develop .services-tags) {
     gap: 16px 24px;
     top: 228px;
@@ -1040,7 +1069,8 @@
     line-height: 17px;
   }
 
-  .servicesScope :global(.services-case-card) {
+  .servicesScope :global(.services-case-card),
+  .servicesScope :global(.services-service.is-discover .services-case-card) {
     height: 308px;
     left: 532px;
     top: 0;
@@ -1178,6 +1208,7 @@
 
   .servicesScope :global(.services-talk-button) {
     left: 562px;
+    transform: none;
     top: 3653px;
   }
 }
@@ -1315,8 +1346,9 @@
   }
 
   .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-discover .services-tags),
   .servicesScope :global(.services-service.is-develop .services-tags) {
-    gap: 31px 24px;
+    gap: 16px 24px;
     top: 240px;
     width: 690px;
   }
@@ -1327,7 +1359,10 @@
     line-height: 17px;
   }
 
-  .servicesScope :global(.services-case-card) {
+  .servicesScope :global(.services-case-card),
+  .servicesScope :global(.services-service.is-discover .services-case-card),
+  .servicesScope :global(.services-service.is-develop .services-case-card),
+  .servicesScope :global(.services-service.is-deploy .services-case-card) {
     height: 321px;
     left: 714px;
     top: 10px;
@@ -1467,6 +1502,7 @@
     font-size: 24px;
     left: 632px;
     min-height: 61px;
+    transform: none;
     top: 3896px;
   }
 }
@@ -1517,6 +1553,17 @@
 
 .servicesScope :global(.services-shared-testimonials .home-testimonial-shell) {
   margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  /* The shared carousel's right arrow is rendered at 64px but its grid
+     track is only 24px, so it overflows toward the outer edge. On the
+     homepage that overflow lands safely in a wide margin, but this
+     page's narrow gutter lets it get clipped by .services-frame's
+     overflow: hidden, making the arrow unreliable to click. */
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-arrow--right) {
+    transform: translateX(-16px);
+  }
 }
 
 @media (min-width: 560px) {
