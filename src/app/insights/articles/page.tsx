@@ -136,9 +136,9 @@ function NewsCard() {
   return (
     <Link className="articles-news-card figma-motion-card" href={innovationFellowshipNews.href}>
       <img alt="" src={figmaAssets.figmaBuilding} />
+      <span className="articles-news-kind">NEWS</span>
       <span className="articles-news-button">Read More</span>
       <span className="articles-news-copy">
-        <span>NEWS</span>
         <span>{innovationFellowshipNews.title}</span>
         <span>{innovationFellowshipNews.cardSummary}</span>
       </span>
@@ -178,6 +178,12 @@ export default function ArticlesPage() {
               <ArticleCard article={fromGuessingToKnowingArticle} className="articles-card--a" href="/insights/articles/from-guessing-to-knowing" />
               <ArticleCard article={innovationSweetSpotArticle} className="articles-card--b" href="/insights/articles/specific-article" />
               <ArticleCard article={fastestWayToWasteIdeaArticle} className="articles-card--c" href="/insights/articles/fastest-way-to-waste-a-good-idea" />
+              {/* The grid's 4th slot (articles-card--d) has been styled at every
+                  breakpoint since this page was built, but nothing was ever
+                  rendered into it. There's no 4th real article yet, so this
+                  repeats "From Guessing to Knowing" as a placeholder until
+                  one exists - swap it for the real piece when it's ready. */}
+              <ArticleCard article={fromGuessingToKnowingArticle} className="articles-card--d" href="/insights/articles/from-guessing-to-knowing" />
             </div>
             <div className="articles-view-all">
               <Link className="articles-pill-button" href="/insights/articles">

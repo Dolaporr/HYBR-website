@@ -9003,7 +9003,7 @@ video.home-video-card {
 .articles-card-kind {
   color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   left: 32px;
   line-height: normal;
@@ -9170,12 +9170,16 @@ video.home-video-card {
   left: 32px;
   line-height: normal;
   position: absolute;
-  width: 371px;
+  /* Was 371px on a 690px card (same fixed-width bug as the Webinars
+     page's own spotlight card), wrapping the title 4 lines deep.
+     Reserve room on the right for the duration badge, which shares
+     this same bottom row. */
+  width: calc(100% - 180px);
   z-index: 1;
 }
 
 .articles-webinar-copy span:first-child,
-.articles-news-copy span:nth-child(2) {
+.articles-news-copy span:first-child {
   color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 32px;
@@ -9189,12 +9193,31 @@ video.home-video-card {
   font-weight: 600;
 }
 
-.articles-news-button {
-  right: 32px;
+/* Matches .articles-webinar-kind so the two cards in this section rhyme:
+   a small top-left label, a play/read action in the same row, and the
+   title+meta anchored to the bottom instead of the label being folded
+   into the bottom copy block. */
+.articles-news-kind {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  left: 32px;
+  line-height: normal;
+  position: absolute;
   top: 32px;
+  z-index: 1;
+}
+
+.articles-news-button {
+  left: 50%;
+  right: auto;
+  top: 32px;
+  transform: translateX(-50%);
 }
 
 .articles-news-copy {
+  bottom: 32px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -9202,15 +9225,9 @@ video.home-video-card {
   left: 32px;
   line-height: normal;
   position: absolute;
-  top: 554px;
-  width: 371px;
+  top: auto;
+  width: calc(100% - 64px);
   z-index: 1;
-}
-
-.articles-news-copy span:first-child {
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  font-weight: 600;
 }
 
 .articles-news-copy span:last-child {
@@ -9384,7 +9401,7 @@ video.home-video-card {
   .articles-more {
     gap: 32px 24px;
     grid-template-columns: 508px 508px;
-    grid-template-rows: 265px 344px;
+    grid-template-rows: 265px 420px;
     margin-top: 224px;
   }
 
@@ -9398,14 +9415,17 @@ video.home-video-card {
   }
 
   .articles-webinar-card {
-    height: 344px;
+    /* 344px wasn't enough room for the bottom-anchored, multi-line title
+       to clear the top-left MASTERCLASS label. */
+    height: 420px;
   }
 
   .articles-news-card {
-    height: 641px;
+    height: 717px;
   }
 
   .articles-news-copy {
+    bottom: auto;
     top: 438px;
     width: 422px;
   }
@@ -9577,14 +9597,17 @@ video.home-video-card {
   }
 
   .articles-news-copy {
+    bottom: auto;
     top: 48px;
     width: 440px;
   }
 
   .articles-news-button {
     bottom: 40px;
+    left: auto;
     right: 32px;
     top: auto;
+    transform: none;
   }
 
   .articles-more-mobile-action {
@@ -9890,7 +9913,7 @@ video.home-video-card {
   }
 
   .articles-webinar-kind,
-  .articles-news-copy span:first-child {
+  .articles-news-kind {
     font-size: 16px;
     line-height: 19.504px;
   }
@@ -9898,6 +9921,11 @@ video.home-video-card {
   .articles-webinar-kind {
     left: 32px;
     top: 194px;
+  }
+
+  .articles-news-kind {
+    left: 32px;
+    top: 40px;
   }
 
   .articles-play {
@@ -9922,7 +9950,7 @@ video.home-video-card {
   }
 
   .articles-webinar-copy span:first-child,
-  .articles-news-copy span:nth-child(2) {
+  .articles-news-copy span:first-child {
     font-size: 32px;
     line-height: 37.568px;
   }
@@ -9934,18 +9962,21 @@ video.home-video-card {
   }
 
   .articles-news-copy {
+    bottom: auto;
     left: 32px;
-    top: 40px;
+    top: 72px;
     width: 278px;
   }
 
   .articles-news-button {
     bottom: 40px;
     font-size: 16px;
+    left: auto;
     min-height: 48px;
     padding: 12px 24px;
     right: 32px;
     top: auto;
+    transform: none;
   }
 
   .articles-more-mobile-action {
@@ -19374,6 +19405,7 @@ video.home-video-card {
   }
 }
 
+
 @media (max-width: 559px) {
   :is(
     .webinars-content-drop,
@@ -19546,6 +19578,13 @@ video.home-video-card {
     top: 27px !important;
     width: 588px !important;
     z-index: 2 !important;
+  }
+
+  /* -549px pushed most of the panel off the left edge at this ~860px
+     frame; tuck it back in so roughly half still shows, matching how
+     much bleeds off at the wider breakpoints. */
+  .news-what-image {
+    left: -300px !important;
   }
 }
 
