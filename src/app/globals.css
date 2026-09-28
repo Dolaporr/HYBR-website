@@ -17380,10 +17380,9 @@ video.home-video-card {
   display: flex;
   height: 64px;
   justify-content: center;
-  left: 50%;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  right: 32px;
+  top: 32px;
   width: 64px;
   z-index: 2;
 }
@@ -18130,10 +18129,9 @@ video.home-video-card {
     display: flex;
     height: 48px;
     justify-content: center;
-    left: 50%;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    right: 24px;
+    top: 24px;
     width: 48px;
   }
 
@@ -18681,9 +18679,9 @@ video.home-video-card {
     display: flex !important;
     height: 48px !important;
     justify-content: center !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    right: 20px !important;
+    top: 20px !important;
+    transform: none !important;
     width: 48px !important;
   }
 
@@ -18719,10 +18717,6 @@ video.home-video-card {
 /* About Us mobile: keep the visual hierarchy but let the history card grow
    with its copy, rather than stacking fixed coordinates inside a fixed height. */
 @media (max-width: 559px) {
-  .about-page .about-founder-card .about-play-button {
-    top: 20% !important;
-  }
-
   .about-page .about-founder-card .about-card-caption {
     left: 32px !important;
     right: 32px !important;
@@ -18777,6 +18771,7 @@ video.home-video-card {
     height: 100% !important;
     inset: auto !important;
     object-fit: cover;
+    position: static !important;
     transform: none !important;
     width: 100% !important;
   }
