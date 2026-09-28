@@ -192,8 +192,8 @@
 
 .workScope :global(.work-filter-chevron) {
   color: #000000;
-  height: 14px;
-  width: 14px;
+  height: 18px;
+  width: 18px;
 }
 
 .workScope :global(.work-filter.is-search) {
@@ -319,6 +319,12 @@
   z-index: 2;
 }
 
+.workScope :global(.work-card.is-spotlight .work-card-company) {
+  /* The spotlight card's short body runs to 4 lines here (longer than any
+     recent-card short body), which the shared top: 258px collides with. */
+  top: 298px;
+}
+
 .workScope :global(.work-card-company-logo) {
   display: block;
   height: 24px;
@@ -366,7 +372,10 @@
 }
 
 .workScope :global(.work-services-image) {
-  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  /* Figma has this panel's curve cut the top-left corner with the point
+     landing bottom-left (the shared mask does the opposite), so flip it
+     vertically here rather than touching the shared token. */
+  --hybr-image-card-mask-current: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 118' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 118H260C309 118 342 94 342 59C342 24 309 0 260 0H128C72 0 25 36 0 118Z'/%3E%3C/svg%3E");
   background-position: center;
   background-size: cover;
   border-radius: 0;
@@ -509,8 +518,8 @@
 
   .workScope :global(.work-filter-icon),
   .workScope :global(.work-filter-chevron) {
-    height: 18px;
-    width: 18px;
+    height: 22px;
+    width: 22px;
   }
 
   .workScope :global(.work-filter.is-search) {
@@ -543,7 +552,7 @@
   }
 
   .workScope :global(.work-card.is-spotlight) {
-    height: 352px;
+    height: 420px;
     top: 620px;
     width: 640px;
   }
@@ -574,7 +583,9 @@
     display: block;
     font-size: 24px;
     line-height: 29px;
-    top: 147px;
+    /* h2 wraps to 2 lines at this width, so give it its full 78px
+       (2 * 39px line-height) before the body starts. */
+    top: 202px;
     width: 560px;
   }
 
@@ -583,9 +594,10 @@
   }
 
   .workScope :global(.work-card.is-spotlight .work-card-company) {
+    bottom: 32px;
     font-size: 16px;
     line-height: 20px;
-    top: 288px;
+    top: auto;
   }
 
   .workScope :global(.work-card.is-spotlight .work-card-mark) {
@@ -596,9 +608,10 @@
   }
 
   .workScope :global(.work-card.is-spotlight .work-button.is-read) {
+    bottom: 40px;
     min-height: 40px;
     right: 40px;
-    top: 280px;
+    top: auto;
     width: 158px;
   }
 
@@ -734,7 +747,7 @@
 }
 
 .workScope :global(.work-services-image) {
-  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  --hybr-image-card-mask-current: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 118' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 118H260C309 118 342 94 342 59C342 24 309 0 260 0H128C72 0 25 36 0 118Z'/%3E%3C/svg%3E");
   border-radius: 0 !important;
   clip-path: none !important;
   mask-image: var(--hybr-image-card-mask-current) !important;
@@ -841,8 +854,8 @@
 
   .workScope :global(.work-filter-icon),
   .workScope :global(.work-filter-chevron) {
-    height: 18px;
-    width: 18px;
+    height: 22px;
+    width: 22px;
   }
 
   .workScope :global(.work-filter.is-search) {
@@ -1125,8 +1138,8 @@
 
   .workScope :global(.work-filter-icon),
   .workScope :global(.work-filter-chevron) {
-    height: 18px;
-    width: 18px;
+    height: 22px;
+    width: 22px;
   }
 
   .workScope :global(.work-filter.is-search) {
