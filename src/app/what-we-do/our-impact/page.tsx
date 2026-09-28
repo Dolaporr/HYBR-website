@@ -125,6 +125,7 @@ function CaseStudyCard({
       ) : (
         <p className="impact-case-company">{caseStudy.company}</p>
       )}
+      <img alt="" aria-hidden="true" className="impact-case-mark" src="/home/logo-case-study.svg" />
       <ImpactButton className="is-read" href={caseStudy.href}>
         Read More
       </ImpactButton>
