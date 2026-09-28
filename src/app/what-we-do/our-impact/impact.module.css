@@ -100,9 +100,15 @@
   width: 364px;
 }
 
-.impactScope :global(.impact-content-drop-media::after),
-.impactScope :global(.impact-case-image::after) {
+.impactScope :global(.impact-content-drop-media::after) {
   background: rgba(0, 0, 0, .6);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.impactScope :global(.impact-case-image::after) {
+  background: rgba(0, 0, 0, .72);
   content: "";
   inset: 0;
   position: absolute;
@@ -197,13 +203,13 @@
 }
 
 .impactScope :global(.impact-globe) {
-  height: var(--impact-mobile-content-width);
+  height: calc(var(--impact-mobile-content-width) * 0.82);
   left: 50%;
   object-fit: contain;
   position: absolute;
   top: 1354px;
   transform: translateX(-50%);
-  width: var(--impact-mobile-content-width);
+  width: calc(var(--impact-mobile-content-width) * 0.82);
 }
 
 .impactScope :global(.impact-blue-band) {
@@ -364,19 +370,19 @@
   left: 32px;
   line-height: 38px;
   position: absolute;
-  top: 62px;
+  top: 70px;
   width: calc(100% - 64px);
   z-index: 2;
 }
 
 .impactScope :global(.impact-case-body) {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   left: 32px;
-  line-height: 20px;
+  line-height: 22px;
   position: absolute;
-  top: 200px;
+  top: 166px;
   width: calc(100% - 64px);
   z-index: 2;
 }
@@ -399,6 +405,10 @@
 
 .impactScope :global(.impact-case-company-logo) {
   bottom: 32px;
+  /* Client marks vary from full-colour brand logos to dark wordmarks;
+     force them all to a flat white so they read consistently on the
+     card's dark image background, matching the Figma reference. */
+  filter: brightness(0) invert(1);
   left: 32px;
   max-height: 28px;
   max-width: 150px;
@@ -561,11 +571,11 @@
   }
 
   .impactScope :global(.impact-globe) {
-    height: 508px;
-    left: 226px;
+    height: 440px;
+    left: 260px;
     top: 1502px;
     transform: none;
-    width: 508px;
+    width: 440px;
   }
 
   .impactScope :global(.impact-blue-band) {
@@ -671,8 +681,8 @@
   }
 
   .impactScope :global(.impact-case-body) {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 22px;
     top: 116px;
     width: 584px;
   }
@@ -785,11 +795,11 @@
   }
 
   .impactScope :global(.impact-globe) {
-    height: 508px;
-    left: 652px;
+    height: 440px;
+    left: 680px;
     top: 1232px;
     transform: none;
-    width: 508px;
+    width: 440px;
   }
 
   .impactScope :global(.impact-blue-band) {
@@ -851,7 +861,9 @@
   }
 
   .impactScope :global(.impact-case-card) {
-    height: 308px;
+    /* The taller (18px) body text plus a 2-line title needs more room
+       than 308px gave the bottom-anchored company logo to clear. */
+    height: 340px;
     transform: none;
     width: 508px;
   }
@@ -899,9 +911,11 @@
   }
 
   .impactScope :global(.impact-case-body) {
-    font-size: 16px;
-    line-height: 20px;
-    top: 145px;
+    font-size: 18px;
+    line-height: 22px;
+    /* h3 wraps to 2 lines at this width (78px tall) for the longer
+       titles, which top: 145px collided with. */
+    top: 168px;
     width: 428px;
   }
 
@@ -921,7 +935,7 @@
     min-height: 40px;
     padding: 8px 24px;
     right: 40px;
-    top: 228px;
+    top: 246px;
   }
 
   .impactScope :global(.impact-work-heading) {
@@ -1027,11 +1041,11 @@
   }
 
   .impactScope :global(.impact-globe) {
-    height: 588px;
-    left: 732px;
+    height: 500px;
+    left: 764px;
     top: 1250px;
     transform: none;
-    width: 588px;
+    width: 500px;
   }
 
   .impactScope :global(.impact-blue-band) {
@@ -1143,7 +1157,7 @@
     font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-size: 32px;
     line-height: 39px;
-    top: 69px;
+    top: 77px;
     width: 399px;
   }
 
@@ -1156,9 +1170,9 @@
   }
 
   .impactScope :global(.impact-case-body) {
-    font-size: 16px;
-    line-height: 20px;
-    top: 155px;
+    font-size: 18px;
+    line-height: 23px;
+    top: 175px;
     width: 511px;
   }
 
