@@ -19511,7 +19511,11 @@ video.home-video-card {
 }
 
 :is(.who-about-image, .who-careers-image, .who-page .who-about-image, .who-page .who-careers-image) {
-  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  /* Do not set --hybr-image-card-mask-current here: these two cards use
+     the single-curve "simple" mask (and its mirror), set where each
+     element is declared. Forcing the shared multi-curve mask here was
+     producing a jagged diagonal swoosh across the photo instead of the
+     intended clean rounded corner. */
   border: none !important;
   border-radius: 0 !important;
   clip-path: none !important;
@@ -20274,7 +20278,9 @@ video.home-video-card {
 @media (max-width: 559px) {
   .who-about-image,
   .who-careers-image {
-    --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+    /* Same reason as the shared :is() rule above: keep each element's
+       own simple-mask / simple-mask-mirror token instead of forcing
+       the multi-curve mask here. */
     border-radius: 0 !important;
     clip-path: none !important;
     mask-image: var(--hybr-image-card-mask-current) !important;
