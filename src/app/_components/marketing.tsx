@@ -140,7 +140,9 @@ export function Footer() {
           />
           {footerGroups.map((group) => (
             <div className="home-footer-group" key={group.title}>
-              <h3 className="font-bold uppercase">{group.title}</h3>
+              <h3 className="font-bold uppercase">
+                <Link href={group.href}>{group.title}</Link>
+              </h3>
               <ul className="mt-4 space-y-3 text-sm">
                 {group.links.map((link) => (
                   <li key={`${group.title}-${link.label}-${link.href}`}>

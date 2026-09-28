@@ -66,6 +66,7 @@ export function SiteInteractions() {
     const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>(revealSelectors));
     const tiltItems = Array.from(document.querySelectorAll<HTMLElement>(tiltSelectors));
+    const impactStatItems = Array.from(document.querySelectorAll<HTMLElement>(".home-impact-stat"));
     const homeFlipCards = Array.from(document.querySelectorAll<HTMLElement>("[data-home-service-card]"));
     const nativeDrawerReady =
       (window as Window & { __HYBR_CONTENT_DRAWERS__?: boolean }).__HYBR_CONTENT_DRAWERS__ === true;
@@ -244,6 +245,23 @@ export function SiteInteractions() {
     requestAnimationFrame(revealVisibleItems);
     window.addEventListener("resize", revealVisibleItems, { passive: true });
 
+    // The impact stats' highlight (colour + scale pop) is a :hover effect,
+    // which touch devices can never trigger. Drive the same visual state
+    // from scroll position instead: whichever stat is nearest the vertical
+    // centre of the viewport as the page scrolls gets the "active" class.
+    // The CSS only applies this class's styling under (hover: none), so
+    // desktop hover behaviour is untouched.
+    const impactObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("is-impact-active", entry.isIntersecting);
+        });
+      },
+      { rootMargin: "-42% 0px -42% 0px", threshold: 0 },
+    );
+
+    impactStatItems.forEach((item) => impactObserver.observe(item));
+
     const handlePointerMove = (event: PointerEvent) => {
       if (!supportsFinePointer || event.pointerType !== "mouse") return;
       if (pointerFrame) cancelAnimationFrame(pointerFrame);
@@ -286,6 +304,7 @@ export function SiteInteractions() {
     return () => {
       window.clearTimeout(loaderTimer);
       observer.disconnect();
+      impactObserver.disconnect();
       cleanupContentDrops();
       window.removeEventListener("resize", revealVisibleItems);
       if (supportsFinePointer) {

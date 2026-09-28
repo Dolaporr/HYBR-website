@@ -15350,6 +15350,16 @@ video.home-video-card {
   transform: scale(1.08);
 }
 
+/* Touch devices have no hover, so the value pop is driven by scroll
+   position instead (see .is-impact-active in HomeInteractions), mirroring
+   the :hover rule above for devices with no hover capability. */
+@media (hover: none) {
+  .homepage-live .home-impact-stat.is-impact-active .home-impact-value {
+    color: #8dc540;
+    transform: scale(1.08);
+  }
+}
+
 .homepage-live .home-footer-inner {
   position: relative;
 }
@@ -15680,11 +15690,14 @@ video.home-video-card {
   .homepage-live .home-footer {
     min-height: 983px;
     overflow: hidden;
-    padding: 77px 24px 48px;
+    padding: 77px 20px 48px;
   }
 
   .homepage-live .home-footer-inner {
-    max-width: 342px;
+    /* Was capped at the site's usual 342px mobile content column, but
+       the footer's nav columns read as unnecessarily narrow with that
+       much empty margin on either side - let it use the full gutter. */
+    max-width: 100%;
   }
 
   .homepage-live .home-footer-main {
