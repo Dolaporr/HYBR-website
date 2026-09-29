@@ -66,6 +66,7 @@ export const navigation = [
 export const footerGroups = [
   {
     title: "Who We Are",
+    href: "/who-we-are",
     links: [
       { label: "About Us", href: "/who-we-are/about-us" },
       { label: "Our Team", href: "/who-we-are/our-team" },
@@ -74,6 +75,7 @@ export const footerGroups = [
   },
   {
     title: "What We Do",
+    href: "/what-we-do",
     links: [
       { label: "Our Services", href: "/what-we-do/services" },
       { label: "Our Products", href: "/what-we-do/products" },
@@ -83,6 +85,7 @@ export const footerGroups = [
   },
   {
     title: "Insights",
+    href: "/insights",
     links: [
       { label: "Articles & Posts", href: "/insights/articles" },
       { label: "Masterclasses", href: "/insights/webinars" },
@@ -91,6 +94,7 @@ export const footerGroups = [
   },
   {
     title: "Contact us",
+    href: "/contact",
     links: [
       { label: "hello@hybrgroup.net", href: "mailto:hello@hybrgroup.net" },
     ],

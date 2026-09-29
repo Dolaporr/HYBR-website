@@ -7787,7 +7787,7 @@ video.home-video-card {
   border-radius: 16px;
   color: #ffffff;
   display: block;
-  height: 408px;
+  height: 460px;
   margin-top: 20px;
   overflow: hidden;
   position: relative;
@@ -7871,7 +7871,11 @@ video.home-video-card {
   left: 32px;
   line-height: normal;
   position: absolute;
-  width: 371px;
+  /* Was 371px on a 1200px+ card, forcing the headline to wrap 4 lines
+     deep; give it most of the card's width (reserving room for the
+     bottom-right duration badge) so it and the subheading wrap far
+     less at every width down to tablet. */
+  width: min(820px, calc(100% - 180px));
   z-index: 1;
 }
 
@@ -8999,7 +9003,7 @@ video.home-video-card {
 .articles-card-kind {
   color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   left: 32px;
   line-height: normal;
@@ -9166,12 +9170,16 @@ video.home-video-card {
   left: 32px;
   line-height: normal;
   position: absolute;
-  width: 371px;
+  /* Was 371px on a 690px card (same fixed-width bug as the Webinars
+     page's own spotlight card), wrapping the title 4 lines deep.
+     Reserve room on the right for the duration badge, which shares
+     this same bottom row. */
+  width: calc(100% - 180px);
   z-index: 1;
 }
 
 .articles-webinar-copy span:first-child,
-.articles-news-copy span:nth-child(2) {
+.articles-news-copy span:first-child {
   color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 32px;
@@ -9185,12 +9193,31 @@ video.home-video-card {
   font-weight: 600;
 }
 
-.articles-news-button {
-  right: 32px;
+/* Matches .articles-webinar-kind so the two cards in this section rhyme:
+   a small top-left label, a play/read action in the same row, and the
+   title+meta anchored to the bottom instead of the label being folded
+   into the bottom copy block. */
+.articles-news-kind {
+  color: #ffffff;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  left: 32px;
+  line-height: normal;
+  position: absolute;
   top: 32px;
+  z-index: 1;
+}
+
+.articles-news-button {
+  left: 50%;
+  right: auto;
+  top: 32px;
+  transform: translateX(-50%);
 }
 
 .articles-news-copy {
+  bottom: 32px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -9198,15 +9225,9 @@ video.home-video-card {
   left: 32px;
   line-height: normal;
   position: absolute;
-  top: 554px;
-  width: 371px;
+  top: auto;
+  width: calc(100% - 64px);
   z-index: 1;
-}
-
-.articles-news-copy span:first-child {
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  font-weight: 600;
 }
 
 .articles-news-copy span:last-child {
@@ -9380,7 +9401,7 @@ video.home-video-card {
   .articles-more {
     gap: 32px 24px;
     grid-template-columns: 508px 508px;
-    grid-template-rows: 265px 344px;
+    grid-template-rows: 265px 420px;
     margin-top: 224px;
   }
 
@@ -9394,14 +9415,17 @@ video.home-video-card {
   }
 
   .articles-webinar-card {
-    height: 344px;
+    /* 344px wasn't enough room for the bottom-anchored, multi-line title
+       to clear the top-left MASTERCLASS label. */
+    height: 420px;
   }
 
   .articles-news-card {
-    height: 641px;
+    height: 717px;
   }
 
   .articles-news-copy {
+    bottom: auto;
     top: 438px;
     width: 422px;
   }
@@ -9573,14 +9597,17 @@ video.home-video-card {
   }
 
   .articles-news-copy {
+    bottom: auto;
     top: 48px;
     width: 440px;
   }
 
   .articles-news-button {
     bottom: 40px;
+    left: auto;
     right: 32px;
     top: auto;
+    transform: none;
   }
 
   .articles-more-mobile-action {
@@ -9886,7 +9913,7 @@ video.home-video-card {
   }
 
   .articles-webinar-kind,
-  .articles-news-copy span:first-child {
+  .articles-news-kind {
     font-size: 16px;
     line-height: 19.504px;
   }
@@ -9894,6 +9921,11 @@ video.home-video-card {
   .articles-webinar-kind {
     left: 32px;
     top: 194px;
+  }
+
+  .articles-news-kind {
+    left: 32px;
+    top: 40px;
   }
 
   .articles-play {
@@ -9918,7 +9950,7 @@ video.home-video-card {
   }
 
   .articles-webinar-copy span:first-child,
-  .articles-news-copy span:nth-child(2) {
+  .articles-news-copy span:first-child {
     font-size: 32px;
     line-height: 37.568px;
   }
@@ -9930,18 +9962,21 @@ video.home-video-card {
   }
 
   .articles-news-copy {
+    bottom: auto;
     left: 32px;
-    top: 40px;
+    top: 72px;
     width: 278px;
   }
 
   .articles-news-button {
     bottom: 40px;
     font-size: 16px;
+    left: auto;
     min-height: 48px;
     padding: 12px 24px;
     right: 32px;
     top: auto;
+    transform: none;
   }
 
   .articles-more-mobile-action {
@@ -15315,6 +15350,16 @@ video.home-video-card {
   transform: scale(1.08);
 }
 
+/* Touch devices have no hover, so the value pop is driven by scroll
+   position instead (see .is-impact-active in HomeInteractions), mirroring
+   the :hover rule above for devices with no hover capability. */
+@media (hover: none) {
+  .homepage-live .home-impact-stat.is-impact-active .home-impact-value {
+    color: #8dc540;
+    transform: scale(1.08);
+  }
+}
+
 .homepage-live .home-footer-inner {
   position: relative;
 }
@@ -15645,11 +15690,14 @@ video.home-video-card {
   .homepage-live .home-footer {
     min-height: 983px;
     overflow: hidden;
-    padding: 77px 24px 48px;
+    padding: 77px 20px 48px;
   }
 
   .homepage-live .home-footer-inner {
-    max-width: 342px;
+    /* Was capped at the site's usual 342px mobile content column, but
+       the footer's nav columns read as unnecessarily narrow with that
+       much empty margin on either side - let it use the full gutter. */
+    max-width: 100%;
   }
 
   .homepage-live .home-footer-main {
@@ -17332,10 +17380,9 @@ video.home-video-card {
   display: flex;
   height: 64px;
   justify-content: center;
-  left: 50%;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  right: 32px;
+  top: 32px;
   width: 64px;
   z-index: 2;
 }
@@ -18082,10 +18129,9 @@ video.home-video-card {
     display: flex;
     height: 48px;
     justify-content: center;
-    left: 50%;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    right: 24px;
+    top: 24px;
     width: 48px;
   }
 
@@ -18633,9 +18679,9 @@ video.home-video-card {
     display: flex !important;
     height: 48px !important;
     justify-content: center !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    right: 20px !important;
+    top: 20px !important;
+    transform: none !important;
     width: 48px !important;
   }
 
@@ -18671,10 +18717,6 @@ video.home-video-card {
 /* About Us mobile: keep the visual hierarchy but let the history card grow
    with its copy, rather than stacking fixed coordinates inside a fixed height. */
 @media (max-width: 559px) {
-  .about-page .about-founder-card .about-play-button {
-    top: 20% !important;
-  }
-
   .about-page .about-founder-card .about-card-caption {
     left: 32px !important;
     right: 32px !important;
@@ -18729,6 +18771,7 @@ video.home-video-card {
     height: 100% !important;
     inset: auto !important;
     object-fit: cover;
+    position: static !important;
     transform: none !important;
     width: 100% !important;
   }
@@ -19370,6 +19413,7 @@ video.home-video-card {
   }
 }
 
+
 @media (max-width: 559px) {
   :is(
     .webinars-content-drop,
@@ -19462,7 +19506,11 @@ video.home-video-card {
 }
 
 :is(.who-about-image, .who-careers-image, .who-page .who-about-image, .who-page .who-careers-image) {
-  --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+  /* Do not set --hybr-image-card-mask-current here: these two cards use
+     the single-curve "simple" mask (and its mirror), set where each
+     element is declared. Forcing the shared multi-curve mask here was
+     producing a jagged diagonal swoosh across the photo instead of the
+     intended clean rounded corner. */
   border: none !important;
   border-radius: 0 !important;
   clip-path: none !important;
@@ -19542,6 +19590,13 @@ video.home-video-card {
     top: 27px !important;
     width: 588px !important;
     z-index: 2 !important;
+  }
+
+  /* -549px pushed most of the panel off the left edge at this ~860px
+     frame; tuck it back in so roughly half still shows, matching how
+     much bleeds off at the wider breakpoints. */
+  .news-what-image {
+    left: -300px !important;
   }
 }
 
@@ -20218,7 +20273,9 @@ video.home-video-card {
 @media (max-width: 559px) {
   .who-about-image,
   .who-careers-image {
-    --hybr-image-card-mask-current: var(--hybr-image-card-mask);
+    /* Same reason as the shared :is() rule above: keep each element's
+       own simple-mask / simple-mask-mirror token instead of forcing
+       the multi-curve mask here. */
     border-radius: 0 !important;
     clip-path: none !important;
     mask-image: var(--hybr-image-card-mask-current) !important;
