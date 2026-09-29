@@ -9210,10 +9210,10 @@ video.home-video-card {
 }
 
 .articles-news-button {
-  left: 50%;
-  right: auto;
+  left: auto;
+  right: 32px;
   top: 32px;
-  transform: translateX(-50%);
+  transform: none;
 }
 
 .articles-news-copy {
