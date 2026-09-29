@@ -372,10 +372,11 @@
 }
 
 .workScope :global(.work-services-image) {
-  /* Figma has this panel's curve cut the top-left corner with the point
-     landing bottom-left (the shared mask does the opposite), so flip it
-     vertically here rather than touching the shared token. */
-  --hybr-image-card-mask-current: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 118' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 118H260C309 118 342 94 342 59C342 24 309 0 260 0H128C72 0 25 36 0 118Z'/%3E%3C/svg%3E");
+  /* This panel's image sits on the right of its copy (mirrored layout vs.
+     the shared pattern), so it uses the mirrored mask to keep the rounded
+     curve facing into the content, matching the "What We Do" panels
+     elsewhere on the site. */
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask-mirror);
   background-position: center;
   background-size: cover;
   border-radius: 0;
@@ -747,7 +748,7 @@
 }
 
 .workScope :global(.work-services-image) {
-  --hybr-image-card-mask-current: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 342 118' preserveAspectRatio='none'%3E%3Cpath fill='%23000' d='M0 118H260C309 118 342 94 342 59C342 24 309 0 260 0H128C72 0 25 36 0 118Z'/%3E%3C/svg%3E");
+  --hybr-image-card-mask-current: var(--hybr-image-card-mask-mirror);
   border-radius: 0 !important;
   clip-path: none !important;
   mask-image: var(--hybr-image-card-mask-current) !important;
