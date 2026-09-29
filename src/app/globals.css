@@ -22036,6 +22036,16 @@ video.home-video-card {
   }
 }
 
+/* Give the Services carousel the same fixed mobile card height the
+   homepage uses, so a long quote never grows the card into the dots/CTA
+   below it instead of leaving blank space like every other slide. */
+@media (max-width: 559px) {
+  .services-shared-testimonials .home-testimonial-card {
+    height: 634px !important;
+    min-height: 634px !important;
+  }
+}
+
 /* Final shared-component overrides: these pages import legacy desktop rules above. */
 @media (min-width: 768px) {
   .home-testimonial-card,
