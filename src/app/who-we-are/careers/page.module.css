@@ -616,8 +616,7 @@
   background-size: cover;
   border-radius: 1000px 0 0 1000px;
   height: 180px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 24px;
   top: 5900px;
   width: min(342px, calc(100vw - 48px));
 }

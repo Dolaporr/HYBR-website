@@ -7848,12 +7848,11 @@ video.home-video-card {
 .webinars-play {
   color: #ffffff;
   display: block;
-  height: 104px;
-  left: 50%;
+  height: 60px;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 104px;
+  right: 32px;
+  top: 32px;
+  width: 60px;
   z-index: 1;
 }
 
@@ -8547,8 +8546,8 @@ video.home-video-card {
   }
 
   .webinars-play {
-    height: 80px;
-    width: 80px;
+    height: 40px;
+    width: 40px;
   }
 
   .webinars-spotlight-copy {
@@ -22036,6 +22035,16 @@ video.home-video-card {
   }
 }
 
+/* Give the Services carousel the same fixed mobile card height the
+   homepage uses, so a long quote never grows the card into the dots/CTA
+   below it instead of leaving blank space like every other slide. */
+@media (max-width: 559px) {
+  .services-shared-testimonials .home-testimonial-card {
+    height: 634px !important;
+    min-height: 634px !important;
+  }
+}
+
 /* Final shared-component overrides: these pages import legacy desktop rules above. */
 @media (min-width: 768px) {
   .home-testimonial-card,
@@ -22259,8 +22268,8 @@ video.home-video-card {
     gap: 4px !important;
   }
 
-  .articles-page .articles-webinar-copy span:first-child { font-size: 27px !important; line-height: 1.08 !important; }
-  .articles-page .articles-webinar-copy span:not(:first-child) { font-size: 15px !important; line-height: 1.28 !important; }
+  .articles-page .articles-webinar-copy span:first-child { font-size: 32px !important; line-height: 37.568px !important; }
+  .articles-page .articles-webinar-copy span:not(:first-child) { font-size: 16px !important; line-height: 19.504px !important; }
   .articles-page .articles-play { top: 36px !important; right: 16px !important; width: 18px !important; height: 18px !important; }
 
   .careers-why-card,
