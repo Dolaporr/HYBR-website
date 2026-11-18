@@ -22892,3 +22892,49 @@ video.home-video-card {
     right: calc(-183px - (100cqw - min(1200px, 100cqw - 48px)) / 2) !important;
   }
 }
+
+/* 10. 13-15" laptops (1024-1359 px): these bands kept 120 px side padding while their content is
+   min(1200px, 100vw - 48px) wide, so the Who We Are panel and the testimonials ran off the right edge
+   (found at 1280 x 800; it was already so before this pass). 24 px padding lets that content centre. */
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .homepage-live .home-who-band,
+  .homepage-live .home-testimonials-section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+/* At 1200-1359 the "Explore Our Services" button stayed absolutely placed (a rule meant for a side-by-side
+   layout) and sat on top of the Discover card. Under the cards and centred, as at 1440. */
+@media (min-width: 1200px) and (max-width: 1359px) {
+  .homepage-live .home-services-cta {
+    left: auto !important;
+    position: static !important;
+    top: auto !important;
+  }
+}
+
+/* Below 1360 the service cards kept a fixed 237 px height plus a 1.62 aspect ratio, which forced them to
+   384 px wide even when the three columns are narrower: they overlapped and the last one ran off the
+   screen (seen at 1152). The cards now take their column's width. */
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .homepage-live .home-services-grid > .home-service-card {
+    aspect-ratio: auto;
+    min-width: 0;
+    width: 100% !important;
+  }
+}
+
+/* Same at 1360-1439 for the Who We Are panel: it was placed 120 px from the left (--home-desktop-left), so at 1366
+   it sat 46 px from the right edge. Centred like the other sections there. */
+@media (min-width: 1360px) and (max-width: 1439px) {
+  .homepage-live .home-who-band {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .homepage-live .home-panel {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
