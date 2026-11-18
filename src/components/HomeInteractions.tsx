@@ -262,40 +262,29 @@ export function SiteInteractions() {
 
     impactStatItems.forEach((item) => impactObserver.observe(item));
 
+    // Performance (QA 18 Nov 2026, "hovering feels like it drags"): the ring used to follow the mouse by
+    // rewriting custom properties on <body> every frame, which re-styled the whole page and moved the ring
+    // with left/top (layout). Now only the ring moves, through the independent `translate` property, which
+    // the compositor handles; the ring's own transform rules (centring, scale) stay as they were.
+    const pointerRings = Array.from(document.querySelectorAll<HTMLElement>(".site-pointer-ring"));
+    let pointerX = 0;
+    let pointerY = 0;
     const handlePointerMove = (event: PointerEvent) => {
       if (!supportsFinePointer || event.pointerType !== "mouse") return;
-      if (pointerFrame) cancelAnimationFrame(pointerFrame);
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (pointerFrame) return;
       pointerFrame = requestAnimationFrame(() => {
-        page.classList.add("has-pointer");
-        page.style.setProperty("--home-pointer-x", `${event.clientX}px`);
-        page.style.setProperty("--home-pointer-y", `${event.clientY}px`);
-        page.style.setProperty("--site-pointer-x", `${event.clientX}px`);
-        page.style.setProperty("--site-pointer-y", `${event.clientY}px`);
+        pointerFrame = 0;
+        if (!page.classList.contains("has-pointer")) page.classList.add("has-pointer");
+        pointerRings.forEach((ring) => {
+          ring.style.translate = `${pointerX}px ${pointerY}px`;
+        });
       });
     };
 
-    const tiltCleanups = supportsFinePointer ? tiltItems.map((item) => {
-      const move = (event: PointerEvent) => {
-        if (event.pointerType !== "mouse") return;
-        const rect = item.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width - 0.5;
-        const y = (event.clientY - rect.top) / rect.height - 0.5;
-        item.style.setProperty("--home-tilt-x", `${(-y * 7).toFixed(2)}deg`);
-        item.style.setProperty("--home-tilt-y", `${(x * 7).toFixed(2)}deg`);
-      };
-      const leave = () => {
-        item.style.setProperty("--home-tilt-x", "0deg");
-        item.style.setProperty("--home-tilt-y", "0deg");
-      };
-
-      item.addEventListener("pointermove", move);
-      item.addEventListener("pointerleave", leave);
-
-      return () => {
-        item.removeEventListener("pointermove", move);
-        item.removeEventListener("pointerleave", leave);
-      };
-    }) : [];
+    // The per-card pointer tilt was removed (QA 18 Nov 2026): it wrote --home-tilt-x/y on every mouse move
+    // but no stylesheet reads those properties, so it only cost style recalculation while hovering.
 
     if (supportsFinePointer) {
       window.addEventListener("pointermove", handlePointerMove, { passive: true });
@@ -310,7 +299,6 @@ export function SiteInteractions() {
       if (supportsFinePointer) {
         window.removeEventListener("pointermove", handlePointerMove);
       }
-      tiltCleanups.forEach((cleanup) => cleanup());
       if (pointerFrame) cancelAnimationFrame(pointerFrame);
       page.classList.remove("site-motion-ready", "home-motion-ready", "is-loaded", "has-pointer");
     };

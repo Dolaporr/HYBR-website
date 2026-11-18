@@ -22505,3 +22505,390 @@ video.home-video-card {
     top: 32px !important;
   }
 }
+
+/* =====================================================================================================
+   Homepage QA pass, 18 Nov 2026 (Ntukwasi & Fawaz, desktop first; Figma "Desktop - Homepage Mockup" 1:11298)
+   Kept as one block at the end so every change from that meeting is in one place.
+   ===================================================================================================== */
+
+/* 1. Flat design (Mr Charles's creative direction): no shadows on cards, at rest or on hover. */
+.homepage-live :is(
+  .home-panel, .home-service-card, .home-case-card, .home-case-feature, .home-case-tall, .home-news-card,
+  .home-webinar-card, .home-article-card, .home-contact-shell, .home-video-card, .home-testimonial-card,
+  .home-droplet-right, .home-droplet-left
+),
+.homepage-live :is(
+  .home-panel, .home-service-card, .home-case-card, .home-case-feature, .home-case-tall, .home-news-card,
+  .home-webinar-card, .home-article-card, .home-contact-shell, .home-video-card, .home-testimonial-card,
+  .home-droplet-right, .home-droplet-left
+):hover {
+  box-shadow: none !important;
+}
+
+/* 2. Smoother hovering: the cursor ring is moved with `translate` from JS (HomeInteractions), not with
+   left/top through custom properties on <body>; finished reveal animations drop their GPU hints. */
+.site-pointer-ring,
+.home-pointer-ring {
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.home-motion-ready .home-reveal.is-visible,
+.site-motion-ready .site-reveal.is-visible {
+  will-change: auto;
+}
+
+/* 3. Video: the player is 16:9 like the video, so no black bars; the poster is a 16:9 still of the
+   Figma preview (was an 8 MB SVG of another shape). Slightly smaller: 590 px tall as in Figma. */
+.homepage-live .home-video-card {
+  aspect-ratio: 16 / 9 !important;
+  background: transparent !important;
+  border-radius: 22px;
+  height: auto !important;
+  object-fit: cover !important;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .homepage-live .home-video-card {
+    width: min(1049px, var(--home-fluid-frame)) !important;
+  }
+}
+
+/* 4. Risk list ("You Risk..."): the X icons sit on the first line of each item (icon top = text top,
+   32 px icon as in Figma), and the list is centred on the image beside it. */
+.homepage-live .home-risk-grid li {
+  align-items: flex-start !important;
+}
+
+.homepage-live .home-risk-grid .risk-marker {
+  display: inline-flex;
+  flex: 0 0 32px;
+  height: 32px !important;
+  margin-top: 0 !important;
+  width: 32px !important;
+}
+
+.homepage-live .home-risk-grid .risk-marker svg {
+  height: 32px;
+  width: 32px;
+}
+
+/* 4b. Who We Are panel (Ntukwasi): text a little higher, more room between the text and the photo, and the photo a
+   little closer to the bottom of the box. Panel height (632) and the Figma layout are unchanged otherwise. */
+@media (min-width: 1024px) {
+  .homepage-live .home-panel > .grid {
+    translate: 0 -16px;
+  }
+
+  .homepage-live .home-panel > div.relative {
+    translate: 0 16px;
+  }
+}
+
+/* 5. Service cards: the pill is green and turns blue when the card is hovered; front and back turn
+   together on one curve; the back is black, laid out as Figma "Property 1=Back" (icon + title on one
+   row, the items, a back icon top right) with no Learn More button. Material icons throughout. */
+.homepage-live .home-service-pill {
+  background: #8dc540 !important;
+  border-color: #8dc540 !important;
+  color: #000000 !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .homepage-live .home-service-card:hover .home-service-pill,
+  .homepage-live .home-service-card:focus-visible .home-service-pill {
+    background: #4fc2f0 !important;
+    border-color: #4fc2f0 !important;
+    color: #07171d !important;
+  }
+}
+
+.homepage-live .home-service-face {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.homepage-live .home-service-glyph,
+.homepage-live .home-service-glyph svg {
+  height: 64px !important;
+  width: 64px !important;
+}
+
+.homepage-live .home-info-badge {
+  border: 0;
+  color: #cbe4a7;
+  height: 32px;
+  width: 32px;
+}
+
+.homepage-live .home-info-badge svg {
+  height: 32px;
+  width: 32px;
+}
+
+.homepage-live .home-service-back {
+  align-items: flex-start;
+  background: #000000;
+  gap: 8px;
+  justify-content: flex-start;
+  padding: 59px 32px 32px;
+  text-align: left;
+}
+
+.homepage-live .home-service-back-icon {
+  color: #cbe4a7;
+  display: inline-flex;
+  height: 32px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 32px;
+}
+
+.homepage-live .home-service-back-icon svg,
+.homepage-live .home-service-back-glyph svg {
+  height: 32px;
+  width: 32px;
+}
+
+.homepage-live .home-service-back-head {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.homepage-live .home-service-back-head h3 {
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.homepage-live .home-service-back-glyph {
+  color: #ffffff;
+  display: inline-flex;
+}
+
+.homepage-live .home-service-back-items {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-live .home-service-back-items li {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+/* 6. Case study cards: white HYBR mark top right (landscape) and top left (portrait), the company at the
+   bottom left, and Read More turns into a white outline with a white arrow on hover. */
+.homepage-live .home-case-logo {
+  height: 56px;
+  pointer-events: none;
+  position: absolute;
+  top: 40px;
+  width: 56px;
+  z-index: 2;
+}
+
+.homepage-live .home-case-logo--feature {
+  right: 40px;
+}
+
+.homepage-live .home-case-tall-top .home-case-logo--tall {
+  left: 40px;
+  position: absolute;
+  top: 40px;
+}
+
+.homepage-live .home-case-company {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.homepage-live .home-case-feature .home-inline-cta,
+.homepage-live .home-case-tall .home-inline-cta {
+  border: 2px solid #ffffff !important;
+  gap: 0;
+  transition: background-color 0.22s ease, color 0.22s ease, gap 0.22s ease;
+}
+
+.homepage-live .home-case-cta-arrow {
+  height: 24px;
+  margin-left: 0;
+  max-width: 0;
+  opacity: 0;
+  transition: max-width 0.22s ease, opacity 0.22s ease, margin-left 0.22s ease;
+  width: 24px;
+}
+
+.homepage-live .home-case-feature .home-inline-cta:is(:hover, :focus-visible),
+.homepage-live .home-case-tall .home-inline-cta:is(:hover, :focus-visible) {
+  background: transparent !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.homepage-live .home-inline-cta:is(:hover, :focus-visible) .home-case-cta-arrow {
+  margin-left: 8px;
+  max-width: 24px;
+  opacity: 1;
+}
+
+/* The marks and the company label are placed for the desktop cards (Figma 690 x 372 and 486 x 712); the smaller
+   cards below 1200 put their text where the marks would go, so there they are left out as before. */
+.homepage-live .home-case-footer > .home-inline-cta {
+  margin-left: auto;
+}
+
+@media (max-width: 1199px) {
+  .homepage-live .home-case-logo,
+  .homepage-live .home-case-company {
+    display: none;
+  }
+}
+
+/* 7. Testimonials: the inner ring is as thick as the outer one (4 px, TestimonialsCarousel), and cards
+   slide sideways instead of fading. `translate` is used so the mobile centring transform stays intact. */
+.homepage-live .home-testimonial-stage {
+  overflow: hidden;
+  position: relative;
+}
+
+.home-testimonial-slide.is-leaving {
+  pointer-events: none;
+  position: absolute !important;
+  top: 0 !important;
+  z-index: 1 !important;
+}
+
+@media (min-width: 768px) {
+  .home-testimonial-slide.is-leaving {
+    left: 0 !important;
+    width: 100% !important;
+  }
+}
+
+.home-testimonial-slide.is-active.from-right { animation: hybr-slide-in-right 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.home-testimonial-slide.is-active.from-left { animation: hybr-slide-in-left 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.home-testimonial-slide.is-leaving.to-left { animation: hybr-slide-out-left 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.home-testimonial-slide.is-leaving.to-right { animation: hybr-slide-out-right 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@keyframes hybr-slide-in-right { from { translate: 100% 0; } to { translate: 0 0; } }
+@keyframes hybr-slide-in-left { from { translate: -100% 0; } to { translate: 0 0; } }
+@keyframes hybr-slide-out-left { from { translate: 0 0; } to { translate: -100% 0; } }
+@keyframes hybr-slide-out-right { from { translate: 0 0; } to { translate: 100% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .home-testimonial-slide { animation: none !important; }
+  .home-testimonial-slide.is-leaving { display: none; }
+}
+
+/* 8. Contact form: the Submit button sat below the card's bottom edge (four fields in a card drawn for
+   three). The card now grows with the form and the spacing is tighter, so the button always shows. */
+.homepage-live .home-contact-form .home-form-status:empty {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .homepage-live .home-contact-shell {
+    height: auto !important;
+    min-height: 596px !important;
+  }
+
+  .homepage-live .home-contact-form {
+    height: auto !important;
+    padding-bottom: 56px !important;
+    padding-top: 56px !important;
+  }
+
+  /* The fields are inline-block, so as plain lines they picked up the line height between them: a column instead. */
+  .homepage-live .home-contact-form {
+    display: flex !important;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .homepage-live .home-contact-form > * {
+    margin-block: 0 !important;
+  }
+
+  .homepage-live .home-contact-form textarea {
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+}
+
+/* 9. No side gaps on wide screens: decorations and the droplet images reach the screen edges as in
+   Figma (24 px from the edge), instead of stopping at a centred 1440 px box. 100cqw = page width
+   without the scrollbar (main is the container from 1200 up, where the desktop layout starts). */
+@media (min-width: 1200px) {
+  main.homepage-live {
+    container-type: inline-size;
+  }
+
+  .homepage-live .home-green-inline {
+    left: 0 !important;
+  }
+
+  .homepage-live .home-risk-pattern {
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .homepage-live .home-inline-connector {
+    left: auto !important;
+    right: -5px !important;
+  }
+
+  .homepage-live .home-risk-grid > div:nth-child(2) {
+    align-self: center !important;
+    margin-top: 0 !important;
+  }
+
+  .homepage-live .home-risk-grid > div:nth-child(3) {
+    align-self: center !important;
+    margin-right: calc((min(1200px, 100cqw - 48px) - 100cqw) / 2 + 24px) !important;
+    width: min(667px, 100%) !important;
+  }
+
+  .homepage-live .home-gain-image {
+    margin-left: calc((min(1440px, 100cqw) - 100cqw) / 2) !important;
+  }
+
+}
+
+/* Testimonial arrows 32 px from the screen edges (Figma x 32 and 1344 at 1440). The arrows show from 1200 up. */
+@media (min-width: 1200px) {
+  .homepage-live .home-testimonial-shell {
+    grid-template-columns: 64px minmax(0, 1fr) 64px !important;
+    margin-inline: calc((100% - 100cqw) / 2) !important;
+    padding-inline: 32px;
+  }
+
+  .homepage-live .home-testimonial-stage {
+    justify-self: center;
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  .homepage-live .home-testimonial-arrow--left,
+  .homepage-live .home-testimonial-arrow--right {
+    transform: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .homepage-live .home-footer-pattern {
+    right: calc(-183px - (100cqw - min(1200px, 100cqw - 48px)) / 2) !important;
+  }
+}

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation } from "@/content/site";
 import { HeroWordRotator } from "@/components/HeroWordRotator";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { MaterialIcon } from "@/components/MaterialIcon";
 import { HomeLeadForm } from "@/components/LeadCaptureForms";
 import { innovationSweetSpotArticle, spctaNewsFeature } from "@/content/insights";
 
@@ -22,6 +23,8 @@ const assets = {
   caseStudy: "/home/case-study.png",
   caseStudyLogo: "/home/logo-case-study.svg",
   mockVideo: "/home/website-mock-1.mp4",
+  // 16:9 still of the Figma video preview (was an 8 MB SVG that left black bars around the player).
+  videoPoster: "/home/video-poster.jpg",
   plasticWaste: "/home/edit-flags/plastic-waste.jpg",
   ourWorkFeature: "/home/our-work-feature-source.png",
   ourWorkTall: "/home/our-work-tall-source.png",
@@ -77,7 +80,7 @@ const services = [
       "Growth Opportunity Discovery",
       "Innovation Readiness & Strategy",
     ],
-    icon: "bag",
+    icon: "shopping_bag",
     tag: "Find The Right Opportunity",
     href: "/what-we-do/services",
     image: "/home/edit-flags/home-service-discover.jpg",
@@ -103,7 +106,7 @@ const services = [
       "Enterprise Transformation",
       "Scale & Investment",
     ],
-    icon: "trend",
+    icon: "trending_up",
     tag: "Scale Measurable Growth",
     href: "/what-we-do/services",
     image: "/home/edit-flags/home-service-deploy.jpg",
@@ -205,7 +208,7 @@ function RiskCloseIcon() {
 function InfoBadge() {
   return (
     <span className="home-info-badge" aria-hidden="true">
-      i
+      <MaterialIcon name="info" />
     </span>
   );
 }
@@ -278,45 +281,6 @@ function SocialIcon({
       <circle cx="10" cy="16" r="4" fill="currentColor" />
       <ellipse cx="18.5" cy="16" rx="3.5" ry="8" fill="currentColor" opacity="0.85" />
       <ellipse cx="24.5" cy="16" rx="2.5" ry="6" fill="currentColor" opacity="0.72" />
-    </svg>
-  );
-}
-
-function ServiceGlyph({ kind }: { kind: "bag" | "palette" | "trend" }) {
-  if (kind === "bag") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 24 24">
-        <path d="M6.5 8.5H17.5V19.5H6.5V8.5Z" stroke="currentColor" strokeWidth="2" />
-        <path
-          d="M9 8.5V6.75C9 5.23122 10.2312 4 11.75 4H12.25C13.7688 4 15 5.23122 15 6.75V8.5"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-      </svg>
-    );
-  }
-
-  if (kind === "palette") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M12 4C7.58172 4 4 7.35786 4 11.5C4 15.6421 7.58172 19 12 19H13.8C14.9046 19 15.8 18.1046 15.8 17C15.8 16.4091 15.542 15.8504 15.0941 15.4686C14.7608 15.1846 14.6 14.787 14.6 14.3936C14.6 13.5648 15.2712 12.8936 16.1 12.8936H17C18.6569 12.8936 20 11.5504 20 9.89355C20 6.63988 16.4183 4 12 4Z"
-          stroke="currentColor"
-          strokeLinejoin="round"
-          strokeWidth="2"
-        />
-        <circle cx="8" cy="10" r="1" fill="currentColor" />
-        <circle cx="11" cy="8" r="1" fill="currentColor" />
-        <circle cx="14.5" cy="9" r="1" fill="currentColor" />
-        <circle cx="9.5" cy="13.5" r="1" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 24 24">
-      <path d="M5 17L10 12L13.5 15.5L19 10" stroke="currentColor" strokeWidth="2" />
-      <path d="M14 10H19V15" stroke="currentColor" strokeWidth="2" />
     </svg>
   );
 }
@@ -446,7 +410,7 @@ export default function Home() {
             className="home-video-card"
             controls
             playsInline
-            poster="/Webinar Card - horizontal tab.svg"
+            poster={assets.videoPoster}
             preload="metadata"
           >
             <source src={assets.mockVideo} type="video/mp4" />
@@ -583,7 +547,7 @@ export default function Home() {
                   <div className="home-service-face home-service-front">
                     <InfoBadge />
                     <span className="home-service-glyph">
-                      <ServiceGlyph kind={service.icon} />
+                      <MaterialIcon name={service.icon} />
                     </span>
                     <div className="home-service-body">
                       <h3 className="font-display text-[32px] font-medium leading-none">
@@ -594,18 +558,24 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
+                  {/* Back as Figma "Property 1=Back": icon + title on one row, the items, and a back
+                      icon top right. No Learn More (Ntukwasi, 18 Nov): "Explore Our Services" below the
+                      cards is the one link. */}
                   <div className="home-service-face home-service-back" aria-hidden="true">
-                    <h3 className="font-display text-[32px] font-medium leading-none">
-                      {service.title}
-                    </h3>
-                    <div className="home-service-back-items">
-                      {service.items.map((item) => (
-                        <p key={item}>{item}</p>
-                      ))}
+                    <span className="home-service-back-icon" aria-hidden="true">
+                      <MaterialIcon name="arrow_circle_left" />
+                    </span>
+                    <div className="home-service-back-head">
+                      <span className="home-service-back-glyph" aria-hidden="true">
+                        <MaterialIcon name={service.icon} />
+                      </span>
+                      <h3 className="font-display font-medium">{service.title}</h3>
                     </div>
-                    <a className="home-service-back-link" href={service.href}>
-                      Learn More
-                    </a>
+                    <ul className="home-service-back-items">
+                      {service.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </article>
               ))}
@@ -666,6 +636,7 @@ export default function Home() {
             className="home-case-feature overflow-hidden rounded-[14px] text-white"
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--feature" src={assets.plasticWaste} />
+            <BrandMark className="home-case-logo home-case-logo--feature" />
             <div className="home-case-content">
               <p className="home-case-kicker">CASE STUDY</p>
               <h3 className="text-[21px] font-medium leading-[1.1]">
@@ -676,9 +647,11 @@ export default function Home() {
                 and urgent environmental problem which helps Coca Cola to
                 radically eliminate plastic waste.
               </p>
-              <div className="mt-5 flex items-end justify-end gap-4">
+              <div className="home-case-footer mt-5 flex items-end justify-between gap-4">
+                <p className="home-case-company">Coca-Cola</p>
                 <a className="home-inline-cta home-case-feature-cta" href="/case-studies/one-liner">
                   Read More
+                  <MaterialIcon className="home-case-cta-arrow" name="arrow_forward" />
                 </a>
               </div>
             </div>
@@ -688,8 +661,10 @@ export default function Home() {
           >
             <img alt="" aria-hidden="true" className="home-case-bg home-case-bg--tall" src={assets.ourWorkTall} />
             <div className="home-case-tall-top">
+              <BrandMark className="home-case-logo home-case-logo--tall" />
               <a className="home-inline-cta home-inline-cta--light home-case-tall-cta" href="/case-studies/one-liner?case=alitheia">
                 Read More
+                <MaterialIcon className="home-case-cta-arrow" name="arrow_forward" />
               </a>
             </div>
             <div className="home-case-tall-content">
