@@ -84,18 +84,25 @@ function releasePointer(element: HTMLDivElement, pointerId: number) {
 
 function TestimonialCard({
   className,
+  onAnimationEnd,
   testimonial,
 }: {
   className?: string;
+  onAnimationEnd?: () => void;
   testimonial: HomeTestimonial;
 }) {
   return (
-    <div className={`home-testimonial-card grid gap-10 text-left text-white md:grid-cols-[116px_1fr] ${className ?? ""}`}>
+    <div
+      className={`home-testimonial-card grid gap-10 text-left text-white md:grid-cols-[116px_1fr] ${className ?? ""}`}
+      onAnimationEnd={(event) => {
+        if (event.target === event.currentTarget) onAnimationEnd?.();
+      }}
+    >
       <div className="home-testimonial-avatar relative flex size-[116px] items-center justify-center rounded-full">
         <span className="absolute inset-0 rounded-full border-4 border-[#8dc540]" />
         <img
           alt={testimonial.name}
-          className="home-testimonial-avatar-image absolute bottom-1 left-1/2 size-[88px] rounded-full border-[3px] border-[#8dc540] object-cover"
+          className="home-testimonial-avatar-image absolute bottom-1 left-1/2 size-[88px] rounded-full border-4 border-[#8dc540] object-cover"
           draggable={false}
           src={testimonial.image}
         />
@@ -123,6 +130,10 @@ export function TestimonialsCarousel({
   variant?: "black";
 }) {
   const [active, setActive] = useState(0);
+  // Side swipe (Ntukwasi, 18 Nov 2026): the old card slides out while the new one slides in, instead of
+  // the previous fade. `leaving` is the card on its way out; `direction` 1 = next (moves left), -1 = previous.
+  const [leaving, setLeaving] = useState<number | null>(null);
+  const [direction, setDirection] = useState<1 | -1>(1);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSwipeAtRef = useRef(0);
   const swipeRef = useRef<SwipeState>({
@@ -132,12 +143,24 @@ export function TestimonialsCarousel({
   });
   const touchRef = useRef<TouchState | null>(null);
 
+  const activeRef = useRef(0);
+
+  const moveTo = useCallback((next: number, dir: 1 | -1) => {
+    const current = activeRef.current;
+    const target = (next + testimonials.length) % testimonials.length;
+    if (target === current) return;
+    activeRef.current = target;
+    setLeaving(current);
+    setDirection(dir);
+    setActive(target);
+  }, []);
+
   const scheduleNext = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
-      setActive((i) => (i + 1) % testimonials.length);
+      moveTo(activeRef.current + 1, 1);
     }, AUTO_DELAY);
-  }, []);
+  }, [moveTo]);
 
   useEffect(() => {
     scheduleNext();
@@ -146,13 +169,10 @@ export function TestimonialsCarousel({
     };
   }, [active, scheduleNext]);
 
-  const go = useCallback((idx: number) => {
-    setActive((idx + testimonials.length) % testimonials.length);
-  }, []);
-
-  const goBy = useCallback((step: number) => {
-    setActive((idx) => (idx + step + testimonials.length) % testimonials.length);
-  }, []);
+  const goBy = useCallback(
+    (step: number) => moveTo(activeRef.current + step, step < 0 ? -1 : 1),
+    [moveTo],
+  );
 
   const finishSwipe = useCallback(
     (deltaX: number, deltaY: number) => {
@@ -254,7 +274,7 @@ export function TestimonialsCarousel({
         <button
           aria-label="Previous testimonial"
           className="home-testimonial-arrow home-testimonial-arrow--left"
-          onClick={() => go(active - 1)}
+          onClick={() => goBy(-1)}
           type="button"
         >
           <TestimonialArrowIcon direction="left" />
@@ -268,16 +288,24 @@ export function TestimonialsCarousel({
           onTouchEnd={handleTouchEnd}
           onTouchStart={handleTouchStart}
         >
+          {leaving !== null && leaving !== active ? (
+            <TestimonialCard
+              className={`home-testimonial-slide is-leaving ${direction === 1 ? "to-left" : "to-right"}`}
+              key={`leaving-${leaving}-${active}`}
+              testimonial={testimonials[leaving]}
+            />
+          ) : null}
           <TestimonialCard
-            className="home-testimonial-animate is-active"
+            className={`home-testimonial-slide is-active ${leaving !== null ? (direction === 1 ? "from-right" : "from-left") : ""}`}
             key={active}
+            onAnimationEnd={() => setLeaving(null)}
             testimonial={t}
           />
         </div>
         <button
           aria-label="Next testimonial"
           className="home-testimonial-arrow home-testimonial-arrow--right"
-          onClick={() => go(active + 1)}
+          onClick={() => goBy(1)}
           type="button"
         >
           <TestimonialArrowIcon direction="right" />
@@ -289,7 +317,7 @@ export function TestimonialsCarousel({
             aria-label={`Go to testimonial set ${i + 1}`}
             className={i === activeDot ? "is-active" : ""}
             key={i}
-            onClick={() => go(i)}
+            onClick={() => moveTo(i, i < active ? -1 : 1)}
             role="button"
             tabIndex={0}
           />
