@@ -6,14 +6,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
-  // Growth Opportunity Sprint campaign page (Charles, 19 Nov 2026): a standalone HTML page served at
-  // hybrgroup.net/GOS_sme. The file lives in public/campaigns/gos-sme.html.
-  // Matching is case-insensitive, so /gos_sme works too; /gos-sme (hyphen) is sent to the same address.
-  async rewrites() {
-    return [{ source: "/GOS_sme", destination: "/campaigns/gos-sme.html" }];
-  },
+  // Growth Opportunity Sprint page: served by src/app/GOS_sme/route.ts. /gos-sme (hyphen) goes there too.
   async redirects() {
     return [{ source: "/gos-sme", destination: "/GOS_sme", permanent: false }];
+  },
+  // The page's HTML is read from src/content when the route is built; keep it with the route's files.
+  outputFileTracingIncludes: {
+    "/GOS_sme": ["./src/content/gos-sme.html"],
   },
 };
 
