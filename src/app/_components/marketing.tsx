@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { figmaAssets, footerGroups, navigation, siteContent } from "@/content/site";
+import "./insight-listing.css";
 
 export const imageUrl = figmaAssets.figmaBusinessPartners;
 
@@ -331,42 +332,87 @@ export function CaseCard({
   );
 }
 
-export function ListingControls() {
+const searchGlyph =
+  "M796-121 533-384q-30 26-70 40.5T378-329q-108 0-183-75t-75-181q0-106 75-181t182-75q106 0 180.5 75T632-585q0 43-14 83t-42 75l264 262-44 44ZM377-389q81 0 138-57.5T572-585q0-81-57-138.5T377-781q-82 0-139.5 57.5T180-585q0 81 57.5 138.5T377-389Z";
+const arrowDownGlyph = "M480-344 240-584l43-43 197 197 197-197 43 43-240 240Z";
+
+/** Material Symbols "search" / "keyboard_arrow_down" (outlined, 400), as in the Figma controls. */
+function ListingGlyph({ path }: { path: string }) {
   return (
-    <div className="listing-controls flex flex-wrap gap-3 md:gap-4">
-      {["Search", "Sort by", "Topic", "Duration"].map((item) => (
-        <button
-          className="min-h-11 rounded-full border border-black/15 px-5 text-sm font-semibold md:min-h-[56px] md:px-7 md:text-[20px]"
-          key={item}
-          type="button"
-        >
-          {item}
+    <svg aria-hidden="true" fill="currentColor" focusable="false" viewBox="0 -960 960 960">
+      <path d={path} />
+    </svg>
+  );
+}
+
+/** The mobile frames' "Slider-Horizontal-Alternative" filter icon (24 x 24, black at 40 %). */
+function SliderGlyph() {
+  return (
+    <svg aria-hidden="true" fill="none" focusable="false" viewBox="0 0 24 24">
+      <g stroke="#000000" strokeOpacity="0.4">
+        <path d="M0 5.5h6.5M9 5.5h15M1 12h13M15.5 12H23M0 18.5h6.5M9 18.5h15" />
+        <path d="M6.5 3.5v4M5.5 4.5v2M16.5 9.5v5M15.5 10.5v3M6.5 16.5v4M5.5 17.5v2" />
+      </g>
+    </svg>
+  );
+}
+
+/**
+ * Search / sort / filter row of the insight listings (Figma "Sharp Button Test 3-6"): Search + Sort by, Topic and
+ * Duration from 1360 px, Search + Filters from 560 px, Search + a filter icon below. Controls only (no behaviour yet).
+ */
+export function ListingControls({ className = "" }: { className?: string } = {}) {
+  return (
+    <div aria-label="Search and filter" className={`hlc ${className}`} role="group">
+      <button className="hlc-pill hlc-search" type="button">
+        <ListingGlyph path={searchGlyph} />
+        <span>Search</span>
+      </button>
+      {["Sort by", "Topic", "Duration"].map((item) => (
+        <button className="hlc-pill hlc-wide" key={item} type="button">
+          <span>{item}</span>
+          <ListingGlyph path={arrowDownGlyph} />
         </button>
       ))}
+      <button className="hlc-pill hlc-mid" type="button">
+        <span>Filters</span>
+        <ListingGlyph path={arrowDownGlyph} />
+      </button>
+      <button aria-label="Filters" className="hlc-pill hlc-narrow" type="button">
+        <SliderGlyph />
+      </button>
     </div>
   );
 }
 
-export function SearchBar({ placeholder = "Search" }: { placeholder?: string }) {
+/** Full-width search pill under a listing hero (Figma "Sharp Button Test 3", 1200 x 56). */
+export function SearchBar({ placeholder = "Search", className = "" }: { placeholder?: string; className?: string }) {
   return (
-    <div className="search-bar flex h-14 items-center justify-center gap-3 rounded-full border border-black/60 bg-white px-6 text-sm font-medium text-black/70 shadow-[0_8px_18px_rgba(0,0,0,0.04)] md:px-8">
-      <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="2" />
-        <path d="M16 16L21 21" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-      </svg>
+    <div className={`search-bar hsb ${className}`} role="search">
+      <ListingGlyph path={searchGlyph} />
       <span>{placeholder}</span>
     </div>
   );
 }
 
+/**
+ * Figma "News Card - V2": image card with a kind label, title, optional summary and a white "Read More" pill.
+ * `buttonPlacement="start"` puts the pill top right and the copy at the bottom; `size="small"` is the half-width
+ * mobile card; `tone="mono"` shows the image in greyscale. `compact` is kept for older callers (same as small).
+ */
 export function InsightCard({
   kind,
   title,
   body,
-  imageSrc = figmaAssets.figmaBuilding,
+  imageSrc = "/insights/listing/building.jpg",
   className = "",
   compact = false,
   href,
+  buttonLabel = "Read More",
+  buttonPlacement = "end",
+  size,
+  tone = "color",
+  id,
 }: {
   kind: string;
   title: string;
@@ -375,6 +421,11 @@ export function InsightCard({
   className?: string;
   compact?: boolean;
   href?: string;
+  buttonLabel?: string;
+  buttonPlacement?: "end" | "start";
+  size?: "default" | "small";
+  tone?: "color" | "mono";
+  id?: string;
 }) {
   const fallbackHref =
     kind.toLowerCase() === "webinar"
@@ -384,34 +435,22 @@ export function InsightCard({
         : "/insights/articles/specific-article";
 
   return (
-    <article
-      className={`figma-motion-card rounded-[20px] bg-black p-6 text-white md:p-8 ${className}`}
-      style={{
-        backgroundColor: "rgba(0,0,0,.48)",
-        backgroundImage: `url(${imageSrc})`,
-        backgroundBlendMode: "multiply",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+    <Link
+      className={`hic-card ${className}`}
+      data-button={buttonPlacement}
+      data-size={size ?? (compact ? "small" : "default")}
+      data-tone={tone}
+      href={href ?? fallbackHref}
+      id={id}
     >
-      <Label>{kind}</Label>
-      <h3 className={`font-display text-3xl font-medium leading-tight md:text-4xl ${compact ? "mt-8 md:mt-12" : "mt-24 md:mt-36"}`}>
-        {title}
-      </h3>
-      {kind.toLowerCase() === "webinar" ? (
-        <div className="mt-3 space-y-1 text-sm font-semibold md:text-base">
-          <p>Jedidiah Akpata &amp; Charles Ojei</p>
-          <p>November 2023</p>
-          <p>01:40:35</p>
-        </div>
-      ) : null}
-      {body ? <p className="mt-4 max-w-[320px] text-base leading-relaxed">{body}</p> : null}
-      <div className="mt-8">
-        <Button href={href ?? fallbackHref} variant="white">
-          Read More
-        </Button>
-      </div>
-    </article>
+      <img alt="" className="hic-image" src={imageSrc} />
+      <span className="hic-copy">
+        <span className="hic-kind">{kind}</span>
+        <span className="hic-title">{title}</span>
+        {body ? <span className="hic-body">{body}</span> : null}
+      </span>
+      <span className="hic-button">{buttonLabel}</span>
+    </Link>
   );
 }
 
