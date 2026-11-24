@@ -1,12 +1,6 @@
 import { InsightArticleDetail } from "@/components/InsightArticleDetail";
-import { absaDiscoveryNews, innovationSweetSpotArticle } from "@/content/insights";
+import { absaDiscoveryNews } from "@/content/insights";
 
 export default function AbsaDiscoveryNewsPage() {
-  return (
-    <InsightArticleDetail
-      article={absaDiscoveryNews}
-      relatedArticle={innovationSweetSpotArticle}
-      relatedHref="/insights/articles/specific-article"
-    />
-  );
+  return <InsightArticleDetail article={absaDiscoveryNews} href={absaDiscoveryNews.href} variant="news" />;
 }
