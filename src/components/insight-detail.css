@@ -755,3 +755,17 @@
     text-align: left;
   }
 }
+
+/* 560-679 and < 380: the half-width "More" cards cannot hold a title word, so the grid stacks */
+@media (min-width: 560px) and (max-width: 679px), (max-width: 379px) {
+  .idt .idt-more-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .idt .idt-card--1,
+  .idt .idt-card--2,
+  .idt .idt-card--3 {
+    grid-column: 1;
+  }
+}

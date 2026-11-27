@@ -172,7 +172,7 @@
 
 .il-spotlight-image img {
   filter: grayscale(1);
-  height: max(507px, 100%);
+  height: max(507px, calc(100% + var(--il-spot-image-extra, 0px)));
   left: 50%;
   max-width: none;
   object-fit: cover;
@@ -953,8 +953,10 @@
     --il-drop-top: 177px;
     --il-spot-image-top: -61px;
     --il-spot-image-shift: 0%;
+    --il-spot-image-extra: 61px;
     --hic-image-top: -61px;
     --hic-image-shift: 0%;
+    --hic-image-extra: 61px;
   }
 
   .il-container {
@@ -1226,5 +1228,41 @@
   .il-what-action {
     font-size: 20px;
     line-height: 24px;
+  }
+}
+
+/* =================== between the frames: keep words whole =================== */
+
+/* 560-767: the copy column of the side-by-side spotlight gets narrow */
+@media (min-width: 560px) and (max-width: 767px) {
+  .il-spotlight {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .il-spotlight-copy {
+    padding: 40px 24px 101px;
+  }
+}
+
+/* 560-679 and < 380: the two half-width cards cannot hold a 32 px / 20 px title word, so the grid stacks */
+@media (min-width: 560px) and (max-width: 679px), (max-width: 379px) {
+  .il .il-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .il .il-card--a,
+  .il .il-card--b,
+  .il .il-card--c,
+  .il .il-card--d {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* < 390: keep the hero copy clear of the content drop's closed tab */
+@media (max-width: 389px) {
+  .il-hero p {
+    max-width: calc(100% - 80px);
   }
 }

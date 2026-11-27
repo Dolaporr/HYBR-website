@@ -24,7 +24,7 @@
 
 .hic-image {
   /* the frames place the 902 x 507 image fill centred on the card, not scaled to it */
-  height: max(507px, 100%);
+  height: max(507px, calc(100% + var(--hic-image-extra, 0px)));
   left: 50%;
   max-width: none;
   object-fit: cover;
