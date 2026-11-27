@@ -681,3 +681,15 @@
     column-gap: 24px !important;
   }
 }
+
+/* phones narrower than the 390 frame: fixed 300 / 342 px blocks would spill past the edge */
+@media (max-width: 389px) {
+  .about-figma.about-page .about-hero-copy,
+  .about-figma.about-page .about-purpose-copy {
+    max-width: calc(100% - 48px) !important;
+  }
+
+  .about-figma.about-page .about-card-caption {
+    max-width: calc(100% - 80px) !important;
+  }
+}
