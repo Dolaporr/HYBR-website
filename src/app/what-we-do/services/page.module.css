@@ -1663,14 +1663,6 @@
     left: calc(50% - 130px);
   }
 
-  .servicesScope :global(.services-content-drop.site-content-drop) {
-    right: -288px !important;
-  }
-
-  .servicesScope :global(.services-content-drop p) {
-    left: 41.5px;
-  }
-
   .servicesScope :global(.services-process-bg) {
     display: none;
   }

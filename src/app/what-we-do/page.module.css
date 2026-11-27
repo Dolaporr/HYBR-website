@@ -1929,34 +1929,8 @@
 }
 
 /* ---- Figma match pass (desktop 1440, frame 1:3587) ---- */
-.whatScope :global(.what-content-drop.site-content-drop) {
-  --content-drop-closed-right: -254px;
-}
 
 @media (min-width: 1360px) {
-  .whatScope :global(.what-content-drop) {
-    border-radius: 1000px 800px 800px 1000px;
-    height: 197px;
-    top: 253px;
-    width: 352px;
-  }
-
-  .whatScope :global(.what-content-drop p) {
-    left: 41.5px;
-  }
-
-  .whatScope :global(.what-content-drop nav) {
-    gap: 8px;
-    right: 111px;
-    top: calc(50% + 0.5px);
-    width: 109px;
-  }
-
-  .whatScope :global(.what-content-drop a) {
-    font-size: 16px;
-    line-height: normal;
-    white-space: nowrap;
-  }
 
   .whatScope :global(.what-services-copy > p),
   .whatScope :global(.what-work-copy > p),
@@ -2054,30 +2028,6 @@
 
   .whatScope :global(.what-hero h1) {
     font-size: 104px;
-  }
-
-  .whatScope :global(.what-content-drop) {
-    border-radius: 1000px 800px 800px 1000px;
-    height: 197px;
-    top: 239px;
-    width: 352px;
-  }
-
-  .whatScope :global(.what-content-drop p) {
-    left: 41.5px;
-  }
-
-  .whatScope :global(.what-content-drop nav) {
-    gap: 8px;
-    right: 111px;
-    top: calc(50% + 0.5px);
-    width: 109px;
-  }
-
-  .whatScope :global(.what-content-drop a) {
-    font-size: 16px;
-    line-height: normal;
-    white-space: nowrap;
   }
 
   .whatScope :global(.what-services-copy h2),
@@ -2204,36 +2154,9 @@
 
 /* ---- Figma match pass (tablet band, frame 1:9771 at 800) ---- */
 @media (min-width: 560px) and (max-width: 1023px) {
-  .whatScope :global(.what-content-drop.site-content-drop) {
-    --content-drop-closed-right: -272px;
-  }
 
   .whatScope :global(.what-hero h1) {
     font-size: 104px;
-  }
-
-  .whatScope :global(.what-content-drop) {
-    border-radius: 1000px 800px 800px 1000px;
-    height: 197px;
-    top: 239px;
-    width: 352px;
-  }
-
-  .whatScope :global(.what-content-drop p) {
-    left: 41.5px;
-  }
-
-  .whatScope :global(.what-content-drop nav) {
-    gap: 8px;
-    right: 111px;
-    top: calc(50% + 0.5px);
-    width: 109px;
-  }
-
-  .whatScope :global(.what-content-drop a) {
-    font-size: 16px;
-    line-height: normal;
-    white-space: nowrap;
   }
 
   .whatScope :global(.what-services-copy h2),
@@ -2373,32 +2296,6 @@
 
 /* ---- Figma match pass (mobile, frame 1:6096 at 390) ---- */
 @media (max-width: 559px) {
-  .whatScope.whatScope :global(.what-frame .what-content-drop.site-content-drop) {
-    border-radius: 1000px 800px 800px 1000px;
-    height: 132px;
-    top: 177px;
-    width: 342px;
-  }
-
-  .whatScope :global(.what-content-drop p) {
-    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    left: 42px;
-  }
-
-  .whatScope :global(.what-content-drop nav) {
-    align-items: flex-start;
-    flex-flow: row wrap;
-    gap: 12px;
-    left: 86px;
-    right: auto;
-    width: 215px;
-  }
-
-  .whatScope :global(.what-content-drop a) {
-    font-size: 16px;
-    line-height: 20px;
-  }
 
   .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
     font-size: 16px;
