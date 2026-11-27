@@ -1,0 +1,904 @@
+/*
+ * /who-we-are, matched to Figma (file OscCH3GaBaaQhkOCIODYT3):
+ *   desktop 1440 1:5284 (>= 1360), tablet horizontal 1280 1:7893 (1024-1359),
+ *   tablet vertical 800 1:9555 (560-1023), mobile 390 1:5939 (< 560).
+ * Every selector is scoped under .wwa-page (the page root) so nothing leaks to other routes after client navigation.
+ * The page used to be absolutely positioned inside fixed-height frames (globals.css .who-*); it now flows, with
+ * the Figma spacing as margins. The .who-content-drop drawer keeps its shared global styles and script.
+ */
+
+.wwa-page {
+  --g: 24px;
+  --copy-gap: 65px;
+  background: #ffffff;
+  color: #000000;
+  container-type: inline-size;
+  position: relative;
+}
+
+.wwa-page .wwa-container {
+  box-sizing: border-box;
+  padding-inline: var(--g);
+  width: 100%;
+}
+
+.wwa-page .wwa-photo {
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  inset: 0;
+  position: absolute;
+}
+
+.wwa-page .wwa-label {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 20px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.wwa-page .wwa-break-mobile,
+.wwa-page .wwa-break-tablet {
+  display: none;
+}
+
+/* ---------- buttons (Figma "Button Test 2": pill, 2 px stroke, 16 / 32 padding) ---------- */
+
+.wwa-page .wwa-button {
+  align-items: center;
+  align-self: flex-start;
+  background: transparent;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  height: 56px;
+  justify-content: center;
+  line-height: 24px;
+  margin-top: 32px;
+  padding: 0 30px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.wwa-page .wwa-button--light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.wwa-page .wwa-button:hover,
+.wwa-page .wwa-button:focus-visible,
+.wwa-page .wwa-journey:hover,
+.wwa-page .wwa-journey:focus-visible {
+  background: #8dc540;
+  border-color: #8dc540;
+  color: #000000;
+}
+
+.wwa-page .wwa-button:focus-visible,
+.wwa-page .wwa-journey:focus-visible,
+.wwa-page .wwa-history-scroller:focus-visible {
+  outline: 2px solid #196ab4;
+  outline-offset: 3px;
+}
+
+/* ---------- hero ---------- */
+
+.wwa-page .wwa-hero {
+  padding-top: 187px;
+}
+
+.wwa-page .wwa-hero h1 {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 56px;
+  margin: 0;
+}
+
+.wwa-page .wwa-hero p {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+  max-width: 300px;
+}
+
+.wwa-page .wwa-break-mobile {
+  display: inline;
+}
+
+/* ---------- history band ---------- */
+
+.wwa-page .wwa-history {
+  background: #000000;
+  color: #ffffff;
+  margin-top: 116px;
+  padding: 48px 0 163px;
+  position: relative;
+}
+
+.wwa-page .wwa-journey {
+  display: none;
+}
+
+.wwa-page .wwa-history-label {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: calc(var(--g) + 2px);
+}
+
+.wwa-page .wwa-history-scroller {
+  outline: none;
+}
+
+.wwa-page .wwa-track {
+  list-style: none;
+  margin: 48px var(--g) 0;
+  padding: 0;
+  position: relative;
+}
+
+/* vertical line: Figma Vector 106, 8 px, round caps, x 56, y 525-3464 */
+.wwa-page .wwa-track::before {
+  background: #ffffff;
+  border-radius: 4px;
+  bottom: -111px;
+  content: "";
+  left: 28px;
+  position: absolute;
+  top: 6px;
+  width: 8px;
+}
+
+.wwa-page .wwa-track-year {
+  display: none;
+}
+
+.wwa-page .wwa-event {
+  margin-top: var(--m-gap);
+  padding-left: 130px;
+  position: relative;
+}
+
+.wwa-page .wwa-event-pin {
+  align-items: center;
+  background: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  height: 67px;
+  justify-content: center;
+  left: -1.5px;
+  position: absolute;
+  top: calc(var(--m-pin) - 33.5px);
+  width: 67px;
+  z-index: 2;
+}
+
+.wwa-page .wwa-event-pin img {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+/* mobile connector: Figma Vector 107-116, 80 px from the line centre, 4 px white */
+.wwa-page .wwa-event-link {
+  background: #ffffff;
+  height: 4px;
+  left: 32px;
+  position: absolute;
+  top: calc(var(--m-pin) - 2px);
+  width: 80px;
+  z-index: 1;
+}
+
+.wwa-page .wwa-event-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 24px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.wwa-page .wwa-event.is-featured .wwa-event-card {
+  background: #196ab4;
+  color: #ffffff;
+}
+
+.wwa-page .wwa-event-card p {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin: 0;
+}
+
+.wwa-page .wwa-event-card strong {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: right;
+}
+
+/* ---------- early days + about + team (shares the orbit decoration) ---------- */
+
+.wwa-page .wwa-story {
+  display: flow-root;
+  position: relative;
+}
+
+.wwa-page .wwa-orbits {
+  display: none;
+}
+
+.wwa-page .wwa-early,
+.wwa-page .wwa-about,
+.wwa-page .wwa-team,
+.wwa-page .wwa-careers {
+  position: relative;
+  z-index: 1;
+}
+
+.wwa-page .wwa-early {
+  margin-top: 64px;
+}
+
+.wwa-page .wwa-early-card {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  height: 386px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wwa-page .wwa-early-copy {
+  bottom: 32px;
+  left: 40px;
+  position: absolute;
+  right: 40px;
+}
+
+.wwa-page .wwa-early-copy h2 {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 39px;
+  margin: 0;
+}
+
+.wwa-page .wwa-early-copy p {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 8px 0 0;
+  max-width: 262px;
+}
+
+/* about / careers: copy + pill image */
+.wwa-page .wwa-split {
+  display: flex;
+  flex-direction: column;
+}
+
+.wwa-page .wwa-about {
+  margin-top: 92px;
+}
+
+.wwa-page .wwa-careers {
+  margin-bottom: 135px;
+  margin-top: 120px;
+}
+
+.wwa-page .wwa-pill {
+  background: #000000;
+  border-radius: 0 1000px 1000px 1000px;
+  height: 118px;
+  margin-bottom: 64px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wwa-page .wwa-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.wwa-page .wwa-copy h2 {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 38px;
+  margin: 0;
+}
+
+.wwa-page .wwa-body {
+  margin-top: 8px;
+}
+
+.wwa-page .wwa-body p {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0;
+}
+
+/* team card */
+.wwa-page .wwa-team {
+  margin-top: 132px;
+}
+
+.wwa-page .wwa-team-card {
+  background: #000000;
+  border-radius: 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 59px 32px;
+}
+
+.wwa-page .wwa-team-head h2 {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 38px;
+  margin: 0;
+}
+
+.wwa-page .wwa-team-head h2 span {
+  color: #8dc540;
+}
+
+.wwa-page .wwa-team-body {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 24px 0 0;
+}
+
+.wwa-page .wwa-team-media {
+  display: flex;
+  flex-direction: column;
+  margin-top: 43px;
+}
+
+.wwa-page .wwa-team-media .wwa-photo {
+  border-radius: 16px;
+  height: 124px;
+  position: relative;
+}
+
+.wwa-page .wwa-team-media .wwa-button {
+  align-self: center;
+  margin-top: 30px;
+}
+
+/* ---------- tablet vertical, 800 frame (560-1023) ---------- */
+
+@media (min-width: 560px) {
+  .wwa-page {
+    --g: 80px;
+    --tl: 120px;
+  }
+
+  .wwa-page .wwa-break-mobile {
+    display: none;
+  }
+
+  .wwa-page .wwa-break-tablet {
+    display: inline;
+  }
+
+  .wwa-page .wwa-hero {
+    padding-top: 240px;
+  }
+
+  .wwa-page .wwa-hero h1 {
+    font-size: 104px;
+    line-height: 122px;
+  }
+
+  .wwa-page .wwa-hero p {
+    font-size: 24px;
+    line-height: 29px;
+    max-width: none;
+  }
+
+  /* band: 1024 tall, a horizontal track that runs past the edge and scrolls */
+  .wwa-page .wwa-history {
+    box-sizing: border-box;
+    height: 1024px;
+    margin-top: 239px;
+    padding: 0;
+  }
+
+  .wwa-page .wwa-journey {
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    gap: 10px;
+    height: 64px;
+    line-height: 29px;
+    padding: 0 30px;
+    position: absolute;
+    right: calc(var(--g) - 46px);
+    top: -31px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    z-index: 3;
+  }
+
+  .wwa-page .wwa-journey-icon {
+    color: #343330;
+    flex: 0 0 auto;
+    height: 32px;
+    transition: transform 0.2s ease;
+    width: 32px;
+  }
+
+  .wwa-page .wwa-journey:hover .wwa-journey-icon,
+  .wwa-page .wwa-journey:focus-visible .wwa-journey-icon {
+    color: #000000;
+  }
+
+  .wwa-page .wwa-journey.is-at-end .wwa-journey-icon {
+    transform: rotate(180deg);
+  }
+
+  .wwa-page .wwa-history-label {
+    font-size: 20px;
+    left: var(--tl);
+    line-height: 24px;
+    margin: 0;
+    position: absolute;
+    top: 97px;
+  }
+
+  /* the scroller holds the band from y 160 to the bottom; track coordinates below are Figma's minus 160 */
+  .wwa-page .wwa-history-scroller {
+    bottom: 0;
+    left: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: absolute;
+    right: 0;
+    scrollbar-width: none;
+    top: 160px;
+  }
+
+  .wwa-page .wwa-history-scroller::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wwa-page .wwa-track {
+    box-sizing: content-box;
+    height: 100%;
+    margin: 0;
+    padding-left: var(--tl);
+    width: 4096px;
+  }
+
+  /* Vector 106: x 284-3809 (+ round caps), centre y 552 */
+  .wwa-page .wwa-track::before {
+    bottom: auto;
+    height: 8px;
+    left: calc(var(--tl) + 160px);
+    top: 388px;
+    width: 3533px;
+  }
+
+  .wwa-page .wwa-track-year {
+    display: block;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49px;
+    position: absolute;
+    text-align: center;
+    top: 367.5px;
+  }
+
+  .wwa-page .wwa-track-year--start {
+    left: calc(var(--tl) + 40px);
+    width: 92px;
+  }
+
+  .wwa-page .wwa-track-year--end {
+    left: calc(var(--tl) + 3721px);
+    width: 98px;
+  }
+
+  .wwa-page .wwa-event {
+    height: 100%;
+    left: calc(var(--tl) + var(--i) * 366px);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 490px;
+  }
+
+  .wwa-page .wwa-event-pin {
+    left: calc(245px - 33.5px);
+    top: calc(392px - 33.5px);
+  }
+
+  /* Vector 107-116: dotted, 4 px, 3 / 3 dashes, white 80 %, 80 long from the line to 16 px off the card */
+  .wwa-page .wwa-event-link {
+    background: repeating-linear-gradient(to bottom, rgb(255 255 255 / 0.8) 0 3px, transparent 3px 6px);
+    height: 80px;
+    left: 243px;
+    top: 312px;
+    width: 4px;
+  }
+
+  .wwa-page .wwa-event.is-bottom .wwa-event-link {
+    top: 392px;
+  }
+
+  .wwa-page .wwa-event-card {
+    gap: 8px;
+    padding: 40px;
+    position: absolute;
+    width: 490px;
+  }
+
+  .wwa-page .wwa-event.is-top .wwa-event-card {
+    bottom: calc(100% - 296px);
+  }
+
+  .wwa-page .wwa-event.is-bottom .wwa-event-card {
+    top: 488px;
+  }
+
+  .wwa-page .wwa-event-card p {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  /* orbits: Figma Group 109, three 1021 circles, positioned from the Early Days card */
+  .wwa-page .wwa-orbits {
+    display: block;
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .wwa-page .wwa-orbit {
+    --w: 1px;
+    border: var(--w) solid #8dc540;
+    border-radius: 50%;
+    box-sizing: border-box;
+    height: calc(1021px + var(--w));
+    margin: calc(var(--w) / -2) 0 0 calc(var(--w) / -2);
+    position: absolute;
+    width: calc(1021px + var(--w));
+  }
+
+  .wwa-page .wwa-orbit--a {
+    left: calc(var(--g) + 458.7px);
+    top: calc(224px + 377.4px);
+  }
+
+  .wwa-page .wwa-orbit--b {
+    left: calc(var(--g) + 228.1px);
+    top: calc(224px + 129.2px);
+  }
+
+  .wwa-page .wwa-orbit--c {
+    left: calc(var(--g) + 302.4px);
+    top: calc(224px + 711.8px);
+  }
+
+  .wwa-page .wwa-early {
+    margin-top: 224px;
+  }
+
+  .wwa-page .wwa-early-copy {
+    bottom: 48px;
+    left: 48px;
+    right: 48px;
+  }
+
+  .wwa-page .wwa-early-copy p {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 371px;
+  }
+
+  .wwa-page .wwa-about {
+    margin-top: 224px;
+  }
+
+  .wwa-page .wwa-careers {
+    margin-bottom: 224px;
+    margin-top: 224px;
+  }
+
+  .wwa-page .wwa-pill {
+    height: 248px;
+    margin-bottom: 80px;
+  }
+
+  .wwa-page .wwa-body p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .wwa-page .wwa-careers .wwa-button {
+    font-size: 24px;
+    height: 61px;
+    line-height: 29px;
+  }
+
+  .wwa-page .wwa-team {
+    margin-top: 224px;
+  }
+
+  .wwa-page .wwa-team-card {
+    padding: 59px 48px 60px;
+  }
+
+  .wwa-page .wwa-team-body {
+    margin-top: 16px;
+  }
+
+  .wwa-page .wwa-team-media {
+    border-radius: 24px;
+    box-sizing: border-box;
+    height: 245px;
+    margin-top: 59px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .wwa-page .wwa-team-media .wwa-photo {
+    border-radius: 0;
+    height: auto;
+    position: absolute;
+  }
+
+  .wwa-page .wwa-team-media .wwa-button {
+    bottom: 16px;
+    margin: 0;
+    position: absolute;
+    right: 16px;
+  }
+}
+
+/* ---------- tablet horizontal, 1280 frame (1024-1359) ---------- */
+
+@media (min-width: 1024px) {
+  .wwa-page {
+    --g: max(120px, calc((100cqw - 1200px) / 2));
+    --tl: var(--g);
+    --copy-gap: 77px;
+    --copy-w: min(588px, calc((100cqw - 2 * var(--g)) * 0.6));
+  }
+
+  .wwa-page .wwa-journey {
+    right: calc(var(--g) - 69px);
+  }
+
+  .wwa-page .wwa-orbit--a {
+    left: calc(var(--g) + 831.7px);
+  }
+
+  .wwa-page .wwa-orbit--b {
+    left: calc(var(--g) + 601.1px);
+  }
+
+  .wwa-page .wwa-orbit--c {
+    left: calc(var(--g) + 675.4px);
+  }
+
+  .wwa-page .wwa-early-copy p {
+    max-width: none;
+  }
+
+  /* about: copy left, pill image from the copy to the right screen edge */
+  .wwa-page .wwa-split {
+    position: relative;
+  }
+
+  .wwa-page .wwa-copy {
+    width: var(--copy-w);
+  }
+
+  .wwa-page .wwa-pill {
+    border-radius: 1000px 0 0 1000px;
+    height: 336px;
+    margin: 0;
+    position: absolute;
+  }
+
+  .wwa-page .wwa-pill--right {
+    left: calc(var(--g) + var(--copy-w) + var(--copy-gap));
+    right: 0;
+    top: 48px;
+  }
+
+  /* careers: copy right-aligned, pill image from the left screen edge */
+  .wwa-page .wwa-careers {
+    margin-bottom: 226px;
+    margin-top: 227px;
+  }
+
+  .wwa-page .wwa-careers .wwa-copy {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .wwa-page .wwa-careers .wwa-button {
+    align-self: flex-end;
+  }
+
+  .wwa-page .wwa-pill--left {
+    border-radius: 0 1000px 1000px 0;
+    left: 0;
+    right: calc(var(--g) + var(--copy-w) + var(--copy-gap));
+    top: -3px;
+  }
+
+  .wwa-page .wwa-team-media {
+    margin-top: 54px;
+  }
+}
+
+/* ---------- desktop, 1440 frame (>= 1360) ---------- */
+
+@media (min-width: 1360px) {
+  .wwa-page {
+    --copy-gap: 65px;
+  }
+
+  .wwa-page .wwa-hero {
+    padding-top: 243px;
+  }
+
+  .wwa-page .wwa-hero h1 {
+    font-size: 160px;
+    line-height: 188px;
+  }
+
+  .wwa-page .wwa-history {
+    margin-top: 245px;
+  }
+
+  .wwa-page .wwa-journey {
+    right: calc(var(--g) - 42px);
+  }
+
+  .wwa-page .wwa-orbit {
+    --w: 2px;
+  }
+
+  .wwa-page .wwa-orbit--a {
+    left: calc(var(--g) + 986.1px);
+    top: calc(280px + 415.4px);
+  }
+
+  .wwa-page .wwa-orbit--b {
+    left: calc(var(--g) + 755.4px);
+    top: calc(280px + 167.2px);
+  }
+
+  .wwa-page .wwa-orbit--c {
+    left: calc(var(--g) + 829.7px);
+    top: calc(280px + 749.8px);
+  }
+
+  .wwa-page .wwa-early {
+    margin-top: 280px;
+  }
+
+  .wwa-page .wwa-early-copy p {
+    font-weight: 600;
+  }
+
+  .wwa-page .wwa-label {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .wwa-page .wwa-copy h2,
+  .wwa-page .wwa-team-head h2 {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .wwa-page .wwa-body p {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .wwa-page .wwa-button {
+    font-size: 24px;
+    height: 61px;
+    line-height: 29px;
+  }
+
+  .wwa-page .wwa-about {
+    margin-top: 280px;
+  }
+
+  .wwa-page .wwa-pill--right {
+    top: 139px;
+  }
+
+  .wwa-page .wwa-careers {
+    margin-bottom: 257px;
+    margin-top: 280px;
+  }
+
+  .wwa-page .wwa-pill--left {
+    top: 38px;
+  }
+
+  .wwa-page .wwa-team {
+    margin-top: 280px;
+  }
+
+  /* two columns: heading 461 wide, body from x +509 and y +96, image row below */
+  .wwa-page .wwa-team-card {
+    display: grid;
+    column-gap: 0;
+    grid-template-areas:
+      "head body"
+      "media media";
+    grid-template-columns: 461px minmax(0, 1fr);
+  }
+
+  .wwa-page .wwa-team-head {
+    grid-area: head;
+  }
+
+  .wwa-page .wwa-team-body {
+    grid-area: body;
+    margin-top: 37px;
+  }
+
+  .wwa-page .wwa-team-media {
+    grid-area: media;
+    margin-top: 56px;
+  }
+
+  .wwa-page .wwa-break-tablet {
+    display: none;
+  }
+}
