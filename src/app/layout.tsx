@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Raleway, Inter } from "next/font/google";
 import { SiteInteractions } from "@/components/HomeInteractions";
+import { ContentDrawers } from "@/components/ContentDrawers";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -37,6 +38,7 @@ export default function RootLayout({
 }>) {
   const contentDrawerScript = `
 (() => {
+  if (window.__HYBR_CONTENT_DRAWERS__) return;
   const selector = [
     ".figma-content-drop",
     ".insights-content-drop",
@@ -56,8 +58,17 @@ export default function RootLayout({
 
   window.__HYBR_CONTENT_DRAWERS__ = true;
   const mobileDrawerMedia = "(max-width: 559px)";
-  const mobileClosedPeek = 72;
-  const desktopClosedPeek = 95;
+  // closed tab peek per Figma frame: 96 (1440), 105 (1280), 70 (800), 58 (390)
+  // a page can set its own frame's value with --content-drop-peek on the drawer (e.g. 66px on a 390 frame)
+  const closedPeek = (drop) => {
+    const own = parseFloat(getComputedStyle(drop).getPropertyValue("--content-drop-peek"));
+    if (Number.isFinite(own)) return own;
+    const w = window.innerWidth;
+    if (w < 560) return 58;
+    if (w < 1024) return 70;
+    if (w < 1360) return 105;
+    return 96;
+  };
 
   const isInsightsFamilyDrop = (drop) => (
     drop.classList.contains("insights-content-drop") ||
@@ -100,7 +111,7 @@ export default function RootLayout({
       : window.innerWidth;
     const targetRectRight = isOpen
       ? viewportRight
-      : viewportRight + rect.width - (isMobile ? mobileClosedPeek : desktopClosedPeek);
+      : viewportRight + rect.width - closedPeek(drop);
     const translateX = targetRectRight - rect.right;
 
     drop.style.setProperty("left", "auto", "important");
@@ -227,9 +238,10 @@ export default function RootLayout({
       className={`${montserrat.variable} ${raleway.variable} ${inter.variable}`}
     >
       <body>
+        {/* before SiteInteractions: its effect checks the flag this script sets, so only one drawer handler runs */}
+        <ContentDrawers script={contentDrawerScript} />
         <SiteInteractions />
         {children}
-        <script dangerouslySetInnerHTML={{ __html: contentDrawerScript }} />
       </body>
     </html>
   );
