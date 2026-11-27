@@ -222,14 +222,14 @@ function HybrMark({ className = "" }: { className?: string }) {
 
 function ContentDrop() {
   return (
-    <aside aria-label="Page contents" className="team-content-drop">
+    <aside aria-label="Page contents" className={`team-content-drop ${styles.drop} ${styles.contentDrop}`}>
       <span
         aria-hidden="true"
-        className="team-content-drop-media"
+        className={styles.dropMedia}
         style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
       />
-      <p>CONTENT</p>
-      <nav>
+      <p className={styles.dropLabel}>CONTENT</p>
+      <nav className={styles.dropNav}>
         {contentLinks.map((link) => (
           <a href={link.href} key={link.href}>
             {link.label}
@@ -242,12 +242,14 @@ function ContentDrop() {
 
 function NetworkMap() {
   return (
-    <section aria-labelledby="team-network-title" className="team-network" id="network">
-      <h2 id="team-network-title">OUR NETWORK</h2>
-      <div className="team-network-card">
-        <span aria-hidden="true" className="team-network-rings" />
+    <section aria-labelledby="team-network-title" className={`${styles.wrap} ${styles.network}`} id="network">
+      <h2 className={styles.networkLabel} id="team-network-title">OUR NETWORK</h2>
+      <div className={styles.networkCard}>
+        <span aria-hidden="true" className={`${styles.ring} ${styles.ringOuter}`} />
+        <span aria-hidden="true" className={`${styles.ring} ${styles.ringMiddle}`} />
+        <span aria-hidden="true" className={`${styles.ring} ${styles.ringInner}`} />
         {networkTiers.map((tier) => (
-          <div className={`team-network-tier is-${tier.label.toLowerCase()}`} key={tier.label}>
+          <div className={`${styles.tier} ${styles[`tier${tier.label}`]}`} key={tier.label}>
             <h3>{tier.label}</h3>
             <p>{tier.text}</p>
           </div>
@@ -263,34 +265,32 @@ function TeamCard({ member }: { member: TeamMember }) {
     : undefined;
 
   return (
-    <article className="team-member-card">
+    <article className={styles.card}>
       <span
         aria-hidden="true"
-        className={`team-member-photo${member.portrait ? "" : " is-placeholder"}`}
+        className={`${styles.photo}${member.portrait ? "" : ` ${styles.photoPlaceholder}`}`}
         style={portraitStyle}
       />
-      <HybrMark className="team-member-mark" />
-      <div className="team-member-copy">
-        <div>
-          <div className="team-member-name-row">
-            <h3>{member.name}</h3>
-            <a
-              aria-label={`Open ${member.name}'s LinkedIn profile`}
-              className="team-member-linkedin"
-              href={member.linkedinUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <svg aria-hidden="true" fill="none" viewBox="0 0 32 32">
-                <rect height="20" rx="3" stroke="currentColor" strokeWidth="2.2" width="20" x="6" y="6" />
-                <path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" />
-                <path d="M16 22V17.5C16 15.84 17.34 14.5 19 14.5C20.66 14.5 22 15.84 22 17.5V22" stroke="currentColor" strokeWidth="2.4" />
-                <circle cx="11" cy="10.5" fill="currentColor" r="1.5" />
-              </svg>
-            </a>
-          </div>
-          {member.role ? <p>{member.role}</p> : null}
+      <HybrMark className={styles.mark} />
+      <div className={styles.cardCopy}>
+        <div className={styles.nameRow}>
+          <h3>{member.name}</h3>
+          <a
+            aria-label={`Open ${member.name}'s LinkedIn profile`}
+            className={styles.linkedin}
+            href={member.linkedinUrl}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg aria-hidden="true" fill="none" viewBox="0 0 32 32">
+              <rect height="20" rx="3" stroke="currentColor" strokeWidth="2.2" width="20" x="6" y="6" />
+              <path d="M11 14V22" stroke="currentColor" strokeWidth="2.4" />
+              <path d="M16 22V17.5C16 15.84 17.34 14.5 19 14.5C20.66 14.5 22 15.84 22 17.5V22" stroke="currentColor" strokeWidth="2.4" />
+              <circle cx="11" cy="10.5" fill="currentColor" r="1.5" />
+            </svg>
+          </a>
         </div>
+        {member.role ? <p>{member.role}</p> : null}
       </div>
     </article>
   );
@@ -298,54 +298,54 @@ function TeamCard({ member }: { member: TeamMember }) {
 
 export default function OurTeamPage() {
   return (
-    <main className={`${styles.teamScope} team-page`}>
-      <div className="team-frame">
-        <Header active="who" />
+    <main className={`${styles.page} team-page`}>
+      <Header active="who" />
 
-        <section aria-labelledby="team-title" className="team-hero">
+      <div className={styles.top}>
+        <section aria-labelledby="team-title" className={`${styles.wrap} ${styles.hero}`}>
           <h1 id="team-title">Our Team</h1>
           <p>The people powering HYBR: innovators obsessed with building what&apos;s next.</p>
         </section>
-
         <ContentDrop />
-        <NetworkMap />
-
-        <section aria-labelledby="team-meet-title" className="team-meet">
-          <h2 id="team-meet-title">Meet the Team</h2>
-          <p>
-            Our network model enables us to go further faster, be radically original,
-            achieve greater lasting impact, and do so with ruthless efficiency
-          </p>
-        </section>
-
-        <TeamTierBrowser
-          afterRoster={(
-            <section aria-labelledby="team-more-title" className="team-more" id="more-about-us">
-              <h2 id="team-more-title">
-                Empowering organizations to unlock new value, create impact, and shape tomorrow.
-              </h2>
-              <p>
-                Build what&apos;s next &mdash; collaborate, experiment, and create change
-                with HYBR. Join a team where curiosity, creativity, and impact drive
-                everything we do.
-              </p>
-              <div>
-                <Link href="/who-we-are/careers">Join Us</Link>
-                <Link href="/what-we-do">What We Do</Link>
-              </div>
-            </section>
-          )}
-          membersByTier={Object.fromEntries(
-            networkTiers.map((tier) => [
-              tier.label,
-              teamMembers
-                .filter((member) => member.tier === tier.label)
-                .map((member) => <TeamCard key={member.name} member={member} />),
-            ]),
-          )}
-          tiers={networkTiers}
-        />
       </div>
+
+      <NetworkMap />
+
+      <section aria-labelledby="team-meet-title" className={`${styles.wrap} ${styles.meet}`}>
+        <h2 className={styles.h2} id="team-meet-title">Meet the Team</h2>
+        <p className={styles.body}>
+          Our network model enables us to go further faster, be radically original,
+          achieve greater lasting impact, and do so with ruthless efficiency
+        </p>
+      </section>
+
+      <TeamTierBrowser
+        afterRoster={(
+          <section aria-labelledby="team-more-title" className={`${styles.wrap} ${styles.more}`} id="more-about-us">
+            <h2 className={styles.h2} id="team-more-title">
+              Empowering organizations to unlock new value, create impact, and shape tomorrow.
+            </h2>
+            <p className={styles.body}>
+              Build what&apos;s next &mdash; collaborate, experiment, and create change
+              with HYBR. Join a team where curiosity, creativity, and impact drive
+              everything we do.
+            </p>
+            <div className={styles.moreButtons}>
+              <Link className={styles.button} href="/who-we-are/careers">Join Us</Link>
+              <Link className={styles.button} href="/what-we-do">What We Do</Link>
+            </div>
+          </section>
+        )}
+        membersByTier={Object.fromEntries(
+          networkTiers.map((tier) => [
+            tier.label,
+            teamMembers
+              .filter((member) => member.tier === tier.label)
+              .map((member) => <TeamCard key={member.name} member={member} />),
+          ]),
+        )}
+        tiers={networkTiers}
+      />
 
       <Footer />
     </main>

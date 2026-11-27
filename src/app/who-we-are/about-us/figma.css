@@ -1,0 +1,695 @@
+/*
+ * /who-we-are/about-us, matched to Figma (file OscCH3GaBaaQhkOCIODYT3):
+ *   desktop 1440 1:4412, tablet horizontal 1280 1:9463, tablet vertical 800 1:10989, mobile 390 1:6745.
+ * Overrides on top of the globals.css .about-* rules, every selector scoped under .about-figma (the page root).
+ */
+
+.about-figma {
+  position: relative;
+}
+
+.about-figma .about-cta-break {
+  display: none;
+}
+
+/* "Button Test 2/3": the 2 px stroke sits inside the 61 px box (padding 16 / 32 incl. the stroke) */
+.about-figma .about-button {
+  box-sizing: border-box;
+}
+
+/* values cards: height = 40 + content + 48 (Frame 696-699: 202, 260, 231, 231) */
+.about-figma .about-value-card {
+  min-height: 0;
+}
+
+@media (min-width: 1024px) {
+  .about-figma .about-hero-copy h1 {
+    line-height: 188px;
+  }
+
+  .about-figma .about-hero-copy p {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .about-figma .about-cta-break {
+    display: inline;
+  }
+
+  .about-figma .about-cta-copy h2 span {
+    display: inline;
+  }
+
+  /* Polygon 1: the play triangle sits in the middle of the founder card */
+  .about-figma.about-page .about-founder-card .about-play-button {
+    height: 104px !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 267px !important;
+    transform: translateX(-50%) !important;
+    width: 104px !important;
+  }
+
+  .about-figma.about-page .about-founder-card .about-play-button img {
+    height: 104px !important;
+    width: 104px !important;
+  }
+}
+
+/* Group 113: six outlined frames behind the founder and history cards, running off the right edge */
+@media (min-width: 1360px) {
+  .about-figma {
+    --g: max(120px, calc((100% - 1200px) / 2));
+  }
+
+  .about-figma .about-floating-frames {
+    display: block;
+    overflow: hidden;
+  }
+
+  .about-figma .about-floating-frames span {
+    box-sizing: border-box;
+    height: 279px;
+    margin: -1px 0 0 -1px;
+    right: auto;
+    width: 474px;
+  }
+
+  .about-figma .about-floating-frames span:nth-child(1) {
+    left: calc(var(--g) + 985px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(2) {
+    left: calc(var(--g) + 985px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(3) {
+    left: calc(var(--g) + 1086px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(4) {
+    left: calc(var(--g) + 959px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(5) {
+    left: calc(var(--g) + 1167px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(6) {
+    left: calc(var(--g) + 1022px);
+    top: 1752px;
+  }
+
+  .about-figma .about-button {
+    line-height: 29px;
+    padding: 14px 30px;
+  }
+
+  .about-figma .about-mission-grid {
+    margin-bottom: -4px;
+    margin-top: 40px;
+  }
+
+  .about-figma .about-values-section {
+    margin-top: 157px;
+  }
+
+  .about-figma .about-values-stack {
+    gap: 64px;
+    margin-top: 56px;
+  }
+
+  .about-figma .about-cta-section {
+    margin-top: 280px;
+    padding-bottom: 582px;
+  }
+
+  .about-figma .about-founder-section,
+  .about-figma .about-history-section {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* ---------- tablets: 800 frame 1:10989 (560-1023) and 1280 frame 1:9463 (1024-1359) ----------
+ * globals.css lays this page out with absolutely positioned pieces sized for desktop or phone, which broke between
+ * 560 and 1359 (342 px cards, overlapping history text). Here the sections flow, with the frames' spacing. */
+@media (min-width: 560px) and (max-width: 1359px) {
+  .about-figma.about-page {
+    --g: 80px;
+    --pad-cta: 226px;
+  }
+
+  .about-figma.about-page .about-hero {
+    height: auto !important;
+    padding: 240px var(--g) 0 !important;
+  }
+
+  .about-figma.about-page .about-hero-copy {
+    left: auto !important;
+    max-width: none !important;
+    position: static !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+  }
+
+  .about-figma.about-page .about-hero-copy h1 {
+    font-size: 104px !important;
+    line-height: 122px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-hero-copy p {
+    font-size: 24px !important;
+    line-height: 29px !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+
+  .about-figma.about-page section:not(.about-hero):not(.about-purpose-section) {
+    box-sizing: border-box;
+    height: auto !important;
+    left: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: none !important;
+    padding-left: var(--g) !important;
+    padding-right: var(--g) !important;
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page section > div,
+  .about-figma.about-page .about-founder-card,
+  .about-figma.about-page .about-history-card,
+  .about-figma.about-page .about-early-card {
+    left: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: none !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  /* founder video card */
+  .about-figma.about-page .about-founder-section {
+    margin-top: 172px !important;
+  }
+
+  .about-figma.about-page .about-founder-card {
+    border-radius: 16px !important;
+    height: 535px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .about-figma.about-page .about-founder-card > img,
+  .about-figma.about-page .about-early-card > img {
+    height: 100% !important;
+    inset: 0 !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page .about-founder-card .about-play-button {
+    height: 72px !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 231px !important;
+    transform: translateX(-50%) !important;
+    width: 72px !important;
+  }
+
+  .about-figma.about-page .about-founder-card .about-play-button img {
+    height: 72px !important;
+    width: 72px !important;
+  }
+
+  .about-figma.about-page .about-card-caption {
+    bottom: 56px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    left: 48px !important;
+    max-width: 551px !important;
+    right: 48px !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+  }
+
+  .about-figma.about-page .about-card-caption h2 {
+    font-size: 32px !important;
+    line-height: 39px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-card-caption p {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    margin: 0 !important;
+  }
+
+  /* history card: one column, image row at the bottom with the button inside it */
+  .about-figma.about-page .about-history-section {
+    margin-top: 224px !important;
+  }
+
+  .about-figma.about-page .about-history-card {
+    border-radius: 24px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 59px 48px 60px !important;
+    position: relative !important;
+  }
+
+  .about-figma.about-page .about-history-card > * {
+    left: auto !important;
+    max-width: none !important;
+    position: static !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+  }
+
+  .about-figma.about-page .about-history-card .about-label {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-history-card h2 {
+    font-size: 32px !important;
+    line-height: 38px !important;
+    margin: 4px 0 0 !important;
+  }
+
+  .about-figma.about-page .about-history-body {
+    display: block !important;
+    margin-top: 16px !important;
+  }
+
+  .about-figma.about-page .about-history-body p {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-history-body p + p {
+    margin-top: 24px !important;
+  }
+
+  .about-figma.about-page .about-history-media {
+    border-radius: 24px !important;
+    height: 245px !important;
+    margin-top: 55px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .about-figma.about-page .about-history-media img {
+    height: 100% !important;
+    inset: 0 !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page .about-history-card .about-button {
+    bottom: 76px !important;
+    left: auto !important;
+    position: absolute !important;
+    right: 64px !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  /* shared tablet button: 56 tall, 20 px text, stroke inside */
+  .about-figma.about-page .about-button {
+    box-sizing: border-box !important;
+    font-size: 20px !important;
+    height: 56px !important;
+    line-height: 24px !important;
+    min-height: 0 !important;
+    padding: 0 30px !important;
+    width: auto !important;
+  }
+
+  /* early days */
+  .about-figma.about-page .about-early-section {
+    margin-top: 224px !important;
+  }
+
+  .about-figma.about-page .about-early-card {
+    border-radius: 16px !important;
+    height: 386px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .about-figma.about-page .about-early-card .about-card-caption {
+    bottom: 48px !important;
+    max-width: 371px !important;
+  }
+
+  /* purpose band: white pills above and below the copy */
+  .about-figma.about-page .about-purpose-section {
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    margin-top: 224px !important;
+    padding: 89px var(--g) !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    left: auto !important;
+    max-width: none !important;
+    order: 1;
+    position: static !important;
+    top: auto !important;
+    transform: none !important;
+    width: auto !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy .about-label {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy h2 {
+    font-size: 32px !important;
+    line-height: 38px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy > div {
+    margin-top: 8px !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy p:not(.about-label) {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy > div p + p {
+    margin-top: 24px !important;
+  }
+
+  .about-figma.about-page .about-purpose-pill {
+    background: #ffffff !important;
+    display: block !important;
+    height: 184px !important;
+    left: auto !important;
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page .about-purpose-pill--top {
+    border-radius: 1000px 0 1000px 1000px !important;
+    margin-bottom: 80px !important;
+    order: 0;
+  }
+
+  .about-figma.about-page .about-purpose-pill--bottom {
+    border-radius: 1000px 1000px 1000px 0 !important;
+    margin-top: 80px !important;
+    order: 2;
+  }
+
+  /* missions */
+  .about-figma.about-page .about-missions-section {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 224px !important;
+  }
+
+  .about-figma.about-page .about-section-heading {
+    gap: 0 !important;
+    left: auto !important;
+    margin: 0 !important;
+    position: static !important;
+    transform: none !important;
+    width: auto !important;
+  }
+
+  .about-figma.about-page .about-section-heading .about-label {
+    font-size: 16px !important;
+    line-height: 20px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-section-heading h2 {
+    font-size: 32px !important;
+    line-height: 38px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-mission-grid {
+    display: grid !important;
+    gap: 32px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    margin: 48px 0 0 !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page .about-mission-card {
+    box-sizing: border-box !important;
+    height: 237px !important;
+    width: auto !important;
+  }
+
+  .about-figma.about-page .about-missions-section > .about-button,
+  .about-figma.about-page .about-missions-section > .about-button:hover {
+    align-self: center !important;
+    left: auto !important;
+    margin: 48px 0 0 !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* values */
+  .about-figma.about-page .about-values-section {
+    margin-top: 120px !important;
+  }
+
+  .about-figma.about-page .about-values-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 35px !important;
+    margin: 48px auto 0 !important;
+    max-width: 894px !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page .about-value-card {
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+  }
+
+  /* closing call to action */
+  .about-figma.about-page .about-cta-section {
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 224px !important;
+    padding-bottom: var(--pad-cta) !important;
+  }
+
+  .about-figma.about-page .about-cta-copy {
+    gap: 8px !important;
+    max-width: 774px !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page .about-cta-copy h2 {
+    font-size: 32px !important;
+    line-height: 38px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-cta-copy p {
+    font-size: 20px !important;
+    line-height: 24px !important;
+    margin: 0 !important;
+  }
+
+  .about-figma.about-page .about-cta-actions {
+    gap: 32px !important;
+    margin-top: 32px !important;
+    width: auto !important;
+  }
+
+  .about-figma .about-cta-break {
+    display: inline;
+  }
+
+  .about-figma .about-cta-break--wide {
+    display: none;
+  }
+
+  .about-figma .about-cta-copy h2 span {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .about-figma.about-page {
+    --g: 120px;
+    --pad-cta: 282px;
+  }
+
+  .about-figma.about-page .about-founder-card .about-play-button {
+    height: 104px !important;
+    top: 216px !important;
+    width: 104px !important;
+  }
+
+  .about-figma.about-page .about-founder-card .about-play-button img {
+    height: 104px !important;
+    width: 104px !important;
+  }
+
+  .about-figma.about-page .about-founder-card .about-card-caption {
+    max-width: 696px !important;
+  }
+
+  .about-figma.about-page .about-early-card .about-card-caption {
+    max-width: none !important;
+  }
+
+  .about-figma.about-page .about-history-media {
+    margin-top: 49px !important;
+  }
+
+  /* purpose: copy 588 wide, one white pill from x +665 to the right edge */
+  .about-figma.about-page .about-purpose-section {
+    display: block !important;
+    padding: 245px var(--g) !important;
+    position: relative !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy {
+    max-width: 588px !important;
+  }
+
+  .about-figma.about-page .about-purpose-pill--top {
+    border-radius: 1000px 0 0 1000px !important;
+    height: 336px !important;
+    left: calc(var(--g) + 665px) !important;
+    margin: 0 !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 249px !important;
+    width: auto !important;
+  }
+
+  .about-figma.about-page .about-purpose-pill--bottom {
+    display: none !important;
+  }
+
+  .about-figma.about-page .about-mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .about-figma.about-page .about-mission-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .about-figma.about-page .about-values-stack {
+    gap: 64px !important;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1359px) {
+  .about-figma.about-page .about-history-card > .about-history-media {
+    align-self: stretch !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .about-figma.about-page .about-purpose-copy > div p:not(.about-label) + p {
+    margin-top: 24px !important;
+  }
+
+  .about-figma.about-page .about-value-title {
+    align-items: center !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+    justify-content: center !important;
+  }
+
+  .about-figma.about-page .about-cta-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+  }
+
+  .about-figma.about-page .about-card-caption h2,
+  .about-figma.about-page .about-card-caption p {
+    white-space: normal !important;
+    width: auto !important;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1359px) {
+  .about-figma.about-page .about-purpose-copy {
+    gap: 0 !important;
+  }
+
+  .about-figma.about-page .about-missions-section {
+    min-height: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .about-figma.about-page .about-cta-section .about-cta-actions {
+    margin-top: 0 !important;
+  }
+
+  .about-figma.about-page .about-mission-card {
+    padding: 32px 48px !important;
+  }
+
+  .about-figma.about-page .about-mission-card strong {
+    font-size: 32px !important;
+    line-height: 38px !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .about-figma.about-page .about-mission-grid {
+    column-gap: 24px !important;
+  }
+}
+
+/* phones narrower than the 390 frame: fixed 300 / 342 px blocks would spill past the edge */
+@media (max-width: 389px) {
+  .about-figma.about-page .about-hero-copy,
+  .about-figma.about-page .about-purpose-copy {
+    max-width: calc(100% - 48px) !important;
+  }
+
+  .about-figma.about-page .about-card-caption {
+    max-width: calc(100% - 80px) !important;
+  }
+}

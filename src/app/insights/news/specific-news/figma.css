@@ -1,0 +1,131 @@
+/*
+ * SPCTA feature: the editorial blocks the News template does not have (pull quotes, facts panel, partner calls to
+ * action), set in the template's type scale and column. Scoped to .idt--spcta (this page's <main>).
+ */
+
+.idt--spcta .spcta-editorial-quote {
+  border-bottom: 1px solid rgb(18 44 39 / 0.28);
+  border-top: 1px solid rgb(18 44 39 / 0.28);
+  gap: 20px;
+  max-width: var(--idt-col);
+  padding: 40px 0;
+}
+
+.idt--spcta .spcta-editorial-quote p {
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.idt--spcta .spcta-editorial-facts {
+  border-radius: 16px;
+  margin-top: var(--idt-gap);
+  padding: 56px;
+}
+
+.idt--spcta .spcta-editorial-facts h2,
+.idt--spcta .spcta-editorial-audiences h2 {
+  font-size: 40px;
+  line-height: 47px;
+}
+
+.idt--spcta .spcta-editorial-facts-heading > p,
+.idt--spcta .spcta-editorial-audiences-heading > p {
+  font-family: var(--idt-m);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 8px;
+}
+
+.idt--spcta .spcta-editorial-facts dd,
+.idt--spcta .spcta-editorial-facts-next {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.idt--spcta .spcta-editorial-audiences {
+  margin-top: var(--idt-gap);
+}
+
+.idt--spcta .spcta-editorial-audiences-grid > div {
+  border-top: 2px solid var(--hybr-lime, #8dc540);
+  padding-top: 24px;
+}
+
+.idt--spcta .spcta-editorial-audiences-grid h3 {
+  font-family: var(--idt-r);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
+
+.idt--spcta .spcta-editorial-audiences-grid p {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@media (max-width: 1359px) {
+  .idt--spcta .spcta-editorial-quote p,
+  .idt--spcta .spcta-editorial-facts h2,
+  .idt--spcta .spcta-editorial-audiences h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .idt--spcta .spcta-editorial-facts-heading > p,
+  .idt--spcta .spcta-editorial-audiences-heading > p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .idt--spcta .spcta-editorial-facts {
+    padding: 40px;
+  }
+
+  .idt--spcta .spcta-editorial-facts dd,
+  .idt--spcta .spcta-editorial-facts-next {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 559px) {
+  .idt--spcta .spcta-editorial-quote {
+    gap: 12px;
+    padding: 28px 0;
+  }
+
+  .idt--spcta .spcta-editorial-quote span {
+    font-size: 64px;
+  }
+
+  .idt--spcta .spcta-editorial-quote p {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .idt--spcta .spcta-editorial-facts {
+    padding: 32px 24px;
+  }
+
+  .idt--spcta .spcta-editorial-facts h2,
+  .idt--spcta .spcta-editorial-audiences h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .idt--spcta .spcta-editorial-facts dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .idt--spcta .spcta-editorial-facts dl > div,
+  .idt--spcta .spcta-editorial-facts dl > div:nth-child(2n) {
+    padding: 20px 0;
+  }
+
+  .idt--spcta .spcta-editorial-audiences-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

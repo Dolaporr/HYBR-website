@@ -1,6 +1,8 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
+import { MenuIcon, SocialIcon, type SocialKind } from "./social-icons";
 import { figmaAssets, footerGroups, navigation, siteContent } from "@/content/site";
+import "./insight-listing.css";
 
 export const imageUrl = figmaAssets.figmaBusinessPartners;
 
@@ -43,37 +45,46 @@ export function Header({
 }) {
   const linkClass = (key: "who" | "what" | "insights") =>
     active === key ? "site-nav-link is-active" : "site-nav-link";
-  const logoSrc = tone === "dark" ? figmaAssets.logoWhite : figmaAssets.logoBlue;
+  // every frame keeps the coloured logo, over dark heroes too (1:11325)
+  const logoSrc = figmaAssets.logoBlue;
 
   return (
     <header className={`site-header absolute left-0 right-0 top-0 z-20${tone === "dark" ? " site-header--dark" : ""}`}>
       <div className="site-header-inner mx-auto flex items-center justify-between">
-        <Link className="site-logo block overflow-hidden" href="/">
+        <Link aria-label={`${siteContent.brand} home`} className="site-logo block overflow-hidden" href="/">
           <img alt={siteContent.brand} className="h-full w-full object-contain" src={logoSrc} />
         </Link>
-        <nav className="site-nav flex items-center">
+        <nav aria-label="Main navigation" className="site-nav flex items-center">
           {navigation.map((item) => (
-            <Link className={linkClass(item.key)} href={item.href} key={item.key}>
+            <Link
+              aria-current={active === item.key ? "page" : undefined}
+              className={linkClass(item.key)}
+              href={item.href}
+              key={item.key}
+            >
               {item.label}
             </Link>
           ))}
-          <Link
-            className="site-talk-button inline-flex items-center justify-center"
-            href="/contact"
-          >
+          <Link className="site-talk-button inline-flex items-center justify-center" href="/contact">
             Let&apos;s Talk
           </Link>
         </nav>
         <details className="site-mobile-menu">
           <summary aria-label="Toggle navigation" className="site-menu-button">
-            <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
-              <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" strokeLinecap="round" strokeWidth="2.4" />
-            </svg>
+            <span className="site-menu-icon site-menu-icon--open">
+              <MenuIcon />
+            </span>
+            <span className="site-menu-icon site-menu-icon--close">
+              <svg aria-hidden="true" fill="none" height="48" viewBox="0 0 48 48" width="48">
+                <path d="M12 12L36 36M36 12L12 36" stroke="currentColor" strokeLinecap="round" strokeWidth="3" />
+              </svg>
+            </span>
           </summary>
           <div className="site-mobile-panel">
             <nav aria-label="Mobile navigation" className="site-mobile-nav">
               {navigation.map((item) => (
                 <Link
+                  aria-current={active === item.key ? "page" : undefined}
                   className={active === item.key ? "site-mobile-nav-link is-active" : "site-mobile-nav-link"}
                   href={item.href}
                   key={`mobile-${item.key}`}
@@ -92,95 +103,78 @@ export function Header({
   );
 }
 
-function FooterSocialIcon({ kind }: { kind: string }) {
-  if (kind === "Instagram") {
-    return <svg aria-label="Instagram" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="1.7" /><circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="1.7" /><circle cx="22.4" cy="9.6" r="1.6" fill="currentColor" /></svg>;
-  }
+const socialOrder: SocialKind[] = ["Instagram", "LinkedIn", "X", "YouTube", "Facebook", "Medium", "TikTok"];
+const socialUrls: Partial<Record<SocialKind, string>> = {
+  Instagram: "https://www.instagram.com/hybrgrouphq/",
+  LinkedIn: "https://www.linkedin.com/company/15213999/admin/dashboard/",
+  Facebook: "https://www.facebook.com/HYBRgroup/",
+  TikTok: "https://www.tiktok.com/@hybrgroup",
+};
 
-  if (kind === "Facebook") {
-    return <svg aria-label="Facebook" className="size-7" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.7" /><path d="M17.5 26V16.8H20.4L20.9 13.4H17.5V11.2C17.5 10.2 17.8 9.5 19.2 9.5H21V6.5C20.1 6.4 19.4 6.4 18.6 6.4C16.1 6.4 14.4 7.9 14.4 10.7V13.4H11.6V16.8H14.4V26" fill="currentColor" /></svg>;
-  }
-
-  if (kind === "TikTok") {
-    return <svg aria-label="TikTok" className="size-7" fill="none" viewBox="0 0 32 32"><path d="M18.5 6C19 9.1 20.8 11 24 11.4V14.7C21.9 14.7 20.1 14.1 18.5 12.9V20.2C18.5 23.8 16.2 26 12.9 26C9.9 26 7.7 24 7.7 21.1C7.7 18.1 10.1 16 13.5 16C14.1 16 14.6 16.1 15.1 16.2V19.6C14.6 19.4 14.1 19.3 13.5 19.3C12.1 19.3 11.1 20 11.1 21.1C11.1 22.2 11.9 22.9 13.1 22.9C14.4 22.9 15.2 22.1 15.2 20.5V6H18.5Z" fill="currentColor" /></svg>;
-  }
-
-  if (kind === "LinkedIn") {
-    return <svg aria-label="LinkedIn" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.7" /><path d="M11 14V22" stroke="currentColor" strokeWidth="1.7" /><path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="1.7" /><circle cx="11" cy="10.5" r="1.5" fill="currentColor" /></svg>;
-  }
-
-  if (kind === "X") {
-    return <svg aria-label="X" className="size-7" fill="none" viewBox="0 0 32 32"><path d="M18.86 14.25 26.24 5.75h-1.75l-6.41 7.38-5.12-7.38H7.06l7.74 11.15-7.74 8.92h1.75l6.77-7.8 5.41 7.8h5.89l-8.02-11.57Zm-2.4 2.76-.78-1.11-6.24-8.86h2.68l5.03 7.14.78 1.11 6.55 9.29H21.8l-5.34-7.57Z" fill="currentColor" /></svg>;
-  }
-
-  if (kind === "YouTube") {
-    return <svg aria-label="YouTube" className="size-7" fill="none" viewBox="0 0 32 32"><rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="1.7" /><path d="M14 12.8L20.4 16L14 19.2V12.8Z" fill="currentColor" /></svg>;
-  }
-
-  return <svg aria-label="Medium" className="size-7" fill="none" viewBox="0 0 32 32"><circle cx="10" cy="16" r="4" fill="currentColor" /><ellipse cx="18.5" cy="16" rx="3.5" ry="8" fill="currentColor" opacity="0.85" /><ellipse cx="24.5" cy="16" rx="2.5" ry="6" fill="currentColor" opacity="0.72" /></svg>;
+/** Lets a long e-mail address break after the "@" on narrow phones instead of running off the screen. */
+function breakableLabel(label: string) {
+  const at = label.indexOf("@");
+  if (at < 0) return label;
+  return (
+    <>
+      <span className="sf-nobreak">{label.slice(0, at + 1)}</span>
+      <span className="sf-nobreak">{label.slice(at + 1)}</span>
+    </>
+  );
 }
 
+// Site footer, from the Figma footers 1:11415 (1440), 1:16300 (1280), 1:17133 (800) and 1:11112 (390).
+// Layout per width lives in globals.css under "SHELL: footer".
 export function Footer() {
-  const socialOrder = ["Instagram", "LinkedIn", "X", "YouTube", "Facebook", "Medium", "TikTok"];
-  const socialUrls: Partial<Record<(typeof socialOrder)[number], string>> = {
-    Instagram: "https://www.instagram.com/hybrgrouphq/",
-    LinkedIn: "https://www.linkedin.com/company/15213999/admin/dashboard/",
-    Facebook: "https://www.facebook.com/HYBRgroup/",
-    TikTok: "https://www.tiktok.com/@hybrgroup",
-  };
-
   return (
-    <footer className="site-footer home-footer bg-black px-6 py-14 text-white md:py-20">
-      <div className="site-footer-inner home-footer-inner mx-auto max-w-[1200px]">
-        <div className="home-footer-main relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-          <img
-            alt=""
-            className="home-footer-pattern pointer-events-none absolute -bottom-44 -right-64 hidden h-[390px] w-[390px] opacity-50 lg:block"
-            src={figmaAssets.footerPattern}
-          />
-          {footerGroups.map((group) => (
-            <div className="home-footer-group" key={group.title}>
-              <h3 className="font-bold uppercase">
-                <Link href={group.href}>{group.title}</Link>
-              </h3>
-              <ul className="mt-4 space-y-3 text-sm">
-                {group.links.map((link) => (
-                  <li key={`${group.title}-${link.label}-${link.href}`}>
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <footer className="site-footer">
+      <img alt="" aria-hidden="true" className="sf-pattern" src={figmaAssets.footerPattern} />
+      <div className="sf-inner">
+        <div className="sf-main">
+          {footerGroups.map((group, index) => (
+            <Fragment key={group.title}>
+              <div className="sf-group">
+                <h3 className="sf-title">
+                  <Link href={group.href}>{group.title}</Link>
+                </h3>
+                <ul className="sf-links">
+                  {group.links.map((link) => (
+                    <li key={`${group.title}-${link.label}-${link.href}`}>
+                      <Link href={link.href}>{breakableLabel(link.label)}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {index === 1 ? <span aria-hidden="true" className="sf-break" /> : null}
+            </Fragment>
           ))}
-          <div className="home-footer-follow">
-            <h3 className="font-bold uppercase">Follow us</h3>
-            <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
-              {socialOrder.map((link) => (
+          <div className="sf-follow">
+            <h3 className="sf-title">Follow us</h3>
+            <div className="sf-socials">
+              {socialOrder.map((kind) => (
                 <a
-                  aria-label={`Visit HYBR on ${link}`}
-                  href={socialUrls[link] ?? "#"}
-                  key={link}
+                  aria-label={`Visit HYBR on ${kind}`}
+                  href={socialUrls[kind] ?? "#"}
+                  key={kind}
                   rel="noreferrer"
-                  target={socialUrls[link] ? "_blank" : undefined}
+                  target={socialUrls[kind] ? "_blank" : undefined}
                 >
-                  <FooterSocialIcon kind={link} />
+                  <SocialIcon kind={kind} />
                 </a>
               ))}
             </div>
-            <div className="mt-8">
-              <Link className="hybr-button hybr-button--white" href="/contact">
-                Let&apos;s Talk
-              </Link>
-            </div>
+            <Link className="sf-talk" href="/contact">
+              Let&apos;s Talk
+            </Link>
           </div>
         </div>
-        <div className="home-footer-bottom mt-14 flex flex-col gap-6 text-sm uppercase md:mt-20 md:flex-row md:items-center md:justify-between">
-          <div className="home-footer-legal flex flex-wrap gap-5 md:gap-8">
+        <div className="sf-bottom">
+          <div className="sf-legal">
             <span>Privacy Policy</span>
-            <span>Terms & Conditions</span>
+            <span>Terms &amp; Conditions</span>
           </div>
-          <img alt={siteContent.brand} className="home-footer-logo h-10 w-[128px] object-contain" src={figmaAssets.logoWhite} />
-          <span>{siteContent.footerCopyright}</span>
+          <img alt={siteContent.brand} className="sf-logo" src={figmaAssets.logoWhite} />
+          <span className="sf-copy">{siteContent.footerCopyright}</span>
         </div>
       </div>
     </footer>
@@ -205,7 +199,7 @@ export function Button({
 
   return (
     <Link
-      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 text-sm font-medium shadow-[0_8px_18px_rgba(0,0,0,0.06)] transition duration-200 md:min-h-[46px] md:px-7 md:text-[20px] ${variants[variant]}`}
+      className={`inline-flex min-h-12 items-center justify-center rounded-full border px-5 text-sm font-medium transition duration-200 md:min-h-[46px] md:px-7 md:text-[20px] ${variants[variant]}`}
       href={href}
     >
       {children}
@@ -331,42 +325,87 @@ export function CaseCard({
   );
 }
 
-export function ListingControls() {
+const searchGlyph =
+  "M796-121 533-384q-30 26-70 40.5T378-329q-108 0-183-75t-75-181q0-106 75-181t182-75q106 0 180.5 75T632-585q0 43-14 83t-42 75l264 262-44 44ZM377-389q81 0 138-57.5T572-585q0-81-57-138.5T377-781q-82 0-139.5 57.5T180-585q0 81 57.5 138.5T377-389Z";
+const arrowDownGlyph = "M480-344 240-584l43-43 197 197 197-197 43 43-240 240Z";
+
+/** Material Symbols "search" / "keyboard_arrow_down" (outlined, 400), as in the Figma controls. */
+function ListingGlyph({ path }: { path: string }) {
   return (
-    <div className="listing-controls flex flex-wrap gap-3 md:gap-4">
-      {["Search", "Sort by", "Topic", "Duration"].map((item) => (
-        <button
-          className="min-h-11 rounded-full border border-black/15 px-5 text-sm font-semibold md:min-h-[56px] md:px-7 md:text-[20px]"
-          key={item}
-          type="button"
-        >
-          {item}
+    <svg aria-hidden="true" fill="currentColor" focusable="false" viewBox="0 -960 960 960">
+      <path d={path} />
+    </svg>
+  );
+}
+
+/** The mobile frames' "Slider-Horizontal-Alternative" filter icon (24 x 24, black at 40 %). */
+function SliderGlyph() {
+  return (
+    <svg aria-hidden="true" fill="none" focusable="false" viewBox="0 0 24 24">
+      <g stroke="#000000" strokeOpacity="0.4">
+        <path d="M0 5.5h6.5M9 5.5h15M1 12h13M15.5 12H23M0 18.5h6.5M9 18.5h15" />
+        <path d="M6.5 3.5v4M5.5 4.5v2M16.5 9.5v5M15.5 10.5v3M6.5 16.5v4M5.5 17.5v2" />
+      </g>
+    </svg>
+  );
+}
+
+/**
+ * Search / sort / filter row of the insight listings (Figma "Sharp Button Test 3-6"): Search + Sort by, Topic and
+ * Duration from 1360 px, Search + Filters from 560 px, Search + a filter icon below. Controls only (no behaviour yet).
+ */
+export function ListingControls({ className = "" }: { className?: string } = {}) {
+  return (
+    <div aria-label="Search and filter" className={`hlc ${className}`} role="group">
+      <button className="hlc-pill hlc-search" type="button">
+        <ListingGlyph path={searchGlyph} />
+        <span>Search</span>
+      </button>
+      {["Sort by", "Topic", "Duration"].map((item) => (
+        <button className="hlc-pill hlc-wide" key={item} type="button">
+          <span>{item}</span>
+          <ListingGlyph path={arrowDownGlyph} />
         </button>
       ))}
+      <button className="hlc-pill hlc-mid" type="button">
+        <span>Filters</span>
+        <ListingGlyph path={arrowDownGlyph} />
+      </button>
+      <button aria-label="Filters" className="hlc-pill hlc-narrow" type="button">
+        <SliderGlyph />
+      </button>
     </div>
   );
 }
 
-export function SearchBar({ placeholder = "Search" }: { placeholder?: string }) {
+/** Full-width search pill under a listing hero (Figma "Sharp Button Test 3", 1200 x 56). */
+export function SearchBar({ placeholder = "Search", className = "" }: { placeholder?: string; className?: string }) {
   return (
-    <div className="search-bar flex h-14 items-center justify-center gap-3 rounded-full border border-black/60 bg-white px-6 text-sm font-medium text-black/70 shadow-[0_8px_18px_rgba(0,0,0,0.04)] md:px-8">
-      <svg aria-hidden="true" className="h-4 w-4" fill="none" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="2" />
-        <path d="M16 16L21 21" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-      </svg>
+    <div className={`search-bar hsb ${className}`} role="search">
+      <ListingGlyph path={searchGlyph} />
       <span>{placeholder}</span>
     </div>
   );
 }
 
+/**
+ * Figma "News Card - V2": image card with a kind label, title, optional summary and a white "Read More" pill.
+ * `buttonPlacement="start"` puts the pill top right and the copy at the bottom; `size="small"` is the half-width
+ * mobile card; `tone="mono"` shows the image in greyscale. `compact` is kept for older callers (same as small).
+ */
 export function InsightCard({
   kind,
   title,
   body,
-  imageSrc = figmaAssets.figmaBuilding,
+  imageSrc = "/insights/listing/building.jpg",
   className = "",
   compact = false,
   href,
+  buttonLabel = "Read More",
+  buttonPlacement = "end",
+  size,
+  tone = "color",
+  id,
 }: {
   kind: string;
   title: string;
@@ -375,6 +414,11 @@ export function InsightCard({
   className?: string;
   compact?: boolean;
   href?: string;
+  buttonLabel?: string;
+  buttonPlacement?: "end" | "start";
+  size?: "default" | "small";
+  tone?: "color" | "mono";
+  id?: string;
 }) {
   const fallbackHref =
     kind.toLowerCase() === "webinar"
@@ -384,34 +428,22 @@ export function InsightCard({
         : "/insights/articles/specific-article";
 
   return (
-    <article
-      className={`figma-motion-card rounded-[20px] bg-black p-6 text-white md:p-8 ${className}`}
-      style={{
-        backgroundColor: "rgba(0,0,0,.48)",
-        backgroundImage: `url(${imageSrc})`,
-        backgroundBlendMode: "multiply",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+    <Link
+      className={`hic-card ${className}`}
+      data-button={buttonPlacement}
+      data-size={size ?? (compact ? "small" : "default")}
+      data-tone={tone}
+      href={href ?? fallbackHref}
+      id={id}
     >
-      <Label>{kind}</Label>
-      <h3 className={`font-display text-3xl font-medium leading-tight md:text-4xl ${compact ? "mt-8 md:mt-12" : "mt-24 md:mt-36"}`}>
-        {title}
-      </h3>
-      {kind.toLowerCase() === "webinar" ? (
-        <div className="mt-3 space-y-1 text-sm font-semibold md:text-base">
-          <p>Jedidiah Akpata &amp; Charles Ojei</p>
-          <p>November 2023</p>
-          <p>01:40:35</p>
-        </div>
-      ) : null}
-      {body ? <p className="mt-4 max-w-[320px] text-base leading-relaxed">{body}</p> : null}
-      <div className="mt-8">
-        <Button href={href ?? fallbackHref} variant="white">
-          Read More
-        </Button>
-      </div>
-    </article>
+      <img alt="" className="hic-image" src={imageSrc} />
+      <span className="hic-copy">
+        <span className="hic-kind">{kind}</span>
+        <span className="hic-title">{title}</span>
+        {body ? <span className="hic-body">{body}</span> : null}
+      </span>
+      <span className="hic-button">{buttonLabel}</span>
+    </Link>
   );
 }
 

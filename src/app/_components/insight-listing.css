@@ -1,0 +1,310 @@
+/*
+ * Shared insight listing parts (InsightCard, ListingControls, SearchBar in marketing.tsx), built from the
+ * Figma "News Card - V2" and "Sharp Button Test" components (file OscCH3GaBaaQhkOCIODYT3, Articles / News
+ * listing frames 1:4009, 1:8684, 1:10211, 1:6364 and 1:4293, 1:8775, 1:10302, 1:6465).
+ * Every selector is prefixed (hic- card, hlc- controls, hsb- search bar), so the file is safe to load on any page.
+ * Pages place and size the cards; per-context spacing comes in through the --hic-* custom properties.
+ */
+
+/* ---------- InsightCard ("News Card - V2") ---------- */
+
+.hic-card {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  min-width: 0;
+  overflow: hidden;
+  padding: var(--hic-pad-top, 32px) var(--hic-pad-x, 32px) var(--hic-pad-bottom, 32px);
+  position: relative;
+  text-decoration: none;
+}
+
+.hic-image {
+  /* the frames place the 902 x 507 image fill centred on the card, not scaled to it */
+  height: max(507px, calc(100% + var(--hic-image-extra, 0px)));
+  left: 50%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  position: absolute;
+  top: var(--hic-image-top, 50%);
+  transform: translate(-50%, var(--hic-image-shift, -50%)) rotate(var(--hic-image-rotate, 0deg));
+  width: max(902px, 100%);
+  z-index: -2;
+}
+
+.hic-card[data-tone="mono"] .hic-image {
+  filter: grayscale(1);
+}
+
+.hic-card::after {
+  background: var(--hic-overlay, transparent);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+.hic-copy {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  max-width: var(--hic-copy-width, none);
+}
+
+.hic-kind {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
+
+.hic-title {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 39px;
+  margin: 0;
+}
+
+.hic-body {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 8px 0 0;
+}
+
+.hic-button {
+  align-items: center;
+  align-self: flex-end;
+  background: #ffffff;
+  border-radius: 100px;
+  color: #000000;
+  display: inline-flex;
+  flex: none;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 29px;
+  margin-top: auto;
+  padding: 16px 32px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Button above, copy at the bottom (the tall "More Insights" cards) */
+.hic-card[data-button="start"] {
+  flex-direction: column-reverse;
+}
+
+.hic-card[data-button="start"] .hic-copy {
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+.hic-card[data-button="start"] .hic-button {
+  margin-bottom: auto;
+  margin-top: 0;
+}
+
+.hic-card:hover .hic-button,
+.hic-card:focus-visible .hic-button {
+  background: #8dc540;
+  color: #000000;
+}
+
+.hic-card:focus-visible {
+  outline: 2px solid #8dc540;
+  outline-offset: 4px;
+}
+
+@media (max-width: 559px) {
+  .hic-card {
+    padding: var(--hic-pad-top, 40px) var(--hic-pad-x, 32px) var(--hic-pad-bottom, 40px);
+  }
+
+  .hic-kind {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .hic-title {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+    line-height: 38px;
+  }
+
+  .hic-body {
+    font-weight: 500;
+  }
+
+  .hic-button {
+    font-size: 20px;
+    line-height: 24px;
+    padding: 12px 24px;
+  }
+
+  /* the 163 px half-width cards of the mobile frames */
+  .hic-card[data-size="small"] {
+    padding: 24px 16px;
+  }
+
+  .hic-card[data-size="small"] .hic-title {
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .hic-card[data-size="small"] .hic-body {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .hic-card[data-size="small"] .hic-button {
+    align-self: center;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 8px 16px;
+  }
+}
+
+/* ---------- ListingControls ("Sharp Button Test 3-6") ---------- */
+
+.hlc {
+  display: grid;
+  gap: 28.92px;
+  grid-template-columns: 462.65fr 216.87fr 216.87fr 216.87fr;
+  width: 100%;
+}
+
+.hlc-pill {
+  align-items: center;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  color: #858688;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  gap: 10px;
+  height: 56px;
+  justify-content: center;
+  line-height: 24px;
+  min-width: 0;
+  /* Figma strokes sit on the edge and take no room: 32 px padding minus the 2 px border */
+  padding: 8px 30px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.hlc-pill:hover,
+.hlc-pill:focus-visible {
+  border-color: #648c2d;
+  color: #000000;
+}
+
+.hlc-pill:focus-visible {
+  outline: 2px solid #8dc540;
+  outline-offset: 3px;
+}
+
+.hlc-pill svg {
+  flex: none;
+  height: 40px;
+  width: 40px;
+}
+
+.hlc-search {
+  justify-content: flex-start;
+}
+
+.hlc-mid,
+.hlc-narrow {
+  display: none;
+}
+
+@media (max-width: 1359px) {
+  .hlc {
+    gap: 24px;
+    /* 391 + 24 + 225 at 640 wide, 774 + 24 + 242 at 1040 wide */
+    grid-template-columns: minmax(0, 1fr) calc(225px + (100% - 640px) * 0.0425);
+  }
+
+  .hlc-search {
+    justify-content: center;
+  }
+
+  .hlc-wide {
+    display: none;
+  }
+
+  .hlc-mid {
+    display: flex;
+  }
+}
+
+@media (max-width: 559px) {
+  .hlc {
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr) 73px;
+  }
+
+  .hlc-pill {
+    border-width: 1.5px;
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 17px;
+    padding: 8px 22.5px;
+  }
+
+  .hlc-search {
+    padding: 8px 30.5px;
+  }
+
+  .hlc-pill svg {
+    height: 24px;
+    width: 24px;
+  }
+
+  .hlc-mid {
+    display: none;
+  }
+
+  .hlc-narrow {
+    border-color: #858688;
+    display: flex;
+  }
+}
+
+/* ---------- SearchBar (full-width "Sharp Button Test 3") ---------- */
+
+.hsb {
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  color: #858688;
+  display: flex;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  gap: 10px;
+  height: 56px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 8px 32px;
+  width: 100%;
+}
+
+.hsb svg {
+  flex: none;
+  height: 40px;
+  width: 40px;
+}
