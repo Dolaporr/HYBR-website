@@ -51,7 +51,7 @@
   justify-content: center;
   line-height: normal;
   min-height: 56px;
-  padding: 16px 32px;
+  padding: 14px 30px;
   position: relative;
   white-space: nowrap;
   z-index: 2;
@@ -2368,5 +2368,64 @@
     flex: 1 1 0;
     min-width: 0;
     width: auto;
+  }
+}
+
+/* ---- Figma match pass (mobile, frame 1:6096 at 390) ---- */
+@media (max-width: 559px) {
+  .whatScope.whatScope :global(.what-frame .what-content-drop.site-content-drop) {
+    border-radius: 1000px 800px 800px 1000px;
+    height: 132px;
+    top: 177px;
+    width: 342px;
+  }
+
+  .whatScope :global(.what-content-drop p) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    left: 42px;
+  }
+
+  .whatScope :global(.what-content-drop nav) {
+    align-items: flex-start;
+    flex-flow: row wrap;
+    gap: 12px;
+    left: 86px;
+    right: auto;
+    width: 215px;
+  }
+
+  .whatScope :global(.what-content-drop a) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .whatScope :global(.what-team-copy h2) {
+    margin-top: 4px;
+  }
+
+  .whatScope :global(.what-team-copy > span) {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 24px;
+  }
+
+  .whatScope :global(.what-team-actions .what-button) {
+    min-height: 48px;
+    padding: 10px 22px;
+  }
+
+  .whatScope :global(.what-product-heading) {
+    text-align: center;
+  }
+
+  .whatScope :global(.what-product-actions input) {
+    padding-inline: 12px;
   }
 }
