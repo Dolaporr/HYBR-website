@@ -15755,7 +15755,8 @@ video.home-video-card {
 
 @media (min-width: 1024px) {
   .homepage-live {
-    --home-fluid-frame: min(1200px, calc(100vw - 48px));
+    /* frames: 1200 content at 1440 and 1040 at 1280, i.e. 120 px side margins (80 below 1152) */
+    --home-fluid-frame: min(1200px, calc(100vw - 240px));
     --home-page-origin: calc((100vw - min(1440px, 100vw)) / 2);
   }
 
@@ -15965,6 +15966,13 @@ video.home-video-card {
 
 
 }
+
+@media (min-width: 1024px) and (max-width: 1151px) {
+  .homepage-live {
+    --home-fluid-frame: calc(100vw - 160px);
+  }
+}
+
 
 @media (min-width: 1024px) and (max-width: 1150px) {
   .homepage-live .home-risk-grid {
@@ -22446,6 +22454,36 @@ video.home-video-card {
   .homepage-live .home-testimonial-arrow--left,
   .homepage-live .home-testimonial-arrow--right {
     transform: none !important;
+  }
+}
+
+/* Laptop band, from the 1280 frame (1:15653): "You Gain" image 508 x 256 starts 96 px left of the content
+   column (x 24 at 1280), copy 588 wide ends on the column's right edge; the CTA buttons sit side by side. */
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .homepage-live .home-gain-wrap {
+    align-items: start !important;
+    column-gap: 40px !important;
+    grid-template-columns: minmax(0, 508px) minmax(0, 588px) !important;
+    justify-content: space-between;
+    margin-left: calc((100vw - var(--home-fluid-frame)) / 2 - 120px) !important; /* the band has 24 px padding */
+    margin-right: 0 !important;
+    max-width: none !important;
+    width: calc(var(--home-fluid-frame) + 96px) !important;
+  }
+
+  .homepage-live .home-gain-image {
+    height: 256px !important;
+    width: 100% !important;
+  }
+
+  .homepage-live .home-cta-wrap {
+    max-width: 774px !important;
+    width: 774px !important;
+  }
+
+  .homepage-live .home-cta-wrap > .flex {
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 }
 
