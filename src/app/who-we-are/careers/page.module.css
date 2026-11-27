@@ -21,8 +21,14 @@
   --section-gap: 156px;
   background: #ffffff;
   color: #000000;
-  overflow-x: clip;
   position: relative;
+}
+
+/* clip, not hidden: globals.css makes the page element a scroll container, which let
+   a drawer's focus / scrollIntoView shift the whole page sideways */
+.page.page {
+  overflow: visible;
+  overflow-x: clip;
 }
 
 .page h1,
