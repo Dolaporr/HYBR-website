@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { figmaAssets, footerGroups, navigation } from "@/content/site";
+import { figmaAssets } from "@/content/site";
+import { Footer, Header } from "@/app/_components/marketing";
 import { HeroWordRotator } from "@/components/HeroWordRotator";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { MaterialIcon } from "@/components/MaterialIcon";
@@ -28,8 +29,6 @@ const assets = {
   plasticWaste: "/home/edit-flags/plastic-waste.jpg",
   ourWorkFeature: "/home/our-work-feature-source.png",
   ourWorkTall: "/home/our-work-tall-source.png",
-  footerLogo: figmaAssets.logoWhite,
-  footerPattern: figmaAssets.footerPattern,
 };
 
 const trustedPartners: ReadonlyArray<{
@@ -57,13 +56,6 @@ const homeWebinar = {
 };
 
 const rotatingWords = ["ideas", "products", "services", "markets", "teams"];
-
-const socialUrls = {
-  instagram: "https://www.instagram.com/hybrgrouphq/",
-  linkedin: "https://www.linkedin.com/company/15213999/admin/dashboard/",
-  facebook: "https://www.facebook.com/HYBRgroup/",
-  tiktok: "https://www.tiktok.com/@hybrgroup",
-} as const;
 
 const risks = [
   "Wasting time and budget on ideas customers don’t want",
@@ -213,125 +205,10 @@ function InfoBadge() {
   );
 }
 
-function SocialIcon({
-  kind,
-}: {
-  kind: "instagram" | "x" | "linkedin" | "youtube" | "facebook" | "medium" | "tiktok";
-}) {
-  if (kind === "instagram") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <rect x="6" y="6" width="20" height="20" rx="6" stroke="currentColor" strokeWidth="1.7" />
-        <circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="1.7" />
-        <circle cx="22.4" cy="9.6" r="1.6" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (kind === "x") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <path
-          d="M18.86 14.25 26.24 5.75h-1.75l-6.41 7.38-5.12-7.38H7.06l7.74 11.15-7.74 8.92h1.75l6.77-7.8 5.41 7.8h5.89l-8.02-11.57Zm-2.4 2.76-.78-1.11-6.24-8.86h2.68l5.03 7.14.78 1.11 6.55 9.29H21.8l-5.34-7.57Z"
-          fill="currentColor"
-        />
-      </svg>
-    );
-  }
-
-  if (kind === "linkedin") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <rect x="6" y="6" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M11 14V22" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M16 22V17.5C16 15.8431 17.3431 14.5 19 14.5C20.6569 14.5 22 15.8431 22 17.5V22" stroke="currentColor" strokeWidth="1.7" />
-        <circle cx="11" cy="10.5" r="1.5" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (kind === "youtube") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <rect x="4.5" y="8" width="23" height="16" rx="5" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M14 12.8L20.4 16L14 19.2V12.8Z" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (kind === "facebook") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.7" />
-        <path d="M17.5 26V16.8H20.4L20.9 13.4H17.5V11.2C17.5 10.2 17.8 9.5 19.2 9.5H21V6.5C20.1 6.4 19.4 6.4 18.6 6.4C16.1 6.4 14.4 7.9 14.4 10.7V13.4H11.6V16.8H14.4V26" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (kind === "tiktok") {
-    return (
-      <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-        <path d="M18.5 6C19 9.1 20.8 11 24 11.4V14.7C21.9 14.7 20.1 14.1 18.5 12.9V20.2C18.5 23.8 16.2 26 12.9 26C9.9 26 7.7 24 7.7 21.1C7.7 18.1 10.1 16 13.5 16C14.1 16 14.6 16.1 15.1 16.2V19.6C14.6 19.4 14.1 19.3 13.5 19.3C12.1 19.3 11.1 20 11.1 21.1C11.1 22.2 11.9 22.9 13.1 22.9C14.4 22.9 15.2 22.1 15.2 20.5V6H18.5Z" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg aria-hidden="true" className="size-8" fill="none" viewBox="0 0 32 32">
-      <circle cx="10" cy="16" r="4" fill="currentColor" />
-      <ellipse cx="18.5" cy="16" rx="3.5" ry="8" fill="currentColor" opacity="0.85" />
-      <ellipse cx="24.5" cy="16" rx="2.5" ry="6" fill="currentColor" opacity="0.72" />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <main className="homepage-live min-h-screen overflow-hidden bg-white text-black">
-      <header className="home-header absolute left-0 right-0 top-0 z-20">
-        <div className="mx-auto flex min-h-28 max-w-[1200px] items-center justify-between gap-5 px-6 py-6 md:h-[152px] md:py-0 lg:px-0">
-          <a
-            className="homepage-logo block overflow-hidden"
-            href="#"
-          >
-            <img alt="HYBR" className="h-full w-full object-contain" src={assets.logo} />
-          </a>
-          <nav className="homepage-nav">
-            {navigation.map((item) => (
-              <a className="whitespace-nowrap text-center md:text-right" key={item.label} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-            <a className="homepage-talk-button" href="/contact">
-              Let&apos;s Talk
-            </a>
-          </nav>
-          <details className="homepage-mobile-menu">
-            <summary aria-label="Toggle navigation" className="homepage-menu-button">
-              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
-                <path
-                  d="M3 6H21M3 12H21M3 18H21"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeWidth="2.4"
-                />
-              </svg>
-            </summary>
-            <div className="homepage-mobile-panel">
-              <nav aria-label="Mobile navigation" className="homepage-mobile-nav">
-                {navigation.map((item) => (
-                  <a href={item.href} key={`home-mobile-${item.key}`}>
-                    {item.label}
-                  </a>
-                ))}
-                <a className="homepage-mobile-talk-button" href="/contact">
-                  Let&apos;s Talk
-                </a>
-              </nav>
-            </div>
-          </details>
-        </div>
-      </header>
+      <Header tone="dark" />
 
       <section
         className="homepage-hero home-hero-entrance relative min-h-[720px] px-6 pt-48 text-white md:min-h-[804px] md:pt-[205px]"
@@ -854,58 +731,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="home-footer bg-black px-6 py-14 text-white md:py-20">
-        <div className="home-footer-inner mx-auto max-w-[1200px]">
-          <div className="home-footer-main relative grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
-            <img
-              alt=""
-              className="home-footer-pattern pointer-events-none absolute -bottom-44 -right-64 hidden h-[390px] w-[390px] opacity-50 lg:block"
-              src={assets.footerPattern}
-            />
-            {footerGroups.map((group) => (
-              <div className="home-footer-group" key={group.title}>
-                <h3 className="font-bold uppercase">
-                  <a href={group.href}>{group.title}</a>
-                </h3>
-                <ul className="mt-4 space-y-3 text-sm">
-                  {group.links.map((link) => (
-                    <li key={`${group.title}-${link.label}-${link.href}`}>
-                      <a href={link.href}>{link.label}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            <div className="home-footer-follow">
-              <h3 className="font-bold uppercase">Follow us</h3>
-              <div className="home-footer-socials mt-4 flex flex-wrap gap-4 text-white">
-                {(["instagram", "linkedin", "x", "youtube", "facebook", "medium", "tiktok"] as const).map((kind) => (
-                  <a
-                    aria-label={`Visit HYBR on ${kind}`}
-                    href={socialUrls[kind as keyof typeof socialUrls] ?? "#"}
-                    key={kind}
-                    rel="noreferrer"
-                    target={kind in socialUrls ? "_blank" : undefined}
-                  >
-                    <SocialIcon kind={kind} />
-                  </a>
-                ))}
-              </div>
-              <div className="mt-8">
-                <Button variant="white">Let&apos;s Talk</Button>
-              </div>
-            </div>
-          </div>
-          <div className="home-footer-bottom mt-14 flex flex-col gap-6 text-sm uppercase md:mt-20 md:flex-row md:items-center md:justify-between">
-            <div className="home-footer-legal flex flex-wrap gap-5 md:gap-8">
-              <span>Privacy Policy</span>
-              <span>Terms & Conditions</span>
-            </div>
-            <img alt="HYBR" className="home-footer-logo h-10 w-[128px] object-contain" src={assets.footerLogo} />
-            <span>&copy; 2026 HYBR GROUP</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
