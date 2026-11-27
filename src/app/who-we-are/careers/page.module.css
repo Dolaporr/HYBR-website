@@ -242,11 +242,10 @@
   background: #000000;
   border-radius: 24px;
   box-sizing: border-box;
+  align-content: center;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 8px;
-  justify-content: center;
   padding: 40px 32px;
 }
 
@@ -349,6 +348,10 @@
 }
 
 .tCard {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 634px;
   border: 2px solid #000000;
   border-radius: 16px;
   box-sizing: border-box;
@@ -636,7 +639,7 @@
 }
 
 .newsletterImage::after {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.35); /* frame: 0.2 over a darker stock photo; the site photo is light */
   content: "";
   inset: 0;
   position: absolute;
@@ -818,6 +821,11 @@
   .carousel {
     margin-left: 8px; /* frame 1:10699 sets the card 88..720 */
     margin-top: 48px;
+  }
+
+  .tCard {
+    justify-content: flex-start;
+    min-height: 418px;
   }
 
   .tInner {
@@ -1028,12 +1036,20 @@
     left: 27px;
   }
 
+  .hero p {
+    max-width: 916px;
+  }
+
   .testimonialsHead {
     max-width: 798px;
   }
 
   .carousel {
     margin-left: 0;
+  }
+
+  .tCard {
+    min-height: 344px;
   }
 
   .tCopy > p {
