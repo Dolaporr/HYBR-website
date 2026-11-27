@@ -50,11 +50,11 @@ export const figmaAssets = {
   aboutValueAppliedCreativity: "/who/edit-flags/about-value-applied-creativity.jpg",
   aboutValueActivelyEntrepreneurial: "/who/edit-flags/about-value-actively-entrepreneurial.jpg",
   aboutValueWorkWin: "/who/edit-flags/about-value-work-win.jpg",
-  careersContentBar: "/who/edit-flags/careers-content-bar.jpg",
-  careersWorking: "/who/edit-flags/careers-working.jpg",
-  careersFellowship: "/who/edit-flags/careers-fellowship.jpg",
-  careersAlphaAd: "/who/edit-flags/careers-alpha-ad.jpg",
-  careersNewsletter: "/who/edit-flags/careers-newsletter.jpg",
+  careersContentBar: "/who/edit-flags/careers-content-bar-web.jpg",
+  careersWorking: "/who/edit-flags/careers-working-web.jpg",
+  careersFellowship: "/who/edit-flags/careers-fellowship-web.jpg",
+  careersAlphaAd: "/who/edit-flags/careers-alpha-ad-web.jpg",
+  careersNewsletter: "/who/edit-flags/careers-newsletter-web.jpg",
 } as const;
 
 export const navigation = [

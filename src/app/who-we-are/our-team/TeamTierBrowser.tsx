@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
+import styles from "./page.module.css";
 
 type NetworkTier = {
   label: string;
@@ -38,7 +39,11 @@ function ArrowIcon({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export function TeamTierBrowser({ afterRoster, membersByTier, tiers }: TeamTierBrowserProps) {
+export function TeamTierBrowser({
+  afterRoster,
+  membersByTier,
+  tiers,
+}: TeamTierBrowserProps) {
   const [activeTierIndex, setActiveTierIndex] = useState(0);
   const activeTier = tiers[activeTierIndex];
 
@@ -50,70 +55,87 @@ export function TeamTierBrowser({ afterRoster, membersByTier, tiers }: TeamTierB
 
   const selectTier = (index: number) => {
     setActiveTierIndex(index);
-    document.getElementById("team")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById("team")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <>
-      <aside aria-label="Team tiers" className="team-tier-drop">
-        <p>TIERS</p>
-        <nav>
-          {tiers.map((tier, index) => {
-            const isActive = index === activeTierIndex;
-
-            return (
-              <a
-                aria-current={isActive ? "page" : undefined}
-                href="#team"
-                key={tier.label}
-                onClick={(event) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  selectTier(index);
-                }}
-                style={{ fontWeight: isActive ? 700 : 500, opacity: isActive ? 1 : 0.72 }}
-              >
-                {tier.label}
-              </a>
-            );
-          })}
-        </nav>
-      </aside>
-
-      <div className="team-roster-layout">
-        <section aria-labelledby="team-tier-title" className="team-core" id="team">
-          <h2 id="team-tier-title">{activeTier.label}</h2>
-          <p>{activeTier.text}</p>
-        </section>
-
-        <div
-          aria-label={`${activeTier.label} team members`}
-          className="team-member-grid"
-          key={activeTier.label}
+      <div className={styles.roster}>
+        <aside
+          aria-label="Team tiers"
+          className={`team-tier-drop ${styles.drop} ${styles.tierDrop}`}
         >
-          {membersByTier[activeTier.label]}
-        </div>
+          <p className={styles.dropLabel}>TIERS</p>
+          <nav className={styles.dropNav}>
+            {tiers.map((tier, index) => {
+              const isActive = index === activeTierIndex;
 
-        <div aria-label="Team tier navigation" className="team-tier-nav" role="group">
-          <button
-            aria-label={`Show previous tier before ${activeTier.label}`}
-            onClick={() => changeTier(-1)}
-            type="button"
-          >
-            <ArrowIcon direction="left" />
-          </button>
-          <span aria-live="polite">{activeTier.label.toUpperCase()}</span>
-          <button
-            aria-label={`Show next tier after ${activeTier.label}`}
-            onClick={() => changeTier(1)}
-            type="button"
-          >
-            <ArrowIcon direction="right" />
-          </button>
-        </div>
+              return (
+                <a
+                  aria-current={isActive ? "page" : undefined}
+                  href="#team"
+                  key={tier.label}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    selectTier(index);
+                  }}
+                  className={isActive ? styles.tierActive : undefined}
+                >
+                  {tier.label}
+                </a>
+              );
+            })}
+          </nav>
+        </aside>
 
-        {afterRoster}
+        <div className={styles.wrap}>
+          <section
+            aria-labelledby="team-tier-title"
+            className={styles.core}
+            id="team"
+          >
+            <h2 className={styles.h2} id="team-tier-title">
+              {activeTier.label}
+            </h2>
+            <p className={styles.body}>{activeTier.text}</p>
+          </section>
+
+          <div
+            aria-label={`${activeTier.label} team members`}
+            className={styles.grid}
+            key={activeTier.label}
+          >
+            {membersByTier[activeTier.label]}
+          </div>
+
+          <div
+            aria-label="Team tier navigation"
+            className={styles.tierNav}
+            role="group"
+          >
+            <button
+              aria-label={`Show previous tier before ${activeTier.label}`}
+              onClick={() => changeTier(-1)}
+              type="button"
+            >
+              <ArrowIcon direction="left" />
+            </button>
+            <span aria-live="polite">{activeTier.label.toUpperCase()}</span>
+            <button
+              aria-label={`Show next tier after ${activeTier.label}`}
+              onClick={() => changeTier(1)}
+              type="button"
+            >
+              <ArrowIcon direction="right" />
+            </button>
+          </div>
+        </div>
       </div>
+
+      {afterRoster}
     </>
   );
 }

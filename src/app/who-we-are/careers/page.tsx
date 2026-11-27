@@ -66,25 +66,43 @@ const benefits = [
   { icon: "globe-hemisphere-east", title: "Global Exposure", body: "Collaborate across markets, industries and cultures while solving important global challenges." },
 ];
 
+const iconPadding: Record<string, string> = {
+  bag: "6.25% 9.38% 15.63%",
+  palette: "9.37% 9.37% 12.5% 9.38%",
+  trend: "18.75% 6.25% 25%",
+  mask: "12.5% 12.5% 6.27%",
+  "clock-user": "9.37% 9.36% 9.32% 9.37%",
+  "calendar-dots": "6.25% 12.5% 12.5%",
+  certificate: "15.63% 3.13% 9.35% 9.38%",
+  "cursor-click": "3.12% 12.5% 12.5% 3.12%",
+  "hand-heart": "12.5% 6.23% 15.62% 0",
+  "hand-coins": "9.37% 6.23% 15.63% 0",
+  "globe-hemisphere-east": "9.38% 9.38% 9.37% 9.37%",
+};
+
+/* Phosphor glyphs exported from Figma: each SVG is the bare glyph, so the
+   inset places it inside its 32 / 80 px icon box exactly as in the frame. */
 function FigmaIcon({ type, className = "" }: { type: string; className?: string }) {
   const src = iconAssets[type] ?? iconAssets["globe-hemisphere-east"];
   return (
-    <span aria-hidden="true" className={`careers-vector-icon careers-vector-icon--${type} ${className}`}>
-      <img alt="" src={src} />
+    <span aria-hidden="true" className={`${styles.icon} ${className}`}>
+      <span style={{ inset: iconPadding[type] }}>
+        <img alt="" src={src} />
+      </span>
     </span>
   );
 }
 
 function ContentDrop() {
   return (
-    <aside aria-label="Careers page contents" className="careers-content-drop">
+    <aside aria-label="Careers page contents" className={`careers-content-drop ${styles.drop}`}>
       <span
         aria-hidden="true"
-        className="careers-content-drop-media"
+        className={styles.dropMedia}
         style={{ backgroundImage: `url(${figmaAssets.careersContentBar})` }}
       />
-      <p>CONTENT</p>
-      <nav>
+      <p className={styles.dropLabel}>CONTENT</p>
+      <nav className={styles.dropNav}>
         {contentLinks.map((link) => (
           <a href={link.href} key={link.href}>
             {link.label}
@@ -92,107 +110,6 @@ function ContentDrop() {
         ))}
       </nav>
     </aside>
-  );
-}
-
-function ImagePill({
-  className = "",
-  overlay = false,
-  src = figmaAssets.figmaBusinessPartners,
-}: {
-  className?: string;
-  overlay?: boolean;
-  src?: string;
-}) {
-  return (
-    <div
-      aria-hidden="true"
-      className={`careers-image-pill ${overlay ? "has-overlay" : ""} ${className}`}
-      style={{ backgroundImage: `url(${src})` }}
-    />
-  );
-}
-
-function WhyCard({ card }: { card: (typeof whyCards)[number] }) {
-  return (
-    <article className={`careers-why-card ${card.className}`}>
-      <div>
-        <FigmaIcon className="careers-card-icon" type={card.icon} />
-        <h3>{card.title}</h3>
-      </div>
-      <p>{card.body}</p>
-    </article>
-  );
-}
-
-function CultureVisual() {
-  return (
-    <div
-      aria-hidden="true"
-      className="careers-culture-visual"
-      style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
-    >
-      <span className="careers-play-mark" />
-      <img alt="" src={figmaAssets.logoWhite} />
-    </div>
-  );
-}
-
-function TestimonialCard() {
-  return (
-    <section aria-label="Team testimonial carousel" className="careers-testimonial-card">
-      <span
-        aria-hidden="true"
-        className="careers-testimonial-bg"
-        style={{ backgroundImage: `url(${figmaAssets.figmaBuilding})` }}
-      />
-      <div className="careers-testimonial-inner">
-        <div className="careers-testimonial-avatar">
-          <span />
-          <img alt="" src={figmaAssets.figmaTeamPortrait} />
-        </div>
-        <div className="careers-testimonial-copy">
-          <p>
-            &ldquo;I really appreciate HYBR&rsquo;s work culture. It&rsquo;s so different from
-            everywhere else I&rsquo;ve worked. It&rsquo;s open, supportive, non-toxic and
-            friendly, and you feel that people genuinely care about you.&rdquo;
-          </p>
-          <div>
-            <strong>Ntukwasi A.</strong>
-            <span>Experience Designer</span>
-          </div>
-        </div>
-      </div>
-      <button aria-label="Previous testimonial" className="careers-carousel-arrow is-left" type="button">
-        <svg aria-hidden="true" fill="none" viewBox="0 0 64 64">
-          <path d="M39 18L25 32L39 46" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-        </svg>
-      </button>
-      <button aria-label="Next testimonial" className="careers-carousel-arrow is-right" type="button">
-        <svg aria-hidden="true" fill="none" viewBox="0 0 64 64">
-          <path d="M25 18L39 32L25 46" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
-        </svg>
-      </button>
-      <div aria-hidden="true" className="careers-carousel-dots">
-        <span />
-        <span />
-        <span />
-      </div>
-    </section>
-  );
-}
-
-function Benefits() {
-  return (
-    <div aria-label="Benefits of working with HYBR" className="careers-benefits-grid">
-      {benefits.map((benefit) => (
-        <article className="careers-benefit" key={benefit.title}>
-          <FigmaIcon className="careers-benefit-icon" type={benefit.icon} />
-          <h3>{benefit.title}</h3>
-          <p>{benefit.body}</p>
-        </article>
-      ))}
-    </div>
   );
 }
 
@@ -206,130 +123,217 @@ function ButtonLink({
   href: string;
 }) {
   return (
-    <Link className={`careers-button ${className}`} href={href}>
+    <Link className={`careers-button ${styles.button} ${className}`} href={href}>
       {children}
     </Link>
   );
 }
 
-function InternshipProgram() {
+function SectionHead({
+  label,
+  title,
+  titleId,
+  body,
+  className = "",
+}: {
+  label: string;
+  title: ReactNode;
+  titleId: string;
+  body?: ReactNode;
+  className?: string;
+}) {
   return (
-    <section
-      aria-labelledby="careers-internship-title"
-      className="careers-internship"
-      id="internship"
-      style={{ backgroundImage: `url(${figmaAssets.careersAlphaAd})` }}
-    >
-      <p className="careers-internship-partner">IN PARTNERSHIP WITH 7EDU IMPACT ACADEMY</p>
-      <div>
-        <h2 id="careers-internship-title">Join the 2026 HYBR internship program.</h2>
-        <p>
-          Through hands-on projects, mentorship, and collaboration, the HYBR
-          Industry Shadowing Program gives bright young talents the chance to
-          build new skills, gain practical experience, and contribute to real
-          industry challenges with guidance from seasoned experts.
-        </p>
-        <ButtonLink className="is-white" href="/contact">Learn More</ButtonLink>
-      </div>
-    </section>
-  );
-}
-
-function NewsletterCard() {
-  return (
-    <section
-      aria-labelledby="careers-newsletter-title"
-      className="careers-newsletter"
-      id="newsletter"
-      style={{ backgroundImage: `url(${figmaAssets.careersNewsletter})` }}
-    >
-      <div className="careers-newsletter-copy">
-        <h2 id="careers-newsletter-title">
-          We&rsquo;d Love to Get <span>to Know You.</span>
-        </h2>
-        <p>
-          We&rsquo;re always looking to connect with talented folks like you. Show
-          us what you&rsquo;ve got or tell us what you do.
-        </p>
-      </div>
-      <CareersConnectionForm />
-    </section>
+    <header className={`${styles.head} ${className}`}>
+      <p className={styles.label}>{label}</p>
+      <h2 className={styles.h2} id={titleId}>{title}</h2>
+      {body ? <p className={styles.body}>{body}</p> : null}
+    </header>
   );
 }
 
 export default function CareersPage() {
   return (
-    <main className={`${styles.careersScope} careers-page`}>
-      <div className="careers-frame">
-        <Header active="who" />
+    <main className={`${styles.page} careers-page`}>
+      <Header active="who" />
 
-        <section aria-labelledby="careers-title" className="careers-hero">
+      <div className={styles.top}>
+        <section aria-labelledby="careers-title" className={`${styles.wrap} ${styles.hero}`}>
           <h1 id="careers-title">Careers</h1>
           <p>Explore career paths designed for curious minds ready to build what&rsquo;s next.</p>
         </section>
-
         <ContentDrop />
+      </div>
 
-        <ImagePill className="careers-working-image" src={figmaAssets.careersWorking} />
-        <section aria-labelledby="careers-working-title" className="careers-working" id="working">
-          <h2 id="careers-working-title">Working at HYBR</h2>
-          <p>
+      <section aria-labelledby="careers-working-title" className={`${styles.wrap} ${styles.working}`} id="working">
+        <div
+          aria-hidden="true"
+          className={styles.workingImage}
+          style={{ backgroundImage: `url(${figmaAssets.careersWorking})` }}
+        />
+        <div className={styles.workingCopy}>
+          <h2 className={styles.h2} id="careers-working-title">Working at HYBR</h2>
+          <p className={styles.body}>
             At HYBR, your ideas don&rsquo;t sit on a shelf &mdash; they shape how
             organizations innovate, grow, and create real impact across Africa
             and beyond. Help organizations solve real challenges.
           </p>
-          <ButtonLink className="careers-working-button" href="/contact">Learn More</ButtonLink>
-        </section>
-
-        <section aria-labelledby="careers-why-title" className="careers-why" id="why">
-          <p>WHY JOIN?</p>
-          <h2 id="careers-why-title">Why become a HYBRian?</h2>
-        </section>
-
-        <div className="careers-why-cards">
-          {whyCards.map((card) => (
-            <WhyCard card={card} key={card.title} />
-          ))}
-          <CultureVisual />
+          <ButtonLink className={styles.workingButton} href="/contact">Learn More</ButtonLink>
         </div>
+      </section>
 
-        <section aria-labelledby="careers-testimonials-title" className="careers-testimonials" id="testimonials">
-          <p>OUR TEAM</p>
-          <h2 id="careers-testimonials-title">Hear from Our Own<span>.</span></h2>
-          <p>
-            Our people are the pulse of HYBR. Discover the insights, stories,
-            and lived experiences shaping our innovation journey.
+      <section aria-labelledby="careers-why-title" className={`${styles.wrap} ${styles.why}`} id="why">
+        <SectionHead label="WHY JOIN?" title="Why become a HYBRian?" titleId="careers-why-title" />
+        <div className={styles.whyGrid}>
+          {whyCards.map((card) => (
+            <article className={`${styles.whyCard} ${styles[card.className]}`} key={card.title}>
+              <div className={styles.whyCardHead}>
+                <FigmaIcon className={styles.whyIcon} type={card.icon} />
+                <h3>{card.title}</h3>
+              </div>
+              <p>{card.body}</p>
+            </article>
+          ))}
+          <div
+            aria-hidden="true"
+            className={styles.culture}
+            style={{ backgroundImage: `url(${figmaAssets.figmaBusinessPartners})` }}
+          >
+            <span className={styles.play} />
+            <img alt="" src={figmaAssets.logoWhite} />
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="careers-testimonials-title" className={`${styles.wrap} ${styles.testimonials}`} id="testimonials">
+        <SectionHead
+          body="Our people are the pulse of HYBR. Discover the insights, stories, and lived experiences shaping our innovation journey."
+          className={styles.testimonialsHead}
+          label="OUR TEAM"
+          title={<>Hear from Our Own<span className={styles.period}>.</span></>}
+          titleId="careers-testimonials-title"
+        />
+        <div className={styles.carousel}>
+          <div aria-label="Team testimonial" className={styles.tCard} role="group">
+            <span
+              aria-hidden="true"
+              className={styles.tBg}
+              style={{ backgroundImage: `url(${figmaAssets.figmaBuilding})` }}
+            />
+            <div className={styles.tInner}>
+              <div className={styles.avatar}>
+                <span />
+                <img alt="" src={figmaAssets.figmaTeamPortrait} />
+              </div>
+              <div className={styles.tCopy}>
+                <p>
+                  &ldquo;I really appreciate HYBR&rsquo;s work culture. It&rsquo;s so different from
+                  everywhere else I&rsquo;ve worked. It&rsquo;s open, supportive, non-toxic and
+                  friendly, and you feel that people genuinely care about you.&rdquo;
+                </p>
+                <div>
+                  <strong>Ntukwasi A.</strong>
+                  <span>Experience Designer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button aria-label="Previous testimonial" className={`${styles.arrow} ${styles.arrowLeft}`} type="button">
+            <svg aria-hidden="true" fill="none" viewBox="0 0 64 64">
+              <path d="M40 52L20 32L40 12" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
+            </svg>
+          </button>
+          <button aria-label="Next testimonial" className={`${styles.arrow} ${styles.arrowRight}`} type="button">
+            <svg aria-hidden="true" fill="none" viewBox="0 0 64 64">
+              <path d="M24 12L44 32L24 52" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
+            </svg>
+          </button>
+        </div>
+        <div aria-hidden="true" className={styles.dots}>
+          <span />
+          <span className={styles.dotActive} />
+          <span />
+        </div>
+      </section>
+
+      <section aria-labelledby="careers-benefits-title" className={`${styles.wrap} ${styles.benefits}`} id="benefits">
+        <SectionHead
+          body="Our benefits are designed to support your journey and empower you with the tools to build a career you are proud of."
+          className={styles.benefitsHead}
+          label="BENEFITS"
+          title="Benefits of Working with Us"
+          titleId="careers-benefits-title"
+        />
+        <div aria-label="Benefits of working with HYBR" className={styles.benefitGrid} role="list">
+          {benefits.map((benefit) => (
+            <article className={styles.benefit} key={benefit.title} role="listitem">
+              <FigmaIcon className={styles.benefitIcon} type={benefit.icon} />
+              <h3>{benefit.title}</h3>
+              <p>{benefit.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="careers-fellowship-title" className={`${styles.wrap} ${styles.fellowship}`} id="fellowship">
+        <div
+          aria-hidden="true"
+          className={styles.fellowshipImage}
+          style={{ backgroundImage: `url(${figmaAssets.careersFellowship})` }}
+        />
+        <div className={styles.fellowshipCopy}>
+          <SectionHead
+            body="Our Innovation Fellowship Program connects ambitious talent with live projects, expert guidance, and a dynamic learning environment designed to shape thinkers who solve problems, create impact, and drive meaningful transformation."
+            label="INNOVATION FELLOWSHIP"
+            title="Accelerating the next generation of Innovation leaders."
+            titleId="careers-fellowship-title"
+          />
+          <ButtonLink className={styles.smallButton} href="/contact">Learn More</ButtonLink>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="careers-internship-title"
+        className={styles.internship}
+        id="internship"
+        style={{ backgroundImage: `url(${figmaAssets.careersAlphaAd})` }}
+      >
+        <p className={styles.partner}>IN PARTNERSHIP WITH 7EDU IMPACT ACADEMY</p>
+        <div className={styles.internshipCopy}>
+          <h2 className={styles.h2} id="careers-internship-title">Join the 2026 HYBR internship program.</h2>
+          <p className={styles.body}>
+            Through hands-on projects, mentorship, and collaboration, the HYBR
+            Industry Shadowing Program gives bright young talents the chance to
+            build new skills, gain practical experience, and contribute to real
+            industry challenges with guidance from seasoned experts.
           </p>
-        </section>
-        <TestimonialCard />
+          <ButtonLink className={`${styles.smallButton} ${styles.white}`} href="/contact">Learn More</ButtonLink>
+        </div>
+        <p className={styles.alpha}>ALPHA</p>
+      </section>
 
-        <section aria-labelledby="careers-benefits-title" className="careers-benefits" id="benefits">
-          <p>BENEFITS</p>
-          <h2 id="careers-benefits-title">Benefits of Working with Us</h2>
-          <p>
-            Our benefits are designed to support your journey and empower you
-            with the tools to build a career you are proud of.
-          </p>
-        </section>
-        <Benefits />
+      {/* The Open Roles section of the frames stays hidden until roles are ready (internal edit doc). */}
 
-        <ImagePill className="careers-fellowship-image" src={figmaAssets.careersFellowship} />
-        <section aria-labelledby="careers-fellowship-title" className="careers-fellowship" id="fellowship">
-          <p>INNOVATION FELLOWSHIP</p>
-          <h2 id="careers-fellowship-title">Accelerating the next generation of Innovation leaders.</h2>
-          <p>
-            Our Innovation Fellowship Program connects ambitious talent with
-            live projects, expert guidance, and a dynamic learning environment
-            designed to shape thinkers who solve problems, create impact, and
-            drive meaningful transformation.
-          </p>
-          <ButtonLink href="/contact">Learn More</ButtonLink>
-        </section>
-
-        <InternshipProgram />
-
-        <NewsletterCard />
-      </div>
+      <section aria-labelledby="careers-newsletter-title" className={styles.newsletterBand} id="newsletter">
+        <div className={styles.newsletter}>
+          <div
+            aria-hidden="true"
+            className={styles.newsletterImage}
+            style={{ backgroundImage: `url(${figmaAssets.careersNewsletter})` }}
+          />
+          <div className={styles.newsletterCopy}>
+            <h2 className={styles.h2} id="careers-newsletter-title">
+              We&rsquo;d Love to Get <span>to Know You.</span>
+            </h2>
+            <p className={styles.body}>
+              We&rsquo;re always looking to connect with talented folks like you. Show
+              us what you&rsquo;ve got or tell us what you do.
+            </p>
+          </div>
+          <div className={styles.newsletterForm}>
+            <CareersConnectionForm />
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </main>
