@@ -1,0 +1,1236 @@
+/* /insights: Figma frames 1:14637 (1440), 1:14928 (1280), 1:15057 (800), 1:14775 (390).
+   Normal-flow rebuild of the old fixed canvas. Breakpoints: >=1360 = 1440 frame, 1024-1359 = 1280,
+   560-1023 = 800, <560 = 390. Every selector is scoped under .ih-page. */
+
+.ih-page {
+  --ih-mont: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  --ih-rale: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  --ih-inter: var(--font-inter), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  overflow-x: clip;
+  position: relative;
+}
+
+.ih-page .ih-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-bottom: 280px;
+  width: calc(100% - 240px);
+}
+
+.ih-page .ih-wrap p,
+.ih-page .ih-wrap h1,
+.ih-page .ih-wrap h2 {
+  margin: 0;
+}
+
+/* ---------- hero ---------- */
+.ih-page .ih-hero {
+  order: 1;
+  padding-top: 243px;
+  width: min(890px, 100%);
+}
+
+.ih-page .ih-hero h1 {
+  font-family: var(--ih-rale);
+  font-size: 160px;
+  font-weight: 500;
+  line-height: 188px;
+}
+
+.ih-page .ih-hero p {
+  font-family: var(--ih-mont);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+}
+
+/* ---------- search + filters ---------- */
+.ih-page .ih-search {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 80px;
+  order: 2;
+}
+
+.ih-page .ih-search-pill,
+.ih-page .ih-filter-pill {
+  align-items: center;
+  background: transparent;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  color: #858688;
+  cursor: pointer;
+  display: flex;
+  font-family: var(--ih-inter);
+  font-size: 20px;
+  font-weight: 500;
+  gap: 10px;
+  height: 56px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 8px 32px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ih-page .ih-search-pill:hover,
+.ih-page .ih-filter-pill:hover {
+  color: #000000;
+}
+
+.ih-page .ih-search-icon,
+.ih-page .ih-filter-arrow {
+  flex: none;
+  height: 40px;
+  width: 40px;
+}
+
+.ih-page .ih-filter-pill,
+.ih-page .ih-filter-sliders {
+  display: none;
+}
+
+/* ---------- section labels and copy ---------- */
+.ih-page .ih-spotlight {
+  margin-top: 120px;
+  order: 3;
+}
+
+.ih-page .ih-label,
+.ih-page .ih-kicker {
+  font-family: var(--ih-mont);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.ih-page .ih-copy h2 {
+  font-family: var(--ih-rale);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 47px;
+}
+
+.ih-page .ih-copy-body {
+  font-family: var(--ih-mont);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  margin-top: 8px !important;
+}
+
+.ih-page .ih-copy--center {
+  margin-inline: auto;
+  max-width: 792px;
+  text-align: center;
+}
+
+/* ---------- cards (shared) ---------- */
+.ih-page .ih-card {
+  background: #000000;
+  border-radius: 16px;
+  color: #ffffff;
+  display: block;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.ih-page .ih-card-image {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  transition: transform 0.4s ease;
+  width: 100%;
+  z-index: -2;
+}
+
+.ih-page .ih-card:hover .ih-card-image {
+  transform: scale(1.03);
+}
+
+/* The frames' photos are darkened in the image itself; the site's real photos get this shade instead. */
+.ih-page .ih-card-shade {
+  background: rgba(0, 0, 0, 0.46);
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.ih-page .ih-pair {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---------- webinar (masterclass) cards ---------- */
+.ih-page .ih-webinar {
+  display: grid;
+  grid-template-areas:
+    "kind kind"
+    "space space"
+    "title ."
+    "meta1 ."
+    "meta2 time";
+  grid-template-columns: minmax(0, 371px) 1fr;
+  grid-template-rows: auto 1fr auto auto auto;
+  height: auto;
+  min-height: 386px;
+  padding: 32px;
+}
+
+.ih-page .ih-webinar--feature {
+  min-height: 408px;
+  margin-top: 21px;
+}
+
+.ih-page .ih-webinar-kind {
+  font-family: var(--ih-mont);
+  font-size: 24px;
+  font-weight: 600;
+  grid-area: kind;
+  line-height: 29px;
+}
+
+.ih-page .ih-webinar-title {
+  font-family: var(--ih-mont);
+  font-size: 32px;
+  font-weight: 500;
+  grid-area: title;
+  line-height: 39px;
+}
+
+.ih-page .ih-webinar-meta {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--ih-mont);
+  font-size: 20px;
+  font-weight: 600;
+  grid-area: meta1;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+.ih-page .ih-webinar-meta + .ih-webinar-meta {
+  grid-area: meta2;
+}
+
+.ih-page .ih-webinar-time {
+  align-self: end;
+  font-family: var(--ih-inter);
+  font-size: 24px;
+  font-weight: 600;
+  grid-area: time;
+  justify-self: end;
+  line-height: 29px;
+  white-space: nowrap;
+}
+
+.ih-page .ih-play {
+  color: #ffffff;
+  position: absolute;
+}
+
+.ih-page .ih-play--large {
+  height: 104px;
+  left: calc(50% - 52px);
+  top: calc(50% - 52px);
+  transition: transform 0.2s ease;
+  width: 104px;
+}
+
+.ih-page .ih-card:hover .ih-play--large {
+  transform: scale(1.08);
+}
+
+.ih-page .ih-play--small {
+  height: 28px;
+  right: 32px;
+  top: 32px;
+  width: 24px;
+}
+
+.ih-page .ih-play--feature-small {
+  display: none;
+}
+
+.ih-page .ih-spotlight-pair {
+  margin-top: 60px;
+}
+
+/* ---------- story (article / news) cards ---------- */
+.ih-page .ih-story {
+  height: 386px;
+  padding: 32px;
+}
+
+.ih-page .ih-story-copy {
+  display: flex;
+  flex-direction: column;
+  max-width: 371px;
+}
+
+.ih-page .ih-story-kind {
+  font-family: var(--ih-mont);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
+
+.ih-page .ih-story-title {
+  font-family: var(--ih-mont);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 39px;
+}
+
+.ih-page .ih-story-body {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  font-family: var(--ih-mont);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.ih-page .ih-read {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 100px;
+  bottom: 32px;
+  color: #000000;
+  display: inline-flex;
+  font-family: var(--ih-mont);
+  font-size: 24px;
+  font-weight: 500;
+  height: 61px;
+  justify-content: center;
+  line-height: 29px;
+  padding: 16px 32px;
+  position: absolute;
+  right: 32px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ih-page .ih-story:hover .ih-read {
+  background: #648c2d;
+  color: #ffffff;
+}
+
+/* ---------- outline buttons ---------- */
+.ih-page .ih-outline {
+  align-items: center;
+  align-self: center;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--ih-mont);
+  font-size: 24px;
+  font-weight: 500;
+  height: 61px;
+  justify-content: center;
+  line-height: 29px;
+  padding: 16px 32px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ih-page .ih-outline:hover {
+  background: #648c2d;
+  color: #ffffff;
+}
+
+/* ---------- masterclasses ---------- */
+.ih-page .ih-webinars {
+  display: flex;
+  flex-direction: column;
+  margin-top: 280px;
+  order: 5;
+}
+
+.ih-page .ih-webinar-pair {
+  margin-top: 60px;
+}
+
+.ih-page .ih-webinars-button {
+  margin-top: 64px;
+}
+
+/* ---------- articles ---------- */
+.ih-page .ih-articles {
+  column-gap: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 690fr) minmax(0, 486fr);
+  grid-template-rows: auto auto;
+  margin-top: 237px;
+  order: 6;
+}
+
+.ih-page .ih-articles-lead {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 588px;
+}
+
+.ih-page .ih-articles-button {
+  align-self: flex-start;
+}
+
+.ih-page .ih-article-small {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 49px;
+}
+
+.ih-page .ih-article-second {
+  display: none;
+}
+
+.ih-page .ih-article-tall {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  height: auto;
+  min-height: 712px;
+}
+
+.ih-page .ih-article-tall .ih-read {
+  bottom: auto;
+  top: 32px;
+}
+
+.ih-page .ih-article-tall .ih-story-copy {
+  bottom: 40px;
+  left: 32px;
+  position: absolute;
+  right: 32px;
+}
+
+/* ---------- news ---------- */
+.ih-page .ih-news {
+  display: flex;
+  flex-direction: column;
+  margin-top: 280px;
+  order: 7;
+}
+
+.ih-page .ih-news .ih-copy {
+  max-width: 690px;
+}
+
+.ih-page .ih-news-pair {
+  grid-template-columns: minmax(0, 486fr) minmax(0, 690fr);
+  margin-top: 38px;
+}
+
+.ih-page .ih-news-pair .ih-story {
+  height: 299px;
+}
+
+.ih-page .ih-news-button {
+  margin-top: 40px;
+}
+
+/* ---------- newsletter ---------- */
+.ih-page .ih-newsletter {
+  align-items: center;
+  background: #000000;
+  border-radius: 24px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: minmax(0, 588fr) minmax(0, 612fr);
+  isolation: isolate;
+  margin-top: 235px;
+  min-height: 596px;
+  order: 8;
+  overflow: hidden;
+  position: relative;
+}
+
+.ih-page .ih-newsletter-image {
+  height: 100%;
+  inset: 0 auto 0 0;
+  object-fit: cover;
+  position: absolute;
+  width: 49%;
+  z-index: -2;
+}
+
+.ih-page .ih-newsletter-image,
+.ih-page .ih-newsletter-panel {
+  height: 100%;
+  inset: 0 auto 0 0;
+  position: absolute;
+  width: 49%;
+}
+
+/* the frame's photo carries a black 20% fill and is itself dark; the site's photo needs a stronger shade */
+.ih-page .ih-newsletter-panel {
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.ih-page .ih-newsletter-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  grid-column: 1;
+  grid-row: 1;
+  padding: 0 24px 0 64px;
+}
+
+.ih-page .ih-newsletter-copy h2 {
+  font-family: var(--ih-rale);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 47px;
+  max-width: 461px;
+}
+
+.ih-page .ih-newsletter-copy p {
+  font-family: var(--ih-mont);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+  max-width: 461px;
+}
+
+.ih-page .ih-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  max-width: 430px;
+  padding-inline: 24px;
+  box-sizing: content-box;
+  width: calc(100% - 48px);
+}
+
+.ih-page .ih-newsletter-form input,
+.ih-page .ih-newsletter-form button {
+  border-radius: 100px;
+  box-sizing: border-box;
+  font-family: var(--ih-inter);
+  font-size: 24px;
+  font-weight: 500;
+  height: 61px;
+  line-height: 29px;
+  margin: 0;
+  padding: 16px 40px;
+  width: 100%;
+}
+
+.ih-page .ih-newsletter-form input {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  outline: none;
+}
+
+.ih-page .ih-newsletter-form input:focus-visible {
+  box-shadow: 0 0 0 2px #4fc2f0;
+}
+
+.ih-page .ih-newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
+
+.ih-page .ih-newsletter-form button {
+  background: #ffffff;
+  border: 0;
+  color: #000000;
+  cursor: pointer;
+  padding-inline: 32px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ih-page .ih-newsletter-form button:hover {
+  background: #648c2d;
+  color: #ffffff;
+}
+
+/* ================= 1280 frame (1024-1359) ================= */
+@media (max-width: 1359px) {
+  .ih-page .ih-wrap {
+    padding-bottom: 285px;
+  }
+
+  .ih-page .ih-hero {
+    padding-top: 240px;
+    width: min(659px, 100%);
+  }
+
+  .ih-page .ih-hero h1 {
+    font-size: 104px;
+    line-height: 122px;
+  }
+
+  .ih-page .ih-search {
+    grid-template-columns: minmax(0, 774fr) minmax(0, 242fr);
+    margin-top: 56px;
+    order: 4;
+  }
+
+  .ih-page .ih-filter-pill {
+    display: flex;
+  }
+
+  .ih-page .ih-spotlight {
+    margin-top: 193px;
+  }
+
+  .ih-page .ih-label,
+  .ih-page .ih-kicker {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .ih-page .ih-copy h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .ih-page .ih-copy-body {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .ih-page .ih-copy--center {
+    max-width: 774px;
+  }
+
+  .ih-page .ih-webinar {
+    grid-template-columns: minmax(0, 438px) 1fr;
+    min-height: 344px;
+    padding: 50px 40px 40px;
+  }
+
+  .ih-page .ih-webinar--feature {
+    /* keep the copy left of the centred play mark when the card is narrower than the frame's 1040 */
+    grid-template-columns: minmax(0, min(438px, calc(50% - 80px))) 1fr;
+    min-height: 408px;
+    margin-top: 16px;
+    padding: 48px 32px 40px 40px;
+  }
+
+  .ih-page .ih-webinar-kind {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .ih-page .ih-webinar-meta {
+    margin-top: 4px;
+  }
+
+  .ih-page .ih-webinar-time {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .ih-page .ih-webinar--feature .ih-webinar-time {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .ih-page .ih-play--large {
+    height: 80px;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    width: 80px;
+  }
+
+  .ih-page .ih-play--small {
+    right: 40px;
+    top: 48px;
+  }
+
+  .ih-page .ih-spotlight-pair {
+    margin-top: 32px;
+  }
+
+  .ih-page .ih-story {
+    padding: 48px 32px 40px;
+  }
+
+  .ih-page .ih-story-copy {
+    max-width: 430px;
+  }
+
+  .ih-page .ih-read {
+    bottom: 40px;
+  }
+
+  .ih-page .ih-outline {
+    font-size: 20px;
+    height: 56px;
+    line-height: 24px;
+  }
+
+  .ih-page .ih-webinars {
+    margin-top: 224px;
+  }
+
+  .ih-page .ih-webinar-pair {
+    margin-top: 56px;
+  }
+
+  .ih-page .ih-webinars-button {
+    margin-top: 48px;
+  }
+
+  .ih-page .ih-articles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 178px;
+  }
+
+  .ih-page .ih-article-small {
+    margin-top: 48px;
+  }
+
+  .ih-page .ih-article-tall {
+    min-height: 674px;
+  }
+
+  .ih-page .ih-article-tall .ih-read {
+    top: 40px;
+  }
+
+  .ih-page .ih-article-tall .ih-story-copy {
+    bottom: 48px;
+    max-width: 371px;
+  }
+
+  .ih-page .ih-news {
+    margin-top: 281px;
+  }
+
+  .ih-page .ih-news .ih-copy {
+    max-width: 798px;
+  }
+
+  .ih-page .ih-news-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 37px;
+  }
+
+  .ih-page .ih-news-pair .ih-story {
+    height: 386px;
+  }
+
+  .ih-page .ih-news-button {
+    margin-top: 48px;
+  }
+
+  .ih-page .ih-newsletter {
+    grid-template-columns: minmax(0, 508fr) minmax(0, 532fr);
+    margin-top: 211px;
+  }
+
+  .ih-page .ih-newsletter-copy h2 {
+    font-size: 32px;
+    line-height: 38px;
+    max-width: 399px;
+  }
+
+  .ih-page .ih-newsletter-copy p {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 399px;
+  }
+
+  .ih-page .ih-newsletter-form {
+    gap: 37px;
+  }
+
+  .ih-page .ih-newsletter-form input,
+  .ih-page .ih-newsletter-form button {
+    font-size: 20px;
+    height: 56px;
+    line-height: 24px;
+    padding: 16px 32px;
+  }
+}
+
+/* ================= 800 frame (560-1023) ================= */
+@media (max-width: 1023px) {
+  .ih-page .ih-wrap {
+    max-width: 864px;
+    padding-bottom: 381px;
+    width: calc(100% - 160px);
+  }
+
+  .ih-page .ih-hero {
+    width: 100%;
+  }
+
+  .ih-page .ih-search {
+    grid-template-columns: minmax(0, 391fr) minmax(0, 225fr);
+  }
+
+  .ih-page .ih-spotlight {
+    margin-top: 164px;
+  }
+
+  .ih-page .ih-pair {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+  }
+
+  .ih-page .ih-spotlight-pair .ih-story--article {
+    height: 285px;
+  }
+
+  /* The site's spotlight title and speaker lines are 5-7 lines where the frame has 3, so the centred
+     play mark would sit on the text at this width: use the small top-right mark (as the 390 frame). */
+  .ih-page .ih-play--large {
+    display: none;
+  }
+
+  .ih-page .ih-webinar--feature {
+    grid-template-columns: minmax(0, 438px) 1fr;
+  }
+
+  .ih-page .ih-play--feature-small {
+    display: block;
+    height: 28px;
+    right: 32px;
+    top: 48px;
+    width: 24px;
+  }
+
+  .ih-page .ih-copy--center {
+    max-width: 640px;
+  }
+
+  .ih-page .ih-articles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ih-page .ih-articles-lead {
+    display: contents;
+  }
+
+  .ih-page .ih-articles .ih-copy {
+    order: 1;
+  }
+
+  .ih-page .ih-article-small,
+  .ih-page .ih-article-second {
+    display: block;
+    height: 285px;
+    margin-top: 32px;
+    order: 2;
+  }
+
+  .ih-page .ih-article-tall {
+    display: none;
+  }
+
+  .ih-page .ih-articles-button {
+    align-self: center;
+    margin-top: 48px;
+    order: 3;
+  }
+
+  .ih-page .ih-news {
+    margin-top: 202px;
+  }
+
+  .ih-page .ih-news-pair {
+    margin-top: 48px;
+  }
+
+  .ih-page .ih-news-button {
+    margin-top: 61px;
+  }
+
+  .ih-page .ih-newsletter {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 372px auto;
+    margin-top: 186px;
+    min-height: 968px;
+  }
+
+  .ih-page .ih-newsletter-image,
+  .ih-page .ih-newsletter-panel {
+    height: 372px;
+    inset: 0 0 auto 0;
+    width: 100%;
+  }
+
+  .ih-page .ih-newsletter-copy {
+    align-self: start;
+    grid-column: 1;
+    grid-row: 1;
+    padding: 139px 0 0 80px;
+    text-align: center;
+  }
+
+  .ih-page .ih-newsletter-copy h2,
+  .ih-page .ih-newsletter-copy p {
+    max-width: 441px;
+  }
+
+  .ih-page .ih-newsletter-copy h2 {
+    white-space: nowrap;
+  }
+
+  .ih-page .ih-newsletter-form {
+    align-self: center;
+    grid-column: 1;
+    grid-row: 2;
+    padding-block: 130px;
+  }
+}
+
+@media (max-width: 799px) and (min-width: 560px) {
+  .ih-page .ih-newsletter-copy {
+    padding: 139px 24px 0;
+  }
+
+  .ih-page .ih-newsletter-copy h2,
+  .ih-page .ih-newsletter-copy p {
+    margin-inline: auto;
+    white-space: normal;
+  }
+}
+
+/* ================= 390 frame (<560) ================= */
+@media (max-width: 559px) {
+  .ih-page .ih-wrap {
+    padding-bottom: 166px;
+    width: calc(100% - 48px);
+  }
+
+  .ih-page .ih-hero {
+    padding-top: 187px;
+    padding-right: 24px;
+  }
+
+  .ih-page .ih-hero h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .ih-page .ih-hero p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .ih-page .ih-search {
+    display: flex;
+    gap: 16px;
+    margin-top: 65px;
+    order: 2;
+  }
+
+  .ih-page .ih-search-pill {
+    border-width: 1.5px;
+    flex: 1 1 auto;
+    font-family: var(--ih-mont);
+    font-size: 14px;
+    font-weight: 600;
+    gap: 10px;
+    height: 40px;
+    line-height: 17px;
+    min-width: 0;
+  }
+
+  .ih-page .ih-filter-pill {
+    border-color: #858688;
+    border-width: 1.5px;
+    flex: 0 0 73px;
+    height: 40px;
+    padding: 8px 24px;
+  }
+
+  .ih-page .ih-search-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .ih-page .ih-filter-label,
+  .ih-page .ih-filter-arrow {
+    display: none;
+  }
+
+  .ih-page .ih-filter-sliders {
+    color: #000000;
+    display: block;
+    flex: none;
+    height: 24px;
+    width: 24px;
+  }
+
+  .ih-page .ih-spotlight {
+    margin-top: 49px;
+  }
+
+  .ih-page .ih-copy h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .ih-page .ih-copy-body {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .ih-page .ih-copy--center {
+    max-width: none;
+    text-align: left;
+  }
+
+  /* mobile masterclass card: duration and play mark on top, kind above the title */
+  .ih-page .ih-webinar,
+  .ih-page .ih-webinar--feature {
+    grid-template-areas:
+      "time"
+      "space"
+      "kind"
+      "title"
+      "meta1"
+      "meta2";
+    grid-template-columns: minmax(0, 278px);
+    grid-template-rows: auto 1fr auto auto auto auto;
+    min-height: 386px;
+    padding: 40px 32px;
+  }
+
+  .ih-page .ih-webinar--feature {
+    margin-top: 16px;
+  }
+
+  .ih-page .ih-webinar-time {
+    align-self: start;
+    font-family: var(--ih-mont);
+    font-size: 16px;
+    justify-self: start;
+    line-height: 20px;
+  }
+
+  .ih-page .ih-webinar-kind {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .ih-page .ih-webinar-title {
+    font-family: var(--ih-rale);
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .ih-page .ih-webinar-meta {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 8px;
+  }
+
+  .ih-page .ih-webinar-title + .ih-webinar-meta {
+    margin-top: 8px;
+  }
+
+  .ih-page .ih-play--large,
+  .ih-page .ih-play--small {
+    display: none;
+  }
+
+  .ih-page .ih-play--feature-small,
+  .ih-page .ih-webinar:not(.ih-webinar--feature) .ih-play--small {
+    display: block;
+    height: 20.8px;
+    right: 35px;
+    top: 39.6px;
+    width: 18px;
+  }
+
+  .ih-page .ih-pair {
+    column-gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ih-page .ih-spotlight-pair {
+    margin-top: 24px;
+  }
+
+  .ih-page .ih-story,
+  .ih-page .ih-spotlight-pair .ih-story--article,
+  .ih-page .ih-news-pair .ih-story {
+    height: 280px;
+    padding: 24px 16px;
+  }
+
+  .ih-page .ih-story-kind {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .ih-page .ih-story-title {
+    font-family: var(--ih-rale);
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .ih-page .ih-story-body {
+    -webkit-line-clamp: 3;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+  }
+
+  .ih-page .ih-read {
+    bottom: 24px;
+    font-size: 14px;
+    height: 33px;
+    left: 50%;
+    line-height: 17px;
+    padding: 8px 16px;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .ih-page .ih-webinars {
+    margin-top: 156px;
+  }
+
+  .ih-page .ih-webinar-pair {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 51px;
+    row-gap: 40px;
+  }
+
+  .ih-page .ih-webinars-button,
+  .ih-page .ih-articles-button,
+  .ih-page .ih-news-button {
+    margin-top: 40px;
+  }
+
+  .ih-page .ih-articles {
+    column-gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 125px;
+  }
+
+  .ih-page .ih-articles .ih-copy {
+    grid-column: 1 / -1;
+  }
+
+  .ih-page .ih-article-small,
+  .ih-page .ih-article-second {
+    height: 280px;
+    margin-top: 40px;
+  }
+
+  .ih-page .ih-article-small {
+    grid-column: 1;
+  }
+
+  .ih-page .ih-article-second {
+    grid-column: 2;
+  }
+
+  .ih-page .ih-articles-button {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .ih-page .ih-news {
+    margin-top: 127px;
+  }
+
+  .ih-page .ih-news-pair {
+    margin-top: 34px;
+  }
+
+  .ih-page .ih-newsletter {
+    border-radius: 0;
+    grid-template-rows: 264px auto;
+    margin-inline: -24px;
+    margin-top: 116px;
+    min-height: 751px;
+  }
+
+  .ih-page .ih-newsletter-image,
+  .ih-page .ih-newsletter-panel {
+    height: 264px;
+  }
+
+  .ih-page .ih-newsletter-copy {
+    padding: 56px 24px 0;
+    text-align: left;
+  }
+
+  .ih-page .ih-newsletter-copy h2 {
+    max-width: none;
+    white-space: normal;
+  }
+
+  .ih-page .ih-newsletter-copy p {
+    font-size: 16px;
+    line-height: 20px;
+    max-width: none;
+  }
+
+  .ih-page .ih-newsletter-form {
+    align-self: start;
+    gap: 42px;
+    max-width: none;
+    padding: 76px 24px;
+  }
+
+  .ih-page .ih-newsletter-form input {
+    font-size: 16px;
+    height: 51px;
+    line-height: 19px;
+  }
+
+  .ih-page .ih-newsletter-form button {
+    font-size: 20px;
+    height: 56px;
+    line-height: 24px;
+  }
+}
+
+/* Below 375 two 140 px story cards break words: stack them (not in the frames). */
+@media (max-width: 374px) {
+  .ih-page .ih-pair,
+  .ih-page .ih-articles {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+  }
+
+  .ih-page .ih-article-small,
+  .ih-page .ih-article-second {
+    grid-column: 1;
+  }
+
+  .ih-page .ih-article-second {
+    margin-top: 0;
+  }
+
+  .ih-page .ih-story-copy {
+    max-width: none;
+  }
+}
