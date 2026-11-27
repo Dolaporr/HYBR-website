@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Raleway, Inter } from "next/font/google";
 import { SiteInteractions } from "@/components/HomeInteractions";
+import { ContentDrawers } from "@/components/ContentDrawers";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -37,6 +38,7 @@ export default function RootLayout({
 }>) {
   const contentDrawerScript = `
 (() => {
+  if (window.__HYBR_CONTENT_DRAWERS__) return;
   const selector = [
     ".figma-content-drop",
     ".insights-content-drop",
@@ -235,7 +237,7 @@ export default function RootLayout({
       <body>
         <SiteInteractions />
         {children}
-        <script dangerouslySetInnerHTML={{ __html: contentDrawerScript }} />
+        <ContentDrawers script={contentDrawerScript} />
       </body>
     </html>
   );
