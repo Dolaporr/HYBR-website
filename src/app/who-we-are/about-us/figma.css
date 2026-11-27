@@ -1,0 +1,132 @@
+/*
+ * /who-we-are/about-us, matched to Figma (file OscCH3GaBaaQhkOCIODYT3):
+ *   desktop 1440 1:4412, tablet horizontal 1280 1:9463, tablet vertical 800 1:10989, mobile 390 1:6745.
+ * Overrides on top of the globals.css .about-* rules, every selector scoped under .about-figma (the page root).
+ */
+
+.about-figma {
+  position: relative;
+}
+
+.about-figma .about-cta-break {
+  display: none;
+}
+
+/* "Button Test 2/3": the 2 px stroke sits inside the 61 px box (padding 16 / 32 incl. the stroke) */
+.about-figma .about-button {
+  box-sizing: border-box;
+}
+
+/* values cards: height = 40 + content + 48 (Frame 696-699: 202, 260, 231, 231) */
+.about-figma .about-value-card {
+  min-height: 0;
+}
+
+@media (min-width: 1024px) {
+  .about-figma .about-hero-copy h1 {
+    line-height: 188px;
+  }
+
+  .about-figma .about-hero-copy p {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .about-figma .about-cta-break {
+    display: inline;
+  }
+
+  .about-figma .about-cta-copy h2 span {
+    display: inline;
+  }
+
+  /* Polygon 1: the play triangle sits in the middle of the founder card */
+  .about-figma.about-page .about-founder-card .about-play-button {
+    height: 104px !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 267px !important;
+    transform: translateX(-50%) !important;
+    width: 104px !important;
+  }
+
+  .about-figma.about-page .about-founder-card .about-play-button img {
+    height: 104px !important;
+    width: 104px !important;
+  }
+}
+
+/* Group 113: six outlined frames behind the founder and history cards, running off the right edge */
+@media (min-width: 1360px) {
+  .about-figma {
+    --g: max(120px, calc((100% - 1200px) / 2));
+  }
+
+  .about-figma .about-floating-frames {
+    display: block;
+    overflow: hidden;
+  }
+
+  .about-figma .about-floating-frames span {
+    box-sizing: border-box;
+    height: 279px;
+    margin: -1px 0 0 -1px;
+    right: auto;
+    width: 474px;
+  }
+
+  .about-figma .about-floating-frames span:nth-child(1) {
+    left: calc(var(--g) + 985px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(2) {
+    left: calc(var(--g) + 985px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(3) {
+    left: calc(var(--g) + 1086px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(4) {
+    left: calc(var(--g) + 959px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(5) {
+    left: calc(var(--g) + 1167px);
+  }
+
+  .about-figma .about-floating-frames span:nth-child(6) {
+    left: calc(var(--g) + 1022px);
+    top: 1752px;
+  }
+
+  .about-figma .about-button {
+    line-height: 29px;
+    padding: 14px 30px;
+  }
+
+  .about-figma .about-mission-grid {
+    margin-bottom: -4px;
+    margin-top: 40px;
+  }
+
+  .about-figma .about-values-section {
+    margin-top: 157px;
+  }
+
+  .about-figma .about-values-stack {
+    gap: 64px;
+    margin-top: 56px;
+  }
+
+  .about-figma .about-cta-section {
+    margin-top: 280px;
+    padding-bottom: 582px;
+  }
+
+  .about-figma .about-founder-section,
+  .about-figma .about-history-section {
+    position: relative;
+    z-index: 1;
+  }
+}

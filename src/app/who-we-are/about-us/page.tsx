@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Footer, Header } from "../../_components/marketing";
 import { figmaAssets } from "@/content/site";
+import "./figma.css";
 
 const aboutAssets = {
   founder: "/about/founder.jpg",
@@ -92,7 +93,7 @@ function AboutButton({
 
 export default function AboutUsPage() {
   return (
-    <main className="about-page about-frame bg-white text-black">
+    <main className="about-page about-frame about-figma bg-white text-black">
       <Header active="who" />
 
       <div aria-hidden="true" className="about-floating-frames">
@@ -216,7 +217,10 @@ export default function AboutUsPage() {
       <section className="about-cta-section" id="what-we-do">
         <div className="about-cta-copy">
           <h2>
-            We help organizations <span>discover, design, and scale</span> <span>breakthrough innovations</span> that drive growth and impact.
+            We help organizations <br className="about-cta-break" />
+            <span>discover, design, and scale</span> <span>breakthrough innovations</span>{" "}
+            <br className="about-cta-break" />
+            that drive growth and impact.
           </h2>
           <p>Our work starts by understanding your toughest challenges, then unlocking the insights and strategies to move you forward. Explore our services and see how HYBR helps teams think bigger—and execute with confidence.</p>
         </div>
