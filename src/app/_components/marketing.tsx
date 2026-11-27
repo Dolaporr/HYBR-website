@@ -44,7 +44,8 @@ export function Header({
 }) {
   const linkClass = (key: "who" | "what" | "insights") =>
     active === key ? "site-nav-link is-active" : "site-nav-link";
-  const logoSrc = tone === "dark" ? figmaAssets.logoWhite : figmaAssets.logoBlue;
+  // every frame keeps the coloured logo, over dark heroes too (1:11325)
+  const logoSrc = figmaAssets.logoBlue;
 
   return (
     <header className={`site-header absolute left-0 right-0 top-0 z-20${tone === "dark" ? " site-header--dark" : ""}`}>
@@ -115,9 +116,8 @@ function breakableLabel(label: string) {
   if (at < 0) return label;
   return (
     <>
-      {label.slice(0, at + 1)}
-      <wbr />
-      {label.slice(at + 1)}
+      <span className="sf-nobreak">{label.slice(0, at + 1)}</span>
+      <span className="sf-nobreak">{label.slice(at + 1)}</span>
     </>
   );
 }

@@ -56,8 +56,14 @@ export default function RootLayout({
 
   window.__HYBR_CONTENT_DRAWERS__ = true;
   const mobileDrawerMedia = "(max-width: 559px)";
-  const mobileClosedPeek = 72;
-  const desktopClosedPeek = 95;
+  // closed tab peek per Figma frame: 96 (1440), 105 (1280), 70 (800), 58 (390)
+  const closedPeek = () => {
+    const w = window.innerWidth;
+    if (w < 560) return 58;
+    if (w < 1024) return 70;
+    if (w < 1360) return 105;
+    return 96;
+  };
 
   const isInsightsFamilyDrop = (drop) => (
     drop.classList.contains("insights-content-drop") ||
@@ -100,7 +106,7 @@ export default function RootLayout({
       : window.innerWidth;
     const targetRectRight = isOpen
       ? viewportRight
-      : viewportRight + rect.width - (isMobile ? mobileClosedPeek : desktopClosedPeek);
+      : viewportRight + rect.width - closedPeek();
     const translateX = targetRectRight - rect.right;
 
     drop.style.setProperty("left", "auto", "important");
