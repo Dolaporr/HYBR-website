@@ -2196,3 +2196,79 @@
     right: 0 !important;
   }
 }
+
+/* mobile, frame 1:6568 at 390 */
+@media (max-width: 559px) {
+  .servicesScope :global(.services-process-bg) {
+    display: none;
+  }
+
+  .servicesScope :global(.services-service-copy h2),
+  .servicesScope :global(.services-testimonials-heading h2) {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-service-copy p),
+  .servicesScope :global(.services-testimonials-heading span) {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .servicesScope :global(.services-tags span) {
+    font-weight: 600;
+  }
+
+  .servicesScope :global(.services-case-statement) {
+    font-size: 14px;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-button.is-read) {
+    border: 0;
+    font-size: 14px;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-card) {
+    height: auto !important;
+    min-height: 634px !important;
+    padding: 64px 56px !important;
+    row-gap: 50px !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-avatar) {
+    height: 188px !important;
+    justify-self: center;
+    width: 188px !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-avatar > span) {
+    border-width: 3px !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-avatar-image) {
+    border-width: 3px !important;
+    bottom: 0 !important;
+    height: 141px !important;
+    width: 141px !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-quote) {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-card > div:last-child > p:first-of-type) {
+    margin-top: 24px !important;
+  }
+}
+
+@media (max-width: 559px) {
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-shell) {
+    margin-top: 0;
+  }
+
+  .servicesScope :global(.services-shared-testimonials) {
+    top: 3554px;
+  }
+}
