@@ -18,17 +18,9 @@ const contentLinks = [
   { label: "Our Work", href: "#work" },
 ] as const;
 
-function ImpactButton({
-  children,
-  className = "",
-  href,
-}: {
-  children: ReactNode;
-  className?: string;
-  href: string;
-}) {
+function ImpactButton({ children, className, href }: { children: ReactNode; className: string; href: string }) {
   return (
-    <Link className={`impact-button ${className}`} href={href}>
+    <Link className={`impact-button ${styles.button} ${className}`} href={href}>
       {children}
     </Link>
   );
@@ -36,14 +28,10 @@ function ImpactButton({
 
 function ContentDrop() {
   return (
-    <aside aria-label="Our Impact page contents" className="impact-content-drop">
-      <span
-        aria-hidden="true"
-        className="impact-content-drop-media"
-        style={{ backgroundImage: `url(${figmaAssets.impactContentTab})` }}
-      />
-      <p>CONTENT</p>
-      <nav>
+    <aside suppressHydrationWarning aria-label="Our Impact page contents" className={`impact-content-drop ${styles.drop}`}>
+      <span aria-hidden="true" className={styles.dropMedia} style={{ backgroundImage: `url(${figmaAssets.impactContentTab})` }} />
+      <p className={styles.dropLabel}>CONTENT</p>
+      <nav className={styles.dropNav}>
         {contentLinks.map((link) => (
           <Link href={link.href} key={link.href}>
             {link.label}
@@ -64,20 +52,20 @@ function Metric({
 }: {
   body: string;
   button?: string;
-  className: string;
+  className?: string;
   id: string;
   label: string;
   value: string;
 }) {
   return (
-    <section className={`impact-metric ${className}`} id={id}>
-      <div className="impact-metric-text">
-        <strong>{value}</strong>
-        <span>{label}</span>
-      </div>
-      <p>{body}</p>
+    <section aria-labelledby={`${id}-label`} className={`${styles.metric} ${className ?? ""}`} id={id}>
+      <strong className={styles.metricValue}>{value}</strong>
+      <span className={styles.metricLabel} id={`${id}-label`}>
+        {label}
+      </span>
+      <p className={styles.metricBody}>{body}</p>
       {button ? (
-        <ImpactButton href="/what-we-do/our-work">
+        <ImpactButton className={styles.metricButton} href="/what-we-do/our-work">
           {button}
         </ImpactButton>
       ) : null}
@@ -85,136 +73,121 @@ function Metric({
   );
 }
 
-function TrustedGrid() {
+function CaseStudyCard({ caseStudy, className }: { caseStudy: CaseStudyListing; className: string }) {
   return (
-    <div aria-hidden="true" className="impact-trusted-grid">
-      {Array.from({ length: 9 }).map((_, index) => (
-        <span key={index} />
-      ))}
-    </div>
-  );
-}
-
-function CaseStudyCard({
-  caseStudy,
-  className = "",
-}: {
-  caseStudy: CaseStudyListing;
-  className?: string;
-}) {
-  return (
-    <article className={`impact-case-card ${className}`}>
+    <article className={`${styles.card} ${className}`}>
       <span
         aria-hidden="true"
-        className="impact-case-image"
-        style={{
-          backgroundImage: `url(${caseStudy.image})`,
-          backgroundPosition: caseStudy.imagePosition,
-        }}
+        className={styles.cardImage}
+        style={{ backgroundImage: `url(${caseStudy.image})`, backgroundPosition: caseStudy.imagePosition }}
       />
-      <p className="impact-case-label">CASE STUDY</p>
-      <h3>{caseStudy.title}</h3>
-      <p className="impact-case-body is-long">
-        {caseStudy.shortBody}
-      </p>
-      <p className="impact-case-body is-short">
-        {caseStudy.shortBody}
-      </p>
-      {caseStudy.companyLogo ? (
-        <img alt={caseStudy.company} className="impact-case-company-logo" src={caseStudy.companyLogo} />
-      ) : (
-        <p className="impact-case-company">{caseStudy.company}</p>
-      )}
-      <img alt="" aria-hidden="true" className="impact-case-mark" src="/home/logo-case-study.svg" />
-      <ImpactButton className="is-read" href={caseStudy.href}>
-        Read More
-      </ImpactButton>
+      <img alt="" aria-hidden="true" className={styles.cardMark} src="/home/logo-case-study.svg" />
+      <div className={styles.cardCopy}>
+        <p className={styles.cardEyebrow}>CASE STUDY</p>
+        <h3 className={styles.cardTitle}>{caseStudy.title}</h3>
+        <p className={styles.cardBody}>{caseStudy.shortBody}</p>
+      </div>
+      <div className={styles.cardFooter}>
+        {caseStudy.companyLogo ? (
+          <img alt={caseStudy.company} className={styles.cardLogo} src={caseStudy.companyLogo} />
+        ) : (
+          <p className={styles.cardCompany}>{caseStudy.company}</p>
+        )}
+        <ImpactButton className={styles.read} href={caseStudy.href}>
+          Read More
+        </ImpactButton>
+      </div>
     </article>
   );
 }
 
 export default function OurImpactPage() {
   return (
-    <main className={`${styles.impactScope} impact-page`}>
-      <div className="impact-frame">
-        <Header active="what" />
+    <main className={`${styles.page} impact-page`}>
+      <Header active="what" />
+      <ContentDrop />
 
-        <section aria-labelledby="impact-title" className="impact-hero">
-          <h1 id="impact-title">Our Impact</h1>
-          <p>How your ideas can bring a positive impact to your business.</p>
-        </section>
+      <section aria-labelledby="impact-title" className={`${styles.wrap} ${styles.hero}`}>
+        <h1 id="impact-title">Our Impact</h1>
+        <p>How your ideas can bring a positive impact to your business.</p>
+      </section>
 
-        <ContentDrop />
-
-        <span
-          aria-hidden="true"
-          className="impact-intro-image"
-          style={{ backgroundImage: `url(${figmaAssets.impactHybrImpact})` }}
-        />
-        <section aria-labelledby="impact-intro-title" className="impact-intro-copy" id="impact">
-          <h2 id="impact-intro-title">HYBR&rsquo;s Impact</h2>
-          <div>
+      <section aria-labelledby="impact-intro-title" className={styles.intro} id="impact">
+        <span aria-hidden="true" className={styles.introImage} style={{ backgroundImage: `url(${figmaAssets.impactHybrImpact})` }} />
+        <div className={`${styles.wrap} ${styles.introCopyWrap}`}>
+          <div className={styles.introCopy}>
+            <h2 id="impact-intro-title">HYBR&rsquo;s Impact</h2>
             <p>
-              Making the right decisions for your business isn&rsquo;t always easy.
-              Many organisations struggle to get it right. HYBR brings structure
-              to the process, helping you turn business ideas into clear,
-              informed decisions.
+              Making the right decisions for your business isn&rsquo;t always easy. Many organisations struggle to get
+              it right. HYBR brings structure to the process, helping you turn business ideas into clear, informed
+              decisions.
             </p>
             <p>
-              With the right decisions in place, confidence follows. Your ideas
-              will be tested, validated, and made ready to work in the real
-              world, so you can deliver solutions that create real impact for
-              your business.
+              With the right decisions in place, confidence follows. Your ideas will be tested, validated, and made
+              ready to work in the real world, so you can deliver solutions that create real impact for your business.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <img alt="" className="impact-globe" src={figmaAssets.impactGlobe} />
-
+      <div className={`${styles.wrap} ${styles.countriesRow}`}>
+        <img alt="" className={styles.globe} src={figmaAssets.impactGlobe} />
         <Metric
           body="Helping organizations make confident decisions worldwide."
           button="View All Locations"
-          className="is-countries"
+          className={styles.countries}
           id="countries"
           label="COUNTRIES REACHED"
           value="35+"
         />
+      </div>
 
-        <div aria-hidden="true" className="impact-blue-band" />
-        <p className="impact-trusted-label">TRUSTED BY</p>
-        <TrustedGrid />
+      <div className={styles.band}>
+        <div className={`${styles.wrap} ${styles.bandRow}`}>
+          <Metric
+            body="Our work creates job opportunities at every level."
+            className={styles.jobs}
+            id="jobs"
+            label="JOBS CREATED"
+            value="300K+"
+          />
+          <div className={styles.trusted}>
+            <p className={styles.trustedLabel}>TRUSTED BY</p>
+            <div aria-hidden="true" className={styles.trustedGrid}>
+              {Array.from({ length: 9 }).map((_, index) => (
+                <span key={index} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <Metric
-          body="Our work creates job opportunities at every level."
-          className="is-jobs"
-          id="jobs"
-          label="JOBS CREATED"
-          value="300K+"
-        />
-
-        <CaseStudyCard caseStudy={cocaColaCaseStudy} className="is-feature" />
-
+      <div className={`${styles.wrap} ${styles.venturesRow}`}>
         <Metric
           body="We help businesses turn good ideas into great results."
-          button="View Our Work"
-          className="is-ventures"
+          button="View Our Reach"
+          className={styles.ventures}
           id="ventures"
           label="VENTURES IMPACTED"
           value="4000+"
         />
+        <CaseStudyCard caseStudy={cocaColaCaseStudy} className={styles.feature} />
+      </div>
 
-        <section aria-labelledby="impact-work-title" className="impact-work-heading" id="work">
+      <section aria-labelledby="impact-work-title" className={`${styles.wrap} ${styles.work}`} id="work">
+        <div className={styles.workHeading}>
           <p>OUR WORK: CASE STUDIES</p>
           <h2 id="impact-work-title">Supporting Ideas From Start To Finish</h2>
           <span>See how we&rsquo;re working with people like you to change the world.</span>
-        </section>
-
-        <CaseStudyCard caseStudy={absaDiscoveryCaseStudy} className="is-work-one" />
-        <CaseStudyCard caseStudy={alitheiaCaseStudy} className="is-work-two" />
-        <ImpactButton className="is-all" href="/what-we-do/our-work">
+        </div>
+        <div className={styles.workGrid}>
+          <CaseStudyCard caseStudy={absaDiscoveryCaseStudy} className={styles.workCard} />
+          <CaseStudyCard caseStudy={alitheiaCaseStudy} className={styles.workCard} />
+        </div>
+        <ImpactButton className={styles.allButton} href="/what-we-do/our-work">
           All Case Studies
         </ImpactButton>
-      </div>
+      </section>
 
       <Footer />
     </main>
