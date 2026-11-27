@@ -2303,16 +2303,10 @@
 }
 
 @media (max-width: 374px) {
-  .servicesScope :global(.services-service.is-discover .services-case-card) {
-    top: 330px;
-  }
-
-  .servicesScope :global(.services-service.is-develop .services-case-card) {
-    top: 400px;
-  }
-
+  .servicesScope :global(.services-service.is-discover .services-case-card),
+  .servicesScope :global(.services-service.is-develop .services-case-card),
   .servicesScope :global(.services-service.is-deploy .services-case-card) {
-    top: 380px;
+    top: 400px;
   }
 
   .servicesScope :global(.services-shared-testimonials .home-testimonial-quote) {
@@ -2321,5 +2315,32 @@
 
   .servicesScope :global(.services-shared-testimonials .home-testimonial-card) {
     padding-inline: 32px !important;
+  }
+}
+
+@media (min-width: 1360px) {
+  .servicesScope :global(.services-shared-testimonials) {
+    left: max(32px, calc(50% - 688px));
+    width: min(1376px, calc(100% - 64px));
+  }
+}
+
+@media (min-width: 375px) and (max-width: 559px) {
+  .servicesScope :global(.services-tags) {
+    translate: 0 20px;
+  }
+}
+
+@media (max-width: 559px) {
+  .servicesScope :global(.services-talk-button) {
+    translate: 0 -18px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 559px) {
+  .servicesScope :global(.services-service.is-discover .services-case-card),
+  .servicesScope :global(.services-service.is-develop .services-case-card),
+  .servicesScope :global(.services-service.is-deploy .services-case-card) {
+    top: 369px;
   }
 }
