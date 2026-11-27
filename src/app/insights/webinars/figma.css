@@ -567,9 +567,14 @@
     gap: 4px;
     grid-area: 1 / 1;
     margin: 0;
-    max-width: 438px;
-    padding: 104px 130px 40px 40px;
+    max-width: 518px;
+    padding: 104px 40px 40px;
     position: relative;
+  }
+
+  /* keep the last line clear of the duration at the bottom right */
+  .wl-page .wl-card-copy .wl-meta:last-child {
+    padding-right: 90px;
   }
 
   .wl-page .wl-card-copy .wl-title {
@@ -890,6 +895,7 @@
   .wl-page .wl-spotlight .wl-meta + .wl-meta,
   .wl-page .wl-card-copy .wl-meta + .wl-meta {
     grid-area: meta2;
+    padding-right: 0;
   }
 
   .wl-page .wl-spotlight .wl-play--small,

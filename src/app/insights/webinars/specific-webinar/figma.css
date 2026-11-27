@@ -179,6 +179,7 @@
 .sw-page .sw-actions {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
   justify-content: space-between;
   margin-top: 32px;
@@ -205,6 +206,7 @@
   line-height: 24px;
   padding: 0;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .sw-page .sw-action:hover {
@@ -643,8 +645,12 @@
     align-self: stretch;
     gap: 4px;
     grid-area: 1 / 1;
-    padding: 50px 130px 40px 40px;
+    padding: 50px 40px 40px;
     position: relative;
+  }
+
+  .sw-page .sw-latest-meta:last-child {
+    padding-right: 90px;
   }
 
   .sw-page .sw-latest-kind {
@@ -951,6 +957,10 @@
     margin-top: 2px;
   }
 
+  .sw-page .sw-latest-meta:last-child {
+    padding-right: 0;
+  }
+
   .sw-page .sw-latest-play {
     display: none;
   }
@@ -988,5 +998,19 @@
     height: 61px;
     line-height: 29px;
     margin-top: 32px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sw-page .sw-actions {
+    gap: 8px;
+  }
+
+  .sw-page .sw-actions-left {
+    padding: 8px 16px;
+  }
+
+  .sw-page .sw-transcript {
+    padding: 9px 16px;
   }
 }
