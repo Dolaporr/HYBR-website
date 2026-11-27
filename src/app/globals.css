@@ -65,7 +65,12 @@ a {
    ========================================================================== */
 .site-header {
   height: 152px;
+  left: 0;
   padding: 0 120px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 20;
 }
 
 .site-header-inner {
@@ -295,6 +300,7 @@ a {
   height: 403.9px;
   left: calc(100% - 223px);
   max-width: none;
+  opacity: 0.4;
   pointer-events: none;
   position: absolute;
   width: 403.3px;
