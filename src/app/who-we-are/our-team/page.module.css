@@ -1,326 +1,359 @@
-.teamScope :global(.team-frame) {
-  --team-mobile-content-width: min(342px, calc(100% - 48px));
-  --team-mobile-gutter: max(24px, calc((100% - var(--team-mobile-content-width)) / 2));
+/*
+  Our Team page, built from the Figma frames (file OscCH3GaBaaQhkOCIODYT3):
+  mobile 390 (1:7611 / 233:8591), tablet vertical 800 (1:10917), tablet horizontal
+  1280 (1:9390), desktop 1440 (1:5708). Sections flow (no fixed canvas), so the
+  roster grows and shrinks with the selected tier and everything below follows.
+  Breakpoints: <560 mobile, 560-1023 tablet vertical, 1024-1359 tablet horizontal,
+  >=1360 desktop. "View as Single Page" is left out on purpose (internal edit doc).
+*/
+
+.page {
+  --gutter: 24px;
+  --wrap-max: 9999px;
+  --h2-fs: 32px;
+  --h2-lh: 38px;
+  --body-fs: 16px;
+  --body-lh: 20px;
+  --body-fw: 500;
   background: #ffffff;
-  height: 7910px;
-  margin-inline: 0;
-  max-width: none;
-  overflow: hidden;
+  color: #000000;
+  overflow-x: clip;
   position: relative;
-  width: 100%;
 }
 
-.teamScope :global(.team-frame h1),
-.teamScope :global(.team-frame h2),
-.teamScope :global(.team-frame h3),
-.teamScope :global(.team-frame p) {
+.page h1,
+.page h2,
+.page h3,
+.page p {
   margin: 0;
 }
 
-.teamScope :global(.team-hero) {
-  left: var(--team-mobile-gutter);
-  position: absolute;
-  top: 187px;
-  width: var(--team-mobile-content-width);
+.wrap {
+  box-sizing: border-box;
+  margin-inline: auto;
+  max-width: var(--wrap-max);
+  position: relative;
+  width: calc(100% - 2 * var(--gutter));
 }
 
-.teamScope :global(.team-hero h1) {
+.h2 {
+  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: var(--h2-fs);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: var(--h2-lh);
+}
+
+.body {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: var(--body-fs);
+  font-weight: var(--body-fw);
+  line-height: var(--body-lh);
+}
+
+.page .body {
+  margin-top: 8px;
+}
+
+.button {
+  align-items: center;
+  border: 2px solid #648c2d;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #648c2d;
+  display: inline-flex;
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  height: 56px;
+  justify-content: center;
+  line-height: 24px;
+  padding: 0 32px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #648c2d;
+  color: #ffffff;
+}
+
+/* ---------- hero + drawers ---------- */
+
+.top {
+  position: relative;
+}
+
+.hero {
+  padding-top: 187px;
+}
+
+.hero h1 {
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 48px;
   font-weight: 500;
-  line-height: normal;
+  letter-spacing: 0;
+  line-height: 56px;
 }
 
-.teamScope :global(.team-hero p) {
+.hero p {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: normal;
-  width: var(--team-mobile-content-width);
+  line-height: 20px;
+  max-width: 342px;
 }
 
-.teamScope :global(.team-content-drop),
-.teamScope :global(.team-tier-drop) {
+/* the shared drawer script and globals.css move these with --content-drop-closed-right */
+.page .drop.drop {
+  --drop-w: 342px;
+  --drop-h: 132px;
+  --drop-peek: 66px;
+  --content-drop-closed-right: calc(var(--drop-peek) - var(--drop-w));
   background: #000000;
+  border: 0;
+  border-radius: 1000px 0 600px 1000px;
+  box-shadow: none;
   color: #ffffff;
+  height: var(--drop-h);
+  left: auto;
   overflow: hidden;
   position: absolute;
+  right: var(--content-drop-closed-right);
+  width: var(--drop-w);
   z-index: 3;
 }
 
-.teamScope :global(.team-content-drop) {
-  border-radius: 1000px 0 600px 1000px;
-  height: 153px;
-  left: var(--team-mobile-gutter);
-  top: 166px;
-  width: 342px;
+.page .contentDrop.contentDrop {
+  top: 177px;
 }
 
-.teamScope :global(.team-content-drop-media) {
-  aspect-ratio: 4096 / 2731;
+.page .dropMedia {
   background-position: center;
   background-size: cover;
-  border: 2px solid #000000;
-  display: block;
-  left: -4.81%;
+  inset: 0;
   pointer-events: none;
   position: absolute;
-  top: -10px;
-  width: 106.53%;
 }
 
-.teamScope :global(.team-content-drop-media::after) {
-  background: rgba(0, 0, 0, .5);
+.page .dropMedia::after {
+  background: rgba(0, 0, 0, 0.5);
   content: "";
   inset: 0;
   position: absolute;
 }
 
-.teamScope :global(.team-content-drop p),
-.teamScope :global(.team-tier-drop p) {
+.page .drop .dropLabel {
+  color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  left: 42px;
-  line-height: normal;
+  left: calc(var(--drop-peek) / 2);
+  line-height: 20px;
+  margin: 0;
   position: absolute;
-  text-align: center;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
   white-space: nowrap;
+  z-index: 1;
 }
 
-.teamScope :global(.team-content-drop nav),
-.teamScope :global(.team-tier-drop nav) {
+.page .drop .dropNav {
+  align-items: flex-end;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 8px;
   position: absolute;
-  right: 49px;
+  right: 40px;
   top: 50%;
-  transform: translateY(-50%);
-  width: 207px;
+  width: 200px;
+  z-index: 1;
 }
 
-.teamScope :global(.team-content-drop a),
-.teamScope :global(.team-tier-drop a) {
+.page .drop .dropNav a {
   color: #ffffff;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 20px;
+  opacity: 0.72;
   text-align: right;
   white-space: nowrap;
 }
 
-.teamScope :global(.team-network) {
-  left: var(--team-mobile-gutter);
-  position: absolute;
-  top: 654px;
-  width: var(--team-mobile-content-width);
+.page .contentDrop .dropNav a,
+.page .drop .dropNav a.tierActive {
+  font-weight: 500;
+  opacity: 1;
 }
 
-.teamScope :global(.team-network h2) {
+.page .drop .dropNav a.tierActive {
+  font-weight: 700;
+}
+
+.page .tierDrop.tierDrop {
+  --drop-h: 96px;
+  --drop-peek: 72px;
+  top: 64px; /* frame: 1771, the tier title at 1907 */
+}
+
+/* ---------- our network ---------- */
+
+.network {
+  margin-top: 107px;
+}
+
+.networkLabel {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  line-height: normal;
+  line-height: 20px;
   text-align: center;
 }
 
-.teamScope :global(.team-network-card) {
+.networkCard {
+  --ring-shift: 7px;
   background: #000000;
   border: 2px solid #000000;
   border-radius: 16px;
+  box-sizing: border-box;
   height: 971px;
   margin-top: 24px;
   overflow: hidden;
   position: relative;
-  width: var(--team-mobile-content-width);
 }
 
-.teamScope :global(.team-network-rings) {
+.ring {
+  border-radius: 50%;
+  box-sizing: border-box;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.ringOuter {
   background: #ffffff;
   border: 2px solid #ffffff;
-  border-radius: 50%;
   height: 1494px;
-  left: 50%;
-  position: absolute;
-  top: -742px;
-  transform: translateX(-50%);
+  top: calc(-747px + var(--ring-shift));
   width: 1494px;
-  z-index: 0;
 }
 
-.teamScope :global(.team-network-rings::before),
-.teamScope :global(.team-network-rings::after) {
-  border-radius: 50%;
-  content: "";
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-}
-
-.teamScope :global(.team-network-rings::before) {
+.ringMiddle {
   background: #000000;
   border: 2px solid #ffffff;
   height: 961px;
-  top: 259px;
+  top: calc(-488px + var(--ring-shift));
   width: 961px;
 }
 
-.teamScope :global(.team-network-rings::after) {
+.ringInner {
   background: #ffffff;
   border: 2px solid #000000;
   height: 423px;
-  top: 535px;
+  top: calc(-212px + var(--ring-shift));
   width: 422px;
 }
 
-.teamScope :global(.team-network-tier) {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  left: 23px;
+.tier {
+  left: 50%;
   position: absolute;
   text-align: center;
-  width: 292px;
-  z-index: 1;
+  transform: translateX(-50%);
+  width: min(292px, calc(100% - 48px));
 }
 
-.teamScope :global(.team-network-tier h3) {
+.tier h3 {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 600;
-  line-height: normal;
+  line-height: 29px;
   text-transform: uppercase;
 }
 
-.teamScope :global(.team-network-tier p) {
+.tier p {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 20px;
   margin-top: 8px;
 }
 
-.teamScope :global(.team-network-tier.is-core) {
+.tierCore {
   color: #000000;
   top: 31px;
 }
 
-.teamScope :global(.team-network-tier.is-associates) {
+.tierAssociates {
   color: #ffffff;
   top: 266px;
 }
 
-.teamScope :global(.team-network-tier.is-affiliates) {
+.tierAffiliates {
   color: #000000;
   top: 555px;
 }
 
-.teamScope :global(.team-network-tier.is-advisors) {
+.tierAdvisors {
   color: #ffffff;
   top: 800px;
 }
 
-.teamScope :global(.team-meet),
-.teamScope :global(.team-core),
-.teamScope :global(.team-more) {
-  position: absolute;
-  width: var(--team-mobile-content-width);
-}
+/* ---------- meet the team ---------- */
 
-.teamScope :global(.team-meet) {
-  left: var(--team-mobile-gutter);
+.meet {
+  margin-top: 156px;
   text-align: center;
-  top: 1825px;
 }
 
-.teamScope :global(.team-core) {
-  left: var(--team-mobile-gutter);
-  top: 2112px;
+/* ---------- roster ---------- */
+
+.roster {
+  padding-top: 200px;
+  position: relative;
 }
 
-.teamScope :global(.team-meet h2),
-.teamScope :global(.team-core h2),
-.teamScope :global(.team-more h2) {
-  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 32px;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.teamScope :global(.team-meet p),
-.teamScope :global(.team-core p),
-.teamScope :global(.team-more p) {
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
+.page .core .body {
   margin-top: 8px;
 }
 
-
-.teamScope :global(.team-tier-drop) {
-  border-radius: 1000px 0 600px 1000px;
-  height: 96px;
-  left: var(--team-mobile-gutter);
-  top: 1978px;
-  width: 342px;
-}
-
-.teamScope :global(.team-tier-drop p) {
-  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  left: 31.5px;
-}
-
-.teamScope :global(.team-tier-drop nav) {
-  right: 71px;
-  width: 200px;
-}
-
-.teamScope :global(.team-member-grid) {
+.grid {
   display: grid;
-  gap: 40px;
-  grid-template-columns: var(--team-mobile-content-width);
-  left: var(--team-mobile-gutter);
-  position: absolute;
-  top: 2381px;
-  width: var(--team-mobile-content-width);
+  gap: 40px 24px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 64px;
 }
 
-.teamScope :global(.team-member-card) {
+.card {
   background: #000000;
   border-radius: 16px;
   height: 425px;
   overflow: hidden;
   position: relative;
-  width: 100%;
 }
 
-.teamScope :global(.team-member-photo) {
+.photo {
   background-position: center top;
   background-size: cover;
   inset: 0;
   position: absolute;
 }
 
-.teamScope :global(.team-member-photo.is-placeholder) {
-  background:
-    radial-gradient(circle at 50% 38%, rgba(148, 204, 67, 0.28), transparent 26%),
-    linear-gradient(145deg, #1e2528 0%, #0b0f10 62%, #000000 100%);
+.photoPlaceholder {
+  background: linear-gradient(145deg, #1e2528 0%, #0b0f10 62%, #000000 100%);
 }
 
-.teamScope :global(.team-member-photo::after) {
-  background: rgba(0, 0, 0, .2);
+.photo::after {
+  background: rgba(0, 0, 0, 0.2);
   content: "";
   inset: 0;
   position: absolute;
 }
 
-.teamScope :global(.team-member-mark) {
+.mark {
   color: #ffffff;
   height: 56px;
   left: 24px;
@@ -330,953 +363,423 @@
   z-index: 1;
 }
 
-.teamScope :global(.team-member-copy) {
+.cardCopy {
   bottom: 24px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 4px;
   left: 24px;
   position: absolute;
-  width: 294px;
+  right: 24px;
   z-index: 1;
 }
 
-.teamScope :global(.team-member-name-row) {
+.nameRow {
   align-items: center;
   display: flex;
   gap: 8px;
+  min-width: 0;
 }
 
-.teamScope :global(.team-member-name-row h3) {
+.nameRow h3 {
   color: #ffffff;
   font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: normal;
+  letter-spacing: 0;
+  line-height: 28px;
+  min-width: 0;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
-.teamScope :global(.team-member-linkedin) {
+.cardCopy p {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.linkedin {
   align-items: center;
   color: #ffffff;
   display: inline-flex;
-  flex: 0 0 auto;
+  flex: 0 0 24px;
   height: 24px;
   justify-content: center;
   width: 24px;
 }
 
-.teamScope :global(.team-member-linkedin:focus-visible) {
-  outline: 2px solid #94cc43;
-  outline-offset: 3px;
-}
-
-.teamScope :global(.team-member-linkedin svg) {
+.linkedin svg {
   height: 100%;
   width: 100%;
 }
 
-@media (max-width: 559px) {
-  .teamScope :global(.team-frame) {
-    --team-mobile-content-width: min(342px, calc(100vw - 48px));
-    --team-mobile-gutter: calc((100vw - var(--team-mobile-content-width)) / 2);
-  }
-
-  .teamScope :global(.team-network),
-  .teamScope :global(.team-member-grid),
-  .teamScope :global(.team-meet),
-  .teamScope :global(.team-core),
-  .teamScope :global(.team-more) {
-    left: var(--team-mobile-gutter) !important;
-    transform: none !important;
-    width: var(--team-mobile-content-width) !important;
-  }
-
-  .teamScope :global(.team-network-card),
-  .teamScope :global(.team-member-card) {
-    box-sizing: border-box;
-    width: var(--team-mobile-content-width) !important;
-  }
-
-  .teamScope :global(.team-network h2) {
-    text-align: center !important;
-    width: 100% !important;
-  }
-
-  .teamScope :global(.team-network-tier) {
-    box-sizing: border-box;
-    left: 50% !important;
-    max-width: calc(100% - 48px) !important;
-    text-align: center !important;
-    transform: translateX(-50%) !important;
-    width: calc(100% - 48px) !important;
-  }
-
-  .teamScope :global(.team-network-tier h3) {
-    font-size: 20px !important;
-    line-height: 1.08 !important;
-  }
-
-  .teamScope :global(.team-network-tier p) {
-    font-size: 13px !important;
-    line-height: 1.16 !important;
-    overflow-wrap: normal;
-  }
-
-  .teamScope :global(.team-member-grid) {
-    gap: 40px !important;
-    grid-template-columns: var(--team-mobile-content-width) !important;
-    justify-content: stretch !important;
-    padding: 0 !important;
-  }
-
-  .teamScope :global(.team-member-copy) {
-    box-sizing: border-box;
-    max-width: calc(100% - 48px) !important;
-    width: calc(100% - 48px) !important;
-  }
-
-  .teamScope :global(.team-member-name-row) {
-    min-width: 0;
-    width: 100%;
-  }
-
-  .teamScope :global(.team-member-name-row h3) {
-    flex: 1 1 auto;
-    font-size: 20px !important;
-    line-height: 1.04 !important;
-    min-width: 0;
-    white-space: normal !important;
-  }
-
-  .teamScope :global(.team-member-linkedin) {
-    flex: 0 0 22px !important;
-    height: 22px !important;
-    width: 22px !important;
-  }
-
-  .teamScope :global(.team-member-tags span) {
-    font-size: 10px !important;
-    padding: 6px 10px !important;
-  }
+.linkedin:focus-visible {
+  outline: 2px solid #94cc43;
+  outline-offset: 3px;
 }
 
-.teamScope :global(.team-member-copy p),
-.teamScope :global(.team-member-more) {
-  color: #ffffff;
-  font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: normal;
-  text-transform: uppercase;
-}
-
-.teamScope :global(.team-member-more) {
-  font-size: 16px;
-  font-weight: 600;
-  position: absolute;
-  right: 0;
-  text-transform: capitalize;
-  top: -337px;
-}
-
-.teamScope :global(.team-member-tags) {
-  align-content: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.teamScope :global(.team-member-tags span) {
-  align-items: center;
-  background: #ffffff;
-  border-radius: 100px;
-  color: #000000;
-  display: inline-flex;
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: normal;
-  padding: 8px 16px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.teamScope :global(.team-tier-nav) {
+.tierNav {
   align-items: center;
   border: 2px solid #000000;
   border-radius: 100px;
-  color: #000000;
+  box-sizing: border-box;
   display: flex;
   gap: 24px;
-  justify-content: center;
-  left: 50%;
-  padding: 16px 32px;
-  position: absolute;
-  top: 7055px;
-  transform: translateX(-50%);
+  height: 64px;
+  margin: 64px auto 0;
+  padding: 0 30px;
+  width: max-content;
 }
 
-.teamScope :global(.team-tier-nav svg) {
-  height: 32px;
-  width: 32px;
-}
-
-.teamScope :global(.team-tier-nav button) {
+.tierNav button {
   align-items: center;
   background: transparent;
   border: 0;
-  color: inherit;
+  color: #000000;
   cursor: pointer;
   display: inline-flex;
   flex: 0 0 32px;
   height: 32px;
   justify-content: center;
   padding: 0;
+  transition: color 0.2s ease;
   width: 32px;
 }
 
-.teamScope :global(.team-tier-nav button:focus-visible) {
-  outline: 2px solid #648c2d;
-  outline-offset: 3px;
+.tierNav button:hover,
+.tierNav button:focus-visible {
+  color: #648c2d;
 }
 
-.teamScope :global(.team-tier-nav span) {
+.tierNav svg {
+  height: 32px;
+  width: 32px;
+}
+
+.tierNav span {
   color: #648c2d;
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: normal;
-  min-width: 124px;
+  line-height: 24px;
   text-align: center;
 }
 
-.teamScope :global(.team-more) {
-  left: var(--team-mobile-gutter);
-  top: 7275px;
+/* ---------- more about us ---------- */
+
+.more {
+  margin-bottom: 236px;
+  margin-top: 156px;
 }
 
-.teamScope :global(.team-more div) {
-  align-items: center;
+.moreButtons {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   margin-top: 32px;
 }
 
-.teamScope :global(.team-more a) {
-  align-items: center;
-  border: 2px solid #648c2d;
-  border-radius: 100px;
-  color: #648c2d;
-  display: inline-flex;
-  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  justify-content: center;
-  line-height: normal;
-  min-height: 56px;
-  padding: 16px 32px;
-  width: max-content;
-}
-
-@media (min-width: 560px) and (max-width: 1023px) {
-  .teamScope :global(.team-frame) {
-    height: 5720px;
-    margin-inline: auto;
-    max-width: 800px;
+/* =========================================================
+   Tablet, vertical (frame 800, 1:10917)
+   ========================================================= */
+@media (min-width: 560px) {
+  .page {
+    --gutter: 80px;
+    --body-fs: 20px;
+    --body-lh: 24px;
+    --body-fw: 400;
   }
 
-  .teamScope :global(.team-hero) {
-    left: 80px;
-    top: 240px;
-    width: 640px;
+  .hero {
+    padding-top: 240px;
   }
 
-  .teamScope :global(.team-hero h1) {
+  .hero h1 {
     font-size: 104px;
+    line-height: 122px;
   }
 
-  .teamScope :global(.team-hero p) {
+  .hero p {
     font-size: 24px;
-    width: 640px;
+    line-height: 29px;
+    max-width: 640px;
   }
 
-  .teamScope :global(.team-content-drop) {
+  .page .drop.drop {
+    --drop-w: 337px;
+    --drop-h: 197px;
+    --drop-peek: 69px;
     border-radius: 1000px 0 800px 1000px;
-    height: 197px;
-    left: auto;
-    right: -268px;
-    top: 216px;
-    width: 337px;
   }
 
-  .teamScope :global(.team-content-drop p) {
+  .page .contentDrop.contentDrop {
+    top: 216px;
+  }
+
+  .page .drop .dropLabel {
     font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-weight: 700;
-    left: 41.5px;
+    left: 31.5px;
   }
 
-  .teamScope :global(.team-content-drop nav) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 8px;
-    right: 108px;
-    width: auto;
+  .page .drop .dropNav {
+    left: 104px;
+    right: auto;
+    width: 125px;
   }
 
-  .teamScope :global(.team-network) {
-    left: 80px;
-    top: 592px;
-    width: 640px;
+  .page .tierDrop.tierDrop {
+    --drop-w: 291px;
+    --drop-peek: 68px;
+    border-radius: 1000px 0 1000px 1000px;
+    top: calc(var(--roster-gap) - 40px);
   }
 
-  .teamScope :global(.team-network-card) {
+  .page .tierDrop .dropNav {
+    gap: 16px;
+    left: 99px;
+    width: 86px;
+  }
+
+  .network {
+    margin-top: 172px;
+  }
+
+  .networkCard {
+    --ring-shift: 0px;
     height: 987px;
     margin-top: 16px;
-    width: 640px;
   }
 
-  .teamScope :global(.team-network-rings) {
-    top: -749px;
-  }
-
-  .teamScope :global(.team-network-tier) {
-    transform: none;
-  }
-
-  .teamScope :global(.team-network-tier.is-core) {
-    left: 149px;
-    top: 24px;
+  .tier {
     width: 339px;
   }
 
-  .teamScope :global(.team-network-tier.is-associates) {
-    left: 58px;
-    top: 259px;
+  .tierCore {
+    top: 26px;
+  }
+
+  .tierAssociates {
+    top: 261px;
     width: 519px;
   }
 
-  .teamScope :global(.team-network-tier.is-affiliates) {
-    left: 28px;
-    top: 548px;
+  .tierAffiliates {
+    top: 550px;
     width: 580px;
   }
 
-  .teamScope :global(.team-network-tier.is-advisors) {
-    left: 37px;
-    top: 814px;
+  .tierAdvisors {
+    top: 816px;
     width: 562px;
   }
 
-  .teamScope :global(.team-meet) {
-    left: 80px;
-    top: 1839px;
-    width: 640px;
+  .meet {
+    margin-top: 224px;
   }
 
-  .teamScope :global(.team-core) {
-    left: 80px;
-    top: 2328px;
-    width: 640px;
+  .roster {
+    --roster-gap: 248px; /* frame position kept: 160 below the omitted 56 px button + 32 */
+    padding-top: var(--roster-gap);
   }
 
-  .teamScope :global(.team-meet p),
-  .teamScope :global(.team-core p),
-  .teamScope :global(.team-more p) {
-    font-size: 20px;
-  }
-
-
-  .teamScope :global(.team-tier-drop) {
-    border-radius: 1000px 0 1000px 1000px;
-    height: 197px;
-    left: auto;
-    right: -223px;
-    top: 2096px;
-    width: 291px;
-  }
-
-  .teamScope :global(.team-tier-drop nav) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 16px;
-    left: 99px;
-    right: auto;
-    width: auto;
-  }
-
-  .teamScope :global(.team-member-grid) {
+  .grid {
     gap: 32px 24px;
-    grid-template-columns: repeat(2, 308px);
-    left: 80px;
-    top: 2600px;
-    width: 640px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 120px;
   }
 
-  .teamScope :global(.team-member-card) {
-    width: 308px;
-  }
-
-  .teamScope :global(.team-member-copy) {
-    bottom: 32px;
-    gap: 8px;
-    left: 24px;
-    width: 265px;
-  }
-
-  .teamScope :global(.team-member-name-row h3) {
+  .nameRow h3 {
     font-size: 20px;
+    line-height: 23px;
   }
 
-  .teamScope :global(.team-member-copy p),
-  .teamScope :global(.team-member-more) {
+  .cardCopy p {
+    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
     font-size: 14px;
+    line-height: 16px;
   }
 
-  .teamScope :global(.team-member-more) {
-    position: static;
-  }
-
-  .teamScope :global(.team-member-tags span) {
-    padding-bottom: 4px;
-    padding-top: 4px;
-  }
-
-  .teamScope :global(.team-tier-nav) {
-    top: 4940px;
-  }
-
-  .teamScope :global(.team-more) {
-    left: 80px;
+  .more {
+    margin-bottom: 282px;
+    margin-top: 224px;
     text-align: center;
-    top: 5200px;
-    width: 640px;
   }
 
-  .teamScope :global(.team-more div) {
+  .moreButtons {
     flex-direction: row;
     justify-content: center;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1359px) {
-  .teamScope :global(.team-frame) {
-    height: 5660px;
-    margin-inline: auto;
-    max-width: 1280px;
+/* =========================================================
+   Tablet, horizontal (frame 1280, 1:9390)
+   ========================================================= */
+@media (min-width: 1024px) {
+  .page {
+    --gutter: 120px;
+    --wrap-max: 1040px;
   }
 
-  .teamScope :global(.team-hero) {
-    left: 120px;
-    top: 240px;
-    width: 1040px;
+  .hero p {
+    max-width: 917px;
   }
 
-  .teamScope :global(.team-hero h1) {
-    font-size: 104px;
+  .page .contentDrop.contentDrop {
+    --drop-peek: 76px;
   }
 
-  .teamScope :global(.team-hero p) {
-    font-size: 24px;
-    width: 1040px;
+  .page .tierDrop.tierDrop {
+    --drop-peek: 86px;
+    top: calc(var(--roster-gap) - 29px);
   }
 
-  .teamScope :global(.team-content-drop) {
-    border-radius: 1000px 0 800px 1000px;
-    height: 197px;
-    left: auto;
-    right: -235px;
-    top: 216px;
-    width: 337px;
+  .network {
+    margin-top: 172px;
   }
 
-  .teamScope :global(.team-content-drop p) {
-    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    left: 41.5px;
-  }
-
-  .teamScope :global(.team-content-drop nav) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 8px;
-    right: 108px;
-    width: auto;
-  }
-
-  .teamScope :global(.team-network) {
-    left: 120px;
-    top: 563px;
-    width: 1040px;
-  }
-
-  .teamScope :global(.team-network-card) {
-    height: 987px;
-    margin-top: 16px;
-    width: 1040px;
-  }
-
-  .teamScope :global(.team-network-rings) {
-    top: -749px;
-  }
-
-  .teamScope :global(.team-network-tier) {
-    transform: none;
-  }
-
-  .teamScope :global(.team-network-tier.is-core) {
-    left: 348px;
-    top: 24px;
+  .tier {
     width: 339px;
   }
 
-  .teamScope :global(.team-network-tier.is-associates) {
-    left: 258px;
-    top: 259px;
+  .tierAssociates {
     width: 519px;
   }
 
-  .teamScope :global(.team-network-tier.is-affiliates) {
-    left: 197px;
-    top: 548px;
+  .tierAffiliates {
     width: 642px;
   }
 
-  .teamScope :global(.team-network-tier.is-advisors) {
-    left: 57px;
-    top: 814px;
-    width: 922px;
+  .tierAdvisors {
+    width: min(922px, calc(100% - 48px));
   }
 
-  .teamScope :global(.team-meet) {
-    left: 50%;
-    top: 1810px;
-    transform: translateX(-50%);
-    width: 774px;
-  }
-
-  .teamScope :global(.team-core) {
-    left: 120px;
-    top: 2265px;
-    width: 798px;
-  }
-
-  .teamScope :global(.team-meet p),
-  .teamScope :global(.team-core p),
-  .teamScope :global(.team-more p) {
-    font-size: 20px;
-  }
-
-
-  .teamScope :global(.team-tier-drop) {
-    border-radius: 1000px 0 1000px 1000px;
-    height: 197px;
-    left: auto;
-    right: -205px;
-    top: 2040px;
-    width: 291px;
-  }
-
-  .teamScope :global(.team-tier-drop nav) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 16px;
-    left: 99px;
-    right: auto;
-    width: auto;
-  }
-
-  .teamScope :global(.team-member-grid) {
-    gap: 32px 24px;
-    grid-template-columns: repeat(2, 508px);
-    left: 120px;
-    top: 2485px;
-    width: 1040px;
-  }
-
-  .teamScope :global(.team-member-card) {
-    width: 508px;
-  }
-
-  .teamScope :global(.team-member-copy) {
-    left: 40px;
-    width: 428px;
-  }
-
-  .teamScope :global(.team-member-more) {
-    position: static;
-  }
-
-  .teamScope :global(.team-member-linkedin) {
-    height: 32px;
-    width: 32px;
-  }
-
-  .teamScope :global(.team-member-mark) {
-    left: 40px;
-  }
-
-  .teamScope :global(.team-tier-nav) {
-    top: 4810px;
-  }
-
-  .teamScope :global(.team-more) {
-    left: 50%;
-    text-align: center;
-    top: 5090px;
-    transform: translateX(-50%);
-    width: 774px;
-  }
-
-  .teamScope :global(.team-more div) {
-    flex-direction: row;
-    gap: 32px;
-    justify-content: center;
-  }
-}
-
-@media (min-width: 1360px) {
-  .teamScope :global(.team-frame) {
-    height: 5960px;
+  .meet {
     margin-inline: auto;
-    max-width: 1440px;
+    max-width: 774px;
   }
 
-  .teamScope :global(.team-hero) {
-    left: 120px;
-    top: 243px;
-    width: 1200px;
+  .roster {
+    --roster-gap: 316px; /* frame position kept: 228 below the omitted 56 px button + 32 */
   }
 
-  .teamScope :global(.team-hero h1) {
-    font-size: 160px;
+  .core {
+    max-width: 798px;
   }
 
-  .teamScope :global(.team-hero p) {
-    font-size: 24px;
-    width: 1200px;
-  }
-
-  .teamScope :global(.team-content-drop) {
-    border-radius: 1000px 0 800px 1000px;
-    height: 197px;
-    left: auto;
-    right: -248px;
-    top: 294px;
-    width: 337px;
-  }
-
-  .teamScope :global(.team-content-drop p) {
-    font-family: var(--font-raleway), var(--font-montserrat), Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    left: 41.5px;
-  }
-
-  .teamScope :global(.team-content-drop nav) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 8px;
-    right: 108px;
-    width: auto;
-  }
-
-  .teamScope :global(.team-network) {
-    left: 120px;
-    top: 700px;
-    width: 1200px;
-  }
-
-  .teamScope :global(.team-network h2) {
-    font-size: 20px;
-  }
-
-  .teamScope :global(.team-network-card) {
-    height: 987px;
-    margin-top: 16px;
-    width: 1200px;
-  }
-
-  .teamScope :global(.team-network-rings) {
-    top: -749px;
-  }
-
-  .teamScope :global(.team-network-tier) {
-    transform: none;
-  }
-
-  .teamScope :global(.team-network-tier.is-core) {
-    left: 428px;
-    top: 24px;
-    width: 339px;
-  }
-
-  .teamScope :global(.team-network-tier.is-associates) {
-    left: 338px;
-    top: 259px;
-    width: 519px;
-  }
-
-  .teamScope :global(.team-network-tier.is-affiliates) {
-    left: 277px;
-    top: 548px;
-    width: 642px;
-  }
-
-  .teamScope :global(.team-network-tier.is-advisors) {
-    left: 137px;
-    top: 814px;
-    width: 922px;
-  }
-
-  .teamScope :global(.team-meet) {
-    left: 50%;
-    top: 2007px;
-    transform: translateX(-50%);
-    width: 894px;
-  }
-
-  .teamScope :global(.team-core) {
-    left: 120px;
-    top: 2485px;
-    width: 996px;
-  }
-
-  .teamScope :global(.team-meet h2),
-  .teamScope :global(.team-core h2),
-  .teamScope :global(.team-more h2) {
-    font-size: 40px;
-  }
-
-  .teamScope :global(.team-meet p),
-  .teamScope :global(.team-core p),
-  .teamScope :global(.team-more p) {
-    font-size: 24px;
-  }
-
-
-  .teamScope :global(.team-tier-drop) {
-    border-radius: 1000px 0 1000px 1000px;
-    height: 197px;
-    left: auto;
-    right: -202px;
-    top: 2248px;
-    width: 291px;
-  }
-
-  .teamScope :global(.team-tier-drop nav) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 16px;
-    left: 99px;
-    right: auto;
-    width: auto;
-  }
-
-  .teamScope :global(.team-member-grid) {
-    gap: 40px 24px;
-    grid-template-columns: repeat(2, 588px);
-    left: 120px;
-    top: 2720px;
-    width: 1200px;
-  }
-
-  .teamScope :global(.team-member-card) {
-    width: 588px;
-  }
-
-  .teamScope :global(.team-member-copy) {
+  .mark {
     left: 40px;
-    width: 484px;
   }
 
-  .teamScope :global(.team-member-copy p) {
+  .cardCopy {
+    left: 40px;
+    right: 40px;
+  }
+
+  .nameRow h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .cardCopy p {
     font-size: 16px;
+    line-height: 19px;
   }
 
-  .teamScope :global(.team-member-more) {
-    position: static;
+  .tierNav {
+    margin-top: 48px;
   }
 
-  .teamScope :global(.team-member-linkedin) {
-    height: 32px;
-    width: 32px;
-  }
-
-  .teamScope :global(.team-member-mark) {
-    left: 40px;
-  }
-
-  .teamScope :global(.team-tier-nav) {
-    top: 5065px;
-  }
-
-  .teamScope :global(.team-more) {
-    left: 50%;
-    text-align: center;
-    top: 5405px;
-    transform: translateX(-50%);
-    width: 996px;
-  }
-
-  .teamScope :global(.team-more div) {
-    flex-direction: row;
-    gap: 48px;
-    justify-content: center;
-  }
-
-  .teamScope :global(.team-more a) {
-    font-size: 24px;
-    min-height: 61px;
+  .more {
+    margin-bottom: 336px;
+    margin-inline: auto;
+    max-width: 774px;
   }
 }
 
-/* The roster is the only variable-height portion of this Figma-led page.
-   Keep it in normal flow so each tier can place its controls after its own cards. */
-.teamScope :global(.team-frame) {
-  --team-roster-start: 2112px;
-  --team-roster-grid-gap: 150px;
-  --team-roster-nav-gap: 64px;
-  --team-roster-more-gap: 154px;
-  --team-roster-bottom-gap: 296px;
-  height: auto !important;
-  min-height: 0;
-  padding-bottom: var(--team-roster-bottom-gap);
-}
-
-.teamScope :global(.team-roster-layout) {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin-inline: auto;
-  padding-top: var(--team-roster-start);
-  width: var(--team-mobile-content-width);
-}
-
-.teamScope :global(.team-roster-layout .team-core),
-.teamScope :global(.team-roster-layout .team-member-grid),
-.teamScope :global(.team-roster-layout .team-tier-nav),
-.teamScope :global(.team-roster-layout .team-more) {
-  left: auto !important;
-  position: static !important;
-  top: auto !important;
-  transform: none !important;
-}
-
-.teamScope :global(.team-roster-layout .team-core) {
-  width: 100% !important;
-}
-
-.teamScope :global(.team-roster-layout .team-member-grid) {
-  margin-top: var(--team-roster-grid-gap);
-  width: 100% !important;
-}
-
-.teamScope :global(.team-roster-layout .team-tier-nav) {
-  margin: var(--team-roster-nav-gap) auto 0;
-}
-
-.teamScope :global(.team-roster-layout .team-more) {
-  margin-top: var(--team-roster-more-gap);
-  width: 100% !important;
-}
-
-@media (min-width: 560px) and (max-width: 1023px) {
-  .teamScope :global(.team-frame) {
-    --team-roster-start: 2328px;
-    --team-roster-grid-gap: 150px;
-    --team-roster-nav-gap: 87px;
-    --team-roster-more-gap: 192px;
-    --team-roster-bottom-gap: 260px;
-  }
-
-  .teamScope :global(.team-roster-layout) {
-    width: 640px;
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1359px) {
-  .teamScope :global(.team-frame) {
-    --team-roster-start: 2265px;
-    --team-roster-grid-gap: 126px;
-    --team-roster-nav-gap: 72px;
-    --team-roster-more-gap: 212px;
-    --team-roster-bottom-gap: 320px;
-  }
-
-  .teamScope :global(.team-roster-layout) {
-    width: 1040px;
-  }
-
-  .teamScope :global(.team-roster-layout .team-core) {
-    width: 798px !important;
-  }
-
-  .teamScope :global(.team-roster-layout .team-more) {
-    align-self: center;
-    width: 774px !important;
-  }
-}
-
+/* =========================================================
+   Desktop (frame 1440, 1:5708)
+   ========================================================= */
 @media (min-width: 1360px) {
-  .teamScope :global(.team-frame) {
-    --team-roster-start: 2485px;
-    --team-roster-grid-gap: 120px;
-    --team-roster-nav-gap: 60px;
-    --team-roster-more-gap: 272px;
-    --team-roster-bottom-gap: 300px;
+  .page {
+    --wrap-max: 1200px;
+    --h2-fs: 40px;
+    --h2-lh: 47px;
+    --body-fs: 24px;
+    --body-lh: 29px;
   }
 
-  .teamScope :global(.team-roster-layout) {
-    width: 1200px;
+  .hero {
+    padding-top: 243px;
   }
 
-  .teamScope :global(.team-roster-layout .team-core) {
-    width: 996px !important;
+  .hero h1 {
+    font-size: 160px;
+    line-height: 188px;
   }
 
-  .teamScope :global(.team-roster-layout .team-more) {
-    align-self: center;
-    width: 996px !important;
-  }
-}
-
-.teamScope :global(.team-content-drop.site-content-drop),
-.teamScope :global(.team-tier-drop.site-content-drop) {
-  left: auto !important;
-  right: -260px !important;
-}
-
-.teamScope :global(.team-content-drop.site-content-drop.is-content-open),
-.teamScope :global(.team-tier-drop.site-content-drop.is-content-open) {
-  left: auto !important;
-  right: 0 !important;
-}
-
-@media (min-width: 560px) {
-  .teamScope :global(.team-content-drop.site-content-drop) {
-    left: auto !important;
-    right: -257px !important;
+  .page .contentDrop.contentDrop {
+    --drop-peek: 89px;
+    top: 294px;
   }
 
-  .teamScope :global(.team-tier-drop.site-content-drop) {
-    left: auto !important;
-    right: -220px !important;
+  .page .tierDrop.tierDrop {
+    --drop-peek: 89px;
+    top: calc(var(--roster-gap) - 24px);
   }
 
-  .teamScope :global(.team-content-drop.site-content-drop.is-content-open),
-  .teamScope :global(.team-tier-drop.site-content-drop.is-content-open) {
-    left: auto !important;
-    right: 0 !important;
+  .network {
+    margin-top: 240px;
   }
-}
 
-@media (max-width: 559px) {
-  .teamScope :global(.team-member-tags span) {
-    font-size: 10px !important;
-    padding: 6px 10px !important;
+  .networkLabel {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .meet {
+    margin-top: 280px;
+    max-width: 894px;
+  }
+
+  .roster {
+    --roster-gap: 237px; /* frame position kept: 144 below the omitted 61 px button + 32 */
+  }
+
+  .core {
+    max-width: 996px;
+  }
+
+  .page .core .body {
+    margin-top: 16px;
+  }
+
+  .grid {
+    gap: 40px 24px;
+    margin-top: 153px;
+  }
+
+  .tierNav {
+    margin-top: 64px;
+  }
+
+  .more {
+    margin-bottom: 280px;
+    margin-top: 280px;
+    max-width: 996px;
+  }
+
+  .moreButtons {
+    gap: 48px;
+  }
+
+  .button {
+    font-size: 24px;
+    height: 61px;
+    line-height: 29px;
   }
 }
