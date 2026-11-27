@@ -1664,12 +1664,12 @@
 
   .whatScope :global(.what-product-card.is-indx) {
     height: 413px;
-    top: 2816px;
+    top: 3293px;
   }
 
   .whatScope :global(.what-product-card.is-flywheel) {
     height: 413px;
-    top: 3293px;
+    top: 2816px;
   }
 
   .whatScope :global(.what-product-card.is-alpha) {
@@ -2039,5 +2039,165 @@
     top: 2300px;
     transform: rotate(-13.72deg);
     width: 1078.03px;
+  }
+}
+
+/* ---- Figma match pass (laptop band, frame 1:8253 at 1280) ---- */
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .whatScope :global(.what-frame) {
+    height: 6089px;
+  }
+
+  .whatScope :global(.what-hero) {
+    top: 240px;
+  }
+
+  .whatScope :global(.what-hero h1) {
+    font-size: 104px;
+  }
+
+  .whatScope :global(.what-content-drop) {
+    border-radius: 1000px 800px 800px 1000px;
+    height: 197px;
+    top: 239px;
+    width: 352px;
+  }
+
+  .whatScope :global(.what-content-drop p) {
+    left: 41.5px;
+  }
+
+  .whatScope :global(.what-content-drop nav) {
+    gap: 8px;
+    right: 111px;
+    top: calc(50% + 0.5px);
+    width: 109px;
+  }
+
+  .whatScope :global(.what-content-drop a) {
+    font-size: 16px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .whatScope :global(.what-services-copy h2),
+  .whatScope :global(.what-work-copy h2),
+  .whatScope :global(.what-section-heading h2),
+  .whatScope :global(.what-impact-heading h2),
+  .whatScope :global(.what-team-copy h2) {
+    font-size: 32px;
+  }
+
+  .whatScope :global(.what-work-copy > span),
+  .whatScope :global(.what-section-heading > span),
+  .whatScope :global(.what-impact-heading > span),
+  .whatScope :global(.what-team-copy > span) {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .whatScope :global(.what-team-copy > span) {
+    margin-top: 16px;
+  }
+
+  .whatScope :global(.what-frame .what-button:not(.what-product-actions .what-button)) {
+    font-size: 20px;
+    min-height: 56px;
+    padding: 14px 30px;
+  }
+
+  .whatScope :global(.what-frame .what-case-card .what-button.is-read) {
+    font-size: 24px;
+    min-height: 61px;
+    padding: 14px 30px;
+  }
+
+  .whatScope :global(.what-case-copy > p) {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .whatScope :global(.what-case-copy h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  }
+
+  .whatScope :global(.what-case-card .what-case-copy span),
+  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
+    left: 32px;
+    top: 48px;
+    width: min(430px, calc(100% - 64px));
+  }
+
+  .whatScope :global(.what-process-map) {
+    left: calc(50% + 85px);
+    top: 213px;
+    width: 435px;
+  }
+
+  .whatScope :global(.what-process-word) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-process-word.is-develop) {
+    left: 93.76px;
+    top: 154px;
+  }
+
+  .whatScope :global(.what-process-word.is-deploy) {
+    left: 248.57px;
+    top: 63px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 66.4px;
+    left: 112.29px;
+    top: 63.03px;
+    transform: matrix(0.595, 0.804, 0.849, -0.529, 0, 0) translate(-1.75px, -1.8px);
+    transform-origin: 0 0;
+    width: 129.3px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 91.57px;
+    left: 311.38px;
+    top: 110px;
+    transform: matrix(0.992, 0.122, -0.145, 0.989, 0, 0) translate(-2.2px, -2px);
+    transform-origin: 0 0;
+    width: 84.07px;
+  }
+
+  .whatScope :global(.what-team-actions) {
+    bottom: 76px;
+  }
+
+  .whatScope :global(.what-team-actions .what-button:last-child) {
+    order: -1;
+  }
+
+  .whatScope :global(.what-product-card),
+  .whatScope :global(.what-team) {
+    width: min(1040px, calc(100% - 48px));
+  }
+
+  .whatScope :global(.what-impact-stats) {
+    width: min(1040px, calc(100% - 48px));
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .whatScope :global(.what-team-copy h2) {
+    margin-top: 4px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .whatScope :global(.what-product-actions input) {
+    padding-inline: 12px;
   }
 }

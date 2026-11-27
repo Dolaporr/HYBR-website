@@ -16,18 +16,18 @@ const contentLinks = [
 
 const products = [
   {
-    key: "indx",
-    name: "INDX",
-    heading: "Know where to grow.",
-    body: productDescriptions.indx,
-    cta: "Join Waiting List",
-    hasDesktopEmail: true,
-  },
-  {
     key: "flywheel",
     name: "FLYWHEEL",
     heading: "Build the capability to grow.",
     body: productDescriptions.flywheel,
+    cta: "Join Waiting List",
+    hasDesktopEmail: true,
+  },
+  {
+    key: "indx",
+    name: "INDX",
+    heading: "Know where to grow.",
+    body: productDescriptions.indx,
     cta: "Join Waiting List",
     hasDesktopEmail: true,
   },
