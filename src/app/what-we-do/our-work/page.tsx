@@ -35,7 +35,7 @@ function WorkButton({ children, className, href }: { children: ReactNode; classN
 
 function ContentDrop() {
   return (
-    <aside aria-label="Our Work page contents" className={`work-content-drop ${styles.drop}`}>
+    <aside suppressHydrationWarning aria-label="Our Work page contents" className={`work-content-drop ${styles.drop}`}>
       <span aria-hidden="true" className={styles.dropMedia} style={{ backgroundImage: `url(${figmaAssets.workContentTab})` }} />
       <p className={styles.dropLabel}>CONTENT</p>
       <nav className={styles.dropNav}>

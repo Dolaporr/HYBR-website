@@ -28,7 +28,7 @@ function ImpactButton({ children, className, href }: { children: ReactNode; clas
 
 function ContentDrop() {
   return (
-    <aside aria-label="Our Impact page contents" className={`impact-content-drop ${styles.drop}`}>
+    <aside suppressHydrationWarning aria-label="Our Impact page contents" className={`impact-content-drop ${styles.drop}`}>
       <span aria-hidden="true" className={styles.dropMedia} style={{ backgroundImage: `url(${figmaAssets.impactContentTab})` }} />
       <p className={styles.dropLabel}>CONTENT</p>
       <nav className={styles.dropNav}>
