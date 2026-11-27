@@ -1820,3 +1820,202 @@
     margin-top: 8px;
   }
 }
+
+/* laptop band, frame 1:8373 at 1280 */
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .servicesScope :global(.services-frame) {
+    height: 3806px;
+    max-width: none;
+  }
+
+  .servicesScope :global(.services-hero),
+  .servicesScope :global(.services-service),
+  .servicesScope :global(.services-testimonials-heading) {
+    left: max(24px, calc(50% - 520px));
+  }
+
+  .servicesScope :global(.services-hero h1) {
+    font-size: 104px;
+  }
+
+  .servicesScope :global(.services-process) {
+    width: 100%;
+  }
+
+  .servicesScope :global(.services-process-bg) {
+    display: none;
+  }
+
+  .servicesScope :global(.services-process-map) {
+    left: calc(50% - 217px);
+  }
+
+  .servicesScope :global(.services-process-word.is-develop) {
+    left: 93.76px;
+  }
+
+  .servicesScope :global(.services-process-word.is-deploy) {
+    left: 248.57px;
+  }
+
+  .servicesScope :global(.services-process-arrow.services-process-arrow--desktop.is-first) {
+    height: 66.4px;
+    left: 112.29px;
+    top: 63.03px;
+    transform: matrix(0.595, 0.804, 0.849, -0.529, 0, 0) translate(-1.75px, -1.8px);
+    transform-origin: 0 0;
+    width: 129.3px;
+  }
+
+  .servicesScope :global(.services-process-arrow.services-process-arrow--desktop.is-second) {
+    height: 91.57px;
+    left: 311.38px;
+    top: 110px;
+    transform: matrix(0.992, 0.122, -0.145, 0.989, 0, 0) translate(-2.2px, -2px);
+    transform-origin: 0 0;
+    width: 84.07px;
+  }
+
+  .servicesScope :global(.services-service) {
+    width: min(1040px, calc(100% - 48px));
+  }
+
+  .servicesScope :global(.services-service-copy) {
+    width: calc(50% - 12px);
+  }
+
+  .servicesScope :global(.services-service-copy h2) {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-service-copy p) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 8px;
+  }
+
+  .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-discover .services-tags),
+  .servicesScope :global(.services-service.is-develop .services-tags) {
+    gap: 16px 24px;
+    top: 228px;
+    width: calc(50% - 12px);
+  }
+
+  .servicesScope :global(.services-tags span) {
+    font-size: 16px;
+    font-weight: 500;
+    height: 36px;
+    line-height: 20px;
+    padding: 8px 16px;
+  }
+
+  .servicesScope :global(.services-case-card),
+  .servicesScope :global(.services-service.is-discover .services-case-card),
+  .servicesScope :global(.services-service.is-develop .services-case-card),
+  .servicesScope :global(.services-service.is-deploy .services-case-card) {
+    left: calc(50% + 12px);
+    top: 0;
+    width: calc(50% - 12px);
+  }
+
+  .servicesScope :global(.services-service.is-develop .services-case-card) {
+    top: 31px;
+  }
+
+  .servicesScope :global(.services-service.is-deploy .services-case-card) {
+    top: 7px;
+  }
+
+  .servicesScope :global(.services-case-company) {
+    gap: 24px;
+    left: 40px;
+    top: 40px;
+  }
+
+  .servicesScope :global(.services-case-mark) {
+    height: 40px;
+    width: 40px;
+  }
+
+  .servicesScope :global(.services-case-company h3) {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-case-statement) {
+    font-weight: 400;
+    left: 40px;
+    line-height: normal;
+    width: calc(100% - 80px);
+  }
+
+  .servicesScope :global(.services-case-label) {
+    left: 40px;
+    top: 236px;
+  }
+
+  .servicesScope :global(.services-button.is-read) {
+    border: 0;
+    bottom: 40px;
+    font-size: 20px;
+    min-height: 40px;
+    padding: 8px 24px;
+    right: 40px;
+    top: auto;
+  }
+
+  .servicesScope :global(.services-book-button) {
+    left: calc(50% - 114px);
+  }
+
+  .servicesScope :global(.services-testimonials-heading > p) {
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-testimonials-heading h2) {
+    font-size: 32px;
+    line-height: normal;
+    max-width: 646px;
+  }
+
+  .servicesScope :global(.services-testimonials-heading span) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 8px;
+  }
+
+  .servicesScope :global(.services-shared-testimonials) {
+    top: 3172px;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-card) {
+    grid-template-columns: 188px minmax(0, 1fr) !important;
+    margin-inline: auto;
+    max-width: 1040px;
+    width: 100%;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-quote) {
+    max-width: 700px;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-arrow--left) {
+    transform: none;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-arrow--right) {
+    transform: translateX(-40px);
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-dots) {
+    margin-top: 48px;
+  }
+}
