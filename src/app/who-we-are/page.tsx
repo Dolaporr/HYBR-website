@@ -15,7 +15,7 @@ const contentLinks = [
   { label: "Careers", href: "#careers" },
 ];
 
-// mobileGap / mobilePin come from the 390 frame (1:5939): card tops 515, 794, 1130, ... and pin centres 605, 912, ...
+// mobileGap / mobilePin / mobileHeight (card min-height) come from the 390 frame (1:5939): card tops 515, 794, 1130, ... and pin centres 605, 912, ...
 const timeline: HistoryItem[] = [
   {
     year: "2016",
@@ -23,6 +23,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/hybr-mark.svg",
     mobileGap: 0,
     mobilePin: 90,
+    mobileHeight: 160,
   },
   {
     year: "2017",
@@ -30,6 +31,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/sneaker-move.svg",
     mobileGap: 119,
     mobilePin: 118,
+    mobileHeight: 217,
   },
   {
     year: "2018",
@@ -37,6 +39,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/arrows-out-cardinal.svg",
     mobileGap: 119,
     mobilePin: 109,
+    mobileHeight: 179,
   },
   {
     year: "2019",
@@ -44,6 +47,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/asclepius.svg",
     mobileGap: 138,
     mobilePin: 109,
+    mobileHeight: 198,
   },
   {
     year: "2019",
@@ -51,6 +55,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/beer-bottle.svg",
     mobileGap: 119,
     mobilePin: 99,
+    mobileHeight: 198,
   },
   {
     year: "2020",
@@ -58,6 +63,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/handshake.svg",
     mobileGap: 100,
     mobilePin: 108,
+    mobileHeight: 179,
   },
   {
     year: "2020",
@@ -65,6 +71,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/map-pin-area.svg",
     mobileGap: 138,
     mobilePin: 99,
+    mobileHeight: 198,
   },
   {
     year: "2021",
@@ -72,6 +79,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/robot.svg",
     mobileGap: 100,
     mobilePin: 90,
+    mobileHeight: 160,
   },
   {
     year: "2022",
@@ -79,6 +87,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/compass.svg",
     mobileGap: 119,
     mobilePin: 80,
+    mobileHeight: 160,
   },
   {
     year: "2024",
@@ -86,6 +95,7 @@ const timeline: HistoryItem[] = [
     icon: "/who/timeline/sparkle.svg",
     mobileGap: 100,
     mobilePin: 71,
+    mobileHeight: 141,
   },
 ];
 
@@ -204,7 +214,7 @@ export default function WhoWeArePage() {
               building, AI, and enterprise transformation. From designing market-shifting business
               models to launching scalable technologies in frontier markets, we combine analytic rigor,
               creative problem-solving, and deep sector expertise to help organizations unlock
-              what&apos;s possible.
+              what&rsquo;s possible.
             </p>
             <div className="wwa-team-media">
               <span className="wwa-photo" style={{ backgroundImage: `url(${primaryImage})` }} />

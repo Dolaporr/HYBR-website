@@ -195,9 +195,9 @@
   width: 40px;
 }
 
-/* mobile connector: Figma Vector 107-116, 80 px from the line centre, 4 px white */
+/* mobile connector: Figma Vector 107-116, 80 px from the line centre, 4 px, dotted as on the other frames */
 .wwa-page .wwa-event-link {
-  background: #ffffff;
+  background: repeating-linear-gradient(to right, rgb(255 255 255 / 0.8) 0 3px, transparent 3px 6px);
   height: 4px;
   left: 32px;
   position: absolute;
@@ -214,6 +214,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-height: var(--m-h);
   padding: 32px 24px 24px;
   position: relative;
   z-index: 1;
@@ -366,7 +367,7 @@
   font-weight: 500;
   letter-spacing: 0;
   line-height: 38px;
-  margin: 0;
+  margin: 4px 0 0;
 }
 
 .wwa-page .wwa-team-head h2 span {
@@ -571,6 +572,7 @@
 
   .wwa-page .wwa-event-card {
     gap: 8px;
+    min-height: 0;
     padding: 40px;
     position: absolute;
     width: 490px;
@@ -886,6 +888,10 @@
 
   .wwa-page .wwa-team-head {
     grid-area: head;
+  }
+
+  .wwa-page .wwa-team-head h2 {
+    margin-top: 0;
   }
 
   .wwa-page .wwa-team-body {

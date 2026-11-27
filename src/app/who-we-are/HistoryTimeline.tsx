@@ -10,6 +10,7 @@ export type HistoryItem = {
   /** Mobile (390 frame): space above the card and the pin centre measured from the card top. */
   mobileGap: number;
   mobilePin: number;
+  mobileHeight: number;
 };
 
 /**
@@ -93,6 +94,7 @@ export function HistoryTimeline({ items }: { items: HistoryItem[] }) {
                   "--i": index,
                   "--m-gap": `${item.mobileGap}px`,
                   "--m-pin": `${item.mobilePin}px`,
+                  "--m-h": `${item.mobileHeight}px`,
                 } as CSSProperties
               }
             >
