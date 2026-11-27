@@ -60,6 +60,16 @@
   color: #ffffff;
 }
 
+/* below the 390 frame the 343 px buttons no longer fit: let them shrink and wrap */
+@media (max-width: 389px) {
+  .button {
+    max-width: 100%;
+    padding-inline: 20px;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
 .button:focus-visible,
 .readMore:focus-visible,
 .readerNav button:focus-visible,
