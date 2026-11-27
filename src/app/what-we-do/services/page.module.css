@@ -2019,3 +2019,188 @@
     margin-top: 48px;
   }
 }
+
+/* tablet band, frame 1:9900 at 800 */
+@media (min-width: 560px) and (max-width: 1023px) {
+  .servicesScope :global(.services-frame) {
+    height: 4684px;
+    max-width: none;
+  }
+
+  .servicesScope :global(.services-hero),
+  .servicesScope :global(.services-service),
+  .servicesScope :global(.services-testimonials-heading) {
+    left: max(24px, calc(50% - 320px));
+    width: min(640px, calc(100% - 48px));
+  }
+
+  .servicesScope :global(.services-hero h1) {
+    font-size: clamp(64px, 13vw, 104px);
+  }
+
+  .servicesScope :global(.services-process) {
+    width: 100%;
+  }
+
+  .servicesScope :global(.services-process-bg) {
+    display: none;
+  }
+
+  .servicesScope :global(.services-process-map) {
+    left: calc(50% - 217px);
+  }
+
+  .servicesScope :global(.services-process-word.is-develop) {
+    left: 93.76px;
+  }
+
+  .servicesScope :global(.services-process-word.is-deploy) {
+    left: 248.57px;
+  }
+
+  .servicesScope :global(.services-process-arrow.services-process-arrow--desktop.is-first) {
+    height: 66.4px;
+    left: 112.29px;
+    top: 63.03px;
+    transform: matrix(0.595, 0.804, 0.849, -0.529, 0, 0) translate(-1.75px, -1.8px);
+    transform-origin: 0 0;
+    width: 129.3px;
+  }
+
+  .servicesScope :global(.services-process-arrow.services-process-arrow--desktop.is-second) {
+    height: 91.57px;
+    left: 311.38px;
+    top: 110px;
+    transform: matrix(0.992, 0.122, -0.145, 0.989, 0, 0) translate(-2.2px, -2px);
+    transform-origin: 0 0;
+    width: 84.07px;
+  }
+
+  .servicesScope :global(.services-service-copy),
+  .servicesScope :global(.services-tags),
+  .servicesScope :global(.services-service.is-discover .services-tags),
+  .servicesScope :global(.services-service.is-develop .services-tags),
+  .servicesScope :global(.services-case-card),
+  .servicesScope :global(.services-service.is-discover .services-case-card),
+  .servicesScope :global(.services-service.is-develop .services-case-card),
+  .servicesScope :global(.services-service.is-deploy .services-case-card) {
+    width: 100%;
+  }
+
+  .servicesScope :global(.services-service-copy h2) {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-service-copy p) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 8px;
+  }
+
+  .servicesScope :global(.services-tags span) {
+    font-size: 14px;
+    font-weight: 500;
+    height: 33px;
+    line-height: 17px;
+    padding: 8px 16px;
+  }
+
+  .servicesScope :global(.services-case-company h3) {
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-case-statement) {
+    font-weight: 400;
+    line-height: normal;
+    width: calc(100% - 83px);
+  }
+
+  .servicesScope :global(.services-button.is-read) {
+    border: 0;
+    font-size: 14px;
+    min-height: 33px;
+    padding: 8px 16px;
+  }
+
+  .servicesScope :global(.services-book-button) {
+    left: calc(50% - 114px);
+  }
+
+  .servicesScope :global(.services-testimonials-heading h2) {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .servicesScope :global(.services-testimonials-heading span) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 8px;
+  }
+
+  .servicesScope :global(.services-shared-testimonials) {
+    top: 3952px;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-card) {
+    margin-inline: auto;
+    max-width: 632px;
+    width: 100%;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-dots) {
+    margin-top: 48px;
+  }
+
+  .servicesScope :global(.services-talk-button) {
+    top: 4530px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-card) {
+    align-items: center;
+    grid-template-columns: 188px minmax(0, 1fr) !important;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 1023px) {
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-card) {
+    height: auto !important;
+    min-height: 418px !important;
+    padding-block: 48px !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-stage) {
+    height: auto !important;
+    min-height: 418px !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-quote) {
+    font-size: 20px !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-shell) {
+    position: relative;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-arrow) {
+    display: flex !important;
+    position: absolute !important;
+    top: calc(50% - 32px) !important;
+    transform: none !important;
+    z-index: 3;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-arrow--left) {
+    left: 0 !important;
+  }
+
+  .servicesScope :global(.services-shared-testimonials .home-testimonial-arrow--right) {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
