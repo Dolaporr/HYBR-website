@@ -2029,3 +2029,15 @@
     width: 430px;
   }
 }
+
+@media (min-width: 1360px) {
+  .whatScope :global(.what-product-orbit) {
+    height: 1430.52px;
+    left: calc(50% + 244.13px);
+    opacity: 1;
+    right: auto;
+    top: 2300px;
+    transform: rotate(-13.72deg);
+    width: 1078.03px;
+  }
+}
