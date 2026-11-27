@@ -400,10 +400,12 @@ export default function Home() {
 
         <section id="what-we-do" className="home-band home-what-band home-reveal relative px-6 py-32" data-reveal="right">
           <div className="home-services-wrap mx-auto">
-            <SectionLabel>What We Do</SectionLabel>
-            <h2 className="home-section-title mt-2 max-w-[640px] font-display font-medium leading-tight">
-              We Help You Build Innovation That Works - and Works Fast
-            </h2>
+            <div className="home-services-head">
+              <SectionLabel>What We Do</SectionLabel>
+              <h2 className="home-section-title mt-2 max-w-[640px] font-display font-medium leading-tight">
+                We Help You Build Innovation That Works - and Works Fast
+              </h2>
+            </div>
             <div className="home-services-grid mt-8 grid gap-5 md:grid-cols-3">
               {services.map((service) => (
                 <article
