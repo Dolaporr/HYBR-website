@@ -2,6 +2,12 @@ import Link from "next/link";
 import { Footer, Header } from "../../../_components/marketing";
 import { businessModelsWebinar, publicPowerWebinar } from "@/content/insights";
 import { figmaAssets } from "@/content/site";
+import { Glyph, PlayMark, PlayPolygon } from "../_parts/icons";
+import { VideoPlayer } from "../_parts/VideoPlayer";
+import "./figma.css";
+
+/* Figma: Desktop 1:15187 (1440), Tablet Horizontal 1:15316 (1280), Tablet Vertical 1:15420 (800),
+   Mobile 1:15523 (390). Layout and type live in ./figma.css, scoped under .sw-page. */
 
 type Masterclass = typeof publicPowerWebinar | typeof businessModelsWebinar;
 
@@ -9,109 +15,43 @@ type SpecificWebinarPageProps = {
   searchParams: Promise<{ masterclass?: string }>;
 };
 
-function SearchControl() {
+/* Phosphor-style outline icons the frames use (ThumbsUp, PaperPlaneTilt, CaretDown). */
+function ThumbsUpIcon({ className = "" }: { className?: string }) {
   return (
-    <div className="figma-search-control" role="search">
-      <svg aria-hidden="true" fill="none" viewBox="0 0 40 40">
-        <circle cx="18.5" cy="18.5" r="10.5" stroke="currentColor" strokeWidth="2.5" />
-        <path d="M26 26L32 32" stroke="currentColor" strokeLinecap="round" strokeWidth="2.5" />
-      </svg>
-      <span>Search</span>
-    </div>
-  );
-}
-
-function PlayIcon({ className = "" }: { className?: string }) {
-  return (
-    <span className={`webinar-play ${className}`} aria-hidden="true">
-      <svg fill="none" viewBox="0 0 104 104">
-        <path d="M29 12L82 52L29 92V12Z" fill="currentColor" />
-      </svg>
-    </span>
-  );
-}
-
-function WebinarVideo({
-  webinar,
-  compact = false,
-  imageSrc = figmaAssets.figmaBuilding,
-}: {
-  webinar: Masterclass;
-  compact?: boolean;
-  imageSrc?: string;
-}) {
-  if (!compact) {
-    return (
-      <div className="webinar-video webinar-video--embed">
-        <iframe
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          className="webinar-video-embed"
-          src={webinar.youtubeEmbed}
-          title={webinar.title}
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className="webinar-video webinar-video--compact">
-      <img alt="" src={imageSrc} />
-      <PlayIcon />
-      <span className="webinar-duration">{webinar.duration}</span>
-    </div>
-  );
-}
-
-function ActionIcon({ type }: { type: "like" | "share" }) {
-  if (type === "like") {
-    return (
-      <svg aria-hidden="true" fill="none" viewBox="0 0 48 48">
-        <path d="M17 41H12C10.3431 41 9 39.6569 9 38V22C9 20.3431 10.3431 19 12 19H17V41Z" stroke="currentColor" strokeWidth="2.2" />
-        <path d="M17 20L25 8C26.1046 8.5 28 10 28 13V19H36C38.7614 19 41 21.2386 41 24L38.5 36C37.9 39 35.5 41 32.5 41H17V20Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.2" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg aria-hidden="true" fill="none" viewBox="0 0 48 48">
-      <path d="M41 7L21 28" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" />
-      <path d="M41 7L29 41L21 28L7 20L41 7Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.2" />
+    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 48 48">
+      <path d="M15 21H7.5A1.5 1.5 0 0 0 6 22.5v16A1.5 1.5 0 0 0 7.5 40H15" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" />
+      <path
+        d="M15 21l7.5-15a6 6 0 0 1 6 6v4.5h11.6a3 3 0 0 1 3 3.4l-2.25 18A3 3 0 0 1 37.85 40H15"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2.5"
+      />
+      <path d="M15 21v19" stroke="currentColor" strokeLinecap="round" strokeWidth="2.5" />
     </svg>
   );
 }
 
-function DetailAction({ type, label }: { type: "like" | "share"; label: string }) {
+function PaperPlaneIcon({ className = "" }: { className?: string }) {
   return (
-    <button className="webinar-detail-action" type="button">
-      <ActionIcon type={type} />
-      <span>{label}</span>
-    </button>
+    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 48 48">
+      <path d="M41.5 6.5 4.8 17.4a.75.75 0 0 0-.1 1.4l16.5 7.9a.75.75 0 0 1 .35.35l7.9 16.5a.75.75 0 0 0 1.4-.1L41.5 6.5Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="2.5" />
+      <path d="m21.3 26.7 9.2-9.2" stroke="currentColor" strokeLinecap="round" strokeWidth="2.5" />
+    </svg>
   );
 }
 
-function RelatedWebinarRow({
-  webinar,
-}: {
-  webinar: Masterclass;
-}) {
+function CaretDownIcon({ className = "" }: { className?: string }) {
   return (
-    <Link className="related-webinar-row" href={webinar.href}>
-      <WebinarVideo webinar={webinar} compact imageSrc={figmaAssets.figmaBusinessPartners} />
-      <div>
-        <h3>{webinar.title}</h3>
-        <p>{webinar.speakers}</p>
-        <p>
-          {webinar.date} | {webinar.duration}
-        </p>
-      </div>
-    </Link>
+    <svg aria-hidden="true" className={className} fill="none" viewBox="0 0 24 24">
+      <path d="M19.5 9 12 16.5 4.5 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+    </svg>
   );
 }
 
-function RelatedTopics({ topics, className = "" }: { topics: string[]; className?: string }) {
+function RelatedTopics({ topics, className }: { topics: string[]; className: string }) {
   return (
-    <section className={`webinar-topics ${className}`.trim()}>
+    <section className={`sw-topics ${className}`} aria-label="Related topics">
       <h2>Related Topics</h2>
       <div>
         {topics.map((topic) => (
@@ -124,120 +64,151 @@ function RelatedTopics({ topics, className = "" }: { topics: string[]; className
   );
 }
 
-function SpeakerCard({ speaker }: { speaker: { name: string } }) {
+function SpeakerCard({ name, webinarTitle }: { name: string; webinarTitle: string }) {
   return (
-    <details
-      className="webinar-speaker-card"
-      style={{
-        backgroundColor: "rgba(0,0,0,.52)",
-        backgroundImage: `url(${figmaAssets.figmaBusinessPartners})`,
-        backgroundBlendMode: "multiply",
-      }}
-    >
-      <summary className="webinar-speaker-summary">
-        <div className="webinar-speaker-person">
-          <span className="webinar-speaker-ring">
-            <img alt="" src={figmaAssets.figmaTeamPortrait} />
-          </span>
-          <div>
-            <h3>{speaker.name}</h3>
-            <p>Masterclass speaker</p>
-          </div>
-        </div>
-        <span className="webinar-speaker-more">
-          <span>About Speaker</span>
-          <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
-            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-          </svg>
+    <details className="sw-speaker">
+      <summary>
+        <img alt="" className="sw-speaker-bg" src={figmaAssets.figmaBusinessPartners} />
+        <span className="sw-speaker-shade" />
+        <span className="sw-speaker-ring">
+          <img alt="" src={figmaAssets.figmaTeamPortrait} />
         </span>
+        <span className="sw-speaker-text">
+          <span className="sw-speaker-name">{name}</span>
+          <span className="sw-speaker-role">Masterclass speaker</span>
+        </span>
+        <span className="sw-speaker-more">
+          <span>About Speaker</span>
+          <CaretDownIcon className="sw-speaker-caret" />
+        </span>
+        <Glyph className="sw-speaker-info" name="info" />
       </summary>
+      <p className="sw-speaker-detail">
+        {name} spoke at the HYBR masterclass &ldquo;{webinarTitle}&rdquo;.
+      </p>
     </details>
+  );
+}
+
+function LatestItem({ webinar }: { webinar: Masterclass }) {
+  return (
+    <Link className="sw-latest-item" href={webinar.href}>
+      <span className="sw-latest-thumb">
+        <img alt="" className="sw-cover" src={figmaAssets.figmaBusinessPartners} />
+        <span className="sw-shade" />
+        <PlayMark className="sw-latest-play" />
+        <PlayPolygon className="sw-latest-play-mobile" />
+        <span className="sw-latest-time">{webinar.duration}</span>
+      </span>
+      <span className="sw-latest-copy">
+        <span className="sw-latest-kind">MASTERCLASS</span>
+        <span className="sw-latest-title">{webinar.title}</span>
+        <span className="sw-latest-meta">{webinar.speakers}</span>
+        <span className="sw-latest-meta">{webinar.date}</span>
+      </span>
+      <Glyph className="sw-latest-info" name="info" />
+    </Link>
   );
 }
 
 export default async function SpecificWebinarPage({ searchParams }: SpecificWebinarPageProps) {
   const { masterclass } = await searchParams;
   const webinar = masterclass === "business-models" ? businessModelsWebinar : publicPowerWebinar;
-  const speakers = webinar.speakers.split(" & ").map((name) => ({ name }));
+  const speakers = webinar.speakers.split(" & ");
   const latestWebinars = webinar === publicPowerWebinar ? [businessModelsWebinar] : [publicPowerWebinar];
 
   return (
-    <main className="webinar-detail-page bg-white text-black">
+    <main className="sw-page">
       <Header active="insights" />
 
-      <section className="webinar-detail-frame">
-        <div className="figma-container">
-          <SearchControl />
-
-          <div className="webinar-detail-grid">
-            <article className="webinar-detail-main">
-              <WebinarVideo webinar={webinar} />
-
-              <div className="webinar-title-block">
-                <h1>{webinar.title}</h1>
-                <p>
-                  {webinar.speakers} | {webinar.date} | {webinar.duration}
-                </p>
-              </div>
-
-              <div className="webinar-detail-actions">
-                <div className="webinar-detail-actions-left">
-                  <DetailAction label="Like" type="like" />
-                  <DetailAction label="Share" type="share" />
-                </div>
-                <Link className="webinar-transcript-link" href="#transcript">
-                  Read Transcript
-                </Link>
-              </div>
-
-              <div className="webinar-body-copy" id="transcript">
-                <p>{webinar.summary}</p>
-                <p>Watch the full conversation for practical lessons on building public-private partnerships that can move from promising ideas to durable results.</p>
-              </div>
-
-              <RelatedTopics className="webinar-topics--mobile" topics={webinar.topics} />
-
-              <section className="webinar-speakers">
-                <div className="webinar-speakers-head">
-                  <h2>About The Speakers</h2>
-                </div>
-                <div className="webinar-speaker-list">
-                  {speakers.map((speaker, index) => (
-                    <SpeakerCard key={`${speaker.name}-${index}`} speaker={speaker} />
-                  ))}
-                </div>
-              </section>
-            </article>
-
-            <aside className="webinar-detail-sidebar">
-              <div
-                className="webinar-ad-card"
-                style={{
-                  backgroundColor: "rgba(0,0,0,.4)",
-                  backgroundImage: `url(${figmaAssets.figmaFieldHero})`,
-                  backgroundBlendMode: "multiply",
-                }}
-              >
-                HYBR Ad
-              </div>
-
-              <RelatedTopics topics={webinar.topics} />
-
-              <section className="webinar-latest">
-                <h2>Latest Masterclasses</h2>
-                <div className="webinar-latest-list">
-                  {latestWebinars.map((webinar, index) => (
-                    <RelatedWebinarRow key={`${webinar.title}-${index}`} webinar={webinar} />
-                  ))}
-                </div>
-                <Link className="news-detail-outline-button webinar-all-button" href="/insights/webinars">
-                  All Masterclasses
-                </Link>
-              </section>
-            </aside>
-          </div>
+      <div className="sw-wrap">
+        <div className="sw-search" role="search">
+          <Glyph className="sw-search-icon" name="search" />
+          <span>Search</span>
         </div>
-      </section>
+
+        <div className="sw-layout">
+          <div className="sw-main">
+            <VideoPlayer
+              duration={webinar.duration}
+              embedUrl={webinar.youtubeEmbed}
+              poster={figmaAssets.figmaBuilding}
+              title={webinar.title}
+            />
+
+            <div className="sw-title">
+              <h1>{webinar.title}</h1>
+              <p>
+                {webinar.speakers}&nbsp;&nbsp;|&nbsp;&nbsp;{webinar.date}&nbsp;&nbsp;|&nbsp;&nbsp;{webinar.duration}
+              </p>
+            </div>
+
+            <div className="sw-actions">
+              <div className="sw-actions-left">
+                <button className="sw-action" type="button">
+                  <ThumbsUpIcon className="sw-action-icon" />
+                  <span>Like</span>
+                </button>
+                <span aria-hidden="true" className="sw-action-divider">
+                  |
+                </span>
+                <button className="sw-action" type="button">
+                  <PaperPlaneIcon className="sw-action-icon" />
+                  <span>Share</span>
+                </button>
+              </div>
+              <Link className="sw-transcript" href="#transcript">
+                Read Transcript
+              </Link>
+            </div>
+
+            <div className="sw-body" id="transcript">
+              <p>{webinar.summary}</p>
+              <p>
+                Watch the full conversation for practical lessons on building public-private partnerships that can move
+                from promising ideas to durable results.
+              </p>
+            </div>
+
+            <RelatedTopics className="sw-topics--main" topics={webinar.topics} />
+
+            <section className="sw-speakers" aria-labelledby="sw-speakers-title">
+              <h2 className="sw-label" id="sw-speakers-title">
+                ABOUT THE SPEAKERS
+              </h2>
+              <div className="sw-speaker-list">
+                {speakers.map((name) => (
+                  <SpeakerCard key={name} name={name} webinarTitle={webinar.title} />
+                ))}
+              </div>
+            </section>
+          </div>
+
+          <aside className="sw-side">
+            <div className="sw-ad">
+              <img alt="" className="sw-cover" src={figmaAssets.figmaFieldHero} />
+              <span className="sw-shade" />
+              <span className="sw-ad-label">HYBR Ad</span>
+            </div>
+
+            <RelatedTopics className="sw-topics--side" topics={webinar.topics} />
+
+            <section className="sw-latest" aria-labelledby="sw-latest-title">
+              <h2 className="sw-label" id="sw-latest-title">
+                LATEST MASTERCLASSES
+              </h2>
+              <div className="sw-latest-list">
+                {latestWebinars.map((item) => (
+                  <LatestItem key={item.title} webinar={item} />
+                ))}
+              </div>
+              <Link className="sw-all" href="/insights/webinars">
+                All Masterclasses
+              </Link>
+            </section>
+          </aside>
+        </div>
+      </div>
 
       <Footer />
     </main>
