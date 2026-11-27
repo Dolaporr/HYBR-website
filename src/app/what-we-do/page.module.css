@@ -1927,3 +1927,105 @@
 .whatScope :global(.what-team-image) {
   overflow: hidden !important;
 }
+
+/* ---- Figma match pass (desktop 1440, frame 1:3587) ---- */
+.whatScope :global(.what-content-drop.site-content-drop) {
+  --content-drop-closed-right: -254px;
+}
+
+@media (min-width: 1360px) {
+  .whatScope :global(.what-content-drop) {
+    border-radius: 1000px 800px 800px 1000px;
+    height: 197px;
+    top: 253px;
+    width: 352px;
+  }
+
+  .whatScope :global(.what-content-drop p) {
+    left: 41.5px;
+  }
+
+  .whatScope :global(.what-content-drop nav) {
+    gap: 8px;
+    right: 111px;
+    top: calc(50% + 0.5px);
+    width: 109px;
+  }
+
+  .whatScope :global(.what-content-drop a) {
+    font-size: 16px;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+  .whatScope :global(.what-services-copy > p),
+  .whatScope :global(.what-work-copy > p),
+  .whatScope :global(.what-section-heading > p),
+  .whatScope :global(.what-impact-heading > p),
+  .whatScope :global(.what-team-copy > p) {
+    font-size: 20px;
+  }
+
+  .whatScope :global(.what-work-copy > span),
+  .whatScope :global(.what-section-heading > span),
+  .whatScope :global(.what-impact-heading > span) {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .whatScope :global(.what-team-copy > span) {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+
+  .whatScope :global(.what-frame .what-button:not(.what-product-actions .what-button)) {
+    font-size: 24px;
+    min-height: 61px;
+    padding: 14px 30px;
+  }
+
+  .whatScope :global(.what-process-word) {
+    font-size: 40px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-first) {
+    height: 62.4871px;
+    left: 103px;
+    top: 63.031px;
+    transform: matrix(0.562, 0.827, 0.827, -0.562, 0, 0) translate(-1.7px, -1.7px);
+    transform-origin: 0 0;
+    width: 125.609px;
+  }
+
+  .whatScope :global(.what-process-arrow--desktop.is-second) {
+    height: 91.4081px;
+    left: 312.613px;
+    top: 110px;
+    transform: matrix(0.991, 0.133, -0.133, 0.991, 0, 0) translate(-2px, -2px);
+    transform-origin: 0 0;
+    width: 77.2226px;
+  }
+
+  .whatScope :global(.what-case-copy > p) {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .whatScope :global(.what-case-copy h3) {
+    font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+  }
+
+  .whatScope :global(.what-case-card .what-case-copy span),
+  .whatScope :global(.what-case-card.is-feature .what-case-copy span) {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .whatScope :global(.what-case-card.is-feature .what-case-copy) {
+    left: 32px;
+    top: 32px;
+    width: 430px;
+  }
+}

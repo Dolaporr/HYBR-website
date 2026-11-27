@@ -125,12 +125,12 @@ function ProcessMap() {
       <img
         alt=""
         className="what-process-arrow what-process-arrow--desktop is-first"
-        src="/what/vectors/service-arrow-down.svg"
+        src="/what/services-vectors/process-desktop-first.svg"
       />
       <img
         alt=""
         className="what-process-arrow what-process-arrow--desktop is-second"
-        src="/what/vectors/service-arrow-loop.svg"
+        src="/what/services-vectors/process-desktop-second.svg"
       />
     </div>
   );
