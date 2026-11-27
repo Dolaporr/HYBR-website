@@ -59,7 +59,10 @@ export default function RootLayout({
   window.__HYBR_CONTENT_DRAWERS__ = true;
   const mobileDrawerMedia = "(max-width: 559px)";
   // closed tab peek per Figma frame: 96 (1440), 105 (1280), 70 (800), 58 (390)
-  const closedPeek = () => {
+  // a page can set its own frame's value with --content-drop-peek on the drawer (e.g. 66px on a 390 frame)
+  const closedPeek = (drop) => {
+    const own = parseFloat(getComputedStyle(drop).getPropertyValue("--content-drop-peek"));
+    if (Number.isFinite(own)) return own;
     const w = window.innerWidth;
     if (w < 560) return 58;
     if (w < 1024) return 70;
@@ -108,7 +111,7 @@ export default function RootLayout({
       : window.innerWidth;
     const targetRectRight = isOpen
       ? viewportRight
-      : viewportRight + rect.width - closedPeek();
+      : viewportRight + rect.width - closedPeek(drop);
     const translateX = targetRectRight - rect.right;
 
     drop.style.setProperty("left", "auto", "important");

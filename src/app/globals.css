@@ -22458,6 +22458,27 @@ video.home-video-card {
   }
 }
 
+/* Tablet (560-1023): the frame's video is 640 x 535, ours is 16:9 (kept from the 18 Nov pass), so the green
+   connector moves up by the difference to keep its place against the video and off the "Guesswork" title. */
+@media (min-width: 560px) and (max-width: 1023px) {
+  .homepage-live .home-green-inline {
+    top: calc(510px - 535px + (100vw - 160px) * 0.5625);
+  }
+}
+
+/* Phone: the risk band's children are placed from the band's top-left corner (title 152, list 590, as 1:11083),
+   but a later padding pushed the grid 152 px down and 24 px right, so the list ran past the band and was cut. */
+@media (max-width: 559px) {
+  .homepage-live .home-risk-section {
+    padding: 0 !important;
+  }
+
+  .homepage-live .home-risk-grid {
+    height: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
 /* Laptop band, from the 1280 frame (1:15653): "You Gain" image 508 x 256 starts 96 px left of the content
    column (x 24 at 1280), copy 588 wide ends on the column's right edge; the CTA buttons sit side by side. */
 @media (min-width: 1024px) and (max-width: 1359px) {
