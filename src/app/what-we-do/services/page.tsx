@@ -113,12 +113,12 @@ function ProcessMap() {
       <img
         alt=""
         className="services-process-arrow services-process-arrow--desktop is-first"
-        src="/what/vectors/service-arrow-down.svg"
+        src="/what/services-vectors/process-desktop-first.svg"
       />
       <img
         alt=""
         className="services-process-arrow services-process-arrow--desktop is-second"
-        src="/what/vectors/service-arrow-loop.svg"
+        src="/what/services-vectors/process-desktop-second.svg"
       />
     </div>
   );
@@ -135,6 +135,14 @@ function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudyListing }) {
           backgroundPosition: caseStudy.imagePosition,
         }}
       />
+      <div className="services-case-company">
+        {caseStudy.companyLogo ? (
+          <span aria-hidden="true" className="services-case-mark">
+            <img alt="" className="services-case-mark-logo" src={caseStudy.companyLogo} />
+          </span>
+        ) : null}
+        <h3>{caseStudy.company}</h3>
+      </div>
       <p className="services-case-statement">
         {caseStudy.shortBody}
       </p>
@@ -204,7 +212,7 @@ export default function ServicesPage() {
         </section>
 
         <ButtonLink className="services-talk-button" href="/contact">
-          Let&apos;s Talk
+          Let&rsquo;s Talk
         </ButtonLink>
       </div>
 
