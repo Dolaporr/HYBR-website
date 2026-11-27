@@ -235,9 +235,10 @@ export default function RootLayout({
       className={`${montserrat.variable} ${raleway.variable} ${inter.variable}`}
     >
       <body>
+        {/* before SiteInteractions: its effect checks the flag this script sets, so only one drawer handler runs */}
+        <ContentDrawers script={contentDrawerScript} />
         <SiteInteractions />
         {children}
-        <ContentDrawers script={contentDrawerScript} />
       </body>
     </html>
   );
