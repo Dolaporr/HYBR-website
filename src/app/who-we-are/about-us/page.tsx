@@ -219,7 +219,7 @@ export default function AboutUsPage() {
           <h2>
             We help organizations <br className="about-cta-break" />
             <span>discover, design, and scale</span> <span>breakthrough innovations</span>{" "}
-            <br className="about-cta-break" />
+            <br className="about-cta-break about-cta-break--wide" />
             that drive growth and impact.
           </h2>
           <p>Our work starts by understanding your toughest challenges, then unlocking the insights and strategies to move you forward. Explore our services and see how HYBR helps teams think bigger—and execute with confidence.</p>
